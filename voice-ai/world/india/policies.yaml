@@ -24,7 +24,7 @@ policies:
   - id: "C03"
     title: "Opening turn"
     rule: "Recording notice and AI disclosure in the opening turn."
-    source: "Tarazu policy"
+    source: "Recording notice: RBI/2026-27/230 para 100P (reasonable precautions such as telling the borrower the call is recorded); AI disclosure: Tarazu policy"
     check_type: "deterministic"
     inputs: ["first agent turn TTS text"]
     parameters: {"required_in_turn_1": ["business_name", "ai_disclosure", "recording_notice"]}
