@@ -12,18 +12,18 @@ full factorial: 180 scenarios; pairwise grid: 60 scenarios
 planned runs: 120; simulator calls placed: 152
 rejected on first attempt: 25/120 = 20.8%
   first-attempt rejections by valid call end         11
-  first-attempt rejections by behavioural fidelity   7
+  first-attempt rejections by behavioral fidelity    7
   first-attempt rejections by caller-turn fidelity   7
      8  no terminal event (call truncated)
      3  simulated caller hung up before the flow's terminal state
-     2  required behaviour missing (veinte|twentieth)
+     2  required behavior missing (veinte|twentieth)
      2  caller fact missing or changed (confirmation_no)
-     2  required behaviour missing (esta mal|wrong)
-     2  required behaviour missing (after six|despues de las seis)
+     2  required behavior missing (esta mal|wrong)
+     2  required behavior missing (after six|despues de las seis)
      1  language mix off card (Spanish share 0.47, card English)
      1  caller fact missing or changed (paid_on)
      1  language mix off card (Spanish share 0.40, card Spanish-dominant)
-     1  required behaviour missing (\[beep)
+     1  required behavior missing (\[beep)
      1  caller fact missing or changed (date_after_payday)
      1  language mix off card (Spanish share 0.50, card Spanish-dominant)
 all rejections incl. retries: 34

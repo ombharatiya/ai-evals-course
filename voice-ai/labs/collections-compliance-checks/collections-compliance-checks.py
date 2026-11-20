@@ -323,7 +323,7 @@ def global_synthetic_traces(seed: int) -> list[dict]:
                 " Would you like me to read the Customer Advocate's email and mailing address too?"),
             sms, tts(CALLBACK_EN), tool("end_call", {"disposition": "dispute"})],
             tzs=("America/Los_Angeles",), state="CA"),
-        # C14: a stop request honoured in the call, and one ignored in Spanish
+        # C14: a stop request honored in the call, and one ignored in Spanish
         trace("X13", "F10", "SBL-guar-nov", (17, 5), 19, [
             tool("lookup_account", {}, {"contact_role": "borrower"}),
             tts(OPENER_EN.format(name="Derek Wallace")), said("Yeah."),
@@ -775,7 +775,7 @@ def c11_frequency(rows: list[tuple], revocations: list[tuple]) -> dict:
 
 
 def c14_deadline(rev: tuple) -> dict:
-    """A revocation is honoured within 10 business days at most (Steelyard policy: the same day)."""
+    """A revocation is honored within 10 business days at most (Steelyard policy: the same day)."""
     detected, honored = date.fromisoformat(rev[4]), date.fromisoformat(rev[5])
     n = business_days(detected, honored)
     skipped = sorted(h for h in HOLIDAYS if detected < h <= honored)

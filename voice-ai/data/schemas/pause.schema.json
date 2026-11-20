@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "voice-ai/data/schemas/pause.schema.json",
-  "title": "One labelled caller pause (endpointing)",
+  "title": "One labeled caller pause (endpointing)",
   "type": "object",
   "properties": {
     "pause_id": {

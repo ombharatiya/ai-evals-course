@@ -18,7 +18,7 @@ Cover:
 6. Online sampling: checks on every call, strata and rates, human audit, how rates are reported, and rare-violation sizing for C07 and for the C04 judge backstop (C04's deterministic check reads every call).
 7. Judge registry: fields, admission rule, status per language group (UK English and Spain Spanish included), revalidation triggers and ownership.
 8. Cost budget: monthly cost by line from the WG20 unit costs, and cost per detected violation, inside the $75,000 cap.
-9. Build vs buy for simulation, telephony impairment, load generation, judges, dashboards and labelling, with criteria (outbound support, Spanish and Spanglish fidelity, audio-path parity, UK and EU data handling, raw-result export, cost at volume) and exit terms.
+9. Build vs buy for simulation, telephony impairment, load generation, judges, dashboards and labeling, with criteria (outbound support, Spanish and Spanglish fidelity, audio-path parity, UK and EU data handling, raw-result export, cost at volume) and exit terms.
 10. Speech-to-speech: which evals disappear or must be rebuilt, and how you would run the comparison.
 11. Incident coverage table: T01-T10, the component and gate that catch each one, and the expected time to detection.
 12. Evidence from your own work: at least four outputs from the labs or exercises, for example your endpointing table from the endpointing lab or your judge registry entry from the judge validation lab.

@@ -24,7 +24,7 @@ The output must match `expected_output.txt` (global) and `expected_output.india.
 
 1. Run the lab with `--wav` on your own consented 16 kHz recording of a line from a promise template in `world/<edition>/phrases.json`, then score your STT output on each condition with the entity error rate lab.
 2. Map the five conditions in `data/<edition>/entity_pairs.jsonl` to the lab's parameters (codec chain, loss, SNR) and write down which parameter you would vary first.
-3. Change the Gilbert-Elliott parameters for 5% loss with a mean burst of 4 frames and check the realised rate and burst length over 10 seeds.
+3. Change the Gilbert-Elliott parameters for 5% loss with a mean burst of 4 frames and check the realized rate and burst length over 10 seeds.
 
 ## Read
 

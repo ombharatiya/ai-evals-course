@@ -31,7 +31,7 @@ print()
 fh = [r for r in connects if r["amd_pred"] == "human" and not r["human_answer"]]
 fm = [r for r in connects if r["human_answer"] and r["amd_pred"] != "human"]
 print(f"AMD said human on {len(human_pred)} connects; {len(fh)} were machines (false human), "
-      f"{len(fm)} humans were labelled machine (false machine).")
+      f"{len(fm)} humans were labeled machine (false machine).")
 print(f"  trunk seconds spent on false humans at 21 s each: {21 * len(fh)}")
 print(f"  PTP per AMD-human connect: {len(ptp) / len(human_pred):.4f} vs PTP per true human answer: {len(ptp) / len(human_true):.4f}")
 print("  PTP per RPC does not move when only the AMD error rate changes; PTP per connect does.")

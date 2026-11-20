@@ -6,12 +6,12 @@ Python 3.11. No network. --edition india switches to the India edition's
 fictional lender and data set (its block sits between the INDIA EDITION markers).
 
 The round trip here runs on a CONSTRUCTED fixture: a toy TTS normalizer and a
-toy 8 kHz STT written to reproduce documented or plausible behaviours (a
+toy 8 kHz STT written to reproduce documented or plausible behaviors (a
 numeric date written month-first and read day-first by a Spanish voice, a
 Spanish voice requested with the bare locale "es" reading a comma as a
 decimal sign, a small model reading $1,000,000 as "one thousand thousand",
 "@" and "." read by their symbol names, bare digits read as a cardinal).
-No audio is synthesised. Swap `fixture_tts` and `fixture_stt` for your own
+No audio is synthesized. Swap `fixture_tts` and `fixture_stt` for your own
 engines in `round_trip()` (see the adapter at the bottom).
 
 Run:

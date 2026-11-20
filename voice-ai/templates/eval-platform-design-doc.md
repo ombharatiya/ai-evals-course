@@ -55,7 +55,7 @@ State the cap, the total, the cost per detected violation, and what is never cut
 | Load generation | | | |
 | Judges | | | |
 | Dashboards | | | |
-| Labelling | | | |
+| Labeling | | | |
 
 ## 10. Speech-to-speech
 

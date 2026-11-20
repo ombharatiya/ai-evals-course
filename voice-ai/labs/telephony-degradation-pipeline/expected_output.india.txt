@@ -18,14 +18,14 @@ Source: synthetic chirp 100 Hz -> 7 kHz + 1 kHz and 5 kHz tones, 4.00 s at 16000
   mu-law payload: 32,000 bytes = 200 frames of 160 bytes (20 ms each)
 
 [3] Gilbert-Elliott loss on 20 ms frames, r = 0.5 (mean burst 2.0 frames = 40 ms), 50,000 frames x 10 seeds
-  target        p     realised loss (min-max)  mean burst   netem equivalent
+  target        p     realized loss (min-max)  mean burst   netem equivalent
       1%  0.00505    0.0101 (0.0093-0.0122)      2.00    netem loss gemodel 0.51% 50% 100% 0%
       5%  0.02632    0.0499 (0.0474-0.0526)      2.00    netem loss gemodel 2.63% 50% 100% 0%
      10%  0.05556    0.0997 (0.0957-0.1046)      1.99    netem loss gemodel 5.56% 50% 100% 0%
   this clip at 5%: 20 of 200 frames lost, bursts [9, 1, 1, 4, 1, 1, 2, 1]
   waveform SNR vs the unlost phone signal: zero fill 9.4 dB, repeat fill 7.6 dB
 
-[4] Noise mixed at a 10 dB target: realised 10.00 dB
+[4] Noise mixed at a 10 dB target: realized 10.00 dB
 
 [5] Files in phone_path_out/ (16-bit PCM WAV)
   00_source_16k.wav                16000 Hz  128,044 bytes

@@ -1,6 +1,6 @@
 # Lab: Choose an endpointing operating point
 
-Module 6 (Turn-taking, barge-in and recovery). Sweeps a turn detector's silence budget over labelled pauses, reads false cutoffs against dead air per language group, and picks a budget per campaign and call state by expected cost. It writes a pause CSV in the folder you run it from.
+Module 6 (Turn-taking, barge-in and recovery). Sweeps a turn detector's silence budget over labeled pauses, reads false cutoffs against dead air per language group, and picks a budget per campaign and call state by expected cost. It writes a pause CSV in the folder you run it from.
 
 `endpointing-operating-point.py` is the same standalone file the course site shows. It generates its own synthetic data with a fixed seed, holds the constants of both editions, and needs only the Python 3.11 standard library.
 

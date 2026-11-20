@@ -20,7 +20,7 @@ The same promises over four denominators:
   PTP per RPC           0.3697
   kept PTP per dial      0.0703
 
-AMD said human on 1782 connects; 30 were machines (false human), 46 humans were labelled machine (false machine).
+AMD said human on 1782 connects; 30 were machines (false human), 46 humans were labeled machine (false machine).
   trunk seconds spent on false humans at 21 s each: 630
   PTP per AMD-human connect: 0.2626 vs PTP per true human answer: 0.2603
   PTP per RPC does not move when only the AMD error rate changes; PTP per connect does.

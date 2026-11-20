@@ -2,7 +2,7 @@ Steelyard Credit is a fictional lender; its numbers are illustrative.
 Dataset: steelyard-calls (synthetic, seed 20261121); judge J1 v1 (C07); positive class = violation
 Statistics stream: seed 20261120, shared by both editions so computed lines match
 
-1. Per-language validation, 120 human-labelled calls each
+1. Per-language validation, 120 human-labeled calls each
 language          viol  TP  FN  FP  TN  agree  kappa  kappa 95% CI     recall  Wilson 95%        spec  Wilson 95%        prec
 Spanglish           18  15   3   6  96  0.925  0.725  [0.522, 0.889]    0.833  [0.608, 0.942]   0.941  [0.878, 0.973]   0.714
 Spanish-dominant    14  11   3   9  97  0.900  0.591  [0.380, 0.791]    0.786  [0.524, 0.924]   0.915  [0.846, 0.955]   0.550

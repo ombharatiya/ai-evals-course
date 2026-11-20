@@ -353,7 +353,7 @@ def main() -> None:
     r = 0.5
     print(f"\n[3] Gilbert-Elliott loss on 20 ms frames, r = {r} (mean burst {1 / r:.1f} frames = "
           f"{20 / r:.0f} ms), 50,000 frames x 10 seeds")
-    print(f"  {'target':>6s} {'p':>8s} {'realised loss (min-max)':>27s} {'mean burst':>11s}   netem equivalent")
+    print(f"  {'target':>6s} {'p':>8s} {'realized loss (min-max)':>27s} {'mean burst':>11s}   netem equivalent")
     for target in (0.01, 0.05, 0.10):
         p = ge_params(target, r)
         losses, bursts = [], []
@@ -364,7 +364,7 @@ def main() -> None:
         mean_loss, mean_burst = float(np.mean(losses)), float(np.mean(bursts))
         print(f"  {target:6.0%} {p:8.5f} {mean_loss:9.4f} ({min(losses):.4f}-{max(losses):.4f}) "
               f"{mean_burst:9.2f}    netem loss gemodel {100 * p:.2f}% {100 * r:.0f}% 100% 0%")
-        assert abs(mean_loss - target) / target < 0.05, "realised loss should match p/(p+r)"
+        assert abs(mean_loss - target) / target < 0.05, "realized loss should match p/(p+r)"
         assert abs(mean_burst - 1 / r) < 0.05, "mean burst should match 1/r"
 
     mask5 = gilbert_elliott(n_frames, ge_params(0.05, r), r, seed=seed)
@@ -380,9 +380,9 @@ def main() -> None:
     rng = np.random.default_rng(seed)
     noise = resample_poly_np(bandpass(rng.standard_normal(len(src)), SR_WIDE), 1, 2)
     noisy = mix_snr(phone, noise, 10.0)
-    realised = snr_db(phone, noisy)
-    print(f"\n[4] Noise mixed at a 10 dB target: realised {realised:.2f} dB")
-    assert abs(realised - 10.0) < 0.01
+    realized = snr_db(phone, noisy)
+    print(f"\n[4] Noise mixed at a 10 dB target: realized {realized:.2f} dB")
+    assert abs(realized - 10.0) < 0.01
 
     # [5] write the source and four conditions
     noisy_mu = mulaw_decode(mulaw_encode(noisy))

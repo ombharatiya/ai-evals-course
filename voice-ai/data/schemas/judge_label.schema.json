@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "voice-ai/data/schemas/judge_label.schema.json",
-  "title": "One human-labelled validation call with judge verdicts",
+  "title": "One human-labeled validation call with judge verdicts",
   "type": "object",
   "properties": {
     "call_id": {

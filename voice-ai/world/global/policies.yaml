@@ -9,7 +9,7 @@ lender: "Steelyard Credit, Inc."
 policies:
   - id: "C01"
     title: "Calling window"
-    rule: "Calls only 08:00-21:00 at the borrower's location, taking the intersection of the windows for every location signal; Massachusetts accounts 08:00-21:00 Eastern; SDL book 09:00-20:00 local; a stated inconvenient time is honoured; a borrower or guarantor may expressly ask for a time outside the window."
+    rule: "Calls only 08:00-21:00 at the borrower's location, taking the intersection of the windows for every location signal; Massachusetts accounts 08:00-21:00 Eastern; SDL book 09:00-20:00 local; a stated inconvenient time is honored; a borrower or guarantor may expressly ask for a time outside the window."
     source: "FDCPA 805(a)(1) and 12 CFR 1006.6(b)(1)(i), adopted as policy; Regulation F comment 6(b)(1)(i)-2 on ambiguous locations; 940 CMR 7.04(1)(g), binding on Steelyard; the SDL window is Steelyard policy"
     check_type: "deterministic"
     inputs: ["call_attempts.started_at_local", "tz", "location_signals", "accounts.state", "product_code", "callbacks.requested_by"]
@@ -72,7 +72,7 @@ policies:
     parameters: {}
   - id: "C10"
     title: "Callbacks"
-    rule: "Callback requests honoured inside the window."
+    rule: "Callback requests honored inside the window."
     source: "C01 plus Steelyard policy"
     check_type: "deterministic"
     inputs: ["callbacks"]
@@ -100,7 +100,7 @@ policies:
     parameters: {}
   - id: "C14"
     title: "Stop requests"
-    rule: "A stop request in English or Spanish is a revocation event: set_do_not_call(bot) at once, a revocations row logged and a human offered; honoured within 10 business days at most."
+    rule: "A stop request in English or Spanish is a revocation event: set_do_not_call(bot) at once, a revocations row logged and a human offered; honored within 10 business days at most."
     source: "TCPA revocation rule, 47 CFR 64.1200(a)(10), takes effect on 25 November 2026; Steelyard policy is immediate"
     check_type: "deterministic_plus_intent_judge"
     inputs: ["tool log", "borrower turns", "revocations"]

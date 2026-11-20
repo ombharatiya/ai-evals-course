@@ -1325,7 +1325,7 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
                 post_tools=[])
         c.t = 20990
         c.turns[-1]["tool_calls"].append(c.tool("end_call", {"disposition": "no_response"}, 21000, 21020))
-        labels = [lab("OUT.AMD", "machine prompt labelled human (0.71); opener played to it; attempt logged as a conversation", 2)]
+        labels = [lab("OUT.AMD", "machine prompt labeled human (0.71); opener played to it; attempt logged as a conversation", 2)]
         gold["call_attempt"] = {"rpc": False, "disposition": "ivr"}
 
     elif iid == "T08":

@@ -301,7 +301,7 @@
       "labeler": "rv-07",
       "taxonomy": "tz-fail-v4",
       "code": "OUT.AMD",
-      "note": "machine prompt labelled human (0.71); opener played to it; attempt logged as a conversation",
+      "note": "machine prompt labeled human (0.71); opener played to it; attempt logged as a conversation",
       "turn_id": 2
     }
   ]

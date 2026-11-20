@@ -47,7 +47,7 @@ Edition: india. Dataset: tarazu-calls (synthetic, seed 20261120)
   kept PTP           18,867   62% of PTP
   PTP per connect 0.2341; PTP per RPC 0.38; kept PTP per dial 0.0755
 
-[4] AMD setting A (current): 200 labelled openings, rows = true, columns = predicted
+[4] AMD setting A (current): 200 labeled openings, rows = true, columns = predicted
                            human   vmail    oper    tune     ivr silence   recall [Wilson 95%]
   human                       77       1       0       0       0       2   0.96 [0.90, 0.99]
   voicemail                    6      31       1       0       2       0   0.78 [0.62, 0.88]
@@ -60,7 +60,7 @@ Edition: india. Dataset: tarazu-calls (synthetic, seed 20261120)
   machine taken for another machine class: 14
   lowest recall: operator_announcement
 
-[4] AMD setting B (stricter human): 200 labelled openings, rows = true, columns = predicted
+[4] AMD setting B (stricter human): 200 labeled openings, rows = true, columns = predicted
                            human   vmail    oper    tune     ivr silence   recall [Wilson 95%]
   human                       75       2       1       0       0       2   0.94 [0.86, 0.97]
   voicemail                    3      34       1       0       2       0   0.85 [0.71, 0.93]

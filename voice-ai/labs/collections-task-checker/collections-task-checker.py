@@ -218,7 +218,7 @@ WORLD: dict = GLOBAL      # set from --edition in main()
 FUNNEL = {"dials_per_day": 250000, "connect_rate": 0.52, "human_share": 0.88,
           "rpc_share": 0.70, "ptp_per_rpc": 0.38, "kept_per_ptp": 0.62}
 T07_TRUNK_S = 21          # trunk seconds T07 spent talking to a machine
-AMD_SEED = 20261126       # one draw per labelled opening, the same in both editions
+AMD_SEED = 20261126       # one draw per labeled opening, the same in both editions
 FAULTS = {"F01": ["amount_misheard", "write_lost", "no_link"], "F02": ["skipped_status_check"],
           "F03": ["pushed_past_dispute"], "F04": ["ptp_after_hardship"], "F05": ["third_party_as_rpc"],
           "F06": ["dues_before_verify"], "F08": ["amd_false_human"],
@@ -610,7 +610,7 @@ def incident_calls() -> list[dict]:
     out.append({"id": "T02", "flow": "F02", "fault": "skipped_status_check", "before": before,
                 "after": after, "tools": tools,
                 "ctx": {"account_id": t["account"], "contact_id": t["contact"], "since": "2026-11-01"}})
-    # T07: a machine labelled human; opener played; no mark_contact
+    # T07: a machine labeled human; opener played; no mark_contact
     t = W["incidents"]["T07"]
     before = base_crm(t["account"], t["contact"], t["product"])
     after = copy_crm(before)
@@ -817,7 +817,7 @@ def main() -> None:
     # [4] AMD matrix (identical counts in both editions; only the class names differ)
     mats = amd_matrices()
     for name, m in mats.items():
-        print(f"\n[4] AMD setting {name}: 200 labelled openings, rows = true, columns = predicted")
+        print(f"\n[4] AMD setting {name}: 200 labeled openings, rows = true, columns = predicted")
         print("  " + " " * 22 + "".join(f"{short[c]:>8s}" for c in classes) + "   recall [Wilson 95%]")
         recalls = {}
         for t in classes:

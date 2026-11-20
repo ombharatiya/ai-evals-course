@@ -4,7 +4,7 @@ Draw the endpointing curve (false cutoffs against dead air) per language group a
 
 ## Data
 
-- `data/<edition>/pauses.jsonl` (1,200 labelled pauses plus T05's pause)
+- `data/<edition>/pauses.jsonl` (1,200 labeled pauses plus T05's pause)
 
 ## Tasks
 

@@ -168,7 +168,7 @@ class Pause:
 
 def gen_pauses(group: str, n: int, seed: int, state: str = "default",
                pace: float = 1.0, prefix: str = "") -> list[Pause]:
-    """At least n labelled pauses, whole calls of 4 turns; holds before amounts and dates run longer."""
+    """At least n labeled pauses, whole calls of 4 turns; holds before amounts and dates run longer."""
     rng = random.Random(f"{seed}:{group}:{state}:{pace}:{prefix}")
     m = GROUP_MODEL[group]
     tags, probs = zip(*STATE_TAGS[state].items())
@@ -371,7 +371,7 @@ def main():
     rows = sets[GEN["csv_group"]]
     write_csv(GEN["csv"], rows)
     print(f"\nwrote {GEN['csv']} ({len(rows)} rows)")
-    print("All assertions passed. The numbers are synthetic; the method transfers to your labelled pauses.")
+    print("All assertions passed. The numbers are synthetic; the method transfers to your labeled pauses.")
 
 
 if __name__ == "__main__":

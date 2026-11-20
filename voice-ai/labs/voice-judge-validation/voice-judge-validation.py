@@ -7,7 +7,7 @@ data set (its constants block sits between the INDIA EDITION markers below).
 
 The judge is J1 (C07: coercion and consequence misstatement, agent-turn transcript
 plus lexicon hits). The positive class everywhere below is the VIOLATION, so
-"recall" is the share of human-labelled violations the judge flags and
+"recall" is the share of human-labeled violations the judge flags and
 "specificity" is the share of compliant calls it leaves alone.
 
 Run:
@@ -224,7 +224,7 @@ def make_rows(language: str, slice_: str, tp: int, fn: int, fp: int, tn: int) ->
 
 
 def validation_sets(rng: random.Random) -> dict[str, list[dict]]:
-    """120 human-labelled calls per language group (gold-v7). The first group reproduces
+    """120 human-labeled calls per language group (gold-v7). The first group reproduces
     J1 v1's validation result (WG17 / W17): 18 violations, 15 caught, 6 false alarms. It is
     split by an input slice (global: the STT language setting; India: the transcript
     script); the split and the other two sets are this recipe's construction."""
@@ -264,7 +264,7 @@ def ppi_mean(judge_all: list[int], judge_lab: list[int], human_lab: list[int],
              lam: float | str = 1.0) -> tuple[float, float, float]:
     """Rectified mean: lam * mean(judge on all judged calls) + mean(human - lam * judge)
     on the audited calls. lam=1 is the classic estimator; lam="tuned" picks the
-    variance-minimising weight from the audited calls. Returns (estimate, se, lam)."""
+    variance-minimizing weight from the audited calls. Returns (estimate, se, lam)."""
     n, big_n = len(human_lab), len(judge_all)
     if lam == "tuned":
         mf, mh = _mean(judge_lab), _mean(human_lab)
@@ -377,7 +377,7 @@ def main() -> None:
     sets = validation_sets(rng)
     results = {lang: judge_stats(rows, rng) for lang, rows in sets.items()}
 
-    print("1. Per-language validation, 120 human-labelled calls each")
+    print("1. Per-language validation, 120 human-labeled calls each")
     print(f"{'language':<{LANG_W}}{'viol':>5}{'TP':>4}{'FN':>4}{'FP':>4}{'TN':>4}{'agree':>7}"
           f"{'kappa':>7}  {'kappa 95% CI':<16}{'recall':>7}  {'Wilson 95%':<16}"
           f"{'spec':>6}  {'Wilson 95%':<16}{'prec':>6}")

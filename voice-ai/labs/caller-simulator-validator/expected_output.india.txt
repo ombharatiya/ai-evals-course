@@ -12,18 +12,18 @@ full factorial: 180 scenarios; pairwise grid: 60 scenarios
 planned runs: 120; simulator calls placed: 152
 rejected on first attempt: 25/120 = 20.8%
   first-attempt rejections by valid call end         11
-  first-attempt rejections by behavioural fidelity   7
+  first-attempt rejections by behavioral fidelity    7
   first-attempt rejections by caller-turn fidelity   7
      8  no terminal event (call truncated)
      3  simulated caller hung up before the flow's terminal state
-     2  required behaviour missing (bees tarikh|20th)
+     2  required behavior missing (bees tarikh|20th)
      2  caller fact missing or changed (utr)
-     2  required behaviour missing (galat|wrong)
-     2  required behaviour missing (after 6|chhe baje)
+     2  required behavior missing (galat|wrong)
+     2  required behavior missing (after 6|chhe baje)
      1  language mix off card (Hindi share 0.44, card Indian English)
      1  caller fact missing or changed (paid_on)
      1  language mix off card (Hindi share 0.31, card Hindi-dominant)
-     1  required behaviour missing (\[beep)
+     1  required behavior missing (\[beep)
      1  caller fact missing or changed (date_after_7)
      1  language mix off card (Hindi share 0.55, card Hindi-dominant)
 all rejections incl. retries: 34

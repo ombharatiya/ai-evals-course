@@ -27,8 +27,8 @@ The same edition always produces byte-identical files; `tests/test_data.py` runs
 | `traces/S1.json`, `S2a.json`, `S2b.json` | 3 | Worked examples: a verified guarantor (S1), a compliant and a non-compliant voicemail (S2a, S2b) | module 14 |
 | `calls.jsonl` | 200 | Simulated calls: 25 scenario cards x 8 trials, with timelines, transcripts, tool calls, stage timings and CRM before and after | modules 1, 5, 7, 8, 9, 11, 12, 14 |
 | `entity_pairs.jsonl` | 600 | Reference transcripts with hypotheses from three STT systems under five audio conditions, and gold entities | modules 3, 4 |
-| `pauses.jsonl` | 1,201 | Labelled caller pauses (hold or end) for endpointing, 400 per language group, plus T05's pause | module 6 |
-| `judge_labels.jsonl` | 720 | 120 human-labelled calls per language group per judged dimension, with two raters and two judges | module 10 |
+| `pauses.jsonl` | 1,201 | Labeled caller pauses (hold or end) for endpointing, 400 per language group, plus T05's pause | module 6 |
+| `judge_labels.jsonl` | 720 | 120 human-labeled calls per language group per judged dimension, with two raters and two judges | module 10 |
 | `production_sample.jsonl` | 4,000 | Dial attempts from one production day, with AMD truth and prediction, funnel flags, strata and check results | modules 2, 8, 9, 13 |
 | `manifest.json` | 1 | Edition, dataset name, seed, world version, generator version, file hashes and counts | tests |
 
@@ -63,7 +63,7 @@ Schema: `schemas/trace.schema.json` (voice-trace/1.3). One object per call. Ever
 | `checks` | Check results the platform recorded (traces only; empty for simulated calls, which you score yourself): `id`, `result`, `evidence_turns` |
 | `judge_scores` | Judge verdicts recorded on the call (T10) |
 | `labels` | Reviewer labels: `labeler`, `taxonomy`, `code` (first failure, or `NONE`), `note`, `turn_id` |
-| `review_set` | Simulated calls: `shared-30` when two reviewers labelled the call, else `single` |
+| `review_set` | Simulated calls: `shared-30` when two reviewers labeled the call, else `single` |
 
 Caller turn:
 

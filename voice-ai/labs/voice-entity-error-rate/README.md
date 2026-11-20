@@ -22,7 +22,7 @@ The output must match `expected_output.txt` (global) and `expected_output.india.
 
 ## Stretch exercises with the course data
 
-1. Score `data/<edition>/entity_pairs.jsonl` with the lab's own canonicalizer: run its amount canonicalizer on each `reference` and each hypothesis, and compare with `ref_entities` and `hyp_entities`. Every disagreement is either a canonicalizer gap or a labelling error.
+1. Score `data/<edition>/entity_pairs.jsonl` with the lab's own canonicalizer: run its amount canonicalizer on each `reference` and each hypothesis, and compare with `ref_entities` and `hyp_entities`. Every disagreement is either a canonicalizer gap or a labeling error.
 2. Recompute the speaker-clustered interval for amount entity error rate on the pairs file with 90 speakers, and compare its width with the lab's synthetic sets.
 3. Slice the pairs by `condition` and report the amount entity error rate per system on the phone path only.
 

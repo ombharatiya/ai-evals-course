@@ -11,7 +11,7 @@ A discrete-event model (heapq) of the agent's cascaded stack under load:
   - an LLM provider concurrency limit with 429s, exponential backoff and at most 3 retries
   - LLM TTFT that inflates, and whose tail widens, as the provider fills up
   - CRM latency that rises with concurrent calls (the T04 mechanism)
-  - STT final delay that rises with stream utilisation (the amount-accuracy proxy)
+  - STT final delay that rises with stream utilization (the amount-accuracy proxy)
   - a caller who says "hello?" after 3 s of dead air, which makes a duplicate reply (T04)
 It runs the plan: ramp in 10% steps of today's 2,400 projected peak up to 1.5x, a sustained
 hold at 1.0x, a 3x spike, and a cold burst for contrast. It reports, per step, P95 tool-turn

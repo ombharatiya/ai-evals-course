@@ -24,7 +24,7 @@ The output must match `expected_output.txt` (global) and `expected_output.india.
 
 1. Run the lab's functions on `data/<edition>/judge_labels.jsonl`; the C07 transcript judge in the edition's validation group reproduces agreement 0.925 and kappa 0.725.
 2. Validate the blueprint judge on TONE.PACE per language group and fill a registry entry from templates/judge-registry-entry.json.
-3. Compute how many more labelled violations each group needs before a recall lower bound of 0.90 is possible.
+3. Compute how many more labeled violations each group needs before a recall lower bound of 0.90 is possible.
 
 ## Read
 

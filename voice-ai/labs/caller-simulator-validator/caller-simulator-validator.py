@@ -9,7 +9,7 @@ What it does:
   1. Builds a pairwise scenario grid over persona-flow x audio condition x language mix.
   2. Generates 120 simulated call transcripts (60 scenarios x 2 seeds) with seeded
      simulator drift.
-  3. Runs three validators on every run (valid call end, behavioural fidelity to the
+  3. Runs three validators on every run (valid call end, behavioral fidelity to the
      persona card, caller-turn fidelity) and regenerates a rejected run up to 2 times.
   4. Compares 30 real calls with their simulated twins, per check (paired).
   5. Scores a two-rater attribution audit of the failed simulated runs (agent or
@@ -69,7 +69,7 @@ AUDIO = ["clean-16k", "phone-8k-mulaw", "phone-8k-loss5-snr10"]
 
 # ---------- persona cards (WORLD-GLOBAL WG8, shortened for the simulator) ----------
 # key: the caller's defining line per language mix. required / forbidden: markers the
-# behavioural validator looks for in caller turns. facts: values the caller-turn
+# behavioral validator looks for in caller turns. facts: values the caller-turn
 # validator checks. machine: no language check, no human speech allowed.
 G_LANGS = ["Spanglish", "Spanish-dominant", "English"]   # mixed, other-dominant, English
 G_CARDS = {
@@ -470,7 +470,7 @@ def r_val(r: dict, factor: str) -> str:
 DRIFT_MENU = [  # (kind, probability per attempt)
     ("truncated", 0.04),          # media dropped, no terminal event
     ("early_hangup", 0.03),       # simulated caller leaves before the flow ends
-    ("behaviour", 0.06),          # caller abandons the card (the key line is replaced)
+    ("behavior", 0.06),          # caller abandons the card (the key line is replaced)
     ("fact", 0.04),               # caller forgets or changes a fact the card says they know
     ("language", 0.03),           # caller drops the card's language mix
     ("timer_interrupt", 0.08),    # interruption on a timer, not on content: no validator checks it
@@ -489,7 +489,7 @@ def simulate(scn: dict, seed: int) -> dict:
     if drift == "fact" and not card["facts"]:
         drift = "language"
     if drift == "language" and card["machine"]:
-        drift = "behaviour"
+        drift = "behavior"
     lang = scn["lang"]
     key = card["key"][lang]
     turns = [("agent", TEXT["opener"][lang])]
@@ -503,7 +503,7 @@ def simulate(scn: dict, seed: int) -> dict:
         turns.append(("agent", TEXT["ask_ref"]))
         ref = "".join(str(rng.randrange(10)) for _ in range(12))
         turns.append(("caller", TEXT["give_ref"].format(ref=ref)))
-    if drift == "behaviour":
+    if drift == "behavior":
         turns = [(s, card["drift"] if t == key else t) for s, t in turns]
     elif drift == "fact":
         fact_re = re.compile("|".join(card["facts"].values()), re.I)
@@ -547,10 +547,10 @@ def v_behaviour(run: dict) -> str | None:
     caller = [t for s, t in run["turns"] if s.startswith("caller")]
     for pat in card["required"]:
         if not any(re.search(pat, t, re.I) for t in caller):
-            return f"required behaviour missing ({pat})"
+            return f"required behavior missing ({pat})"
     for pat in card["forbidden"]:
         if any(re.search(pat, t, re.I) for t in caller):
-            return f"forbidden behaviour present ({pat})"
+            return f"forbidden behavior present ({pat})"
     if card.get("content_interrupt") and not any(s == "caller-interrupt" for s, _ in run["turns"]):
         return "content-triggered interruption missing"
     return None
@@ -577,7 +577,7 @@ def v_caller_turns(run: dict) -> str | None:
     return None
 
 
-VALIDATORS = [("valid call end", v_call_end), ("behavioural fidelity", v_behaviour),
+VALIDATORS = [("valid call end", v_call_end), ("behavioral fidelity", v_behaviour),
               ("caller-turn fidelity", v_caller_turns)]
 
 

@@ -44,4 +44,4 @@ T05 at 600 ms, no hold signal: waits  600 ms -> cut off
 T05 at 600 ms, hold signal   : waits 1100 ms -> held
 
 wrote tarazu_pauses_hinglish.csv (609 rows)
-All assertions passed. The numbers are synthetic; the method transfers to your labelled pauses.
+All assertions passed. The numbers are synthetic; the method transfers to your labeled pauses.
