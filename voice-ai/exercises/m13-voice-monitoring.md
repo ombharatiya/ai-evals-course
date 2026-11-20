@@ -4,8 +4,8 @@ Size production samples for rare violations and see why a uniform sample misses 
 
 ## Data
 
-- `data/<edition>/production_sample.jsonl (`stratum`)`
-- `world/<edition>/constants.json (`world_rates`, `volumes`)`
+- `data/<edition>/production_sample.jsonl` (`stratum`)
+- `world/<edition>/constants.json` (`world_rates`, `volumes`)
 
 ## Tasks
 

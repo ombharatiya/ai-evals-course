@@ -4,7 +4,7 @@ Build a collections funnel where every rate names its denominator, and see how a
 
 ## Data
 
-- `data/<edition>/production_sample.jsonl (4,000 dial attempts from one day)`
+- `data/<edition>/production_sample.jsonl` (4,000 dial attempts from one day)
 
 ## Tasks
 

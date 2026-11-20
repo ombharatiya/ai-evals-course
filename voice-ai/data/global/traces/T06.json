@@ -328,7 +328,13 @@
           }
         ],
         "gloss": "Your next payment of $680.00 is due on 12/03.",
-        "audio_reading": "...vence el doce de marzo. [gloss: ...is due on the twelfth of March.]"
+        "audio_reading": "...vence el doce de marzo. [gloss: ...is due on the twelfth of March.]",
+        "audio_entities": [
+          {
+            "type": "date",
+            "value": "2027-03-12"
+          }
+        ]
       },
       "play_start_ms": 46092,
       "play_end_ms": 49472,
@@ -367,18 +373,8 @@
       "reference_text": "Esta bien, pago entonces.",
       "gloss": "Okay, I'll pay then.",
       "ref_intent": "confirm_yes",
-      "ref_entities": [
-        {
-          "type": "date",
-          "value": "2027-03-12"
-        }
-      ],
-      "stt_entities": [
-        {
-          "type": "date",
-          "value": "2027-03-12"
-        }
-      ],
+      "ref_entities": [],
+      "stt_entities": [],
       "tags": [],
       "pauses": []
     },

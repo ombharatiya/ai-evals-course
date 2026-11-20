@@ -56,7 +56,7 @@ print("Silence alone cannot separate this hold from a turn end; a detector that 
 print()
 thr = 0.5
 for g in C["language_groups"]:
-    sub = [p for p in pauses if p["language_group"] == g]
+    sub = [p for p in pauses if p["language_group"] == g and p["pause_id"] != "T05-p1"]
     holds = [p for p in sub if p["label"] == "hold"]
     cut_a = sum(p["pause_ms"] > 300 and p["model_a_hold_prob"] < thr for p in holds) / len(holds)
     print(f"{g}: at 300 ms, silence-only cuts {v.pct(curve(sub, 300)[0])} of holds; "

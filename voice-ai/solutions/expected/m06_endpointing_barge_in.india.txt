@@ -4,9 +4,9 @@ Data: tarazu-calls (synthetic, seed 20261120)
 
 language group  pauses  false cutoff at 300 ms  at 600 ms  silence for <= 5% cutoff (ms)
 --------------  ------  ----------------------  ---------  -----------------------------
-Hinglish        400     53.3%                   4.1%       600
-Hindi-dominant  400     49.0%                   7.4%       700
-Indian English  400     38.5%                   3.1%       500
+Hinglish        400     67.5%                   9.5%       650
+Hindi-dominant  400     60.4%                   16.8%      700
+Indian English  400     55.3%                   5.6%       650
 
 False cutoff never rises as the threshold rises: True
 
@@ -14,24 +14,24 @@ Chosen silence budget per campaign and call state (minimum expected cost per 1,0
 campaign        call state    pauses  chosen ms  world budget ms  false cutoff at world budget
 --------------  ------------  ------  ---------  ---------------  ----------------------------
 TW-early-nov    default       115     550        400              26.8%
-TW-early-nov    amount_asked  66      500        600              3.3%
-TW-early-nov    date_asked    60      550        600              8.7%
+TW-early-nov    amount_asked  66      650        600              6.7%
+TW-early-nov    date_asked    60      750        600              13.0%
 PL-digital-nov  default       115     350        400              13.6%
-PL-digital-nov  amount_asked  65      450        600              11.1%
-PL-digital-nov  date_asked    60      500        600              9.1%
+PL-digital-nov  amount_asked  65      750        600              14.8%
+PL-digital-nov  date_asked    60      700        600              9.1%
 CD-short-nov    default       134     500        400              22.0%
-CD-short-nov    amount_asked  49      550        600              4.2%
-CD-short-nov    date_asked    57      500        600              8.3%
+CD-short-nov    amount_asked  49      650        600              12.5%
+CD-short-nov    date_asked    57      750        600              12.5%
 SBL-guar-nov    default       113     500        450              12.0%
-SBL-guar-nov    amount_asked  71      600        650              3.2%
-SBL-guar-nov    date_asked    56      450        650              9.1%
+SBL-guar-nov    amount_asked  71      750        650              6.5%
+SBL-guar-nov    date_asked    56      700        650              9.1%
 MFI-fort-nov    default       118     500        600              4.4%
-MFI-fort-nov    amount_asked  62      650        800              0.0%
-MFI-fort-nov    date_asked    60      600        800              0.0%
+MFI-fort-nov    amount_asked  62      750        800              0.0%
+MFI-fort-nov    date_asked    60      800        800              0.0%
 
 T05: a 720 ms hold before a date. 300 ms cuts it off, 400 ms cuts it off, 600 ms cuts it off, 800 ms waits.
 Silence alone cannot separate this hold from a turn end; a detector that reads the content helps.
 
-Hinglish: at 300 ms, silence-only cuts 53.5% of holds; model A (wait when hold probability >= 0.5) cuts 28.8%
-Hindi-dominant: at 300 ms, silence-only cuts 49.0% of holds; model A (wait when hold probability >= 0.5) cuts 23.5%
-Indian English: at 300 ms, silence-only cuts 38.5% of holds; model A (wait when hold probability >= 0.5) cuts 17.4%
+Hinglish: at 300 ms, silence-only cuts 67.5% of holds; model A (wait when hold probability >= 0.5) cuts 34.3%
+Hindi-dominant: at 300 ms, silence-only cuts 60.4% of holds; model A (wait when hold probability >= 0.5) cuts 25.5%
+Indian English: at 300 ms, silence-only cuts 55.3% of holds; model A (wait when hold probability >= 0.5) cuts 23.6%

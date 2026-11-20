@@ -7,7 +7,7 @@ Read the course in either edition:
 - Global edition: [aievals.co/learn/voice-ai-evals](https://www.aievals.co/learn/voice-ai-evals). Steelyard Credit, a fictional US lender, and its agent Hazel. English, Spanish-dominant and Spanglish callers; US dollars; US, UK and EU rules.
 - India edition: [aievals.co/learn/voice-ai-evals-india](https://www.aievals.co/learn/voice-ai-evals-india). Tarazu Finance, a fictional Indian lender, and its agent Asha; rupees; RBI, TRAI and DPDP rules.
 
-Both editions share the same chapters, ids, code and computed numbers. Everything about both lenders is fictional and illustrative, the data is synthetic, and nothing here is legal advice.
+Both editions share the same chapters, ids and code, and the worked numbers the course quotes are the same in both. The exercise and lab outputs on each edition's synthetic data differ. Everything about both lenders is fictional and illustrative, the data is synthetic, and nothing here is legal advice.
 
 ## Setup
 
@@ -34,7 +34,7 @@ voice-ai/
   solutions/                    worked solutions and their expected output
   templates/                    decision memo, codebook, judge registry entry, design doc, capstone brief and rubric
   tests/                        standard-library unittest suite
-  tools/                        a small JSON Schema validator and a YAML reader (standard library)
+  tools/                        a small JSON Schema validator, a YAML reader and the lab sync check (standard library)
 ```
 
 Pick an edition with `--edition global` (the default) or `--edition india` on any lab, solution or the data generator.
@@ -67,7 +67,7 @@ cd labs/voice-latency-waterfall
 ../../.venv/bin/python voice-latency-waterfall.py --edition india  # India edition
 ```
 
-The lab scripts are copies of the scripts the site publishes and stay identical to them. Each is standalone: it generates its own synthetic data with a fixed seed and holds both editions' constants. The shared course data in `data/` is for the exercises and the stretch exercises in each lab's README.
+The lab scripts are copies of the scripts the site publishes and stay identical to them. `python3.11 tools/sync_labs.py --site <site repo> --check` compares every lab script and expected output with the site's copies; run it before each release, and without `--check` to copy the site files over. Each is standalone: it generates its own synthetic data with a fixed seed and holds both editions' constants. The shared course data in `data/` is for the exercises and the stretch exercises in each lab's README.
 
 ## Data
 

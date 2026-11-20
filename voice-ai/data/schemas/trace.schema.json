@@ -369,6 +369,36 @@
                 },
                 "audio_reading": {
                   "type": "string"
+                },
+                "audio_entities": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "enum": [
+                          "amount",
+                          "date",
+                          "confirmation",
+                          "postal_code",
+                          "product",
+                          "dpd"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "integer",
+                          "string"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "description": "Entities the audio stated where it differs from the text (T06)"
                 }
               },
               "required": [

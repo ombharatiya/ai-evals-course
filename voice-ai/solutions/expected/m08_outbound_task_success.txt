@@ -19,7 +19,7 @@ F08   IVR or machine prompt        5/8           62.5%
 F09   Callback request             13/16         81.2%
 F10   Threatening to complain      24/24         100.0%
 
-Most common diff fields: ptps.amount_cents (4), ptps.readback_confirmed (4), call_attempts.disposition (4), callbacks.requested_by (3), dnc: (1)
+Most common diff fields: ptps.amount_cents (4), ptps.readback_confirmed (4), call_attempts.disposition (4), callbacks.requested_by (3), dnc missing row (1)
 
 AMD confusion on connected attempts (rows: true class, columns: predicted):
 true \ pred        human  voicemail  carrier_intercept  call_screening  ivr  silence  recall

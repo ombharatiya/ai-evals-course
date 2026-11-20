@@ -1040,6 +1040,7 @@ INCIDENT_META = {
 }
 
 
+S2_TITLES = {"S2a": "Voicemail, compliant", "S2b": "Voicemail, non-compliant"}
 ANCHORS = {"T02": ("start", None), "T04": ("start", 38710), "T05": ("start", 51200), "T08": ("end", 70500)}
 
 
@@ -1294,11 +1295,12 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
         txt, gl = text_of(inc["llm"])
         heard, hgl = text_of(inc["heard"])
         c.caller(*W.caller_line(group, "repeat_ask"), intent="repeat_request")
-        c.agent("amount-quote", txt, gl, acts=["inform_dues", "inform_due_date"],
-                entities=[{"type": "amount", "value": dues_value}, {"type": "date", "value": inc["stored_date"]}],
-                audio_reading=heard + (f" [gloss: {hgl}]" if hgl else ""))
+        quote = c.agent("amount-quote", txt, gl, acts=["inform_dues", "inform_due_date"],
+                        entities=[{"type": "amount", "value": dues_value}, {"type": "date", "value": inc["stored_date"]}],
+                        audio_reading=heard + (f" [gloss: {hgl}]" if hgl else ""))
+        quote["tts"]["audio_entities"] = [{"type": "date", "value": inc["heard_date"]}]
         txt, gl = text_of(inc["ref"])
-        ct = c.caller(txt, gl, intent="confirm_yes", ref_entities=[{"type": "date", "value": inc["heard_date"]}])
+        ct = c.caller(txt, gl, intent="confirm_yes")
         disclosure_turn(c, group, "ptp_done", "tool", acts=["inform_link"],
                         tools=[("record_promise_to_pay", {amtF: dues_value, "ptp_date": inc["stored_date"], "channel": "link", "readback_confirmed": True}),
                                ("send_payment_link", {amtF: dues_value, "channel": "sms"})])
@@ -1436,7 +1438,7 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
     else:
         dial = {"connected_calls_today_before": 0, "connected_calls_week_before": 2, "connect_outcome": conn["connect_outcome"]}
     meta = {"persona_or_real": "real", "location_signals": tzsig, "carrier": carrier, "codec_chain": W.C["codec_chains"][carrier],
-            "scenario": {"incident": iid, "title": inc["title"], "flow": flow, "persona": pid, "language_group": group}}
+            "scenario": {"incident": iid, "title": S2_TITLES.get(iid, inc["title"]), "flow": flow, "persona": pid, "language_group": group}}
     return c.finish(meta, before, gold, checks=checks, judge_scores=judge_scores, labels=labels, dial=dial), c
 
 
@@ -1526,6 +1528,7 @@ def generate_pauses(W: World) -> list[dict]:
     rng = random.Random(W.C["seed"] + 13)
     gf = {W.C["group_roles"]["english"]: 1.0, W.C["group_roles"]["native"]: 1.18, W.C["group_roles"]["mixed"]: 1.08}
     tag_med = {"date": 320, "amount": 300, "dispute": 250, "small_talk": 180, "none": 200}
+    asked_med = 460  # a caller who was just asked for an amount or a date holds longer before it
     camps = list(W.C["campaigns"])
     rows = []
     n = 0
@@ -1544,8 +1547,9 @@ def generate_pauses(W: World) -> list[dict]:
             else:
                 tag = rng.choice(["date", "amount", "dispute", "small_talk", "none", "small_talk"])
             if label == "hold":
-                med = tag_med[tag] * gf[group] * (1.15 if older else 1.0)
-                pause = lognorm(rng, med, med * 1.9, 60, 2500)
+                asked = state != "default" and tag in ("date", "amount")
+                med = (asked_med if asked else tag_med[tag]) * gf[group] * (1.15 if older else 1.0)
+                pause = lognorm(rng, med, med * (1.3 if asked else 1.9), 60, 2500)
                 pa = min(0.98, max(0.02, rng.gauss(0.55 if tag in ("date", "amount") else 0.30, 0.15)))
                 pb = min(0.98, max(0.02, rng.gauss(0.45 if tag in ("date", "amount") else 0.25, 0.12)))
             else:

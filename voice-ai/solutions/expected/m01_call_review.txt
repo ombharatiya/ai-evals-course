@@ -2,7 +2,7 @@ Error analysis on calls (global edition)
 Steelyard Credit is a fictional lender; its numbers are illustrative.
 Data: steelyard-calls (synthetic, seed 20261121)
 
-Caller turns where the STT entity differs from the reference transcript: 4
+Caller turns where the STT entity differs from the reference transcript: 4 (first 3 shown)
   SY-2026-11-19-9000003 turn 6
     REF: yeah I can do one fifty on the thirtieth, rest next month
     STT: yeah I can do one fifteen on the thirtieth, rest next month
@@ -29,14 +29,14 @@ Shared calls: 30; same first-failure code: 27; Cohen's kappa 0.804
   disagreement: rv-03 TURN.CUTOFF vs rv-11 TURN.TALKOVER
   disagreement: rv-03 NONE vs rv-11 TURN.TALKOVER
 
-Incident traces: does the STT text alone show the failure turn's problem?
-  T01 ENT.AMOUNT    STT differs from REF on an entity: yes
-  T02 TURN.BARGEIN  STT differs from REF on an entity: no
-  T03 POL.DISCLOSE  STT differs from REF on an entity: no
-  T04 LAT.TAIL      STT differs from REF on an entity: no
-  T05 TURN.CUTOFF   STT differs from REF on an entity: no
-  T06 ENT.DATE      STT differs from REF on an entity: no
-  T07 OUT.AMD       STT differs from REF on an entity: no
-  T08 STT.LID       STT differs from REF on an entity: yes
-  T09 POL.COERCE    STT differs from REF on an entity: no
-  T10 POL.HARDSHIP  STT differs from REF on an entity: no
+Incident traces: transcript view, and the evidence outside the STT and TTS text
+  T01 ENT.AMOUNT    not visible     REF lane (misheard entity)
+  T02 TURN.BARGEIN  partly visible  timeline (barge_in)
+  T03 POL.DISCLOSE  visible         none needed
+  T04 LAT.TAIL      partly visible  timeline (3990 ms turn gap)
+  T05 TURN.CUTOFF   visible         none needed
+  T06 ENT.DATE      not visible     audio (TTS read the text differently)
+  T07 OUT.AMD       visible         none needed
+  T08 STT.LID       visible         REF lane (misheard entity)
+  T09 POL.COERCE    visible         none needed
+  T10 POL.HARDSHIP  partly visible  tags (crying, 4 s)

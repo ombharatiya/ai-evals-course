@@ -4,7 +4,7 @@ Rank STT systems per audio condition and show that a ranking on wideband audio d
 
 ## Data
 
-- `data/<edition>/entity_pairs.jsonl (`condition`: wideband_16k, g711_clean, amr_g711, amr_g711_loss5, noise_10db)`
+- `data/<edition>/entity_pairs.jsonl` (`condition`: wideband_16k, g711_clean, amr_g711, amr_g711_loss5, noise_10db)
 
 ## Tasks
 

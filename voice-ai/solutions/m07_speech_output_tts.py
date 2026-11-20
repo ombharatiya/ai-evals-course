@@ -26,7 +26,7 @@ for c in calls:
                 if spoken[0]["value"] != caller_amount:
                     errors += 1
                     examples.append((c["call_id"], t["turn_id"], caller_amount, spoken[0]["value"]))
-print(f"Read-back lines in the simulated calls: {lines}; amount differs from what the caller said: {errors}")
+print(f"Read-back lines in the simulated calls: {lines}; amount differs from what the caller said: {errors} (first {min(3, errors)} shown)")
 for cid, tid, said, spoken in examples[:3]:
     print(f"  {cid} turn {tid}: caller said {v.money(C, said)}, agent read back {v.money(C, spoken)}")
 print(f"Upper bound on the read-back amount error rate: {v.cp_upper(errors, lines):.4f}")
@@ -48,5 +48,5 @@ print("T06: the text was right and the audio was wrong")
 print(f"  TTS input text : {turn['tts']['text']}")
 print(f"  audio reading  : {turn['tts']['audio_reading']}")
 ptp = [tc for t in t06["turns"] for tc in t.get("tool_calls", []) if tc["name"] == "record_promise_to_pay"][0]
-heard = [e["value"] for t in t06["turns"] if t["speaker"] == "caller" for e in t["ref_entities"] if e["type"] == "date"]
-print(f"  stored ptp_date {ptp['args_redacted']['ptp_date']}; the date the borrower heard {heard[-1]}")
+heard = next(e["value"] for e in turn["tts"]["audio_entities"] if e["type"] == "date")
+print(f"  stored ptp_date {ptp['args_redacted']['ptp_date']}; the date the borrower heard {heard}")

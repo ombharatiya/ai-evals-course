@@ -4,9 +4,9 @@ Find the failures a transcript hides, code them with the failure taxonomy, and m
 
 ## Data
 
-- `data/<edition>/calls.jsonl (200 simulated calls, two reviewers on 30 shared calls)`
+- `data/<edition>/calls.jsonl` (200 simulated calls, two reviewers on 30 shared calls)
 - `data/<edition>/traces/T01.json to T10.json`
-- `world/<edition>/constants.json (`taxonomy`)`
+- `world/<edition>/constants.json` (`taxonomy`)
 
 ## Tasks
 

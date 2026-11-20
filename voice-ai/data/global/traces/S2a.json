@@ -8,7 +8,7 @@
   "persona_or_real": "real",
   "scenario": {
     "incident": "S2a",
-    "title": "Voicemail, compliant and non-compliant",
+    "title": "Voicemail, compliant",
     "flow": "F07",
     "persona": "P08",
     "language_group": "English"

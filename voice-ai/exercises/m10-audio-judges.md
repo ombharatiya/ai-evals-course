@@ -4,7 +4,7 @@ Validate a judge per language group and dimension against human labels, admit it
 
 ## Data
 
-- `data/<edition>/judge_labels.jsonl (120 calls per language group per dimension, two raters, two judges)`
+- `data/<edition>/judge_labels.jsonl` (120 calls per language group per dimension, two raters, two judges)
 
 ## Tasks
 

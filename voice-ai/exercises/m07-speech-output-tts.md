@@ -4,8 +4,8 @@ Test the spoken output: compare what the agent read back with what the caller sa
 
 ## Data
 
-- `data/<edition>/calls.jsonl (agent `tts.entities`, caller `ref_entities`)`
-- `data/<edition>/traces/T06.json (`tts.audio_reading`)`
+- `data/<edition>/calls.jsonl` (agent `tts.entities`, caller `ref_entities`)
+- `data/<edition>/traces/T06.json` (`tts.audio_reading`, `tts.audio_entities`)
 
 ## Tasks
 

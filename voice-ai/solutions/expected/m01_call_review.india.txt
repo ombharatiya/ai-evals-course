@@ -2,7 +2,7 @@ Error analysis on calls (india edition)
 Tarazu Finance is a fictional lender; its numbers are illustrative.
 Data: tarazu-calls (synthetic, seed 20261120)
 
-Caller turns where the STT entity differs from the reference transcript: 13
+Caller turns where the STT entity differs from the reference transcript: 13 (first 3 shown)
   TZ-2026-11-19-9000001 turn 6
     REF: yes I can pay one thousand seven hundred fifty on the twentieth, rest next month
     STT: yes I can pay two thousand on the twentieth, rest next month
@@ -32,14 +32,14 @@ Shared calls: 30; same first-failure code: 27; Cohen's kappa 0.788
   disagreement: rv-03 LAT.TAIL vs rv-11 NONE
   disagreement: rv-03 NONE vs rv-11 TURN.TALKOVER
 
-Incident traces: does the STT text alone show the failure turn's problem?
-  T01 ENT.AMOUNT    STT differs from REF on an entity: yes
-  T02 TURN.BARGEIN  STT differs from REF on an entity: no
-  T03 POL.DISCLOSE  STT differs from REF on an entity: no
-  T04 LAT.TAIL      STT differs from REF on an entity: no
-  T05 TURN.CUTOFF   STT differs from REF on an entity: no
-  T06 ENT.DATE      STT differs from REF on an entity: no
-  T07 OUT.AMD       STT differs from REF on an entity: no
-  T08 STT.LID       STT differs from REF on an entity: yes
-  T09 POL.COERCE    STT differs from REF on an entity: no
-  T10 POL.HARDSHIP  STT differs from REF on an entity: no
+Incident traces: transcript view, and the evidence outside the STT and TTS text
+  T01 ENT.AMOUNT    not visible     REF lane (misheard entity)
+  T02 TURN.BARGEIN  partly visible  timeline (barge_in)
+  T03 POL.DISCLOSE  visible         none needed
+  T04 LAT.TAIL      partly visible  timeline (3990 ms turn gap)
+  T05 TURN.CUTOFF   visible         none needed
+  T06 ENT.DATE      not visible     audio (TTS read the text differently)
+  T07 OUT.AMD       visible         none needed
+  T08 STT.LID       visible         REF lane (misheard entity)
+  T09 POL.COERCE    visible         none needed
+  T10 POL.HARDSHIP  partly visible  tags (crying, 4 s)

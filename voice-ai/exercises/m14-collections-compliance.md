@@ -4,10 +4,10 @@ Turn the lender's policies into deterministic checks that point at evidence turn
 
 ## Data
 
-- `world/<edition>/policies.yaml (read with tools/mini_yaml.py)`
+- `world/<edition>/policies.yaml` (read with tools/mini_yaml.py)
 - `data/<edition>/traces/*.json`
 - `data/<edition>/calls.jsonl`
-- `world/<edition>/constants.json (`check_keywords`, `calling_window`)`
+- `world/<edition>/constants.json` (`check_keywords`, `calling_window`)
 
 ## Tasks
 

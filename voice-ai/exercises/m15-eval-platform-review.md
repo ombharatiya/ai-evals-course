@@ -5,7 +5,7 @@ Collect the evidence for your capstone design: which component catches each inci
 ## Data
 
 - `data/<edition>/traces/T01.json to T10.json`
-- `world/<edition>/constants.json (`cost_model`)`
+- `world/<edition>/constants.json` (`cost_model`)
 - your outputs from exercises 1-14 and the labs
 
 ## Tasks

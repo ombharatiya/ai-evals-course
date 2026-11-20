@@ -8,7 +8,7 @@ Exact one-sided 95% upper bound on the error rate after k errors in n spoken lin
   0 of 100: 0.0295
   2 of 1000: 0.0063
 
-Read-back lines in the simulated calls: 37; amount differs from what the caller said: 4
+Read-back lines in the simulated calls: 37; amount differs from what the caller said: 4 (first 3 shown)
   TZ-2026-11-19-9000001 turn 7: caller said Rs 1,750, agent read back Rs 2,000
   TZ-2026-11-19-9000031 turn 7: caller said Rs 1,500, agent read back Rs 1,000
   TZ-2026-11-18-9000032 turn 7: caller said Rs 1,500, agent read back Rs 1,000

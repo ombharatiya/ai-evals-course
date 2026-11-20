@@ -4,7 +4,7 @@ Score three STT systems by WER and by amount entity error rate, with an interval
 
 ## Data
 
-- `data/<edition>/entity_pairs.jsonl (600 reference and hypothesis pairs, three systems, gold entities)`
+- `data/<edition>/entity_pairs.jsonl` (600 reference and hypothesis pairs, three systems, gold entities)
 
 ## Tasks
 

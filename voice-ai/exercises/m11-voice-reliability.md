@@ -4,7 +4,7 @@ Estimate pass^k from repeated simulated trials without the biased shortcut.
 
 ## Data
 
-- `data/<edition>/calls.jsonl (25 scenarios x 8 trials; `scenario.trial`)`
+- `data/<edition>/calls.jsonl` (25 scenarios x 8 trials; `scenario.trial`)
 
 ## Tasks
 

@@ -4,9 +4,9 @@ Data: steelyard-calls (synthetic, seed 20261121)
 
 language group    pauses  false cutoff at 300 ms  at 600 ms  silence for <= 5% cutoff (ms)
 ----------------  ------  ----------------------  ---------  -----------------------------
-English           400     44.9%                   2.8%       600
-Spanish-dominant  400     59.6%                   8.7%       650
-Spanglish         400     41.0%                   6.0%       700
+English           400     60.8%                   4.0%       600
+Spanish-dominant  400     67.7%                   18.0%      750
+Spanglish         400     54.8%                   11.4%      700
 
 False cutoff never rises as the threshold rises: True
 
@@ -14,24 +14,24 @@ Chosen silence budget per campaign and call state (minimum expected cost per 1,0
 campaign         call state    pauses  chosen ms  world budget ms  false cutoff at world budget
 ---------------  ------------  ------  ---------  ---------------  ----------------------------
 AUTO-early-nov   default       127     400        400              11.8%
-AUTO-early-nov   amount_asked  51      450        600              5.3%
-AUTO-early-nov   date_asked    63      400        600              13.6%
+AUTO-early-nov   amount_asked  51      600        600              5.3%
+AUTO-early-nov   date_asked    63      600        600              13.6%
 PIL-digital-nov  default       126     450        400              14.0%
-PIL-digital-nov  amount_asked  63      600        600              3.2%
-PIL-digital-nov  date_asked    51      650        600              8.7%
+PIL-digital-nov  amount_asked  63      700        600              12.9%
+PIL-digital-nov  date_asked    51      700        600              21.7%
 POS-short-nov    default       126     450        400              11.8%
-POS-short-nov    amount_asked  63      450        600              4.2%
-POS-short-nov    date_asked    51      550        600              8.0%
+POS-short-nov    amount_asked  63      650        600              12.5%
+POS-short-nov    date_asked    51      750        600              20.0%
 SBL-guar-nov     default       108     500        450              6.0%
-SBL-guar-nov     amount_asked  69      700        650              10.7%
-SBL-guar-nov     date_asked    63      600        650              4.2%
+SBL-guar-nov     amount_asked  69      750        650              17.9%
+SBL-guar-nov     date_asked    63      700        650              4.2%
 SDL-biwk-nov     default       108     600        600              7.1%
-SDL-biwk-nov     amount_asked  62      700        800              0.0%
-SDL-biwk-nov     date_asked    70      750        800              3.8%
+SDL-biwk-nov     amount_asked  62      750        800              0.0%
+SDL-biwk-nov     date_asked    70      850        800              3.8%
 
 T05: a 720 ms hold before a date. 300 ms cuts it off, 400 ms cuts it off, 600 ms cuts it off, 800 ms waits.
 Silence alone cannot separate this hold from a turn end; a detector that reads the content helps.
 
-English: at 300 ms, silence-only cuts 45.2% of holds; model A (wait when hold probability >= 0.5) cuts 20.9%
-Spanish-dominant: at 300 ms, silence-only cuts 59.6% of holds; model A (wait when hold probability >= 0.5) cuts 26.7%
-Spanglish: at 300 ms, silence-only cuts 41.0% of holds; model A (wait when hold probability >= 0.5) cuts 16.3%
+English: at 300 ms, silence-only cuts 60.8% of holds; model A (wait when hold probability >= 0.5) cuts 26.1%
+Spanish-dominant: at 300 ms, silence-only cuts 67.7% of holds; model A (wait when hold probability >= 0.5) cuts 30.4%
+Spanglish: at 300 ms, silence-only cuts 54.8% of holds; model A (wait when hold probability >= 0.5) cuts 21.7%

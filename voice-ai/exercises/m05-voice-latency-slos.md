@@ -4,9 +4,9 @@ Measure the turn gap by turn type, test it against the SLOs, and show that stage
 
 ## Data
 
-- `data/<edition>/calls.jsonl (`timings_summary`, `silence_budget_ms`)`
+- `data/<edition>/calls.jsonl` (`timings_summary`, `silence_budget_ms`)
 - `data/<edition>/traces/T04.json`
-- `world/<edition>/constants.json (`slo`)`
+- `world/<edition>/constants.json` (`slo`)
 
 ## Tasks
 

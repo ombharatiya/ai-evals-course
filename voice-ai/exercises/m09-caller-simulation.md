@@ -4,9 +4,9 @@ Check that the simulated callers cover every gated segment, and compare simulate
 
 ## Data
 
-- `data/<edition>/calls.jsonl (`scenario`)`
-- `data/<edition>/production_sample.jsonl (`checks`)`
-- `world/<edition>/constants.json (`flow_groups`, `language_groups`)`
+- `data/<edition>/calls.jsonl` (`scenario`)
+- `data/<edition>/production_sample.jsonl` (`checks`)
+- `world/<edition>/constants.json` (`flow_groups`, `language_groups`)
 
 ## Tasks
 

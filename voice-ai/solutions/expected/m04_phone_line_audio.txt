@@ -5,7 +5,7 @@ Data: steelyard-calls (synthetic, seed 20261121)
 condition       amount utterances  sys_a  sys_b  sys_c  ranking (best first)
 --------------  -----------------  -----  -----  -----  ---------------------
 wideband_16k    88                 0.023  0.045  0.000  sys_c < sys_a < sys_b
-g711_clean      96                 0.042  0.042  0.042  sys_a < sys_b < sys_c
+g711_clean      96                 0.042  0.042  0.042  sys_a = sys_b = sys_c
 amr_g711        96                 0.094  0.062  0.125  sys_b < sys_a < sys_c
 amr_g711_loss5  97                 0.052  0.155  0.216  sys_a < sys_b < sys_c
 noise_10db      95                 0.042  0.063  0.189  sys_a < sys_b < sys_c

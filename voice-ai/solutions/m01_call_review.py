@@ -14,7 +14,7 @@ for c in calls:
     for t in c["turns"]:
         if t["speaker"] == "caller" and t["source"] == "human" and t["ref_entities"] != t["stt_entities"]:
             hidden.append((c["call_id"], t["turn_id"], t["reference_text"], t["stt_final"]["text"]))
-print(f"Caller turns where the STT entity differs from the reference transcript: {len(hidden)}")
+print(f"Caller turns where the STT entity differs from the reference transcript: {len(hidden)} (first {min(3, len(hidden))} shown)")
 for cid, tid, ref, hyp in hidden[:3]:
     print(f"  {cid} turn {tid}")
     print(f"    REF: {ref}")
@@ -48,12 +48,26 @@ for a, b in pairs:
         print(f"  disagreement: rv-03 {a} vs rv-11 {b}")
 print()
 
-# 4. Which incident failures are invisible in a transcript-only review?
-print("Incident traces: does the STT text alone show the failure turn's problem?")
+# 4. Transcript view: what a reviewer sees from the STT and TTS text alone (world bible, incident log).
+VIEW = {"T01": "not visible", "T02": "partly visible", "T03": "visible", "T04": "partly visible", "T05": "visible",
+        "T06": "not visible", "T07": "visible", "T08": "visible", "T09": "visible", "T10": "partly visible"}
+print("Incident traces: transcript view, and the evidence outside the STT and TTS text")
 for iid, t in v.traces(ed).items():
     if not iid.startswith("T"):
         continue
-    lab = t["labels"][0]
-    diff = any(x["speaker"] == "caller" and x["source"] == "human" and x["reference_text"].replace(",", "") != x["stt_final"]["text"].replace(",", "")
-               and x["ref_entities"] != x["stt_entities"] for x in t["turns"])
-    print(f"  {iid} {lab['code']:<13} STT differs from REF on an entity: {'yes' if diff else 'no'}")
+    human = [x for x in t["turns"] if x["speaker"] == "caller" and x["source"] == "human"]
+    agent = [x for x in t["turns"] if x["speaker"] == "agent"]
+    evidence = []
+    if any(x["ref_entities"] != x["stt_entities"] for x in human):
+        evidence.append("REF lane (misheard entity)")
+    if any(x.get("tts") and x["tts"].get("audio_reading") for x in agent):
+        evidence.append("audio (TTS read the text differently)")
+    if any(x["barge_in"] for x in agent):
+        evidence.append("timeline (barge_in)")
+    gap = max(t["timings_summary"]["turn_gap_ms"], default=0)
+    if gap >= 3000:  # T04-scale dead air; ordinary tool turns stay under it
+        evidence.append(f"timeline ({gap} ms turn gap)")
+    tags = sorted({tag for x in human for tag in x["tags"]})
+    if tags:
+        evidence.append("tags (" + "; ".join(tags) + ")")
+    print(f"  {iid} {t['labels'][0]['code']:<13} {VIEW[iid]:<15} {', '.join(evidence) or 'none needed'}")

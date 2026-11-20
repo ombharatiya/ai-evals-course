@@ -92,7 +92,7 @@ Agent turn:
 | `responds_to` | The caller turn this turn answers (`null` for scripted turns such as the opener or a voicemail message) |
 | `llm` | `request_ms`, `first_token_ms`, `first_answer_token_ms`, `cached_tokens`; `speculative` is true when the request started before the end-of-turn commit. `null` for scripted turns |
 | `tool_calls` | `name`, `args_redacted` (arguments without account and contact ids, phone numbers, verification values and free-text statements), `start_ms`, `end_ms`, `result`. Calls that start after playback are listed after it |
-| `tts` | `text` sent to synthesis, optional `gloss`, `request_ms`, `first_byte_ms`, `entities` (what the text states: `amount`, `date`, `product`, `dpd`), optional `audio_reading` (what the audio said, when it differs; T06) |
+| `tts` | `text` sent to synthesis, optional `gloss`, `request_ms`, `first_byte_ms`, `entities` (what the text states: `amount`, `date`, `product`, `dpd`), optional `audio_reading` (what the audio said, when it differs; T06), optional `audio_entities` (the entities the audio stated where they differ from `entities`; T06's heard date) |
 | `play_start_ms`, `play_end_ms` | Agent audio at media egress |
 | `speaking_rate_sps` | Syllables per second |
 | `barge_in` | `null`, or `t_ms`, `tts_stop_ms`, `stop_latency_ms` when the caller interrupted |

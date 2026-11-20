@@ -15,7 +15,10 @@ for cond in conds:
         wrong = sum(p["hyp_entities"][s][0]["value"] != p["ref_entities"][0]["value"] for p in sub)
         rates[s] = wrong / len(sub)
     ranks[cond] = sorted(systems, key=lambda s: (rates[s], s))
-    rows.append([cond, len(sub)] + [f"{rates[s]:.3f}" for s in systems] + [" < ".join(ranks[cond])])
+    shown = ranks[cond][0]
+    for prev, s in zip(ranks[cond], ranks[cond][1:]):
+        shown += (" = " if rates[s] == rates[prev] else " < ") + s  # equal rates are a tie, not a ranking
+    rows.append([cond, len(sub)] + [f"{rates[s]:.3f}" for s in systems] + [shown])
 v.table(rows, ["condition", "amount utterances", *systems, "ranking (best first)"])
 print()
 phone = [p for p in pairs if p["condition"] != "wideband_16k" and any(e["type"] == "amount" for e in p["ref_entities"])]

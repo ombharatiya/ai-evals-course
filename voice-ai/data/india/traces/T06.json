@@ -316,7 +316,13 @@
             "value": "2026-12-05"
           }
         ],
-        "audio_reading": "...due on May twelfth."
+        "audio_reading": "...due on May twelfth.",
+        "audio_entities": [
+          {
+            "type": "date",
+            "value": "2027-05-12"
+          }
+        ]
       },
       "play_start_ms": 35832,
       "play_end_ms": 38982,
@@ -355,18 +361,8 @@
       "eot_commit_ms": 42378,
       "reference_text": "Okay, fine, I'll pay then.",
       "ref_intent": "confirm_yes",
-      "ref_entities": [
-        {
-          "type": "date",
-          "value": "2027-05-12"
-        }
-      ],
-      "stt_entities": [
-        {
-          "type": "date",
-          "value": "2027-05-12"
-        }
-      ],
+      "ref_entities": [],
+      "stt_entities": [],
       "tags": [],
       "pauses": []
     },

@@ -4,8 +4,8 @@ Find the load knee in the simulated calls and rebuild the monthly eval budget fr
 
 ## Data
 
-- `data/<edition>/calls.jsonl (`concurrency_at_start`, `timings_summary`)`
-- `world/<edition>/constants.json (`cost_model`, `volumes`, `ci`, `world_rates`)`
+- `data/<edition>/calls.jsonl` (`concurrency_at_start`, `timings_summary`)
+- `world/<edition>/constants.json` (`cost_model`, `volumes`, `ci`, `world_rates`)
 
 ## Tasks
 

@@ -21,7 +21,15 @@ for c in calls:
 rows = [[f, C["flows"][f], f"{ok}/{n}", v.pct(ok / n)] for f, (ok, n) in sorted(by_flow.items())]
 v.table(rows, ["flow", "name", "task success", "rate"])
 print()
-fails = Counter(line.split(" ")[0] for c in calls for line in v.task_diff(c))
+def diff_label(line: str) -> str:
+    """'<table>.<field>' for a field difference, '<table> missing row' or '<table> unexpected row' for a row."""
+    head = line.split(" ")[0]
+    if head.endswith(":"):
+        return head[:-1] + (" missing row" if ": missing row " in line else " unexpected row")
+    return head
+
+
+fails = Counter(diff_label(line) for c in calls for line in v.task_diff(c))
 print("Most common diff fields:", ", ".join(f"{k} ({n})" for k, n in fails.most_common(5)))
 print()
 prod = v.jsonl(ed, "production_sample")
