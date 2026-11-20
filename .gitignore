@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.DS_Store
+# files the labs write when you run them
+phone_path_out/
+*_pauses_*.csv
+voice-ai/scratch/

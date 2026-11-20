@@ -1,0 +1,30 @@
+name: voice-ai
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "voice-ai/**"
+      - ".github/workflows/voice-ai.yml"
+  pull_request:
+    paths:
+      - "voice-ai/**"
+      - ".github/workflows/voice-ai.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install pinned requirements
+        run: python -m pip install -r voice-ai/requirements.txt
+      - name: Run the voice-ai tests
+        working-directory: voice-ai
+        run: python -m unittest discover -s tests -t . -v
