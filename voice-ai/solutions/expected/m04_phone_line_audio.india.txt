@@ -1,0 +1,14 @@
+Amount entity error rate by audio condition (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+condition       amount utterances  sys_a  sys_b  sys_c  ranking (best first)
+--------------  -----------------  -----  -----  -----  ---------------------
+wideband_16k    93                 0.054  0.097  0.011  sys_c < sys_a < sys_b
+g711_clean      94                 0.053  0.064  0.032  sys_c < sys_a < sys_b
+amr_g711        94                 0.021  0.149  0.138  sys_a < sys_c < sys_b
+amr_g711_loss5  101                0.040  0.099  0.208  sys_a < sys_b < sys_c
+noise_10db      102                0.088  0.059  0.225  sys_b < sys_a < sys_c
+
+Best on wideband audio: sys_c. On all phone-path conditions pooled: sys_a < sys_b < sys_c (sys_c places 3 of 3).
+Gate STT on the phone-path columns; report the wideband column, never gate on it.

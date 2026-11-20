@@ -1,0 +1,70 @@
+steelyard-calls (synthetic, seed 20261121); Steelyard Credit, Inc. (fictional US lender); numbers are illustrative.
+
+Step 1. T04 waterfall (AUTO-early-nov, 2026-11-13, budget then 300 ms)
+  end-of-turn delay          40210 -> 40590   380 ms  ########
+  hop                        40590 -> 40600    10 ms  #
+  LLM TTFT                   40600 -> 41820  1220 ms  ########################
+  hop                        41820 -> 41830    10 ms  #
+  tool get_dues              41830 -> 42690   860 ms  #################
+  hop                        42690 -> 42700    10 ms  #
+  tool check_payment_status  42700 -> 43950  1250 ms  #########################
+  hop                        43950 -> 43960    10 ms  #
+  TTS TTFB                   43960 -> 44150   190 ms  ####
+  playout                    44150 -> 44200    50 ms  #
+  turn gap 3990 ms = 3950 ms of stages + 4 hops x 10 ms
+  end_of_turn      380 ms  SLO   450  ok
+  llm_ttft        1220 ms  SLO   900  over
+  tool_time       2110 ms  SLO   600  over
+  tts_ttfb         190 ms  SLO   250  ok
+  playout           50 ms  SLO    60  ok
+  turn_gap        3990 ms  SLO  2500  over
+  filler deadline 1100 ms; no filler played
+  LAT.DUP: caller eot_commit at 43580 while the reply was pending until 44200
+
+Step 2. Parsed 300 calls, 2400 agent turns; every turn's stages plus hops equal its turn gap
+  AUTO-early-nov per-stage P95, call-clustered 95% CI (1,000 resamples)
+  stage        turns             n   P50   P95  95% CI         P99   SLO
+  end_of_turn  default         840   456   510  [ 505,  517]    556   550  pass
+  end_of_turn  date-asked      120   656   734  [ 700,  755]    757   750  unclear
+  stt_final    all             960   169   279  [ 271,  294]    356   300  pass
+  llm_ttft     non-tool        720   398   680  [ 641,  697]    813   700  pass
+  llm_ttft     tool            240   642  1149  [1066, 1222]   1379   900  BREACH
+  tool_time    1 call          118   442   913  [ 708, 1147]   1199   600  BREACH
+  tool_time    2 sequential    122   930  1804  [1510, 1954]   2011   600  BREACH
+  tts_ttfb     all             960   159   226  [ 219,  229]    265   250  pass
+  playout      all             960    45    57  [  56,   58]     63    60  pass
+
+Step 3. AUTO-early-nov platform turn gap by turn type (budget 400 ms, 600 ms when an amount or date was asked)
+  turn type        n   P50   P95  95% CI         SLO
+  greeting       120  1085  1382  [1332, 1456]  1900  pass
+  verification   120  1075  1353  [1310, 1446]  1900  pass
+  amount-quote   120  1103  1352  [1308, 1393]  1900  pass
+  objection      120  1103  1340  [1299, 1382]  1900  pass
+  readback       120  1293  1594  [1496, 1693]  2100  pass
+  closing        120  1089  1362  [1305, 1467]  1900  pass
+  non-tool (all) 720  P95 of gap minus own SLO -524 [-551, -512]  pass
+  tool           240  2050  3039  [2791, 3305]  2600  BREACH
+  tool turns past the 1,200 ms filler deadline: 240 of 240
+
+  Tool-turn P95 by campaign (SLO = budget + 2,200 ms)
+  AUTO-early-nov    3039  [2791, 3243]  SLO 2600  BREACH
+  PIL-digital-nov   2865  [2725, 3287]  SLO 2600  BREACH
+  POS-short-nov     2960  [2722, 3077]  SLO 2600  BREACH
+  SBL-guar-nov      2859  [2620, 3020]  SLO 2650  unclear
+  SDL-biwk-nov      3139  [2796, 3182]  SLO 2800  unclear
+
+Step 4. Sum of stage P95s vs P95 of the total
+  teaching model, independent     total P50  1335  P95  3028  sum of P95s 3496
+  teaching model, correlated 0.8  total P50  1296  P95  3321  sum of P95s 3496
+  teaching model, comonotone      total P50  1266  P95  3499  sum of P95s 3496
+  Steelyard two-tool turns, independent  sum of stage P95s  3660  P95 of turn gap  3084  gap  576
+  Steelyard two-tool turns, shared load  sum of stage P95s  3886  P95 of turn gap  3560  gap  325
+
+Step 5. 50 recorded AUTO calls (spans written without back-dating vad_end_ms)
+  recovered carrier offset 217 ms (injected 212; per-call 209 to 225)
+  recovered carrier round trip 179 ms
+  turn gap from spans:     P50  1132  P95  1550  min   800
+  caller-heard (recording): P50  1480  P95  1901  min  -720
+  spans understate the caller-heard gap by 370 ms (median, clean turns)
+  minus the round trip leaves 191 ms: the VAD hangover the pipeline never subtracted
+  negative caller-heard gaps (agent started over the caller): 28 of 400, 27 of them past the 300 ms talk-over line; the spans show every one as a positive gap

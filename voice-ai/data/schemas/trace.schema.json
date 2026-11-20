@@ -1,0 +1,1061 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/data/schemas/trace.schema.json",
+  "title": "One call on one clock (voice-trace/1.3)",
+  "description": "A call record: traces/*.json and every line of calls.jsonl. All *_ms times are milliseconds since media start at the agent's ingress. Edition-specific tool arguments and CRM rows are checked against world/<edition>/tools.schema.json and crm.schema.json.",
+  "type": "object",
+  "$defs": {
+    "caller_turn": {
+      "type": "object",
+      "properties": {
+        "turn_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "speaker": {
+          "const": "caller"
+        },
+        "source": {
+          "enum": [
+            "human",
+            "machine"
+          ]
+        },
+        "vad_start_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "vad_end_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "vad_hangover_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stt_partials": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "t_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "t_ms",
+              "text"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "stt_final": {
+          "type": "object",
+          "properties": {
+            "t_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "text": {
+              "type": "string"
+            },
+            "lang_tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "t_ms",
+            "text",
+            "lang_tags",
+            "confidence"
+          ],
+          "additionalProperties": false
+        },
+        "eot_commit_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "reference_text": {
+          "type": "string"
+        },
+        "gloss": {
+          "type": "string"
+        },
+        "ref_intent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ref_entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "amount",
+                  "date",
+                  "confirmation",
+                  "postal_code",
+                  "product",
+                  "dpd"
+                ]
+              },
+              "value": {
+                "type": [
+                  "integer",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "stt_entities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "amount",
+                  "date",
+                  "confirmation",
+                  "postal_code",
+                  "product",
+                  "dpd"
+                ]
+              },
+              "value": {
+                "type": [
+                  "integer",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "type",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pauses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "label": {
+                "enum": [
+                  "hold",
+                  "end"
+                ]
+              },
+              "content_tag": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "start_ms",
+              "end_ms",
+              "label",
+              "content_tag"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "turn_id",
+        "speaker",
+        "source",
+        "vad_start_ms",
+        "vad_end_ms",
+        "vad_hangover_ms",
+        "stt_partials",
+        "stt_final",
+        "eot_commit_ms",
+        "reference_text",
+        "ref_intent",
+        "ref_entities",
+        "stt_entities",
+        "tags",
+        "pauses"
+      ],
+      "additionalProperties": false
+    },
+    "agent_turn": {
+      "type": "object",
+      "properties": {
+        "turn_id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "speaker": {
+          "const": "agent"
+        },
+        "turn_type": {
+          "enum": [
+            "greeting",
+            "verification",
+            "amount-quote",
+            "readback",
+            "tool",
+            "objection",
+            "closing"
+          ]
+        },
+        "responds_to": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "llm": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "request_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "first_token_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "first_answer_token_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "cached_tokens": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "speculative": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "request_ms",
+                "first_token_ms",
+                "first_answer_token_ms",
+                "cached_tokens"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "tool_calls": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "args_redacted": {
+                "type": "object"
+              },
+              "start_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end_ms": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "result": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "name",
+              "args_redacted",
+              "start_ms",
+              "end_ms",
+              "result"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "tts": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string"
+                },
+                "gloss": {
+                  "type": "string"
+                },
+                "request_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "first_byte_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "entities": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "enum": [
+                          "amount",
+                          "date",
+                          "confirmation",
+                          "postal_code",
+                          "product",
+                          "dpd"
+                        ]
+                      },
+                      "value": {
+                        "type": [
+                          "integer",
+                          "string"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "type",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "audio_reading": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "text",
+                "request_ms",
+                "first_byte_ms",
+                "entities"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "play_start_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "play_end_ms": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "speaking_rate_sps": {
+          "type": "number"
+        },
+        "barge_in": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "t_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "tts_stop_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "stop_latency_ms": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "t_ms",
+                "tts_stop_ms",
+                "stop_latency_ms"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "acts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "turn_id",
+        "speaker",
+        "turn_type",
+        "responds_to",
+        "llm",
+        "tool_calls",
+        "tts",
+        "play_start_ms",
+        "play_end_ms",
+        "barge_in",
+        "acts"
+      ],
+      "additionalProperties": false
+    },
+    "label": {
+      "type": "object",
+      "properties": {
+        "labeler": {
+          "type": "string"
+        },
+        "taxonomy": {
+          "enum": [
+            "gl-fail-v4",
+            "tz-fail-v4"
+          ]
+        },
+        "code": {
+          "enum": [
+            "NONE",
+            "ENT.AMOUNT",
+            "ENT.DATE",
+            "ENT.CONFIRM",
+            "TURN.CUTOFF",
+            "TURN.TALKOVER",
+            "TURN.BARGEIN",
+            "LAT.TAIL",
+            "LAT.DUP",
+            "POL.DISCLOSE",
+            "POL.COERCE",
+            "POL.DISPUTE",
+            "POL.HARDSHIP",
+            "POL.WINDOW",
+            "OUT.AMD",
+            "OUT.PARTY",
+            "STT.LID",
+            "LOOP.CLARIFY",
+            "TONE.PACE",
+            "TONE.GENDER"
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "turn_id": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "labeler",
+        "taxonomy",
+        "code",
+        "note",
+        "turn_id"
+      ],
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "amount",
+            "date",
+            "confirmation",
+            "postal_code",
+            "product",
+            "dpd"
+          ]
+        },
+        "value": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "call_id": {
+      "type": "string",
+      "pattern": "^(SY|TZ)-\\d{4}-\\d{2}-\\d{2}-\\d{7}$"
+    },
+    "schema_version": {
+      "const": "voice-trace/1.3"
+    },
+    "edition": {
+      "enum": [
+        "global",
+        "india"
+      ]
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "account_id": {
+      "type": "string",
+      "pattern": "^A-\\d{8}$"
+    },
+    "persona_or_real": {
+      "enum": [
+        "sim",
+        "real"
+      ]
+    },
+    "scenario": {
+      "type": "object",
+      "properties": {
+        "scenario_id": {
+          "type": "string"
+        },
+        "trial": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "incident": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "flow": {
+          "type": "string",
+          "pattern": "^F(0[1-9]|10)$"
+        },
+        "persona": {
+          "type": "string",
+          "pattern": "^P(0[1-9]|1[0-3])$"
+        },
+        "language_group": {
+          "type": "string"
+        },
+        "variant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "flow",
+        "persona",
+        "language_group"
+      ],
+      "additionalProperties": false
+    },
+    "started_at_local": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[+-]\\d{2}:\\d{2}$"
+    },
+    "tz": {
+      "type": "string"
+    },
+    "location_signals": {
+      "type": "object",
+      "properties": {
+        "area_code": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "area_code",
+        "address"
+      ],
+      "additionalProperties": false
+    },
+    "dial": {
+      "type": "object"
+    },
+    "cli": {
+      "type": "string"
+    },
+    "attestation": {
+      "enum": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    "carrier": {
+      "type": "string"
+    },
+    "codec_chain": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "pipeline": {
+      "enum": [
+        "cascade",
+        "s2s"
+      ]
+    },
+    "concurrency_at_start": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "versions": {
+      "type": "object",
+      "properties": {
+        "agent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "prompt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "turn_detector": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "llm": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tts": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "policy_pack": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "taxonomy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gold": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "agent",
+        "prompt",
+        "stt",
+        "turn_detector",
+        "llm",
+        "tts",
+        "policy_pack",
+        "taxonomy",
+        "gold"
+      ],
+      "additionalProperties": false
+    },
+    "silence_budget_ms": {
+      "type": "object",
+      "properties": {
+        "default": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "amount_or_date_asked": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "default",
+        "amount_or_date_asked"
+      ],
+      "additionalProperties": false
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "agent_channel_uri": {
+          "type": "string"
+        },
+        "caller_channel_uri": {
+          "type": "string"
+        },
+        "sample_rate_hz": {
+          "const": 8000
+        },
+        "redacted_uri": {
+          "type": "string"
+        },
+        "carrier_offset_ms": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "agent_channel_uri",
+        "caller_channel_uri",
+        "sample_rate_hz",
+        "redacted_uri",
+        "carrier_offset_ms"
+      ],
+      "additionalProperties": false
+    },
+    "amd": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "decided_at_ms": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "true_label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "confidence",
+        "decided_at_ms",
+        "true_label"
+      ],
+      "additionalProperties": false
+    },
+    "turns": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/caller_turn"
+          },
+          {
+            "$ref": "#/$defs/agent_turn"
+          }
+        ]
+      }
+    },
+    "timings_summary": {
+      "type": "object",
+      "properties": {
+        "agent_turn_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "turn_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "turn_gap_ms": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "stage_ms": {
+          "type": "object",
+          "properties": {
+            "eot_delay": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "llm_ttft": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "tool": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "tts_ttfb": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "playout": {
+              "type": "array",
+              "items": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            }
+          },
+          "required": [
+            "eot_delay",
+            "llm_ttft",
+            "tool",
+            "tts_ttfb",
+            "playout"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "agent_turn_ids",
+        "turn_types",
+        "turn_gap_ms",
+        "stage_ms"
+      ],
+      "additionalProperties": false
+    },
+    "crm_before": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "crm_after": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "gold_end_state": {
+      "type": "object",
+      "properties": {
+        "new_rows": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "account": {
+          "type": "object"
+        },
+        "call_attempt": {
+          "type": "object"
+        },
+        "note": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "new_rows",
+        "account",
+        "call_attempt"
+      ],
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C(0[1-9]|1[0-6])$"
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "evidence_turns": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "result",
+          "evidence_turns"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "judge_scores": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "judge": {
+            "type": "string"
+          },
+          "dimension": {
+            "type": "string"
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail"
+            ]
+          },
+          "turn_id": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "judge",
+          "dimension",
+          "result",
+          "turn_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "labels": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/label"
+      }
+    },
+    "review_set": {
+      "enum": [
+        "single",
+        "shared-30"
+      ]
+    }
+  },
+  "required": [
+    "call_id",
+    "schema_version",
+    "edition",
+    "dataset",
+    "campaign",
+    "account_id",
+    "persona_or_real",
+    "scenario",
+    "started_at_local",
+    "tz",
+    "dial",
+    "cli",
+    "carrier",
+    "codec_chain",
+    "pipeline",
+    "concurrency_at_start",
+    "versions",
+    "silence_budget_ms",
+    "audio",
+    "amd",
+    "turns",
+    "timings_summary",
+    "crm_before",
+    "crm_after",
+    "gold_end_state",
+    "checks",
+    "judge_scores",
+    "labels"
+  ],
+  "additionalProperties": false
+}

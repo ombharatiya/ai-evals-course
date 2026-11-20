@@ -1,0 +1,719 @@
+{
+  "edition": "global",
+  "world_version": "world-global-v1.1",
+  "lender": "Steelyard Credit, Inc.",
+  "lender_short": "Steelyard",
+  "lender_note": "Steelyard Credit is a fictional lender; its numbers are illustrative.",
+  "agent": "Hazel",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "seed": 20261121,
+  "call_id_prefix": "SY",
+  "currency": {
+    "code": "USD",
+    "major": "dollar",
+    "minor": "cent",
+    "minor_per_major": 100,
+    "symbol": "$",
+    "digit_grouping": "western"
+  },
+  "fields": {
+    "amount": "amount_cents",
+    "past_due": "past_due_cents",
+    "payment": "payment_cents",
+    "late_fee": "late_fee_cents",
+    "payoff": "payoff_cents",
+    "payment_ref": "confirmation_no",
+    "postal_code": "zip",
+    "verify_methods": [
+      "dob",
+      "loan_last4",
+      "zip"
+    ],
+    "ptp_channels": [
+      "ach",
+      "debit_card",
+      "autopay",
+      "link"
+    ],
+    "link_channels": [
+      "sms",
+      "email"
+    ],
+    "disclosure_sms_tool": "send_disclosure_sms",
+    "hardship_reasons": [
+      "job_loss",
+      "medical",
+      "death_in_family",
+      "capacity_concern",
+      "other"
+    ]
+  },
+  "products": {
+    "AUTO": {
+      "name": "Auto loan",
+      "payment_range_major": [
+        245,
+        680
+      ],
+      "period": "monthly"
+    },
+    "PIL": {
+      "name": "Personal installment loan, digital",
+      "payment_range_major": [
+        95,
+        1850
+      ],
+      "period": "monthly"
+    },
+    "POS": {
+      "name": "Retail point-of-sale financing",
+      "payment_range_major": [
+        45,
+        520
+      ],
+      "period": "monthly"
+    },
+    "SBL": {
+      "name": "Small business loan with a personal guarantor",
+      "payment_range_major": [
+        980,
+        7200
+      ],
+      "period": "monthly"
+    },
+    "SDL": {
+      "name": "Credit-builder and small-dollar loan",
+      "payment_range_major": [
+        35,
+        140
+      ],
+      "period": "biweekly"
+    }
+  },
+  "campaigns": {
+    "AUTO-early-nov": {
+      "book": "AUTO",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "English",
+        "Spanish-dominant"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7,
+      "budget_ms_before_fix": 300,
+      "threshold_before_fix": 0.62,
+      "fix_date": "2026-11-17"
+    },
+    "PIL-digital-nov": {
+      "book": "PIL",
+      "dpd": [
+        1,
+        60
+      ],
+      "languages": [
+        "English",
+        "Spanglish"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7
+    },
+    "POS-short-nov": {
+      "book": "POS",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "Spanish-dominant",
+        "English"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7
+    },
+    "SBL-guar-nov": {
+      "book": "SBL",
+      "dpd": [
+        1,
+        90
+      ],
+      "languages": [
+        "English",
+        "Spanglish"
+      ],
+      "budget_ms": 450,
+      "budget_asked_ms": 650,
+      "threshold": 0.72
+    },
+    "SDL-biwk-nov": {
+      "book": "SDL",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "English",
+        "Spanish-dominant"
+      ],
+      "budget_ms": 600,
+      "budget_asked_ms": 800,
+      "threshold": 0.78
+    }
+  },
+  "calling_window": {
+    "default": [
+      "08:00",
+      "21:00"
+    ],
+    "by_product": {
+      "SDL": [
+        "09:00",
+        "20:00"
+      ]
+    },
+    "rule": "borrower's location; intersection over every location signal; Massachusetts accounts in Eastern time"
+  },
+  "frequency_rule": {
+    "type": "regf_7in7",
+    "max_attempts_7d": 7,
+    "no_call_days_after_conversation": 7,
+    "counts": [
+      "answered",
+      "voicemail",
+      "unanswered"
+    ],
+    "not_counted": [
+      "busy",
+      "out_of_service"
+    ],
+    "massachusetts_max_initiated_7d": 2
+  },
+  "recording_retention": {
+    "months": 36
+  },
+  "language_groups": [
+    "English",
+    "Spanish-dominant",
+    "Spanglish"
+  ],
+  "language_shares": {
+    "English": 0.64,
+    "Spanish-dominant": 0.18,
+    "Spanglish": 0.14,
+    "other": 0.04
+  },
+  "judge_validation_group": "Spanglish",
+  "states": [
+    "AZ",
+    "CA",
+    "TX",
+    "FL",
+    "IL",
+    "MA"
+  ],
+  "timezones": {
+    "AZ": "America/Phoenix",
+    "CA": "America/Los_Angeles",
+    "TX": "America/Chicago",
+    "FL": "America/New_York",
+    "IL": "America/Chicago",
+    "MA": "America/New_York"
+  },
+  "utc_offsets": {
+    "America/Phoenix": "-07:00",
+    "America/Los_Angeles": "-08:00",
+    "America/Chicago": "-06:00",
+    "America/New_York": "-05:00"
+  },
+  "complaints_contact": {
+    "role": "Customer Advocate",
+    "name": "Ms Dana Brooks",
+    "email": "advocate@steelyard.example",
+    "phone": "(520) 555-0199",
+    "address": "1200 Example Avenue, Tucson, AZ 85701"
+  },
+  "callback_number": "(520) 555-0100",
+  "cli_pattern": "+1-520-555-01XX",
+  "carriers": [
+    "carrier-a-mobile",
+    "carrier-b-mobile",
+    "carrier-c-mobile",
+    "voip-leg"
+  ],
+  "codec_chains": {
+    "carrier-a-mobile": [
+      "amr-nb",
+      "g711-pcmu"
+    ],
+    "carrier-b-mobile": [
+      "amr-wb",
+      "g711-pcmu"
+    ],
+    "carrier-c-mobile": [
+      "amr-nb",
+      "g711-pcmu"
+    ],
+    "voip-leg": [
+      "opus",
+      "g711-pcmu"
+    ]
+  },
+  "amd_classes": [
+    "human",
+    "voicemail",
+    "carrier_intercept",
+    "call_screening",
+    "ivr",
+    "silence"
+  ],
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": "gold-v7"
+  },
+  "taxonomy": {
+    "version": "gl-fail-v4",
+    "categories": {
+      "ENT": {
+        "codes": [
+          "ENT.AMOUNT",
+          "ENT.DATE",
+          "ENT.CONFIRM"
+        ],
+        "definition": "An amount, date or yes/no was misheard, misspoken or mis-stored"
+      },
+      "TURN": {
+        "codes": [
+          "TURN.CUTOFF",
+          "TURN.TALKOVER",
+          "TURN.BARGEIN"
+        ],
+        "definition": "False cutoff, talk-over, or missed or unrecovered barge-in"
+      },
+      "LAT": {
+        "codes": [
+          "LAT.TAIL",
+          "LAT.DUP"
+        ],
+        "definition": "Turn gap over budget; duplicate or overlapping replies"
+      },
+      "POL": {
+        "codes": [
+          "POL.DISCLOSE",
+          "POL.COERCE",
+          "POL.DISPUTE",
+          "POL.HARDSHIP",
+          "POL.WINDOW"
+        ],
+        "definition": "Breach of C01-C16"
+      },
+      "OUT": {
+        "codes": [
+          "OUT.AMD",
+          "OUT.PARTY"
+        ],
+        "definition": "Machine treated as human or the reverse; wrong-party handling"
+      },
+      "STT": {
+        "codes": [
+          "STT.LID",
+          "LOOP.CLARIFY"
+        ],
+        "definition": "Language identification locked to the wrong language; more than two clarifications on one slot"
+      },
+      "TONE": {
+        "codes": [
+          "TONE.PACE",
+          "TONE.GENDER"
+        ],
+        "definition": "Rushed or ill-timed delivery; masculine self-reference"
+      }
+    }
+  },
+  "volumes_note": "mean concurrency about 400 calls over a 16-hour dialing day",
+  "mean_concurrency": 400,
+  "cost_model": {
+    "currency": "USD",
+    "llm_price_per_million": {
+      "input": 1.0,
+      "cached_input": 0.25,
+      "output": 4.0
+    },
+    "deterministic_check_per_call": 0.0001,
+    "stt_retranscription_per_call_minute": 0.03,
+    "stt_retranscription_per_call": 0.075,
+    "stt_retranscription_share": 0.05,
+    "text_judge_per_call_per_dimension": 0.0075,
+    "blueprint_judge_per_call": 0.02,
+    "raw_audio_judge_per_call": 0.125,
+    "simulated_audio_call": 0.3,
+    "text_scenario_run": 0.025,
+    "human_audit_per_call_minute": 1.25,
+    "human_audit_per_call": 3.125,
+    "load_test_per_run": 2500,
+    "monthly_cap_today": 50000,
+    "monthly_cap_capstone": 75000,
+    "baseline_lines": {
+      "checks": 338.0,
+      "judges": 7003.36,
+      "stt": 12675.0,
+      "human_audit": 5416.67,
+      "nightly_simulation": 8640.0,
+      "per_commit_text": 6600.0,
+      "load_tests": 5000.0
+    },
+    "baseline_total": 45673.03,
+    "capstone_volume_factor": 2.5,
+    "capstone_volume_lines_total": 50040.9,
+    "capstone_total": 75697.57
+  },
+  "group_roles": {
+    "english": "English",
+    "native": "Spanish-dominant",
+    "mixed": "Spanglish"
+  },
+  "check_keywords": {
+    "business_identity": [
+      "Steelyard"
+    ],
+    "ai_disclosure": [
+      "AI assistant",
+      "inteligencia artificial"
+    ],
+    "recording_notice": [
+      "call is recorded",
+      "llamada se graba"
+    ],
+    "callback_number": [
+      "five two zero, five five five, zero one zero zero",
+      "cinco dos cero, cinco cinco cinco, cero uno cero cero"
+    ],
+    "debt_words": [
+      "past due",
+      "past-due",
+      "atrasado",
+      "atraso",
+      "debt",
+      "deuda",
+      "loan payment",
+      "auto loan"
+    ],
+    "coercion_lexicon": [
+      "police",
+      "jail",
+      "arrest",
+      "send someone out",
+      "garnish",
+      "policia",
+      "carcel",
+      "arresto",
+      "mandar a alguien"
+    ]
+  },
+  "flows": {
+    "F01": "Happy path",
+    "F02": "Already paid",
+    "F03": "Dispute",
+    "F04": "Hardship",
+    "F05": "Wrong party (family member)",
+    "F06": "Guarantor",
+    "F07": "Voicemail",
+    "F08": "IVR or machine prompt",
+    "F09": "Callback request",
+    "F10": "Threatening to complain"
+  },
+  "flow_groups": {
+    "promise": [
+      "F01",
+      "F09"
+    ],
+    "dispute_and_already_paid": [
+      "F02",
+      "F03"
+    ],
+    "hardship_and_complaint": [
+      "F04",
+      "F10"
+    ],
+    "other_parties_and_machines": [
+      "F05",
+      "F06",
+      "F07",
+      "F08"
+    ]
+  },
+  "turn_types": [
+    "greeting",
+    "verification",
+    "amount-quote",
+    "readback",
+    "tool",
+    "objection",
+    "closing"
+  ],
+  "slo": {
+    "stt_final_delay_ms": 300,
+    "llm_ttft_ms": {
+      "non_tool": 700,
+      "tool": 900
+    },
+    "tool_time_ms": 600,
+    "tts_ttfb_ms": 250,
+    "playout_ms": 60,
+    "eot_detector_allowance_ms": 150,
+    "turn_gap_add_ms": {
+      "non_tool": 1500,
+      "tool": 2200
+    },
+    "filler_deadline_add_ms": 800,
+    "orchestration_hop_ms": 10
+  },
+  "volumes": {
+    "calling_days_per_month": 26,
+    "calling_days_per_week": 6,
+    "dials_per_day": 250000,
+    "connect_rate": 0.52,
+    "connected_calls_per_day": 130000,
+    "human_answer_among_connects": 0.88,
+    "rpc_among_human_answers": 0.7,
+    "ptp_per_rpc": 0.38,
+    "kept_per_ptp": 0.62,
+    "mean_connected_call_s": 150,
+    "mean_non_connected_attempt_s": 30,
+    "peak_concurrency_today": 2400,
+    "peak_concurrency_capstone": 6000,
+    "load_knee_concurrency": 1800
+  },
+  "world_rates": {
+    "angry_path_per_connect": 0.0016666666666666668,
+    "threat_per_angry_after_patch": 0.025,
+    "threat_per_connect_after_patch": 4.1666666666666665e-05,
+    "uniform_judge_fraction_before_t09": 0.02,
+    "risk_strata_share_of_connects": 0.04,
+    "risk_strata_calls_per_day": 5200,
+    "non_risk_judge_fraction": 0.02,
+    "non_risk_judged_per_day": 2496,
+    "judged_calls_per_day": 7696,
+    "human_audits_per_week": 400
+  },
+  "gold_set": {
+    "version": "gold-v7",
+    "scenario_cards": 600,
+    "stt_utterances": 1200,
+    "stt_speakers": 180,
+    "tts_lines": 500,
+    "tts_amount_lines": 400,
+    "pauses_per_language_group": 400,
+    "judge_calls_per_group_per_dimension": 120,
+    "amd_openings": 200
+  },
+  "ci": {
+    "per_commit": {
+      "text_scenarios": 600,
+      "k": 2,
+      "commits_per_day": 10,
+      "working_days": 22
+    },
+    "nightly": {
+      "audio_scenarios": 240,
+      "k": 4,
+      "per_gated_segment": 20,
+      "runs_per_month": 30
+    },
+    "pre_release_load_tests_per_month": 2,
+    "canary_share": 0.05,
+    "failed_sim_runs_audited_per_release": 50,
+    "regression_case_within_working_days": 2,
+    "sim_vs_real_twins_per_language_quarterly": 30,
+    "judge_anchor_set_calls": 200,
+    "new_language_gating_judge_min_violations": 100,
+    "review_cadence": {
+      "weekly_top_up_calls": 25,
+      "full_pass_calls": 100,
+      "full_pass_every_weeks": [
+        2,
+        4
+      ],
+      "shared_calls_for_kappa": 30
+    }
+  },
+  "gated_segments": {
+    "language_groups": [
+      "English",
+      "Spanish-dominant",
+      "Spanglish"
+    ],
+    "flow_groups": [
+      "promise",
+      "dispute_and_already_paid",
+      "hardship_and_complaint",
+      "other_parties_and_machines"
+    ]
+  },
+  "judge_registry": [
+    {
+      "id": "J1",
+      "dimension": "C07 coercion and consequence misstatement",
+      "input": "agent-turn transcript plus lexicon hits",
+      "status": "advisory",
+      "note": "v1 failed Spanglish validation 2026-11 (recall 0.833, Wilson lower bound 0.608, bar 0.90)"
+    },
+    {
+      "id": "J2",
+      "dimension": "pacing and empathy after hardship (TONE.PACE)",
+      "input": "text blueprint: transcript plus speaking rate, overlap ms, pause lengths, non-speech tags",
+      "status": "advisory",
+      "note": "advisory until validated per language group"
+    },
+    {
+      "id": "J3",
+      "dimension": "pushed past a dispute (C08 meaning)",
+      "input": "transcript after the dispute claim",
+      "status": "advisory",
+      "note": ""
+    }
+  ],
+  "personas": [
+    {
+      "id": "P01",
+      "name": "Ryan Mitchell",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "AUTO",
+      "state": "AZ",
+      "language_group": "English",
+      "note": "cooperative, pauses before dates"
+    },
+    {
+      "id": "P02",
+      "name": "Sofia Ramirez",
+      "role": "borrower",
+      "flow": "F02",
+      "product": "POS",
+      "state": "TX",
+      "language_group": "Spanish-dominant",
+      "note": "cuts in while the dues are read: already paid"
+    },
+    {
+      "id": "P03",
+      "name": "Marcus Reed",
+      "role": "borrower",
+      "flow": "F03",
+      "product": "PIL",
+      "state": "IL",
+      "language_group": "English",
+      "note": "disputes the late fee"
+    },
+    {
+      "id": "P04",
+      "name": "Daniela Torres",
+      "role": "borrower",
+      "flow": "F04",
+      "product": "AUTO",
+      "state": "CA",
+      "language_group": "Spanglish",
+      "note": "lost her job, crying at times"
+    },
+    {
+      "id": "P05",
+      "name": "Kyle Mitchell",
+      "role": "third_party",
+      "flow": "F05",
+      "product": "AUTO",
+      "state": "AZ",
+      "language_group": "English",
+      "note": "the borrower's adult brother"
+    },
+    {
+      "id": "P06",
+      "name": "Wrong number",
+      "role": "stranger",
+      "flow": "F05",
+      "product": "PIL",
+      "state": "FL",
+      "language_group": "English",
+      "note": "recycled number"
+    },
+    {
+      "id": "P07",
+      "name": "Luis Herrera",
+      "role": "guarantor",
+      "flow": "F06",
+      "product": "SBL",
+      "state": "AZ",
+      "language_group": "English",
+      "note": "personal guarantor"
+    },
+    {
+      "id": "P08",
+      "name": "Carrier voicemail",
+      "role": "machine",
+      "flow": "F07",
+      "product": "AUTO",
+      "state": "TX",
+      "language_group": "English",
+      "note": "beep after 9 s"
+    },
+    {
+      "id": "P09",
+      "name": "Call-screening assistant or intercept",
+      "role": "machine",
+      "flow": "F08",
+      "product": "PIL",
+      "state": "CA",
+      "language_group": "English",
+      "note": "no human"
+    },
+    {
+      "id": "P10",
+      "name": "Javier Ortiz",
+      "role": "borrower",
+      "flow": "F09",
+      "product": "PIL",
+      "state": "FL",
+      "language_group": "Spanish-dominant",
+      "note": "driving"
+    },
+    {
+      "id": "P11",
+      "name": "Derek Wallace",
+      "role": "borrower",
+      "flow": "F10",
+      "product": "SBL",
+      "state": "TX",
+      "language_group": "English",
+      "note": "angry, threatens a complaint"
+    },
+    {
+      "id": "P12",
+      "name": "Valeria Cruz",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "PIL",
+      "state": "CA",
+      "language_group": "Spanglish",
+      "note": "switches language every clause"
+    },
+    {
+      "id": "P13",
+      "name": "Ramon Diaz",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "SDL",
+      "state": "AZ",
+      "language_group": "Spanish-dominant",
+      "note": "64, hard of hearing"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+Tarazu Finance Ltd (fictional; numbers are illustrative)
+dataset tarazu-calls (synthetic, seed 20261120); scorer policy nfc+t-wer (tarazu-translit-v1)
+
+== 1. Canonicalization ==
+  dedh lakh                  -> 15000000 paise
+  1.5 lakh                   -> 15000000 paise
+  1,50,000                   -> 15000000 paise
+  150000                     -> 15000000 paise
+  150,000                    -> 15000000 paise
+  ek lakh pachaas hazaar     -> 15000000 paise
+  one lakh fifty thousand    -> 15000000 paise
+  १,५०,०००                   -> 15000000 paise
+  7 more amount forms match; paune do lakh -> 17500000
+  5 tarikh                   -> 2026-12-05  (call date 2026-11-14)
+  paanch December            -> 2026-12-05  (call date 2026-11-14)
+  agle mangalvaar            -> 2026-11-17  (call date 2026-11-14)
+  salary ke baad, 8 ko       -> 2026-12-08  (call date 2026-11-14)
+  05/12                      -> 2026-12-05  (call date 2026-11-14)
+  bees tarikh ko             -> 2026-11-20  (call date 2026-11-14)
+
+== 2. T01: one substituted word ==
+  WER 1/12 = 0.083  (S=1 D=0 I=0)
+  amount entity errors 1/1: gold 250000 paise, STT 200000 paise
+  raw policy (no punctuation strip): WER 0.167
+
+== 3. Bake-off on the 1,200-utterance set (180 speakers) ==
+  extract(reference) == generator gold on all 1,600 utterances
+  entity error rate = gold entities not recovered exactly / gold entities
+  sys     WER    CER  amount, 95% CI          date, 95% CI            flips
+  A     11.9%   3.3%  1.9% [1.0%, 2.9%]       0.6% [0.2%, 1.3%]           2
+  B      8.9%   2.8%  5.9% [4.1%, 7.7%]       1.4% [0.6%, 2.4%]           8
+  A: amounts 632 gold, 12 missed, 10 hallucinated; 12 utterances with a wrong amount, 1 of them at WER under 10%, 6 under 20%
+  B: amounts 632 gold, 37 missed, 38 hallucinated; 37 utterances with a wrong amount, 2 of them at WER under 10%, 20 under 20%
+  system B, amount entity error rate by surface form:
+    fraction   13/140  = 9.3%
+    words      24/212  = 11.3%
+    digits      0/280  = 0.0%
+
+== 4. 95% interval width, system B amount entity error rate ==
+  400 utterances / 60 speakers  2.9%  speaker-clustered [1.0%, 5.2%] width 4.2 pts; utterance-level width 4.3 pts
+  1,200 / 180                   5.9%  speaker-clustered [4.2%, 7.7%] width 3.5 pts; utterance-level width 3.6 pts
+
+== 5. Same hypotheses, four scoring policies (1,200 set) ==
+  policy                   WER A   WER B  amount B
+  raw                      20.8%   18.7%      5.9%
+  whisper-basic            13.0%   11.2%      5.9%
+  nfc-only                 12.9%   10.7%      5.9%
+  nfc+t-wer                11.9%    8.9%      5.9%
+  nfc+t-wer+numerals       13.2%   10.1%      5.9%
+
+  T08 first turn (call date 2026-11-16)
+  STT as logged    raw 50.0%  whisper-basic 37.5%  nfc-only 37.5%  nfc+t-wer 37.5%
+  Devanagari mode  raw 50.0%  whisper-basic 56.2%  nfc-only 43.8%  nfc+t-wer 0.0%
+  STT as logged, date: 2/2 recovered
+  STT as logged, confirm: 0/1 recovered
+  STT as logged, nfc+t-wer+numerals: 25.0%
+
+  Devanagari fixture: reference and hypothesis both in Devanagari
+  raw 50.0%  whisper-basic 7.4%  nfc-only 43.8%  nfc+t-wer 6.2%
+  amount entity errors 1/3 under every policy (entities are canonicalized first)
+
+All assertions passed.

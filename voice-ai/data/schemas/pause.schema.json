@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/data/schemas/pause.schema.json",
+  "title": "One labelled caller pause (endpointing)",
+  "type": "object",
+  "properties": {
+    "pause_id": {
+      "type": "string"
+    },
+    "call_id": {
+      "type": "string"
+    },
+    "turn_id": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "language_group": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "call_state": {
+      "enum": [
+        "default",
+        "amount_asked",
+        "date_asked"
+      ]
+    },
+    "content_tag": {
+      "enum": [
+        "date",
+        "amount",
+        "dispute",
+        "small_talk",
+        "none"
+      ]
+    },
+    "label": {
+      "enum": [
+        "hold",
+        "end"
+      ]
+    },
+    "pause_ms": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "model_a_hold_prob": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "model_b_hold_prob": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "pause_id",
+    "call_id",
+    "turn_id",
+    "language_group",
+    "campaign",
+    "call_state",
+    "content_tag",
+    "label",
+    "pause_ms",
+    "model_a_hold_prob",
+    "model_b_hold_prob"
+  ],
+  "additionalProperties": false
+}

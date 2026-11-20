@@ -1,0 +1,1019 @@
+{
+  "edition": "global",
+  "note": "Utterance templates for data/generate.py. Spanish lines carry an English gloss. Steelyard Credit is a fictional lender.",
+  "agent_language_for_group": {
+    "English": "en",
+    "Spanish-dominant": "es",
+    "Spanglish": "en"
+  },
+  "lang_tags": {
+    "default": "en",
+    "other": "es",
+    "other_words": [
+      "si",
+      "soy",
+      "yo",
+      "eso",
+      "es",
+      "el",
+      "la",
+      "de",
+      "puedo",
+      "pagar",
+      "oiga",
+      "ya",
+      "lo",
+      "pague",
+      "tres",
+      "con",
+      "mi",
+      "tarjeta",
+      "gracias",
+      "adios",
+      "esta",
+      "bien",
+      "pero",
+      "viernes",
+      "llameme",
+      "despues",
+      "las",
+      "seis",
+      "voy",
+      "manejando",
+      "ahorita",
+      "no",
+      "puedo",
+      "nada",
+      "aja",
+      "veinte",
+      "veintiuno",
+      "veintitres",
+      "veinticinco",
+      "veintiseis",
+      "veintisiete",
+      "veintiocho",
+      "treinta",
+      "doscientos",
+      "trescientos",
+      "cuatrocientos",
+      "ciento",
+      "cincuenta",
+      "quince",
+      "veinte",
+      "seiscientos",
+      "mil",
+      "dolares",
+      "ocho",
+      "cinco",
+      "siete",
+      "uno",
+      "nueve",
+      "cero",
+      "dos",
+      "cuatro",
+      "ese",
+      "cargo",
+      "esta",
+      "mal",
+      "pague",
+      "a",
+      "tiempo",
+      "perdi",
+      "trabajo",
+      "mi",
+      "hermano",
+      "trabajando",
+      "que",
+      "pasa",
+      "se",
+      "equivoco",
+      "numero",
+      "quien",
+      "habla",
+      "me",
+      "llaman",
+      "todos",
+      "los",
+      "dias",
+      "voy",
+      "a",
+      "poner",
+      "una",
+      "queja",
+      "resto",
+      "mes",
+      "que",
+      "viene",
+      "cuando",
+      "cobre",
+      "deje",
+      "llamarme",
+      "senora",
+      "senor",
+      "dias",
+      "hola",
+      "bueno",
+      "sabado",
+      "despues",
+      "del",
+      "pago",
+      "trabajo",
+      "y",
+      "en",
+      "por",
+      "favor",
+      "esto",
+      "amenazando"
+    ]
+  },
+  "digits": {
+    "en": [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine"
+    ],
+    "es": [
+      "cero",
+      "uno",
+      "dos",
+      "tres",
+      "cuatro",
+      "cinco",
+      "seis",
+      "siete",
+      "ocho",
+      "nueve"
+    ]
+  },
+  "digit_language_for_group": {
+    "English": "en",
+    "Spanish-dominant": "es",
+    "Spanglish": "en"
+  },
+  "postal_codes": [
+    "85719",
+    "85701",
+    "85705",
+    "85711",
+    "85716",
+    "85710"
+  ],
+  "dues_amounts": [
+    {
+      "value": 42500,
+      "agent": {
+        "en": "four hundred twenty-five dollars",
+        "es": "cuatrocientos veinticinco dolares"
+      }
+    },
+    {
+      "value": 68000,
+      "agent": {
+        "en": "six hundred eighty dollars",
+        "es": "seiscientos ochenta dolares"
+      }
+    },
+    {
+      "value": 52000,
+      "agent": {
+        "en": "five hundred twenty dollars",
+        "es": "quinientos veinte dolares"
+      }
+    },
+    {
+      "value": 98000,
+      "agent": {
+        "en": "nine hundred eighty dollars",
+        "es": "novecientos ochenta dolares"
+      }
+    },
+    {
+      "value": 120000,
+      "agent": {
+        "en": "one thousand two hundred dollars",
+        "es": "mil doscientos dolares"
+      }
+    },
+    {
+      "value": 64500,
+      "agent": {
+        "en": "six hundred forty-five dollars",
+        "es": "seiscientos cuarenta y cinco dolares"
+      }
+    }
+  ],
+  "small_amounts": [
+    {
+      "value": 10000,
+      "agent": {
+        "en": "one hundred dollars",
+        "es": "cien dolares"
+      }
+    },
+    {
+      "value": 5000,
+      "agent": {
+        "en": "fifty dollars",
+        "es": "cincuenta dolares"
+      }
+    }
+  ],
+  "promise_amounts": [
+    {
+      "value": 25000,
+      "say": {
+        "English": "two fifty",
+        "Spanish-dominant": "doscientos cincuenta",
+        "Spanglish": "two fifty"
+      },
+      "agent": {
+        "en": "two hundred fifty dollars",
+        "es": "doscientos cincuenta dolares"
+      },
+      "confusable": {
+        "value": 21500,
+        "say": {
+          "English": "two fifteen",
+          "Spanish-dominant": "doscientos quince",
+          "Spanglish": "two fifteen"
+        },
+        "agent": {
+          "en": "two hundred fifteen dollars",
+          "es": "doscientos quince dolares"
+        }
+      }
+    },
+    {
+      "value": 35000,
+      "say": {
+        "English": "three fifty",
+        "Spanish-dominant": "trescientos cincuenta",
+        "Spanglish": "three fifty"
+      },
+      "agent": {
+        "en": "three hundred fifty dollars",
+        "es": "trescientos cincuenta dolares"
+      },
+      "confusable": {
+        "value": 31500,
+        "say": {
+          "English": "three fifteen",
+          "Spanish-dominant": "trescientos quince",
+          "Spanglish": "three fifteen"
+        },
+        "agent": {
+          "en": "three hundred fifteen dollars",
+          "es": "trescientos quince dolares"
+        }
+      }
+    },
+    {
+      "value": 45000,
+      "say": {
+        "English": "four fifty",
+        "Spanish-dominant": "cuatrocientos cincuenta",
+        "Spanglish": "four fifty"
+      },
+      "agent": {
+        "en": "four hundred fifty dollars",
+        "es": "cuatrocientos cincuenta dolares"
+      },
+      "confusable": {
+        "value": 41500,
+        "say": {
+          "English": "four fifteen",
+          "Spanish-dominant": "cuatrocientos quince",
+          "Spanglish": "four fifteen"
+        },
+        "agent": {
+          "en": "four hundred fifteen dollars",
+          "es": "cuatrocientos quince dolares"
+        }
+      }
+    },
+    {
+      "value": 15000,
+      "say": {
+        "English": "one fifty",
+        "Spanish-dominant": "ciento cincuenta",
+        "Spanglish": "one fifty"
+      },
+      "agent": {
+        "en": "one hundred fifty dollars",
+        "es": "ciento cincuenta dolares"
+      },
+      "confusable": {
+        "value": 11500,
+        "say": {
+          "English": "one fifteen",
+          "Spanish-dominant": "ciento quince",
+          "Spanglish": "one fifteen"
+        },
+        "agent": {
+          "en": "one hundred fifteen dollars",
+          "es": "ciento quince dolares"
+        }
+      }
+    },
+    {
+      "value": 42500,
+      "say": {
+        "English": "four twenty-five",
+        "Spanish-dominant": "cuatrocientos veinticinco",
+        "Spanglish": "four twenty-five"
+      },
+      "agent": {
+        "en": "four hundred twenty-five dollars",
+        "es": "cuatrocientos veinticinco dolares"
+      },
+      "confusable": {
+        "value": 42000,
+        "say": {
+          "English": "four twenty",
+          "Spanish-dominant": "cuatrocientos veinte",
+          "Spanglish": "four twenty"
+        },
+        "agent": {
+          "en": "four hundred twenty dollars",
+          "es": "cuatrocientos veinte dolares"
+        }
+      }
+    }
+  ],
+  "promise_dates": [
+    {
+      "iso": "2026-11-20",
+      "say": {
+        "English": "the twentieth",
+        "Spanish-dominant": "veinte",
+        "Spanglish": "veinte"
+      },
+      "gloss": "twentieth",
+      "agent": {
+        "en": "November twentieth",
+        "es": "el veinte de noviembre"
+      }
+    },
+    {
+      "iso": "2026-11-21",
+      "say": {
+        "English": "the twenty-first",
+        "Spanish-dominant": "veintiuno",
+        "Spanglish": "veintiuno"
+      },
+      "gloss": "twenty-first",
+      "agent": {
+        "en": "November twenty-first",
+        "es": "el veintiuno de noviembre"
+      }
+    },
+    {
+      "iso": "2026-11-23",
+      "say": {
+        "English": "the twenty-third",
+        "Spanish-dominant": "veintitres",
+        "Spanglish": "veintitres"
+      },
+      "gloss": "twenty-third",
+      "agent": {
+        "en": "November twenty-third",
+        "es": "el veintitres de noviembre"
+      }
+    },
+    {
+      "iso": "2026-11-25",
+      "say": {
+        "English": "the twenty-fifth",
+        "Spanish-dominant": "veinticinco",
+        "Spanglish": "veinticinco"
+      },
+      "gloss": "twenty-fifth",
+      "agent": {
+        "en": "November twenty-fifth",
+        "es": "el veinticinco de noviembre"
+      }
+    },
+    {
+      "iso": "2026-11-27",
+      "say": {
+        "English": "the twenty-seventh",
+        "Spanish-dominant": "veintisiete",
+        "Spanglish": "veintisiete"
+      },
+      "gloss": "twenty-seventh",
+      "agent": {
+        "en": "November twenty-seventh",
+        "es": "el veintisiete de noviembre"
+      }
+    },
+    {
+      "iso": "2026-11-30",
+      "say": {
+        "English": "the thirtieth",
+        "Spanish-dominant": "treinta",
+        "Spanglish": "treinta"
+      },
+      "gloss": "thirtieth",
+      "agent": {
+        "en": "November thirtieth",
+        "es": "el treinta de noviembre"
+      }
+    }
+  ],
+  "paid_on": {
+    "iso": "2026-11-03",
+    "agent": {
+      "en": "November third",
+      "es": "el tres de noviembre"
+    }
+  },
+  "callback_times": [
+    {
+      "local": "18:30",
+      "agent": {
+        "en": "six thirty",
+        "es": "las seis y media"
+      }
+    },
+    {
+      "local": "19:00",
+      "agent": {
+        "en": "seven",
+        "es": "las siete"
+      }
+    }
+  ],
+  "agent": {
+    "en": {
+      "opener": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with {first} {last}?",
+      "verify_ask": "Thank you. To verify your identity, can you tell me your ZIP code?",
+      "notice": "This is an attempt to collect a debt, and any information obtained will be used for that purpose.",
+      "dues": "Thanks, {first}. {notice} Your past-due amount is {amount}. When do you think you can pay it?",
+      "readback": "So that's {amount} by {date}. Is that right?",
+      "noted_no_readback": "Okay, so I'm noting {amount} for {date}.",
+      "ptp_done": "Thank you. I've noted your payment and texted you a payment link.",
+      "disclosure": "If you have a complaint, you can reach our Customer Advocate, Dana Brooks, at five two zero, five five five, zero one nine nine. I'm texting you the details now.",
+      "closing": "You can call us back at five two zero, five five five, zero one zero zero. Goodbye.",
+      "filler": "One second, I'm checking that.",
+      "paid_found": "Thank you, I can see your payment of {amount} on {date}. You're all set.",
+      "paid_not_found": "I can't see that payment yet, so I've logged it for review. We won't ask you for this amount while we check.",
+      "push_after_claim": "I understand. So, can you make the payment today?",
+      "dispute_logged": "I've logged your dispute about the late fee. While we review it, we won't ask you for payment.",
+      "dispute_push": "I understand. But could you still pay {amount} today to keep the account current?",
+      "hardship_ack": "I'm sorry to hear that. I've noted it, and I'm transferring you to our hardship team now.",
+      "hardship_push": "I understand. Could you pay a minimum amount, say {amount}, this week?",
+      "third_party_ok": "Thanks. I'll try again later. You can call us back at five two zero, five five five, zero one zero zero. Goodbye.",
+      "third_party_disclose": "No problem. Can you let him know he needs to pay the {amount} as soon as possible?",
+      "third_party_opener_v16": "Hi, this is Hazel from Steelyard Credit. I'm calling about {first} {last}'s auto loan payment, which is {dpd_words} days past due.",
+      "wrong_number_ok": "I'm sorry to bother you. I'll stop calls to this number. You can call us back at five two zero, five five five, zero one zero zero. Goodbye.",
+      "guarantor_dues": "Thanks, {first}. {notice} You're the guarantor on a business loan, and a payment of {amount} is outstanding on it.",
+      "dues_unverified": "Thanks. Your payment of {amount} is past due. When can you pay it?",
+      "voicemail_ok": "Hello, this is Steelyard. Please call Dana Brooks at five two zero, five five five, zero one zero zero. Any representative can help. Thank you.",
+      "voicemail_bad": "Hi {first}, this is Hazel from Steelyard Credit. Your loan payment is past due. Please pay the {amount} as soon as possible.",
+      "amd_repeat": "Hello, can you hear me?",
+      "callback_ok": "Of course. I'll call you back today at {time}. Drive safely.",
+      "angry_ok": "I'm sorry for the trouble, and I'll make sure your concern is recorded.",
+      "threat": "Sir, if you don't make a payment, legal action may follow, and we may have to send someone out to your house.",
+      "clarify": "Sorry, could you tell me the date you can pay?",
+      "clarify_again": "Just to confirm, which date can you pay?",
+      "loop_offer": "I'm sorry, I'm having trouble. I can text you a payment link or transfer you to a person.",
+      "push_same_day": "Could you make a payment today? That way you'd avoid a late fee.",
+      "transfer_language": "I'll connect you with a colleague who speaks your language.",
+      "connecting": "I'm connecting you now. Please stay on the line."
+    },
+    "es": {
+      "opener": {
+        "text": "Hola, le llamamos de Steelyard Credit. Soy Hazel, una asistente de inteligencia artificial. Esta llamada se graba. Hablo con {first} {last}?",
+        "gloss": "Hello, we are calling from Steelyard Credit. I'm Hazel, an artificial intelligence assistant. This call is recorded. Am I speaking with {first} {last}?"
+      },
+      "verify_ask": {
+        "text": "Gracias. Para verificar su identidad, me puede decir su codigo postal?",
+        "gloss": "Thank you. To verify your identity, can you tell me your ZIP code?"
+      },
+      "notice": {
+        "text": "Esta llamada es un intento de cobrar una deuda y cualquier informacion obtenida se usara con ese fin.",
+        "gloss": "This is an attempt to collect a debt, and any information obtained will be used for that purpose."
+      },
+      "dues": {
+        "text": "Gracias, {first}. {notice} Su pago atrasado es de {amount}. Cuando cree que lo puede pagar?",
+        "gloss": "Thank you, {first}. {notice_gloss} Your past-due payment is {amount_gloss}. When do you think you can pay it?"
+      },
+      "readback": {
+        "text": "Entonces son {amount} para {date}. Es correcto?",
+        "gloss": "So that's {amount_gloss} by {date_gloss}. Is that right?"
+      },
+      "noted_no_readback": {
+        "text": "Muy bien, anoto {amount} para {date}.",
+        "gloss": "Okay, I'm noting {amount_gloss} for {date_gloss}."
+      },
+      "ptp_done": {
+        "text": "Gracias. Ya anote su pago y le envie un enlace de pago por mensaje.",
+        "gloss": "Thank you. I've noted your payment and texted you a payment link."
+      },
+      "disclosure": {
+        "text": "Si tiene una queja, puede comunicarse con nuestra Customer Advocate, Dana Brooks, al cinco dos cero, cinco cinco cinco, cero uno nueve nueve. Le envio los datos por mensaje.",
+        "gloss": "If you have a complaint, you can reach our Customer Advocate, Dana Brooks, at five two zero, five five five, zero one nine nine. I'm texting you the details."
+      },
+      "closing": {
+        "text": "Puede llamarnos al cinco dos cero, cinco cinco cinco, cero uno cero cero. Adios.",
+        "gloss": "You can call us at five two zero, five five five, zero one zero zero. Goodbye."
+      },
+      "filler": {
+        "text": "Un momento, lo estoy revisando.",
+        "gloss": "One moment, I'm checking it."
+      },
+      "paid_found": {
+        "text": "Gracias, veo su pago de {amount} del {date}. Todo esta en orden.",
+        "gloss": "Thank you, I can see your payment of {amount_gloss} on {date_gloss}. Everything is in order."
+      },
+      "paid_not_found": {
+        "text": "Todavia no veo ese pago, asi que lo registre para revision. No le pediremos este monto mientras lo revisamos.",
+        "gloss": "I can't see that payment yet, so I've logged it for review. We won't ask you for this amount while we check."
+      },
+      "push_after_claim": {
+        "text": "Si, entiendo. Entonces, puede hacer el pago hoy?",
+        "gloss": "Yes, I understand. So, can you make the payment today?"
+      },
+      "dispute_logged": {
+        "text": "Registre su disputa sobre el cargo por atraso. Mientras la revisamos, no le pediremos el pago.",
+        "gloss": "I've logged your dispute about the late fee. While we review it, we won't ask you for payment."
+      },
+      "dispute_push": {
+        "text": "Entiendo. Pero podria pagar {amount} hoy para mantener la cuenta al dia?",
+        "gloss": "I understand. But could you pay {amount_gloss} today to keep the account current?"
+      },
+      "hardship_ack": {
+        "text": "Siento mucho escuchar eso. Ya lo anote y la paso con nuestro equipo de apoyo.",
+        "gloss": "I'm very sorry to hear that. I've noted it and I'm transferring you to our support team."
+      },
+      "hardship_push": {
+        "text": "Entiendo. Podria pagar un monto minimo, digamos {amount}, esta semana?",
+        "gloss": "I understand. Could you pay a minimum amount, say {amount_gloss}, this week?"
+      },
+      "third_party_ok": {
+        "text": "Gracias. Llamaremos mas tarde. Puede llamarnos al cinco dos cero, cinco cinco cinco, cero uno cero cero. Adios.",
+        "gloss": "Thank you. We'll call later. You can call us at five two zero, five five five, zero one zero zero. Goodbye."
+      },
+      "third_party_disclose": {
+        "text": "No hay problema. Le puede decir que tiene que pagar los {amount} lo antes posible?",
+        "gloss": "No problem. Can you tell him he has to pay the {amount_gloss} as soon as possible?"
+      },
+      "third_party_opener_v16": {
+        "text": "Hola, soy Hazel de Steelyard Credit. Llamo por el pago del prestamo de auto de {first} {last}, que tiene {dpd_words} dias de atraso.",
+        "gloss": "Hi, I'm Hazel from Steelyard Credit. I'm calling about {first} {last}'s auto loan payment, which is {dpd_words_gloss} days past due."
+      },
+      "wrong_number_ok": {
+        "text": "Disculpe la molestia. Dejaremos de llamar a este numero. Puede llamarnos al cinco dos cero, cinco cinco cinco, cero uno cero cero. Adios.",
+        "gloss": "Sorry for the bother. We'll stop calling this number. You can call us at five two zero, five five five, zero one zero zero. Goodbye."
+      },
+      "guarantor_dues": {
+        "text": "Gracias, {first}. {notice} Usted es el garante de un prestamo de negocio, y hay un pago pendiente de {amount}.",
+        "gloss": "Thank you, {first}. {notice_gloss} You're the guarantor on a business loan, and a payment of {amount_gloss} is outstanding."
+      },
+      "dues_unverified": {
+        "text": "Gracias. Su pago de {amount} esta atrasado. Cuando lo puede pagar?",
+        "gloss": "Thank you. Your payment of {amount_gloss} is past due. When can you pay it?"
+      },
+      "voicemail_ok": {
+        "text": "Hola, le llama Steelyard. Por favor llame a Dana Brooks al cinco dos cero, cinco cinco cinco, cero uno cero cero. Cualquier representante le puede ayudar. Gracias.",
+        "gloss": "Hello, this is Steelyard calling. Please call Dana Brooks at five two zero, five five five, zero one zero zero. Any representative can help. Thank you."
+      },
+      "voicemail_bad": {
+        "text": "Hola {first}, soy Hazel de Steelyard Credit. Su pago esta atrasado. Por favor pague los {amount} lo antes posible.",
+        "gloss": "Hi {first}, I'm Hazel from Steelyard Credit. Your payment is past due. Please pay the {amount_gloss} as soon as possible."
+      },
+      "amd_repeat": {
+        "text": "Hola, me escucha?",
+        "gloss": "Hello, can you hear me?"
+      },
+      "callback_ok": {
+        "text": "Claro. Le llamo hoy a {time}. Maneje con cuidado.",
+        "gloss": "Of course. I'll call you today at {time_gloss}. Drive carefully."
+      },
+      "angry_ok": {
+        "text": "Siento mucho la molestia, y me asegurare de que su queja quede registrada.",
+        "gloss": "I'm very sorry for the trouble, and I'll make sure your complaint is recorded."
+      },
+      "threat": {
+        "text": "Senor, si no hace un pago, puede haber accion legal, y tendriamos que mandar a alguien a su casa.",
+        "gloss": "Sir, if you don't make a payment, there may be legal action, and we would have to send someone to your house."
+      },
+      "clarify": {
+        "text": "Disculpe, me puede decir la fecha en que puede pagar?",
+        "gloss": "Sorry, can you tell me the date you can pay?"
+      },
+      "clarify_again": {
+        "text": "Solo para confirmar, que fecha puede pagar?",
+        "gloss": "Just to confirm, which date can you pay?"
+      },
+      "loop_offer": {
+        "text": "Disculpe, tengo problemas para entender. Le puedo enviar un enlace de pago o pasarle con una persona.",
+        "gloss": "Sorry, I'm having trouble understanding. I can send you a payment link or transfer you to a person."
+      },
+      "push_same_day": {
+        "text": "Podria hacer un pago hoy? Asi evitaria un cargo por atraso.",
+        "gloss": "Could you make a payment today? That way you would avoid a late fee."
+      },
+      "transfer_language": {
+        "text": "Le paso con un colega que habla su idioma.",
+        "gloss": "I'll transfer you to a colleague who speaks your language."
+      },
+      "connecting": {
+        "text": "La comunico ahora. Por favor no cuelgue.",
+        "gloss": "I'm connecting you now. Please don't hang up."
+      }
+    }
+  },
+  "caller": {
+    "English": {
+      "identity_yes": "yes, speaking",
+      "repeat_ask": "sorry, how much was that?",
+      "promise": "yeah I can do {amount} on {date}, rest next month",
+      "promise_part1": "I can pay it... next month on the",
+      "promise_part2": "{date}, I get paid then",
+      "yes": "yes, that's right",
+      "backchannel": "uh-huh, okay",
+      "bye": "okay, thanks, bye",
+      "already_paid": "listen, I already paid it, on the third, with my card",
+      "dispute": "that late fee is wrong, I paid on time",
+      "hardship": "I lost my job... right now I can't pay anything",
+      "third_party": "he's at work. This is his brother, he left his phone here. What's this about?",
+      "wrong_number": "you've got the wrong number, I've had this number two years",
+      "guarantor_q": "yeah, this is {first}. What's going on?",
+      "callback_req": "call me after six, I'm driving",
+      "angry": "I'm filing a complaint with the CFPB. You people call me every single day, this is harassment",
+      "angry_after_threat": "are you threatening me? This call is recorded",
+      "angry_after_ok": "fine. Just send me the details",
+      "hello": "hello? hello?",
+      "repeat_date": "the {date}, I said",
+      "loop_answer": "{date}, after payday",
+      "loop_hangup": "no. {date}. Forget it"
+    },
+    "Spanish-dominant": {
+      "identity_yes": {
+        "text": "si, soy yo",
+        "gloss": "yes, it's me"
+      },
+      "repeat_ask": {
+        "text": "perdon, cuanto era?",
+        "gloss": "sorry, how much was it?"
+      },
+      "promise": {
+        "text": "si, puedo pagar {amount} el {date}, el resto el mes que viene",
+        "gloss": "yes, I can pay {amount_gloss} on the {date_gloss}, the rest next month"
+      },
+      "promise_part1": {
+        "text": "puedo pagar... el mes que viene, el",
+        "gloss": "I can pay... next month, on the"
+      },
+      "promise_part2": {
+        "text": "{date}, cuando cobre",
+        "gloss": "the {date_gloss}, when I get paid"
+      },
+      "yes": {
+        "text": "si, eso es",
+        "gloss": "yes, that's it"
+      },
+      "backchannel": {
+        "text": "aja",
+        "gloss": "uh-huh"
+      },
+      "bye": {
+        "text": "bueno, gracias, adios",
+        "gloss": "okay, thanks, goodbye"
+      },
+      "already_paid": {
+        "text": "oiga, ya lo pague, el tres, con mi tarjeta",
+        "gloss": "listen, I already paid it, on the third, with my card"
+      },
+      "dispute": {
+        "text": "ese cargo esta mal, yo pague a tiempo",
+        "gloss": "that charge is wrong, I paid on time"
+      },
+      "hardship": {
+        "text": "perdi mi trabajo... ahorita no puedo pagar nada",
+        "gloss": "I lost my job... right now I can't pay anything"
+      },
+      "third_party": {
+        "text": "esta trabajando, soy su hermano, dejo su telefono aqui. Que pasa?",
+        "gloss": "he's working, I'm his brother, he left his phone here. What's going on?"
+      },
+      "wrong_number": {
+        "text": "se equivoco de numero, tengo este numero hace dos anos",
+        "gloss": "you've got the wrong number, I've had this number for two years"
+      },
+      "guarantor_q": {
+        "text": "si, soy {first}. Que pasa?",
+        "gloss": "yes, I'm {first}. What's going on?"
+      },
+      "callback_req": {
+        "text": "llameme despues de las seis, voy manejando",
+        "gloss": "call me after six, I'm driving"
+      },
+      "angry": {
+        "text": "voy a poner una queja con la CFPB. Me llaman todos los dias, esto es acoso",
+        "gloss": "I'm going to file a complaint with the CFPB. You call me every day, this is harassment"
+      },
+      "angry_after_threat": {
+        "text": "me esta amenazando? Esta llamada se graba",
+        "gloss": "are you threatening me? This call is recorded"
+      },
+      "angry_after_ok": {
+        "text": "bueno. Mandeme los datos",
+        "gloss": "okay. Send me the details"
+      },
+      "hello": {
+        "text": "hola? hola?",
+        "gloss": "hello? hello?"
+      },
+      "repeat_date": {
+        "text": "el {date}, le dije",
+        "gloss": "the {date_gloss}, I told you"
+      },
+      "loop_answer": {
+        "text": "el {date}, despues del pago",
+        "gloss": "the {date_gloss}, after payday"
+      },
+      "loop_hangup": {
+        "text": "no. El {date}. Olvidelo",
+        "gloss": "no. The {date_gloss}. Forget it"
+      }
+    },
+    "Spanglish": {
+      "identity_yes": {
+        "text": "yeah, soy yo",
+        "gloss": "yeah, it's me"
+      },
+      "repeat_ask": {
+        "text": "sorry, cuanto era?",
+        "gloss": "sorry, how much was it?"
+      },
+      "promise": {
+        "text": "si, pero I can do {amount} el {date}, after payday",
+        "gloss": "yes, but I can do {amount_gloss} on the {date_gloss}, after payday"
+      },
+      "promise_part1": {
+        "text": "I can pay it... el mes que viene, on the",
+        "gloss": "I can pay it... next month, on the"
+      },
+      "promise_part2": {
+        "text": "{date}, when I get paid",
+        "gloss": "the {date_gloss}, when I get paid"
+      },
+      "yes": {
+        "text": "yeah, eso es",
+        "gloss": "yeah, that's it"
+      },
+      "backchannel": {
+        "text": "mm-hm",
+        "gloss": "mm-hm"
+      },
+      "bye": {
+        "text": "okay, gracias, bye",
+        "gloss": "okay, thanks, bye"
+      },
+      "already_paid": {
+        "text": "oiga, I already paid it, el tres, con mi tarjeta",
+        "gloss": "listen, I already paid it, on the third, with my card"
+      },
+      "dispute": {
+        "text": "that late fee esta mal, I paid on time",
+        "gloss": "that late fee is wrong, I paid on time"
+      },
+      "hardship": {
+        "text": "I lost my job... ahorita no puedo pagar nada",
+        "gloss": "I lost my job... right now I can't pay anything"
+      },
+      "third_party": {
+        "text": "he's at work, soy su hermano. What's this about?",
+        "gloss": "he's at work, I'm his brother. What's this about?"
+      },
+      "wrong_number": {
+        "text": "wrong number, se equivoco",
+        "gloss": "wrong number, you made a mistake"
+      },
+      "guarantor_q": {
+        "text": "yeah, soy {first}. What's going on?",
+        "gloss": "yeah, I'm {first}. What's going on?"
+      },
+      "callback_req": {
+        "text": "call me despues de las seis, I'm driving",
+        "gloss": "call me after six, I'm driving"
+      },
+      "angry": {
+        "text": "I'm filing a complaint con la CFPB, me llaman every single day",
+        "gloss": "I'm filing a complaint with the CFPB, you call me every single day"
+      },
+      "angry_after_threat": {
+        "text": "are you threatening me? Esta llamada se graba",
+        "gloss": "are you threatening me? This call is recorded"
+      },
+      "angry_after_ok": {
+        "text": "okay. Send me los datos",
+        "gloss": "okay. Send me the details"
+      },
+      "hello": {
+        "text": "hello? hola?",
+        "gloss": "hello? hello?"
+      },
+      "repeat_date": {
+        "text": "el {date}, I said",
+        "gloss": "the {date_gloss}, I said"
+      },
+      "loop_answer": {
+        "text": "el {date}, after payday",
+        "gloss": "the {date_gloss}, after payday"
+      },
+      "loop_hangup": {
+        "text": "ay, no. El {date}. Forget it",
+        "gloss": "oh, no. The {date_gloss}. Forget it"
+      }
+    }
+  },
+  "machine": {
+    "voicemail": "Hi, you've reached the voicemail of this number. Please leave a message after the tone. Hola, deje su mensaje despues del tono.",
+    "screening": "Hi, the person you're calling is using a screening service and will get a copy of this conversation. Go ahead and say your name and why you're calling.",
+    "intercept": "The number you have dialed is not in service. Please check the number and try again.",
+    "ivr": "Thank you for calling. For sales, press 1. For support, press 2."
+  },
+  "stt_noise": {
+    "subs": {
+      "yeah": "yes",
+      "okay": "ok",
+      "the": "a",
+      "on": "in",
+      "next": "the next",
+      "rest": "rest of",
+      "listen": "list in",
+      "with": "wit",
+      "my": "a",
+      "card": "car",
+      "late": "lake",
+      "fee": "free",
+      "paid": "pay",
+      "can": "can't",
+      "si": "see",
+      "pero": "pedro",
+      "eso": "esa",
+      "es": "is",
+      "el": "el",
+      "resto": "rest",
+      "que": "k",
+      "viene": "vine",
+      "puedo": "pudo",
+      "pagar": "pay gar",
+      "gracias": "grassy",
+      "mes": "mess"
+    },
+    "fillers": [
+      "um",
+      "uh",
+      "eh"
+    ]
+  },
+  "loop_stt": {
+    "Spanglish": "see pedro I can do {amount} el bee air ness after payday"
+  },
+  "incidents": {
+    "T01": {
+      "title": "Two fifty or two fifteen",
+      "persona": "P01",
+      "dues": "Ryan, your past-due amount is four hundred twenty-five dollars. When do you think you can pay it?",
+      "ref": "yeah I can do two fifty on the twentieth, rest next month",
+      "stt": "yeah I can do two fifteen on the twentieth rest next month",
+      "noted": "Okay, so I'm noting two hundred fifteen dollars for November twentieth.",
+      "backchannel": "uh-huh, okay",
+      "stored": 21500,
+      "said": 25000,
+      "date": "2026-11-20"
+    },
+    "T02": {
+      "title": "Ya lo pague",
+      "persona": "P02",
+      "dues": {
+        "text": "Sofia, el pago de su financiamiento, ciento treinta dolares, que vencia el cinco de noviembre...",
+        "gloss": "Sofia, your financing payment, one hundred thirty dollars, which was due on November fifth..."
+      },
+      "claim": {
+        "text": "oiga, ya lo pague, el tres, con mi tarjeta",
+        "gloss": "listen, I already paid it, on the third, with my card"
+      },
+      "push": {
+        "text": "Si, entiendo. Entonces, puede hacer el pago hoy?",
+        "gloss": "Yes, I understand. So, can you make the payment today?"
+      },
+      "dues_value": 13000
+    },
+    "T03": {
+      "title": "He's at work, this is his brother",
+      "persona": "P05",
+      "opener_v16": "Hi, this is Hazel from Steelyard Credit. I'm calling about Ryan Mitchell's auto loan payment, which is four days past due.",
+      "reply": "He's at work. This is his brother, he left his phone here. What's this about?",
+      "disclose": "No problem. Can you let him know he needs to pay the four hundred twenty-five dollars as soon as possible?",
+      "dues_value": 42500
+    },
+    "T04": {
+      "title": "Hello? Hello?",
+      "persona": "P01",
+      "ask": "how much do I owe in total?",
+      "hello": "hello? hello?",
+      "reply": "Your total past-due amount is four hundred twenty-five dollars, with no late fee yet.",
+      "dup": "Yes, I'm here. Your total is four hundred twenty-five dollars.",
+      "dues_value": 42500
+    },
+    "T05": {
+      "title": "Next month on the... fifth",
+      "persona": "P01",
+      "part1": "I can pay it... next month on the",
+      "part2": "fifth, I get paid then",
+      "push": "Could you make a payment today? That way you'd avoid a late fee."
+    },
+    "T06": {
+      "title": "Third of December or twelfth of March",
+      "persona": "P10",
+      "llm": {
+        "text": "Su proximo pago de $680.00 vence el 12/03.",
+        "gloss": "Your next payment of $680.00 is due on 12/03."
+      },
+      "heard": {
+        "text": "...vence el doce de marzo.",
+        "gloss": "...is due on the twelfth of March."
+      },
+      "ref": {
+        "text": "Esta bien, pago entonces.",
+        "gloss": "Okay, I'll pay then."
+      },
+      "stored_date": "2026-12-03",
+      "heard_date": "2027-03-12",
+      "dues_value": 68000
+    },
+    "T07": {
+      "title": "Say your name and why you're calling",
+      "persona": "P09",
+      "machine": "Hi, the person you're calling is using a screening service and will get a copy of this conversation. Go ahead and say your name and why you're calling.",
+      "opener": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Ryan Mitchell?",
+      "repeat": "Hello, can you hear me?",
+      "amd_true": "call_screening"
+    },
+    "T08": {
+      "title": "Si, pero my paycheck comes el viernes",
+      "persona": "P12",
+      "ref1": {
+        "text": "si, pero my paycheck comes el viernes, so after that I can pay, like the twenty-third",
+        "gloss": "yes, but my paycheck comes on Friday, so after that I can pay, like the twenty-third"
+      },
+      "stt1": "see pedro my paycheck comes el bee air ness so after that I can pay like the twenty third",
+      "ask1": "Sorry, could you tell me the date you can pay?",
+      "ref2": {
+        "text": "el veintitres, the twenty-third, after payday",
+        "gloss": "the twenty-third, the twenty-third, after payday"
+      },
+      "stt2": "el bent he tres the twenty third after payday",
+      "ask2": "Just to confirm, is it the third or the twenty-third?",
+      "ref3": {
+        "text": "ay, no. Twenty-three. Two, three.",
+        "gloss": "oh, no. Twenty-three. Two, three."
+      }
+    },
+    "T09": {
+      "title": "Send someone out to your house",
+      "persona": "P11",
+      "angry": "I'm filing a complaint with the CFPB. You people call me every single day, this is harassment.",
+      "threat": "Sir, if you don't make a payment, legal action may follow, and we may have to send someone out to your house.",
+      "reply": "Are you threatening me? This call is recorded."
+    },
+    "T10": {
+      "title": "Transcript says fine",
+      "persona": "P04",
+      "ref": {
+        "text": "I lost my job... [crying, 4 s] ...ahorita no puedo pagar nada",
+        "gloss": "I lost my job... [crying, 4 s] ...right now I can't pay anything"
+      },
+      "push": "I understand. Could you pay a minimum amount, say one hundred dollars, this week?"
+    },
+    "S1": {
+      "title": "Guarantor verified first",
+      "persona": "P07",
+      "opener": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Luis Herrera?",
+      "reply": "Yeah, this is Luis. What's going on?",
+      "ask": "Thank you. To verify your identity, can you tell me your ZIP code?",
+      "zip_words": "eight five seven one nine",
+      "zip": "85719",
+      "dues": "Thanks, Luis. This is an attempt to collect a debt, and any information obtained will be used for that purpose. You're the guarantor on a business loan, and a payment of one thousand two hundred dollars is outstanding on it...",
+      "dues_value": 120000
+    },
+    "S2": {
+      "title": "Voicemail, compliant and non-compliant",
+      "persona": "P08",
+      "ok": "Hello, this is Steelyard. Please call Dana Brooks at five two zero, five five five, zero one zero zero. Any representative can help. Thank you.",
+      "bad": "Hi Ryan, this is Hazel from Steelyard Credit. Your auto loan payment is past due. Please pay the four hundred twenty-five dollars as soon as possible."
+    }
+  }
+}

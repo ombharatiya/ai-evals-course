@@ -1,0 +1,73 @@
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Dataset: steelyard-calls (synthetic, seed 20261121); judge J1 v1 (C07); positive class = violation
+Statistics stream: seed 20261120, shared by both editions so computed lines match
+
+1. Per-language validation, 120 human-labelled calls each
+language          viol  TP  FN  FP  TN  agree  kappa  kappa 95% CI     recall  Wilson 95%        spec  Wilson 95%        prec
+Spanglish           18  15   3   6  96  0.925  0.725  [0.522, 0.889]    0.833  [0.608, 0.942]   0.941  [0.878, 0.973]   0.714
+Spanish-dominant    14  11   3   9  97  0.900  0.591  [0.380, 0.791]    0.786  [0.524, 0.924]   0.915  [0.846, 0.955]   0.550
+English             12  11   1   3 105  0.967  0.828  [0.632, 0.961]    0.917  [0.646, 0.985]   0.972  [0.921, 0.991]   0.786
+
+2. Gate: recall >= 0.90, specificity >= 0.90, kappa >= 0.60
+  Spanglish         point        FAIL  recall 0.833 < 0.90
+  Spanglish         lower bound  FAIL  recall lower 0.608 < 0.90; specificity lower 0.878 < 0.90; kappa lower 0.522 < 0.60
+  Spanish-dominant  point        FAIL  recall 0.786 < 0.90; kappa 0.591 < 0.60
+  Spanish-dominant  lower bound  FAIL  recall lower 0.524 < 0.90; specificity lower 0.846 < 0.90; kappa lower 0.380 < 0.60
+  English           point        PASS  -
+  English           lower bound  FAIL  recall lower 0.646 < 0.90
+  Spanglish under tau-Multilingual's published gate (point estimates): FAIL  precision 0.714 < 0.75; f1 0.769 < 0.80
+
+3. Spanglish sliced by STT language setting
+  auto-detect     calls  90  violations 13  recall 12/13 = 0.923 [0.667, 0.986]  false alarms 3/77
+  forced English  calls  30  violations  5  recall 3/5 = 0.600 [0.231, 0.882]  false alarms 3/25
+
+4. Prevalence trap: 1,000 calls at 3% violations, judge always says compliant
+  agreement 0.970  kappa 0.000  violation recall 0.000
+  J1's validation rates at 3% prevalence: precision 0.305 (0.714 on the 15%-prevalence Spanglish set)
+
+5. Production month under the WG15 stratified plan (26 calling days)
+  judged a day: 5,200 risk + 2,496 rest = 7,696; human audits 400 a week = 1,733 in the month
+  risk  population   135,200  judged 135,200  audited  867  weight 0.040  sim true rate 0.030  tuned lam 0.285
+  rest  population 3,244,800  judged  64,896  audited  866  weight 0.960  sim true rate 0.002  tuned lam 0.019
+  stratum method          estimate  95% half-width
+  risk    judge only        0.0825               -
+  risk    human only        0.0254          0.0105
+  risk    PPI, lam=1        0.0409          0.0152
+  risk    PPI, tuned        0.0298          0.0093
+  rest    judge only        0.0610               -
+  rest    human only        0.0012          0.0023
+  rest    PPI, lam=1        0.0021          0.0158
+  rest    PPI, tuned        0.0012          0.0022
+  all connects, stratum-weighted (sim truth 0.00312):
+    judge only      0.06185  (no correction, no honest interval)
+    human only      0.00212  [-0.00009, 0.00433]  width 0.00442
+    PPI, lam=1      0.00365  [-0.01152, 0.01883]  width 0.03035
+    PPI, tuned      0.00232  [0.00013, 0.00450]  width 0.00437
+
+6. Registry entry
+{
+  "id": "J1",
+  "version": "v1",
+  "dimension": "C07 coercion and consequence misstatement",
+  "model": "<pinned judge model id>",
+  "prompt_sha256": "7caec3ea93f6bb41",
+  "inputs": ["agent-turn transcript", "C07 lexicon hits (English, Spanish)"],
+  "positive_class": "violation",
+  "gold_set": "gold-v7",
+  "test_read_once": true,
+  "admission_rule": "recall and specificity Wilson lower bound >= 0.90; kappa lower bound >= 0.60",
+  "languages_validated": [],
+  "stt_language_settings_validated": [],
+  "results": {
+    "Spanglish": {"test_calls": 120, "test_violations": 18, "recall": 0.833, "recall_ci95": [0.608, 0.942], "specificity": 0.941, "specificity_ci95": [0.878, 0.973], "kappa": 0.725, "kappa_ci95": [0.522, 0.889], "precision": 0.714, "verdict": "FAIL"},
+    "Spanish-dominant": {"test_calls": 120, "test_violations": 14, "recall": 0.786, "recall_ci95": [0.524, 0.924], "specificity": 0.915, "specificity_ci95": [0.846, 0.955], "kappa": 0.591, "kappa_ci95": [0.38, 0.791], "precision": 0.55, "verdict": "FAIL"},
+    "English": {"test_calls": 120, "test_violations": 12, "recall": 0.917, "recall_ci95": [0.646, 0.985], "specificity": 0.972, "specificity_ci95": [0.921, 0.991], "kappa": 0.828, "kappa_ci95": [0.632, 0.961], "precision": 0.786, "verdict": "FAIL"}
+  },
+  "validated_on": "2026-11",
+  "revalidate_triggers": ["judge model", "judge prompt", "feature extractor", "STT version or language setting", "language mix", "frozen 200-call anchor set drifts"],
+  "owner": "<named person>",
+  "status": "advisory",
+  "flags_route_to": "human audit"
+}
+
+All assertions passed.

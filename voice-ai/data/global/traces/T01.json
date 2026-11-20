@@ -1,0 +1,774 @@
+{
+  "call_id": "SY-2026-11-14-0871234",
+  "schema_version": "voice-trace/1.3",
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "campaign": "AUTO-early-nov",
+  "account_id": "A-55120931",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T01",
+    "title": "Two fifty or two fifteen",
+    "flow": "F01",
+    "persona": "P01",
+    "language_group": "English"
+  },
+  "started_at_local": "2026-11-14T18:41:07-07:00",
+  "tz": "America/Phoenix",
+  "location_signals": {
+    "area_code": "America/Phoenix",
+    "address": "America/Phoenix"
+  },
+  "dial": {
+    "attempts_7d_before": 2,
+    "connect_outcome": "answered",
+    "counts_toward_cap": true,
+    "conversation": true
+  },
+  "cli": "+1-520-555-01XX",
+  "attestation": "A",
+  "carrier": "carrier-b-mobile",
+  "codec_chain": [
+    "amr-wb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 1150,
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.62",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 300,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/SY-2026-11-14-0871234/agent.wav",
+    "caller_channel_uri": "s3://recordings/SY-2026-11-14-0871234/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/SY-2026-11-14-0871234/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.92,
+    "decided_at_ms": 2365,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2375,
+          "end_ms": 2590,
+          "result": {
+            "account_id": "A-55120931",
+            "contact_id": "K-82389",
+            "first_name": "Ryan",
+            "product_code": "AUTO",
+            "preferred_language": "English",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX6814",
+            "jurisdiction": "us"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Ryan Mitchell?",
+        "request_ms": 2600,
+        "first_byte_ms": 2830,
+        "entities": []
+      },
+      "play_start_ms": 2877,
+      "play_end_ms": 6400,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 6800,
+      "vad_end_ms": 7500,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 7150,
+          "text": "yes, speaking"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 7710,
+        "text": "yes, speaking",
+        "lang_tags": [
+          "en",
+          "en"
+        ],
+        "confidence": 0.86
+      },
+      "eot_commit_ms": 7870,
+      "reference_text": "yes, speaking",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 7880,
+        "first_token_ms": 8400,
+        "first_answer_token_ms": 8400,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Thank you. To verify your identity, can you tell me your ZIP code?",
+        "request_ms": 8410,
+        "first_byte_ms": 8600,
+        "entities": []
+      },
+      "play_start_ms": 8650,
+      "play_end_ms": 10900,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 11300,
+      "vad_end_ms": 12500,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 11790,
+          "text": "eight five"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 12751,
+        "text": "eight five seven one six",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.94
+      },
+      "eot_commit_ms": 12870,
+      "reference_text": "eight five seven one six",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "85716"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "85716"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 12880,
+        "first_token_ms": 13350,
+        "first_answer_token_ms": 13350,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "zip"
+          },
+          "start_ms": 13360,
+          "end_ms": 13560,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 13570,
+          "end_ms": 13820,
+          "result": {
+            "past_due_cents": 42500,
+            "payment_cents": 42500,
+            "next_due_date": "2026-11-30",
+            "dpd": 6,
+            "late_fee_cents": 2500,
+            "payoff_cents": 382500
+          }
+        }
+      ],
+      "tts": {
+        "text": "Ryan, your past-due amount is four hundred twenty-five dollars. When do you think you can pay it?",
+        "request_ms": 13830,
+        "first_byte_ms": 14040,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 42500
+          }
+        ]
+      },
+      "play_start_ms": 14100,
+      "play_end_ms": 17800,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "debt_notice",
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 18220,
+      "vad_end_ms": 21940,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 18710,
+          "text": "yeah I can"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 22180,
+        "text": "yeah I can do two fifteen on the twentieth rest next month",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.78
+      },
+      "eot_commit_ms": 22310,
+      "reference_text": "yeah I can do two fifty on the twentieth, rest next month",
+      "ref_intent": "promise",
+      "ref_entities": [
+        {
+          "type": "amount",
+          "value": 25000
+        },
+        {
+          "type": "date",
+          "value": "2026-11-20"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "amount",
+          "value": 21500
+        },
+        {
+          "type": "date",
+          "value": "2026-11-20"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "tool",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 22320,
+        "first_token_ms": 22990,
+        "first_answer_token_ms": 22990,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "record_promise_to_pay",
+          "args_redacted": {
+            "amount_cents": 21500,
+            "ptp_date": "2026-11-20",
+            "channel": "link",
+            "readback_confirmed": false
+          },
+          "start_ms": 23010,
+          "end_ms": 23480,
+          "result": {
+            "ptp_id": "PTP-584593"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Okay, so I'm noting two hundred fifteen dollars for November twentieth.",
+        "request_ms": 23500,
+        "first_byte_ms": 23690,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 21500
+          },
+          {
+            "type": "date",
+            "value": "2026-11-20"
+          }
+        ]
+      },
+      "play_start_ms": 23740,
+      "play_end_ms": 27900,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_ptp"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 28120,
+      "vad_end_ms": 28900,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 28510,
+          "text": "uh-huh, okay"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 29101,
+        "text": "uh-huh, okay",
+        "lang_tags": [
+          "en",
+          "en"
+        ],
+        "confidence": 0.85
+      },
+      "eot_commit_ms": 29210,
+      "reference_text": "uh-huh, okay",
+      "ref_intent": "backchannel",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "tool",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 29220,
+        "first_token_ms": 29942,
+        "first_answer_token_ms": 29942,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "send_payment_link",
+          "args_redacted": {
+            "amount_cents": 21500,
+            "channel": "sms"
+          },
+          "start_ms": 29952,
+          "end_ms": 30079,
+          "result": {
+            "link_id": "LNK-818602"
+          }
+        },
+        {
+          "name": "send_disclosure_sms",
+          "args_redacted": {
+            "jurisdiction": "us"
+          },
+          "start_ms": 45558,
+          "end_ms": 45698,
+          "result": {
+            "sms_id": "SMS-312202"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thank you. I've noted your payment and texted you a payment link. If you have a complaint, you can reach our Customer Advocate, Dana Brooks, at five two zero, five five five, zero one nine nine. I'm texting you the details now.",
+        "request_ms": 30089,
+        "first_byte_ms": 30293,
+        "entities": []
+      },
+      "play_start_ms": 30348,
+      "play_end_ms": 45548,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_link",
+        "disclosure"
+      ]
+    },
+    {
+      "turn_id": 10,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 46162,
+      "vad_end_ms": 47412,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 46652,
+          "text": "okay, thanks,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 47566,
+        "text": "okay, thanks, bye",
+        "lang_tags": [
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.93
+      },
+      "eot_commit_ms": 47744,
+      "reference_text": "okay, thanks, bye",
+      "ref_intent": "closing",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 11,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 10,
+      "llm": {
+        "request_ms": 47754,
+        "first_token_ms": 48214,
+        "first_answer_token_ms": 48214,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "ptp"
+          },
+          "start_ms": 54835,
+          "end_ms": 55012,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "You can call us back at five two zero, five five five, zero one zero zero. Goodbye.",
+        "request_ms": 48224,
+        "first_byte_ms": 48445,
+        "entities": []
+      },
+      "play_start_ms": 48485,
+      "play_end_ms": 54825,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "callback_number",
+        "goodbye"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "tool",
+      "tool",
+      "closing"
+    ],
+    "turn_gap_ms": [
+      1150,
+      1600,
+      1800,
+      1448,
+      1073
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        370,
+        370,
+        370,
+        310,
+        332
+      ],
+      "llm_ttft": [
+        520,
+        470,
+        670,
+        722,
+        460
+      ],
+      "tool": [
+        0,
+        450,
+        470,
+        127,
+        0
+      ],
+      "tts_ttfb": [
+        190,
+        210,
+        190,
+        204,
+        221
+      ],
+      "playout": [
+        50,
+        60,
+        50,
+        55,
+        40
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-55120931",
+        "product_code": "AUTO",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1997-01-18",
+        "zip": "85716",
+        "state": "AZ",
+        "jurisdiction": "us",
+        "loan_last4": "6814",
+        "preferred_language": "English",
+        "dpd": 6,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-11-30",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-82389",
+        "account_id": "A-55120931",
+        "phone_e164": "+15553048642",
+        "role": "borrower",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1997-01-18",
+        "zip": "85716",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [],
+    "revocations": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-55120931",
+        "product_code": "AUTO",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1997-01-18",
+        "zip": "85716",
+        "state": "AZ",
+        "jurisdiction": "us",
+        "loan_last4": "6814",
+        "preferred_language": "English",
+        "dpd": 6,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-11-30",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-82389",
+        "account_id": "A-55120931",
+        "phone_e164": "+15553048642",
+        "role": "borrower",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1997-01-18",
+        "zip": "85716",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [
+      {
+        "ptp_id": "PTP-584593",
+        "account_id": "A-55120931",
+        "attempt_id": "AT-70000001",
+        "amount_cents": 21500,
+        "ptp_date": "2026-11-20",
+        "channel": "link",
+        "readback_confirmed": false,
+        "created_at": "2026-11-14T18:41:30-07:00",
+        "kept": null,
+        "kept_checked_at": null
+      }
+    ],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [
+      {
+        "sms_id": "SMS-883275",
+        "account_id": "A-55120931",
+        "template": "payment_link",
+        "sent_at": "2026-11-14T18:41:37-07:00"
+      },
+      {
+        "sms_id": "SMS-312202",
+        "account_id": "A-55120931",
+        "template": "disclosure",
+        "sent_at": "2026-11-14T18:41:52-07:00"
+      }
+    ],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000001",
+        "account_id": "A-55120931",
+        "phone_e164": "+15553048642",
+        "cli": "+1-520-555-01XX",
+        "started_at_local": "2026-11-14T18:41:07-07:00",
+        "tz": "America/Phoenix",
+        "location_signals": {
+          "area_code": "America/Phoenix",
+          "address": "America/Phoenix"
+        },
+        "connect_outcome": "answered",
+        "counts_toward_cap": true,
+        "conversation": true,
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "ptp",
+        "recording_uri": "s3://recordings/SY-2026-11-14-0871234.wav",
+        "retain_until": "2029-11-03"
+      }
+    ],
+    "revocations": []
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "ptps": [
+        {
+          "amount_cents": 25000,
+          "ptp_date": "2026-11-20",
+          "readback_confirmed": true
+        }
+      ],
+      "sms_log": [
+        {
+          "template": "payment_link"
+        },
+        {
+          "template": "disclosure"
+        }
+      ]
+    },
+    "account": {},
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "ptp"
+    }
+  },
+  "checks": [
+    {
+      "id": "C12",
+      "result": "fail",
+      "evidence_turns": [
+        6,
+        7
+      ]
+    }
+  ],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "gl-fail-v4",
+      "code": "ENT.AMOUNT",
+      "note": "amount word substituted; PTP written before read-back",
+      "turn_id": 6
+    }
+  ]
+}

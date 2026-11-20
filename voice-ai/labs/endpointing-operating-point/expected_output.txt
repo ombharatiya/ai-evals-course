@@ -1,0 +1,47 @@
+Synthetic Steelyard data (Steelyard Credit is a fictional lender; its numbers are illustrative)
+seed 20261121; budgets 200-1250 ms in 50 ms steps
+
+Curves per language group (default state; pauses = whole calls, at least 600)
+group             detector       pauses holds  cut@300  cut@600  lat@5%  lat@10%
+English           silence-only      605   353    38.0%     6.5%     700      500
+English           model t=0.70      605   353    18.4%     2.3%     504      354
+Spanish-dominant  silence-only      602   354    34.7%     6.5%     700      550
+Spanish-dominant  model t=0.70      602   354    20.3%     3.4%     502      402
+Spanglish         silence-only      602   358    35.2%     8.7%     750      550
+Spanglish         model t=0.70      602   358    19.3%     4.7%     552      452
+
+False cutoff at a fixed silence budget, model t=0.70, 95% CI clustered by call
+English             63 calls   300 ms 14.7% [10.8%, 18.9%]   400 ms  7.4% [4.5%, 10.6%]
+Spanish-dominant    62 calls   300 ms 15.5% [11.6%, 20.4%]   400 ms  8.2% [5.4%, 11.3%]
+Spanglish           61 calls   300 ms 15.6% [11.6%, 20.1%]   400 ms 11.5% [7.8%, 15.7%]
+
+Chosen silence budget per campaign and state (cost per 1,000 turns;
+range = central 95% of choices over 200 call-clustered resamples)
+campaign        state           thr  chosen       range  cost  cutoff  WG12
+AUTO-early-nov  default        0.70     450     350-450   579    4.3%   400
+AUTO-early-nov  amount_asked   0.70     550     500-750   806    6.9%   600
+PIL-digital-nov default        0.70     350     200-450   594    9.1%   400
+PIL-digital-nov amount_asked   0.70     500     450-650   706    5.9%   600
+POS-short-nov   default        0.70     450     250-550   613    6.5%   400
+POS-short-nov   amount_asked   0.70     650     500-700   771    2.9%   600
+SBL-guar-nov    default        0.72     450     300-550   614    5.4%   450
+SBL-guar-nov    amount_asked   0.72     650     600-650   878    6.1%   650
+SDL-biwk-nov    default        0.78     550     500-650   849   12.7%   600
+SDL-biwk-nov    amount_asked   0.78     700     600-900   997    7.9%   800
+
+Sensitivity: amount and date weights 2.5 -> 5.0
+AUTO-early-nov  default 450 -> 450 ms   amount/date 550 -> 750 ms
+PIL-digital-nov default 350 -> 450 ms   amount/date 500 -> 650 ms
+POS-short-nov   default 450 -> 550 ms   amount/date 650 -> 700 ms
+SBL-guar-nov    default 450 -> 450 ms   amount/date 650 -> 650 ms
+SDL-biwk-nov    default 550 -> 650 ms   amount/date 700 -> 900 ms
+
+T05 at 300 ms, no hold signal: waits  300 ms -> cut off
+T05 at 300 ms, hold signal   : waits  800 ms -> held
+T05 at 400 ms, no hold signal: waits  400 ms -> cut off
+T05 at 400 ms, hold signal   : waits  900 ms -> held
+T05 at 600 ms, no hold signal: waits  600 ms -> cut off
+T05 at 600 ms, hold signal   : waits 1100 ms -> held
+
+wrote steelyard_pauses_english.csv (605 rows)
+All assertions passed. The numbers are synthetic; the method transfers to your labelled pauses.

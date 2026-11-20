@@ -1,0 +1,731 @@
+{
+  "call_id": "TZ-2026-11-11-8000006",
+  "schema_version": "voice-trace/1.3",
+  "edition": "india",
+  "dataset": "tarazu-calls (synthetic, seed 20261120)",
+  "campaign": "PL-digital-nov",
+  "account_id": "A-25871556",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T06",
+    "title": "Paanch December ya baarah May",
+    "flow": "F01",
+    "persona": "P10",
+    "language_group": "Indian English"
+  },
+  "started_at_local": "2026-11-11T16:02:51+05:30",
+  "tz": "Asia/Kolkata",
+  "dial": {
+    "connected_calls_today_before": 0,
+    "connected_calls_week_before": 2,
+    "connect_outcome": "answered"
+  },
+  "cli": "1600-XXX-XXXX",
+  "carrier": "airtel",
+  "codec_chain": [
+    "amr-nb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 800,
+  "versions": {
+    "agent": "asha-3.2.1",
+    "prompt": "collections-v16",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.70",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "rbi-2027-01",
+    "taxonomy": "tz-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 400,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/TZ-2026-11-11-8000006/agent.wav",
+    "caller_channel_uri": "s3://recordings/TZ-2026-11-11-8000006/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/TZ-2026-11-11-8000006/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.87,
+    "decided_at_ms": 2342,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2352,
+          "end_ms": 2521,
+          "result": {
+            "account_id": "A-25871556",
+            "contact_id": "K-24438",
+            "first_name": "Arjun",
+            "product_code": "PL",
+            "preferred_language": "Indian English",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX5359"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat Arjun ji se ho rahi hai?",
+        "request_ms": 2531,
+        "first_byte_ms": 2780,
+        "entities": []
+      },
+      "play_start_ms": 2817,
+      "play_end_ms": 12337,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 12927,
+      "vad_end_ms": 13917,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 13417,
+          "text": "yes, speaking"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 14130,
+        "text": "yes, speaking",
+        "lang_tags": [
+          "en",
+          "en"
+        ],
+        "confidence": 0.87
+      },
+      "eot_commit_ms": 14404,
+      "reference_text": "yes, speaking",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 14414,
+        "first_token_ms": 14736,
+        "first_answer_token_ms": 14736,
+        "cached_tokens": 0
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Thank you. For verification, could you please tell me your pincode?",
+        "request_ms": 14746,
+        "first_byte_ms": 14908,
+        "entities": []
+      },
+      "play_start_ms": 14956,
+      "play_end_ms": 19246,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 19964,
+      "vad_end_ms": 22794,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 20454,
+          "text": "four five"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 22989,
+        "text": "four five two zero zero one",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.96
+      },
+      "eot_commit_ms": 23224,
+      "reference_text": "four five two zero zero one",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "452001"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "452001"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 23234,
+        "first_token_ms": 24011,
+        "first_answer_token_ms": 24011,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "pincode"
+          },
+          "start_ms": 24021,
+          "end_ms": 24523,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 24533,
+          "end_ms": 24898,
+          "result": {
+            "overdue_paise": 680000,
+            "emi_paise": 680000,
+            "next_due_date": "2026-11-21",
+            "dpd": 9,
+            "late_fee_paise": 50000,
+            "foreclosure_paise": 6120000
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thank you, Arjun. Your overdue amount is six thousand eight hundred rupees. By when will you be able to pay?",
+        "request_ms": 24908,
+        "first_byte_ms": 25117,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 680000
+          }
+        ]
+      },
+      "play_start_ms": 25169,
+      "play_end_ms": 31729,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 32628,
+      "vad_end_ms": 34408,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 33118,
+          "text": "sorry, how"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 34645,
+        "text": "sorry, how much was it?",
+        "lang_tags": [
+          "en",
+          "hi",
+          "hi",
+          "hi",
+          "en"
+        ],
+        "confidence": 0.82
+      },
+      "eot_commit_ms": 34879,
+      "reference_text": "sorry, how much was it?",
+      "ref_intent": "repeat_request",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 34889,
+        "first_token_ms": 35612,
+        "first_answer_token_ms": 35612,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Your next EMI of Rs 6,800 is due on 05/12.",
+        "request_ms": 35622,
+        "first_byte_ms": 35797,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 680000
+          },
+          {
+            "type": "date",
+            "value": "2026-12-05"
+          }
+        ],
+        "audio_reading": "...due on May twelfth."
+      },
+      "play_start_ms": 35832,
+      "play_end_ms": 38982,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_dues",
+        "inform_due_date"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 39854,
+      "vad_end_ms": 41894,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 40344,
+          "text": "Okay, fine,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 42152,
+        "text": "Okay, fine, I'll pay then.",
+        "lang_tags": [
+          "en",
+          "en",
+          "hi",
+          "en",
+          "hi"
+        ],
+        "confidence": 0.89
+      },
+      "eot_commit_ms": 42378,
+      "reference_text": "Okay, fine, I'll pay then.",
+      "ref_intent": "confirm_yes",
+      "ref_entities": [
+        {
+          "type": "date",
+          "value": "2027-05-12"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "date",
+          "value": "2027-05-12"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "tool",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 42388,
+        "first_token_ms": 43033,
+        "first_answer_token_ms": 43033,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "record_promise_to_pay",
+          "args_redacted": {
+            "amount_paise": 680000,
+            "ptp_date": "2026-12-05",
+            "channel": "link",
+            "readback_confirmed": true
+          },
+          "start_ms": 43043,
+          "end_ms": 43396,
+          "result": {
+            "ptp_id": "PTP-337620"
+          }
+        },
+        {
+          "name": "send_payment_link",
+          "args_redacted": {
+            "amount_paise": 680000,
+            "channel": "sms"
+          },
+          "start_ms": 43406,
+          "end_ms": 43678,
+          "result": {
+            "link_id": "LNK-462767"
+          }
+        },
+        {
+          "name": "send_grievance_sms",
+          "args_redacted": {},
+          "start_ms": 56332,
+          "end_ms": 56403,
+          "result": {
+            "sms_id": "SMS-404675"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thank you. I have noted your payment and sent you a payment link by SMS. For any complaint you can speak to our grievance officer Ms Neha Kulkarni on 020-4000-0000; I am sending the full details by SMS.",
+        "request_ms": 43688,
+        "first_byte_ms": 44022,
+        "entities": []
+      },
+      "play_start_ms": 44072,
+      "play_end_ms": 56322,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_link",
+        "disclosure"
+      ]
+    },
+    {
+      "turn_id": 10,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 57297,
+      "vad_end_ms": 58817,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 57787,
+          "text": "okay, thank"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 58977,
+        "text": "okay, thank you, bye",
+        "lang_tags": [
+          "en",
+          "hi",
+          "en",
+          "en"
+        ],
+        "confidence": 0.89
+      },
+      "eot_commit_ms": 59199,
+      "reference_text": "okay, thank you, bye",
+      "ref_intent": "closing",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 11,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 10,
+      "llm": {
+        "request_ms": 59209,
+        "first_token_ms": 59627,
+        "first_answer_token_ms": 59627,
+        "cached_tokens": 0
+      },
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "ptp"
+          },
+          "start_ms": 61688,
+          "end_ms": 61760,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thank you, have a good day.",
+        "request_ms": 59637,
+        "first_byte_ms": 59841,
+        "entities": []
+      },
+      "play_start_ms": 59888,
+      "play_end_ms": 61678,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "goodbye"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "amount-quote",
+      "tool",
+      "closing"
+    ],
+    "turn_gap_ms": [
+      1039,
+      2375,
+      1424,
+      2178,
+      1071
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        487,
+        430,
+        471,
+        484,
+        382
+      ],
+      "llm_ttft": [
+        322,
+        777,
+        723,
+        645,
+        418
+      ],
+      "tool": [
+        0,
+        867,
+        0,
+        625,
+        0
+      ],
+      "tts_ttfb": [
+        162,
+        209,
+        175,
+        334,
+        204
+      ],
+      "playout": [
+        48,
+        52,
+        35,
+        50,
+        47
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-25871556",
+        "product_code": "PL",
+        "first_name": "Arjun",
+        "last_name": "Mehta",
+        "dob": "1997-09-22",
+        "pincode": "452001",
+        "loan_last4": "5359",
+        "preferred_language": "Indian English",
+        "dpd": 9,
+        "overdue_paise": 680000,
+        "emi_paise": 680000,
+        "next_due_date": "2026-11-21",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_loan": true,
+        "agent_particulars_sent_at": "2026-10-28T11:00:00+05:30"
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-24438",
+        "account_id": "A-25871556",
+        "phone_e164": "+910000112121",
+        "role": "borrower",
+        "first_name": "Arjun",
+        "last_name": "Mehta",
+        "dob": "1997-09-22",
+        "pincode": "452001",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-25871556",
+        "product_code": "PL",
+        "first_name": "Arjun",
+        "last_name": "Mehta",
+        "dob": "1997-09-22",
+        "pincode": "452001",
+        "loan_last4": "5359",
+        "preferred_language": "Indian English",
+        "dpd": 9,
+        "overdue_paise": 680000,
+        "emi_paise": 680000,
+        "next_due_date": "2026-11-21",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_loan": true,
+        "agent_particulars_sent_at": "2026-10-28T11:00:00+05:30"
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-24438",
+        "account_id": "A-25871556",
+        "phone_e164": "+910000112121",
+        "role": "borrower",
+        "first_name": "Arjun",
+        "last_name": "Mehta",
+        "dob": "1997-09-22",
+        "pincode": "452001",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [
+      {
+        "ptp_id": "PTP-337620",
+        "account_id": "A-25871556",
+        "attempt_id": "AT-70000006",
+        "amount_paise": 680000,
+        "ptp_date": "2026-12-05",
+        "channel": "link",
+        "readback_confirmed": true,
+        "created_at": "2026-11-11T16:03:34+05:30",
+        "kept": null,
+        "kept_checked_at": null
+      }
+    ],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [
+      {
+        "sms_id": "SMS-536552",
+        "account_id": "A-25871556",
+        "template": "payment_link",
+        "sent_at": "2026-11-11T16:03:34+05:30"
+      },
+      {
+        "sms_id": "SMS-404675",
+        "account_id": "A-25871556",
+        "template": "grievance",
+        "sent_at": "2026-11-11T16:03:47+05:30"
+      }
+    ],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000006",
+        "account_id": "A-25871556",
+        "phone_e164": "+910000112121",
+        "cli": "1600-XXX-XXXX",
+        "started_at_local": "2026-11-11T16:02:51+05:30",
+        "tz": "Asia/Kolkata",
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "ptp",
+        "recording_uri": "s3://recordings/TZ-2026-11-11-8000006.wav",
+        "retain_until": "2027-05-15"
+      }
+    ]
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "ptps": [
+        {
+          "amount_paise": 680000,
+          "ptp_date": "2026-12-05",
+          "readback_confirmed": true
+        }
+      ],
+      "sms_log": [
+        {
+          "template": "payment_link"
+        },
+        {
+          "template": "grievance"
+        }
+      ]
+    },
+    "account": {},
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "ptp"
+    },
+    "note": "the CRM diff passes; only a spoken-entity round-trip check sees what the borrower heard"
+  },
+  "checks": [],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "tz-fail-v4",
+      "code": "ENT.DATE",
+      "note": "numeric date read in the other field order by the TTS locale",
+      "turn_id": 7
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/data/schemas/entity_pair.schema.json",
+  "title": "Reference and STT hypothesis pair with gold entities",
+  "type": "object",
+  "properties": {
+    "pair_id": {
+      "type": "string",
+      "pattern": "^(T01|EP\\d{3})$"
+    },
+    "speaker_id": {
+      "type": "string"
+    },
+    "language_group": {
+      "type": "string"
+    },
+    "condition": {
+      "enum": [
+        "wideband_16k",
+        "g711_clean",
+        "amr_g711",
+        "amr_g711_loss5",
+        "noise_10db"
+      ]
+    },
+    "call_date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "kind": {
+      "enum": [
+        "promise",
+        "confirm"
+      ]
+    },
+    "reference": {
+      "type": "string"
+    },
+    "hyps": {
+      "type": "object",
+      "properties": {
+        "sys_a": {
+          "type": "string"
+        },
+        "sys_b": {
+          "type": "string"
+        },
+        "sys_c": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "sys_a",
+        "sys_b",
+        "sys_c"
+      ],
+      "additionalProperties": false
+    },
+    "ref_entities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      },
+      "minItems": 1
+    },
+    "hyp_entities": {
+      "type": "object",
+      "properties": {
+        "sys_a": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "sys_b": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        },
+        "sys_c": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          }
+        }
+      },
+      "required": [
+        "sys_a",
+        "sys_b",
+        "sys_c"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "pair_id",
+    "speaker_id",
+    "language_group",
+    "condition",
+    "call_date",
+    "kind",
+    "reference",
+    "hyps",
+    "ref_entities",
+    "hyp_entities"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "entity": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "enum": [
+            "amount",
+            "date",
+            "confirmation",
+            "postal_code",
+            "product",
+            "dpd"
+          ]
+        },
+        "value": {
+          "type": [
+            "integer",
+            "string"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "value"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

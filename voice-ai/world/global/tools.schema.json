@@ -1,0 +1,647 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/world/global/tools.schema.json",
+  "title": "Hazel tool calls (global edition)",
+  "description": "Arguments and results of every tool the agent can call. Money fields are integer cent units (amount_cents). In data/ traces, tool calls carry args_redacted: the arguments with the fields listed in x-redacted removed.",
+  "x-redacted": [
+    "account_id",
+    "contact_id",
+    "phone_e164",
+    "value",
+    "statement"
+  ],
+  "tools": {
+    "lookup_account": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "phone_e164": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "phone_e164"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "contact_id": {
+            "type": "string",
+            "pattern": "^K-\\d{5}$"
+          },
+          "first_name": {
+            "type": "string"
+          },
+          "product_code": {
+            "enum": [
+              "AUTO",
+              "PIL",
+              "POS",
+              "SBL",
+              "SDL"
+            ]
+          },
+          "preferred_language": {
+            "type": "string"
+          },
+          "contact_role": {
+            "enum": [
+              "borrower",
+              "guarantor",
+              "unknown"
+            ]
+          },
+          "masked_loan_no": {
+            "type": "string"
+          },
+          "jurisdiction": {
+            "enum": [
+              "us",
+              "uk",
+              "es"
+            ]
+          }
+        },
+        "required": [
+          "account_id",
+          "contact_id",
+          "first_name",
+          "product_code",
+          "preferred_language",
+          "contact_role",
+          "masked_loan_no",
+          "jurisdiction"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "verify_identity": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "contact_id": {
+            "type": "string"
+          },
+          "method": {
+            "enum": [
+              "dob",
+              "loan_last4",
+              "zip"
+            ]
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id",
+          "contact_id",
+          "method",
+          "value"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "verified": {
+            "type": "boolean"
+          },
+          "attempts": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "locked": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "verified",
+          "attempts",
+          "locked"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "get_dues": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          }
+        },
+        "required": [
+          "account_id"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "past_due_cents": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payment_cents": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "next_due_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "dpd": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "late_fee_cents": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "payoff_cents": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "past_due_cents",
+          "payment_cents",
+          "next_due_date",
+          "dpd",
+          "late_fee_cents",
+          "payoff_cents"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "check_payment_status": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "since": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        },
+        "required": [
+          "account_id",
+          "since"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "payments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "confirmation_no": {
+                  "type": "string",
+                  "pattern": "^\\d{12}$"
+                },
+                "amount_cents": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "paid_on": {
+                  "type": "string",
+                  "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+                },
+                "channel": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "confirmation_no",
+                "amount_cents",
+                "paid_on",
+                "channel"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "payments"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "record_promise_to_pay": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "amount_cents": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "ptp_date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          },
+          "channel": {
+            "enum": [
+              "ach",
+              "debit_card",
+              "autopay",
+              "link"
+            ]
+          },
+          "readback_confirmed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "account_id",
+          "amount_cents",
+          "ptp_date",
+          "channel",
+          "readback_confirmed"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "ptp_id": {
+            "type": "string",
+            "pattern": "^PTP-\\d{6}$"
+          }
+        },
+        "required": [
+          "ptp_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "send_payment_link": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "amount_cents": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "channel": {
+            "enum": [
+              "sms",
+              "email"
+            ]
+          }
+        },
+        "required": [
+          "account_id",
+          "amount_cents",
+          "channel"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "link_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "link_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "schedule_callback": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "callback_at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?([+-]\\d{2}:\\d{2})?$"
+          },
+          "requested_by": {
+            "enum": [
+              "borrower",
+              "agent"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id",
+          "callback_at",
+          "requested_by",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "callback_id": {
+            "type": "string"
+          },
+          "within_window": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "callback_id",
+          "within_window"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "log_dispute": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "category": {
+            "enum": [
+              "already_paid",
+              "not_my_loan",
+              "amount_wrong",
+              "service",
+              "other"
+            ]
+          },
+          "statement": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id",
+          "category",
+          "statement"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "grievance_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "grievance_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "flag_hardship": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "reason": {
+            "enum": [
+              "job_loss",
+              "medical",
+              "death_in_family",
+              "capacity_concern",
+              "other"
+            ]
+          }
+        },
+        "required": [
+          "account_id",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "hardship_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "hardship_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "mark_contact": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "outcome": {
+            "enum": [
+              "wrong_number",
+              "third_party",
+              "voicemail",
+              "ivr",
+              "no_answer"
+            ]
+          },
+          "relation": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "account_id",
+          "outcome",
+          "relation"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ok"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "set_do_not_call": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "phone_e164": {
+            "type": "string"
+          },
+          "scope": {
+            "enum": [
+              "bot",
+              "all"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "account_id",
+          "phone_e164",
+          "scope",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ok"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "transfer_to_human": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "queue": {
+            "enum": [
+              "collections_l2",
+              "grievance",
+              "hardship",
+              "language"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "queue",
+          "reason"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "transfer_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "transfer_id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "end_call": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "disposition": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "disposition"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "ok"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "send_disclosure_sms": {
+      "args": {
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "pattern": "^A-\\d{8}$"
+          },
+          "jurisdiction": {
+            "enum": [
+              "us",
+              "uk",
+              "es"
+            ]
+          }
+        },
+        "required": [
+          "account_id",
+          "jurisdiction"
+        ],
+        "additionalProperties": false
+      },
+      "result": {
+        "type": "object",
+        "properties": {
+          "sms_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "sms_id"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

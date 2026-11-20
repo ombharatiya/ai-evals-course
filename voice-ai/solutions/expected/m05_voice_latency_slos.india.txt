@@ -1,0 +1,25 @@
+Voice latency: turn gap by turn type (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+turns     n    P50 ms  P95 ms  P99 ms  over the SLO (budget + 1,500 / + 2,200 ms)
+--------  ---  ------  ------  ------  ------------------------------------------
+tool      288  1804    2836    3436    19 (6.6%)
+non-tool  420  1244    1715    2070    7 (1.7%)
+
+tool turns: sum of stage P95s 3085 ms (+40 ms of hops) vs P95 of the turn gap 2836 ms
+non-tool turns: sum of stage P95s 1959 ms (+20 ms of hops) vs P95 of the turn gap 1715 ms
+Percentiles do not add: budget the total from spans, then allocate it to stages.
+
+T04 waterfall (the slowest turn):
+  end-of-turn delay              380 ms
+  hop                             10 ms
+  LLM TTFT                      1220 ms
+  hop                             10 ms
+  tool get_dues                  860 ms
+  hop                             10 ms
+  tool check_payment_status     1250 ms
+  hop                             10 ms
+  TTS TTFB                       190 ms
+  playout                         50 ms
+  stages 3950 ms + hops 40 ms = turn gap 3990 ms (recorded 3990 ms)

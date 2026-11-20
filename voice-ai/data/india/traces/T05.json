@@ -1,0 +1,987 @@
+{
+  "call_id": "TZ-2026-11-15-8000005",
+  "schema_version": "voice-trace/1.3",
+  "edition": "india",
+  "dataset": "tarazu-calls (synthetic, seed 20261120)",
+  "campaign": "TW-early-nov",
+  "account_id": "A-55120931",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T05",
+    "title": "Agle mahine ki... paanch",
+    "flow": "F01",
+    "persona": "P01",
+    "language_group": "Hinglish"
+  },
+  "started_at_local": "2026-11-15T13:15:09+05:30",
+  "tz": "Asia/Kolkata",
+  "dial": {
+    "connected_calls_today_before": 0,
+    "connected_calls_week_before": 2,
+    "connect_outcome": "answered"
+  },
+  "cli": "1600-XXX-XXXX",
+  "carrier": "airtel",
+  "codec_chain": [
+    "amr-nb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 1300,
+  "versions": {
+    "agent": "asha-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.62",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "rbi-2027-01",
+    "taxonomy": "tz-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 300,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/TZ-2026-11-15-8000005/agent.wav",
+    "caller_channel_uri": "s3://recordings/TZ-2026-11-15-8000005/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/TZ-2026-11-15-8000005/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.92,
+    "decided_at_ms": 2460,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2470,
+          "end_ms": 2692,
+          "result": {
+            "account_id": "A-55120931",
+            "contact_id": "K-93408",
+            "first_name": "Rahul",
+            "product_code": "TW",
+            "preferred_language": "Hinglish",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX7446"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat Rahul ji se ho rahi hai?",
+        "request_ms": 2702,
+        "first_byte_ms": 2892,
+        "entities": []
+      },
+      "play_start_ms": 2928,
+      "play_end_ms": 12448,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 13385,
+      "vad_end_ms": 15165,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 13875,
+          "text": "haan ji,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 15389,
+        "text": "haan ji, bol raha hoon",
+        "lang_tags": [
+          "hi",
+          "en",
+          "hi",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.8
+      },
+      "eot_commit_ms": 15553,
+      "reference_text": "haan ji, bol raha hoon",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 15563,
+        "first_token_ms": 16198,
+        "first_answer_token_ms": 16198,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Dhanyavaad. Pehchaan ke liye, kya aap apna pincode bata sakte hain?",
+        "request_ms": 16208,
+        "first_byte_ms": 16452,
+        "entities": []
+      },
+      "play_start_ms": 16490,
+      "play_end_ms": 21010,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 22213,
+      "vad_end_ms": 24523,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 22703,
+          "text": "chaar ek"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 24681,
+        "text": "chaar ek ek zero zero saat",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi",
+          "en",
+          "en",
+          "hi"
+        ],
+        "confidence": 0.92
+      },
+      "eot_commit_ms": 24862,
+      "reference_text": "chaar ek ek zero zero saat",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "411007"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "411007"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 24872,
+        "first_token_ms": 25452,
+        "first_answer_token_ms": 25452,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "pincode"
+          },
+          "start_ms": 25462,
+          "end_ms": 25721,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 25731,
+          "end_ms": 25898,
+          "result": {
+            "overdue_paise": 425000,
+            "emi_paise": 425000,
+            "next_due_date": "2026-12-08",
+            "dpd": 6,
+            "late_fee_paise": 50000,
+            "foreclosure_paise": 3825000
+          }
+        }
+      ],
+      "tts": {
+        "text": "Rahul ji, aapka overdue chaar hazaar do sau pachaas rupaye hai. Aap kab tak bhar paayenge?",
+        "request_ms": 25908,
+        "first_byte_ms": 26007,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 425000
+          }
+        ]
+      },
+      "play_start_ms": 26063,
+      "play_end_ms": 31713,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 32827,
+      "vad_end_ms": 34347,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 33317,
+          "text": "sorry, kitna"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 34537,
+        "text": "sorry, kitna tha?",
+        "lang_tags": [
+          "en",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.81
+      },
+      "eot_commit_ms": 34647,
+      "reference_text": "sorry, kitna tha?",
+      "ref_intent": "repeat_request",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 34657,
+        "first_token_ms": 35402,
+        "first_answer_token_ms": 35402,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Rahul ji, aapka overdue chaar hazaar do sau pachaas rupaye hai. Aap kab tak bhar paayenge?",
+        "request_ms": 35412,
+        "first_byte_ms": 35661,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 425000
+          }
+        ]
+      },
+      "play_start_ms": 35708,
+      "play_end_ms": 41358,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 42462,
+      "vad_end_ms": 43982,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 42952,
+          "text": "sorry, kitna"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 44219,
+        "text": "sorry, kitna tha?",
+        "lang_tags": [
+          "en",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.82
+      },
+      "eot_commit_ms": 44286,
+      "reference_text": "sorry, kitna tha?",
+      "ref_intent": "repeat_request",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 44296,
+        "first_token_ms": 44577,
+        "first_answer_token_ms": 44577,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Rahul ji, aapka overdue chaar hazaar do sau pachaas rupaye hai. Aap kab tak bhar paayenge?",
+        "request_ms": 44587,
+        "first_byte_ms": 44805,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 425000
+          }
+        ]
+      },
+      "play_start_ms": 44850,
+      "play_end_ms": 50500,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 10,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 51200,
+      "vad_end_ms": 52950,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 51690,
+          "text": "main... agle"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 53127,
+        "text": "main... agle mahine ki",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.87
+      },
+      "eot_commit_ms": 53250,
+      "reference_text": "main... agle mahine ki",
+      "ref_intent": "promise_partial",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": [
+        {
+          "start_ms": 52950,
+          "end_ms": 53670,
+          "label": "hold",
+          "content_tag": "date"
+        }
+      ]
+    },
+    {
+      "turn_id": 11,
+      "speaker": "agent",
+      "turn_type": "objection",
+      "responds_to": 10,
+      "llm": {
+        "request_ms": 53260,
+        "first_token_ms": 53700,
+        "first_answer_token_ms": 53700,
+        "cached_tokens": 0
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Kya aap aaj hi payment kar sakte hain? Late fee bach jaayegi.",
+        "request_ms": 53710,
+        "first_byte_ms": 53850,
+        "entities": []
+      },
+      "play_start_ms": 53900,
+      "play_end_ms": 57740,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 12,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 53670,
+      "vad_end_ms": 55710,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 54160,
+          "text": "paanch tarikh"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 55950,
+        "text": "paanch tarikh ko kar dunga",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.9
+      },
+      "eot_commit_ms": 56009,
+      "reference_text": "paanch tarikh ko kar dunga",
+      "ref_intent": "promise",
+      "ref_entities": [
+        {
+          "type": "date",
+          "value": "2026-12-05"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "date",
+          "value": "2026-12-05"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 13,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 58386,
+      "vad_end_ms": 60426,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 58876,
+          "text": "paanch tarikh"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 60666,
+        "text": "paanch tarikh ko, bola na",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.92
+      },
+      "eot_commit_ms": 60806,
+      "reference_text": "paanch tarikh ko, bola na",
+      "ref_intent": "promise",
+      "ref_entities": [
+        {
+          "type": "date",
+          "value": "2026-12-05"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "date",
+          "value": "2026-12-05"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 14,
+      "speaker": "agent",
+      "turn_type": "readback",
+      "responds_to": 13,
+      "llm": {
+        "request_ms": 60816,
+        "first_token_ms": 61166,
+        "first_answer_token_ms": 61166,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Toh chaar hazaar do sau pachaas rupaye, paanch December tak. Sahi hai?",
+        "request_ms": 61176,
+        "first_byte_ms": 61399,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 425000
+          },
+          {
+            "type": "date",
+            "value": "2026-12-05"
+          }
+        ]
+      },
+      "play_start_ms": 61444,
+      "play_end_ms": 65734,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "readback"
+      ]
+    },
+    {
+      "turn_id": 15,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 66284,
+      "vad_end_ms": 67534,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 66774,
+          "text": "haan, sahi"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 67752,
+        "text": "haan, sahi hai",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi"
+        ],
+        "confidence": 0.91
+      },
+      "eot_commit_ms": 67837,
+      "reference_text": "haan, sahi hai",
+      "ref_intent": "confirm_yes",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 16,
+      "speaker": "agent",
+      "turn_type": "tool",
+      "responds_to": 15,
+      "llm": {
+        "request_ms": 67847,
+        "first_token_ms": 68332,
+        "first_answer_token_ms": 68332,
+        "cached_tokens": 0
+      },
+      "tool_calls": [
+        {
+          "name": "record_promise_to_pay",
+          "args_redacted": {
+            "amount_paise": 425000,
+            "ptp_date": "2026-12-05",
+            "channel": "link",
+            "readback_confirmed": true
+          },
+          "start_ms": 68342,
+          "end_ms": 68721,
+          "result": {
+            "ptp_id": "PTP-851836"
+          }
+        },
+        {
+          "name": "send_payment_link",
+          "args_redacted": {
+            "amount_paise": 425000,
+            "channel": "sms"
+          },
+          "start_ms": 68731,
+          "end_ms": 68986,
+          "result": {
+            "link_id": "LNK-580749"
+          }
+        },
+        {
+          "name": "send_grievance_sms",
+          "args_redacted": {},
+          "start_ms": 83466,
+          "end_ms": 83594,
+          "result": {
+            "sms_id": "SMS-359221"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Dhanyavaad. Maine aapka payment note kar liya hai aur payment link SMS kar diya hai. Kisi shikayat ke liye hamare grievance officer Ms Neha Kulkarni se 020-4000-0000 par baat kar sakte hain; poori jaankari SMS mein bhej rahi hoon.",
+        "request_ms": 68996,
+        "first_byte_ms": 69124,
+        "entities": []
+      },
+      "play_start_ms": 69166,
+      "play_end_ms": 83456,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "inform_link",
+        "disclosure"
+      ]
+    },
+    {
+      "turn_id": 17,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 84155,
+      "vad_end_ms": 85405,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 84645,
+          "text": "theek hai,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 85558,
+        "text": "theek hai, thank you",
+        "lang_tags": [
+          "hi",
+          "hi",
+          "hi",
+          "en"
+        ],
+        "confidence": 0.89
+      },
+      "eot_commit_ms": 85733,
+      "reference_text": "theek hai, thank you",
+      "ref_intent": "closing",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 18,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 17,
+      "llm": {
+        "request_ms": 85743,
+        "first_token_ms": 86274,
+        "first_answer_token_ms": 86274,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "ptp"
+          },
+          "start_ms": 88610,
+          "end_ms": 88728,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "Dhanyavaad, aapka din shubh ho.",
+        "request_ms": 86284,
+        "first_byte_ms": 86542,
+        "entities": []
+      },
+      "play_start_ms": 86580,
+      "play_end_ms": 88600,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "goodbye"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9,
+      11,
+      14,
+      16,
+      18
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "amount-quote",
+      "amount-quote",
+      "objection",
+      "readback",
+      "tool",
+      "closing"
+    ],
+    "turn_gap_ms": [
+      1325,
+      1540,
+      1361,
+      868,
+      950,
+      1018,
+      1632,
+      1175
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        388,
+        339,
+        300,
+        304,
+        300,
+        380,
+        303,
+        328
+      ],
+      "llm_ttft": [
+        635,
+        580,
+        745,
+        281,
+        440,
+        350,
+        485,
+        531
+      ],
+      "tool": [
+        0,
+        426,
+        0,
+        0,
+        0,
+        0,
+        634,
+        0
+      ],
+      "tts_ttfb": [
+        244,
+        99,
+        249,
+        218,
+        140,
+        223,
+        128,
+        258
+      ],
+      "playout": [
+        38,
+        56,
+        47,
+        45,
+        50,
+        45,
+        42,
+        38
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-55120931",
+        "product_code": "TW",
+        "first_name": "Rahul",
+        "last_name": "Verma",
+        "dob": "1971-07-07",
+        "pincode": "411007",
+        "loan_last4": "7446",
+        "preferred_language": "Hinglish",
+        "dpd": 6,
+        "overdue_paise": 425000,
+        "emi_paise": 425000,
+        "next_due_date": "2026-12-08",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_loan": false,
+        "agent_particulars_sent_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-93408",
+        "account_id": "A-55120931",
+        "phone_e164": "+910000247660",
+        "role": "borrower",
+        "first_name": "Rahul",
+        "last_name": "Verma",
+        "dob": "1971-07-07",
+        "pincode": "411007",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-55120931",
+        "product_code": "TW",
+        "first_name": "Rahul",
+        "last_name": "Verma",
+        "dob": "1971-07-07",
+        "pincode": "411007",
+        "loan_last4": "7446",
+        "preferred_language": "Hinglish",
+        "dpd": 6,
+        "overdue_paise": 425000,
+        "emi_paise": 425000,
+        "next_due_date": "2026-12-08",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_loan": false,
+        "agent_particulars_sent_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-93408",
+        "account_id": "A-55120931",
+        "phone_e164": "+910000247660",
+        "role": "borrower",
+        "first_name": "Rahul",
+        "last_name": "Verma",
+        "dob": "1971-07-07",
+        "pincode": "411007",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [
+      {
+        "ptp_id": "PTP-851836",
+        "account_id": "A-55120931",
+        "attempt_id": "AT-70000005",
+        "amount_paise": 425000,
+        "ptp_date": "2026-12-05",
+        "channel": "link",
+        "readback_confirmed": true,
+        "created_at": "2026-11-15T13:16:17+05:30",
+        "kept": null,
+        "kept_checked_at": null
+      }
+    ],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [
+      {
+        "sms_id": "SMS-455316",
+        "account_id": "A-55120931",
+        "template": "payment_link",
+        "sent_at": "2026-11-15T13:16:17+05:30"
+      },
+      {
+        "sms_id": "SMS-359221",
+        "account_id": "A-55120931",
+        "template": "grievance",
+        "sent_at": "2026-11-15T13:16:32+05:30"
+      }
+    ],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000005",
+        "account_id": "A-55120931",
+        "phone_e164": "+910000247660",
+        "cli": "1600-XXX-XXXX",
+        "started_at_local": "2026-11-15T13:15:09+05:30",
+        "tz": "Asia/Kolkata",
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "ptp",
+        "recording_uri": "s3://recordings/TZ-2026-11-15-8000005.wav",
+        "retain_until": "2027-05-19"
+      }
+    ]
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "ptps": [
+        {
+          "amount_paise": 425000,
+          "ptp_date": "2026-12-05",
+          "readback_confirmed": true
+        }
+      ],
+      "sms_log": [
+        {
+          "template": "payment_link"
+        },
+        {
+          "template": "grievance"
+        }
+      ]
+    },
+    "account": {},
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "ptp"
+    }
+  },
+  "checks": [],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "tz-fail-v4",
+      "code": "TURN.CUTOFF",
+      "note": "turn closed at 300 ms of silence in a 720 ms pause before the date",
+      "turn_id": 11
+    }
+  ]
+}

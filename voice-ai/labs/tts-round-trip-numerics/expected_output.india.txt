@@ -1,0 +1,37 @@
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+dataset: tarazu-calls (synthetic, seed 20261120); call date 2026-11-20; fixture: constructed
+
+W7 surface forms 1-7 -> 15000000 paise: ok
+T06 line '05/12' (gold 2026-12-05) heard as: 'may twelfth' -> 2027-05-12
+
+200 prompts from CRM templates; exact match after the round trip
+entity      n    numeric input  written-out input  STT floor (human)
+amount     80   70/80    87.5%     80/80   100.0%     79/80    98.8%
+date       50   36/50    72.0%     50/50   100.0%     50/50   100.0%
+pincode    30   22/30    73.3%     30/30   100.0%     28/30    93.3%
+email      20    0/20     0.0%     20/20   100.0%     20/20   100.0%
+address    20   20/20   100.0%     20/20   100.0%     20/20   100.0%
+all       200  148/200   74.0%    200/200  100.0%    197/200   98.5%
+date rows, numeric input, day 1-12 :   2/16    12.5%  (day == month in 2)
+date rows, numeric input, day 13-31:  34/34   100.0%
+
+first failure per entity type, numeric input:
+  amount  TTS input: Poora loan band karne ke liye Rs 14,30,000 lagenge.
+          heard:     poora loan band karne ke liye rupees one four three zero zero zero lagenge
+          parsed 14300000, expected 143000000
+  date    TTS input: Aapki agli EMI 09/12 ko due hai.
+          heard:     aapki agli emi september twelfth ko due hai
+          parsed 2027-09-12, expected 2026-12-09
+  pincode TTS input: Dhanyavaad, pincode 110720 match ho gaya.
+          heard:     dhanyavaad pincode eleven seven twenty match ho gaya
+          parsed None, expected '110720'
+  email   TTS input: Hamara grievance email hai grievance@tarazu.example.
+          heard:     hamara grievance email hai grievance commercial at tarazu full stop example
+          parsed None, expected 'grievance@tarazu.example'
+
+acceptance gate: 400 amount lines, rule = exact match >= 99.5% and zero wrong amounts
+input          wrong  exact match  95% upper bound (one-sided)  gate
+written-out    0/400      100.00%                       0.0075  PASS
+numeric       65/400       83.75%                       0.1959  FAIL
+0 of 400: exact bound 0.00746 (0.746%); rule of three 3/400 = 0.0075
+all assertions passed

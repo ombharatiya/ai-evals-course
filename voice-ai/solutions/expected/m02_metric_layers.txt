@@ -1,0 +1,26 @@
+Funnel metrics with named denominators (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+Production sample: 4000 dial attempts on 2026-11-05
+stage                            count  rate
+-------------------------------  -----  ------------------------
+dials                            4000
+connects (answered by anything)  2033   50.8%
+human answers (true)             1798   88.4% of connects
+right-party contacts             1266   70.4% of human answers
+promises to pay                  468    37.0% of RPC
+verified PTP                     463    98.9% of PTP
+kept PTP                         281    60.0% of PTP (kept rate)
+
+The same promises over four denominators:
+  PTP per dial          0.1170
+  PTP per connect       0.2302
+  PTP per human answer  0.2603
+  PTP per RPC           0.3697
+  kept PTP per dial      0.0703
+
+AMD said human on 1782 connects; 30 were machines (false human), 46 humans were labelled machine (false machine).
+  trunk seconds spent on false humans at 21 s each: 630
+  PTP per AMD-human connect: 0.2626 vs PTP per true human answer: 0.2603
+  PTP per RPC does not move when only the AMD error rate changes; PTP per connect does.

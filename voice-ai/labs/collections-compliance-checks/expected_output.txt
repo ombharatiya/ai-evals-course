@@ -1,0 +1,89 @@
+Collections compliance checks. Steelyard Credit is a fictional lender; its numbers are illustrative.
+Steelyard's reading of the rules, not legal advice.
+Edition: global. Dataset: steelyard-calls (synthetic, seed 20261121); policy pack us-regf-2026-11
+22 traces: 5 from the incident log (WG16), 17 synthetic
+
+trace  flow amd       C01   C03   C04   C06   C07   C08   C14   C15   C16   VM
+T03    F05  human     pass  FAIL  FAIL  n/a   pass  n/a   n/a   pass  pass  n/a
+T09    F10  human     pass  n/a   n/a   n/a   FAIL  n/a   n/a   pass  pass  n/a
+S1     F06  human     n/a   pass  pass  n/a   pass  n/a   n/a   pass  pass  n/a
+S2-ok  F07  voicemail n/a   n/a   pass  n/a   pass  n/a   n/a   pass  pass  pass
+S2-bad F07  voicemail n/a   n/a   FAIL  n/a   pass  n/a   n/a   pass  pass  FAIL
+X01    F01  human     FAIL  pass  pass  n/a   pass  n/a   n/a   pass  pass  n/a
+X02    F01  human     FAIL  pass  pass  n/a   pass  n/a   n/a   pass  pass  n/a
+X03    F01  human     FAIL  pass  pass  n/a   pass  n/a   n/a   pass  pass  n/a
+X04    F09  human     pass  pass  pass  pass  pass  n/a   n/a   pass  pass  n/a
+X05    F06  human     pass  pass  pass  pass  pass  n/a   n/a   pass  pass  n/a
+X06    F07  voicemail pass  n/a   pass  n/a   pass  n/a   n/a   pass  pass  FAIL
+X07    F07  voicemail pass  n/a   pass  n/a   pass  n/a   n/a   pass  pass  FAIL
+X08    F01  human     pass  n/a   n/a   n/a   pass  n/a   n/a   pass  pass  n/a
+X09    F01  human     pass  pass  pass  pass  pass  n/a   n/a   pass  pass  n/a
+X10    F02  human     pass  pass  pass  pass  pass  pass  n/a   pass  pass  n/a
+X11    F02  human     pass  pass  pass  pass  pass  FAIL  n/a   pass  pass  n/a
+X12    F03  human     pass  pass  pass  pass  pass  pass  n/a   pass  pass  n/a
+X13    F10  human     pass  pass  pass  pass  pass  n/a   pass  pass  pass  n/a
+X14    F01  human     pass  pass  pass  n/a   pass  n/a   FAIL  pass  pass  n/a
+X15    F01  human     pass  pass  pass  n/a   pass  n/a   n/a   FAIL  pass  n/a
+X16    F01  human     pass  pass  pass  n/a   pass  n/a   n/a   FAIL  pass  n/a
+X17    F01  human     pass  pass  pass  n/a   pass  n/a   n/a   pass  FAIL  n/a
+
+Evidence (every FAIL, and every pass that used an exception):
+  T03    C03  FAIL  turn 1: agent name before business identity; no AI disclosure; no recording notice
+  T03    C04  FAIL  turn 1: product "auto loan", dues word "payment", dpd "four days past due"
+  T03    C04  FAIL  turn 3: amount "four hundred twenty-five dollars"
+  T09    C07  FAIL  turn 2: home visit "send someone out to your house"
+  S2-bad C04  FAIL  turn 1: product "auto loan", dues word "payment", dues word "past due", amount "four hundred twenty-five dollars"
+  S2-bad VM   FAIL  sentence 1: names the AI persona "hazel"
+  S2-bad VM   FAIL  sentence 2: debt detail: product "auto loan", dues word "payment", dues word "past due"
+  S2-bad VM   FAIL  sentence 3: debt detail: amount "four hundred twenty-five dollars"
+  S2-bad VM   FAIL  no request to call back
+  S2-bad VM   FAIL  no natural person to contact
+  S2-bad VM   FAIL  no reply number
+  X01    C01  FAIL  started 08:30:38 local, outside the SDL window 09:00-20:00; no borrower or guarantor request on file
+  X02    C01  FAIL  started 20:10:27 local, outside the SDL window 09:00-20:00; no borrower or guarantor request on file
+  X03    C01  FAIL  started 18:30:26 America/Los_Angeles, 21:30:26 America/New_York (stored as 02:30+0000), outside the AUTO window 08:00-21:00 at America/New_York; no borrower or guarantor request on file
+  X04    C01  pass  started 21:15:16 local, outside 08:00-21:00; exception: callback CB-77031 requested_by=borrower for 21:15 in call X04-prev: "Llameme a las nueve y cuarto, voy manejando" [Call me at a quarter past nine, I'm driving]
+  X06    VM   FAIL  sentence 2: names the AI persona "hazel"
+  X06    VM   FAIL  no natural person to contact
+  X07    VM   FAIL  sentence 3: other content "If you have a complaint, you can reach our Customer Advocate at five two zero, five five five, zero one nine nine."
+  X07    VM   FAIL  send_disclosure_sms sent with a voicemail
+  X11    C08  FAIL  already_paid claim at turn 7
+  X11    C08  FAIL  turn 8: PTP request after the claim
+  X11    C08  FAIL  record_promise_to_pay called after the claim
+  X11    C08  FAIL  check_payment_status not called
+  X14    C14  FAIL  stop request at turn 6: "deje de llamarme, por favor" [stop calling me, please]
+  X14    C14  FAIL  set_do_not_call(scope=bot) not called after the stop request
+  X14    C14  FAIL  turn 7: payment request after the stop request
+  X15    C15  FAIL  consent 2025-08-02, revoked 2026-11-09; AI-voice call on 2026-11-19
+  X16    C15  FAIL  no ai_voice_consent_at on file
+  X17    C16  FAIL  caller ID withheld
+
+Per check: fail / pass / n/a
+  C01   3 / 16 /  3
+  C03   1 / 15 /  6
+  C04   2 / 18 /  2
+  C06   0 /  7 / 15
+  C07   1 / 21 /  0
+  C08   1 /  2 / 19
+  C14   1 /  1 / 20
+  C15   2 / 20 /  0
+  C16   1 / 21 /  0
+  VM    3 /  1 / 18
+
+Dialer log (call_attempts and revocations):
+  A-55120931 AZ C11  pass  max 7 counted calls in 7 days (2026-11-02 to 2026-11-08); 11 dials, 3 busy or out of service, not counted
+  A-55188402 AZ C11  FAIL  call on 2026-11-19 is inside the 7 days after the conversation on 2026-11-16 (blocked through 2026-11-22)
+  A-55163307 MA C11  FAIL  call on 2026-11-13 is initiated call 3 in 7 days (Massachusetts cap 2)
+  A-55190415 TX C11  FAIL  AI-voice call on 2026-11-12 after the stop request on 2026-11-05
+  A-55190415    C14  pass  "stop calling me" (English) detected 2026-11-05, honored 2026-11-05: 0 business days
+  A-55141126    C14  pass  "deje de llamarme" [stop calling me] (Spanish) detected 2026-11-02, honored 2026-11-17: 10 business days (2026-11-11 not a business day); inside the limit, late against the same-day policy
+  A-55177604    C14  FAIL  "no me llamen mas" [don't call me anymore] (Spanish) detected 2026-11-03, honored 2026-11-19: 11 business days (2026-11-11 not a business day); over the 10-business-day limit
+
+Self-checks passed.
+
+Unit tests:
+....................................................
+----------------------------------------------------------------------
+Ran 52 tests
+
+OK

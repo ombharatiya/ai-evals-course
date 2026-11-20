@@ -1,0 +1,45 @@
+Error analysis on calls (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+Caller turns where the STT entity differs from the reference transcript: 13
+  TZ-2026-11-19-9000001 turn 6
+    REF: yes I can pay one thousand seven hundred fifty on the twentieth, rest next month
+    STT: yes I can pay two thousand on the twentieth, rest next month
+  TZ-2026-11-18-9000018 turn 6
+    REF: haan main saade teen hazaar de dunga tees tarikh ko, baaki next month
+    STT: hum but mary salary seven ko RT hai to after that I can pay teen hazaar
+  TZ-2026-11-18-9000018 turn 8
+    REF: tees tarikh, after salary
+    STT: tees tarikh
+
+Taxonomy tz-fail-v4: 49 of 200 calls have a first failure
+code          category  calls  share of failing
+------------  --------  -----  ----------------
+ENT.AMOUNT    ENT       4      8.2%
+TURN.CUTOFF   TURN      3      6.1%
+TURN.BARGEIN  TURN      7      14.3%
+LAT.TAIL      LAT       16     32.7%
+POL.DISCLOSE  POL       4      8.2%
+POL.COERCE    POL       3      6.1%
+POL.DISPUTE   POL       1      2.0%
+POL.HARDSHIP  POL       2      4.1%
+POL.WINDOW    POL       7      14.3%
+STT.LID       STT       2      4.1%
+
+Shared calls: 30; same first-failure code: 27; Cohen's kappa 0.788
+  disagreement: rv-03 NONE vs rv-11 TURN.TALKOVER
+  disagreement: rv-03 LAT.TAIL vs rv-11 NONE
+  disagreement: rv-03 NONE vs rv-11 TURN.TALKOVER
+
+Incident traces: does the STT text alone show the failure turn's problem?
+  T01 ENT.AMOUNT    STT differs from REF on an entity: yes
+  T02 TURN.BARGEIN  STT differs from REF on an entity: no
+  T03 POL.DISCLOSE  STT differs from REF on an entity: no
+  T04 LAT.TAIL      STT differs from REF on an entity: no
+  T05 TURN.CUTOFF   STT differs from REF on an entity: no
+  T06 ENT.DATE      STT differs from REF on an entity: no
+  T07 OUT.AMD       STT differs from REF on an entity: no
+  T08 STT.LID       STT differs from REF on an entity: yes
+  T09 POL.COERCE    STT differs from REF on an entity: no
+  T10 POL.HARDSHIP  STT differs from REF on an entity: no

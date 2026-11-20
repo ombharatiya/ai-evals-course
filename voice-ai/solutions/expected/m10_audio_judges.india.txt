@@ -1,0 +1,25 @@
+Judge validation per language group and dimension (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+dim        group           judge       TP/FN/FP/TN  agree  kappa  recall [Wilson 95%]   specificity [Wilson 95%]  precision  gate
+---------  --------------  ----------  -----------  -----  -----  --------------------  ------------------------  ---------  --------
+C07        Hinglish        transcript  15/3/6/96    0.925  0.725  0.833 [0.608, 0.942]  0.941 [0.878, 0.973]      0.714      advisory
+C07        Hinglish        blueprint   16/2/2/100   0.967  0.869  0.889 [0.672, 0.969]  0.980 [0.931, 0.995]      0.889      advisory
+C07        Hindi-dominant  transcript  12/2/4/102   0.950  0.772  0.857 [0.601, 0.960]  0.962 [0.907, 0.985]      0.750      advisory
+C07        Hindi-dominant  blueprint   11/3/7/99    0.917  0.640  0.786 [0.524, 0.924]  0.934 [0.870, 0.968]      0.611      advisory
+C07        Indian English  transcript  17/3/6/94    0.925  0.745  0.850 [0.640, 0.948]  0.940 [0.875, 0.972]      0.739      advisory
+C07        Indian English  blueprint   17/3/6/94    0.925  0.745  0.850 [0.640, 0.948]  0.940 [0.875, 0.972]      0.739      advisory
+TONE.PACE  Hinglish        transcript  13/5/7/95    0.900  0.625  0.722 [0.491, 0.875]  0.931 [0.865, 0.966]      0.650      advisory
+TONE.PACE  Hinglish        blueprint   16/2/5/97    0.942  0.786  0.889 [0.672, 0.969]  0.951 [0.890, 0.979]      0.762      advisory
+TONE.PACE  Hindi-dominant  transcript  17/6/7/90    0.892  0.656  0.739 [0.535, 0.875]  0.928 [0.858, 0.965]      0.708      advisory
+TONE.PACE  Hindi-dominant  blueprint   17/6/13/84   0.842  0.542  0.739 [0.535, 0.875]  0.866 [0.784, 0.920]      0.567      advisory
+TONE.PACE  Indian English  transcript  11/5/7/97    0.900  0.589  0.688 [0.444, 0.858]  0.933 [0.868, 0.967]      0.611      advisory
+TONE.PACE  Indian English  blueprint   13/3/10/94   0.892  0.604  0.812 [0.570, 0.934]  0.904 [0.832, 0.947]      0.565      advisory
+
+Gate: admit only when the Wilson lower bounds of recall and specificity both reach 0.90.
+Prevalence trap: an always-compliant judge at 3% prevalence agrees on 0.970 of calls, kappa 0.000.
+
+Human raters A vs B, Hinglish: kappa 0.628
+Human raters A vs B, Hindi-dominant: kappa 0.699
+Human raters A vs B, Indian English: kappa 0.699

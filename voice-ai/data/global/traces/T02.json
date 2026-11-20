@@ -1,0 +1,716 @@
+{
+  "call_id": "SY-2026-11-16-8000002",
+  "schema_version": "voice-trace/1.3",
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "campaign": "POS-short-nov",
+  "account_id": "A-53363710",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T02",
+    "title": "Ya lo pague",
+    "flow": "F02",
+    "persona": "P02",
+    "language_group": "Spanish-dominant"
+  },
+  "started_at_local": "2026-11-16T12:20:44-06:00",
+  "tz": "America/Chicago",
+  "location_signals": {
+    "area_code": "America/Chicago",
+    "address": "America/Chicago"
+  },
+  "dial": {
+    "attempts_7d_before": 2,
+    "connect_outcome": "answered",
+    "counts_toward_cap": true,
+    "conversation": true
+  },
+  "cli": "+1-520-555-01XX",
+  "attestation": "A",
+  "carrier": "carrier-b-mobile",
+  "codec_chain": [
+    "amr-wb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 900,
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.70",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 400,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/SY-2026-11-16-8000002/agent.wav",
+    "caller_channel_uri": "s3://recordings/SY-2026-11-16-8000002/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/SY-2026-11-16-8000002/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.96,
+    "decided_at_ms": 2448,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2458,
+          "end_ms": 2720,
+          "result": {
+            "account_id": "A-53363710",
+            "contact_id": "K-98845",
+            "first_name": "Sofia",
+            "product_code": "POS",
+            "preferred_language": "Spanish-dominant",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX8698",
+            "jurisdiction": "us"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hola, le llamamos de Steelyard Credit. Soy Hazel, una asistente de inteligencia artificial. Esta llamada se graba. Hablo con Sofia Ramirez?",
+        "request_ms": 2730,
+        "first_byte_ms": 2881,
+        "entities": [],
+        "gloss": "Hello, we are calling from Steelyard Credit. I'm Hazel, an artificial intelligence assistant. This call is recorded. Am I speaking with Sofia Ramirez?"
+      },
+      "play_start_ms": 2926,
+      "play_end_ms": 13576,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 17723,
+      "vad_end_ms": 18713,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 18213,
+          "text": "si, soy"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 18941,
+        "text": "si, soy yo",
+        "lang_tags": [
+          "es",
+          "es",
+          "es"
+        ],
+        "confidence": 0.95
+      },
+      "eot_commit_ms": 19189,
+      "reference_text": "si, soy yo",
+      "gloss": "yes, it's me",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 19199,
+        "first_token_ms": 19880,
+        "first_answer_token_ms": 19880,
+        "cached_tokens": 0
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Gracias. Para verificar su identidad, me puede decir su codigo postal?",
+        "request_ms": 19890,
+        "first_byte_ms": 20116,
+        "entities": [],
+        "gloss": "Thank you. To verify your identity, can you tell me your ZIP code?"
+      },
+      "play_start_ms": 20170,
+      "play_end_ms": 25820,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 26520,
+      "vad_end_ms": 29350,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 27010,
+          "text": "ocho cinco"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 29517,
+        "text": "ocho cinco siete uno nueve",
+        "lang_tags": [
+          "es",
+          "es",
+          "es",
+          "es",
+          "es"
+        ],
+        "confidence": 0.83
+      },
+      "eot_commit_ms": 29800,
+      "reference_text": "ocho cinco siete uno nueve",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "85719"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "85719"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 29810,
+        "first_token_ms": 30000,
+        "first_answer_token_ms": 30000,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "zip"
+          },
+          "start_ms": 30010,
+          "end_ms": 30200,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 30210,
+          "end_ms": 30380,
+          "result": {
+            "past_due_cents": 13000,
+            "payment_cents": 13000,
+            "next_due_date": "2026-12-09",
+            "dpd": 20,
+            "late_fee_cents": 2500,
+            "payoff_cents": 117000
+          }
+        }
+      ],
+      "tts": {
+        "text": "Sofia, el pago de su financiamiento, ciento treinta dolares, que vencia el cinco de noviembre...",
+        "request_ms": 30390,
+        "first_byte_ms": 30450,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 13000
+          }
+        ],
+        "gloss": "Sofia, your financing payment, one hundred thirty dollars, which was due on November fifth..."
+      },
+      "play_start_ms": 30500,
+      "play_end_ms": 33060,
+      "speaking_rate_sps": 4.4,
+      "barge_in": {
+        "t_ms": 33000,
+        "tts_stop_ms": 33060,
+        "stop_latency_ms": 900
+      },
+      "acts": [
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 32160,
+      "vad_end_ms": 34980,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 32650,
+          "text": "oiga, ya"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 35224,
+        "text": "oiga, ya lo pague, el tres, con mi tarjeta",
+        "lang_tags": [
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es"
+        ],
+        "confidence": 0.93
+      },
+      "eot_commit_ms": 35280,
+      "reference_text": "oiga, ya lo pague, el tres, con mi tarjeta",
+      "gloss": "listen, I already paid it, on the third, with my card",
+      "ref_intent": "already_paid",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "objection",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 34300,
+        "first_token_ms": 34900,
+        "first_answer_token_ms": 34900,
+        "cached_tokens": 1840,
+        "speculative": true
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Si, entiendo. Entonces, puede hacer el pago hoy?",
+        "request_ms": 35290,
+        "first_byte_ms": 35370,
+        "entities": [],
+        "gloss": "Yes, I understand. So, can you make the payment today?"
+      },
+      "play_start_ms": 35420,
+      "play_end_ms": 39030,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 39882,
+      "vad_end_ms": 43502,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 40372,
+          "text": "oiga, ya"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 43722,
+        "text": "oiga, ya lo pague, el tres, con mi tarjeta",
+        "lang_tags": [
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es",
+          "es"
+        ],
+        "confidence": 0.9
+      },
+      "eot_commit_ms": 43929,
+      "reference_text": "oiga, ya lo pague, el tres, con mi tarjeta",
+      "gloss": "listen, I already paid it, on the third, with my card",
+      "ref_intent": "already_paid",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 43939,
+        "first_token_ms": 44275,
+        "first_answer_token_ms": 44275,
+        "cached_tokens": 0
+      },
+      "tool_calls": [
+        {
+          "name": "send_disclosure_sms",
+          "args_redacted": {
+            "jurisdiction": "us"
+          },
+          "start_ms": 57667,
+          "end_ms": 57707,
+          "result": {
+            "sms_id": "SMS-630636"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Si tiene una queja, puede comunicarse con nuestra Customer Advocate, Dana Brooks, al cinco dos cero, cinco cinco cinco, cero uno nueve nueve. Le envio los datos por mensaje.",
+        "request_ms": 44285,
+        "first_byte_ms": 44447,
+        "entities": [],
+        "gloss": "If you have a complaint, you can reach our Customer Advocate, Dana Brooks, at five two zero, five five five, zero one nine nine. I'm texting you the details."
+      },
+      "play_start_ms": 44507,
+      "play_end_ms": 57657,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "disclosure"
+      ]
+    },
+    {
+      "turn_id": 10,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 58130,
+      "vad_end_ms": 59910,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 58620,
+          "text": "bueno, gracias,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 60069,
+        "text": "bueno, gracias, adios",
+        "lang_tags": [
+          "es",
+          "es",
+          "es"
+        ],
+        "confidence": 0.84
+      },
+      "eot_commit_ms": 60362,
+      "reference_text": "bueno, gracias, adios",
+      "gloss": "okay, thanks, goodbye",
+      "ref_intent": "closing",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 11,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 10,
+      "llm": {
+        "request_ms": 60372,
+        "first_token_ms": 60858,
+        "first_answer_token_ms": 60858,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "refused"
+          },
+          "start_ms": 67487,
+          "end_ms": 67557,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "Puede llamarnos al cinco dos cero, cinco cinco cinco, cero uno cero cero. Adios.",
+        "request_ms": 60868,
+        "first_byte_ms": 61092,
+        "entities": [],
+        "gloss": "You can call us at five two zero, five five five, zero one zero zero. Goodbye."
+      },
+      "play_start_ms": 61137,
+      "play_end_ms": 67477,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "callback_number",
+        "goodbye"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "objection",
+      "closing",
+      "closing"
+    ],
+    "turn_gap_ms": [
+      1457,
+      1150,
+      440,
+      1005,
+      1227
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        476,
+        450,
+        300,
+        427,
+        452
+      ],
+      "llm_ttft": [
+        681,
+        190,
+        600,
+        336,
+        486
+      ],
+      "tool": [
+        0,
+        360,
+        0,
+        0,
+        0
+      ],
+      "tts_ttfb": [
+        226,
+        60,
+        80,
+        162,
+        224
+      ],
+      "playout": [
+        54,
+        50,
+        50,
+        60,
+        45
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-53363710",
+        "product_code": "POS",
+        "first_name": "Sofia",
+        "last_name": "Ramirez",
+        "dob": "1989-05-11",
+        "zip": "85719",
+        "state": "TX",
+        "jurisdiction": "us",
+        "loan_last4": "8698",
+        "preferred_language": "Spanish-dominant",
+        "dpd": 20,
+        "past_due_cents": 13000,
+        "payment_cents": 13000,
+        "next_due_date": "2026-12-09",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-98845",
+        "account_id": "A-53363710",
+        "phone_e164": "+15555541247",
+        "role": "borrower",
+        "first_name": "Sofia",
+        "last_name": "Ramirez",
+        "dob": "1989-05-11",
+        "zip": "85719",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [],
+    "revocations": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-53363710",
+        "product_code": "POS",
+        "first_name": "Sofia",
+        "last_name": "Ramirez",
+        "dob": "1989-05-11",
+        "zip": "85719",
+        "state": "TX",
+        "jurisdiction": "us",
+        "loan_last4": "8698",
+        "preferred_language": "Spanish-dominant",
+        "dpd": 20,
+        "past_due_cents": 13000,
+        "payment_cents": 13000,
+        "next_due_date": "2026-12-09",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-98845",
+        "account_id": "A-53363710",
+        "phone_e164": "+15555541247",
+        "role": "borrower",
+        "first_name": "Sofia",
+        "last_name": "Ramirez",
+        "dob": "1989-05-11",
+        "zip": "85719",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [
+      {
+        "sms_id": "SMS-630636",
+        "account_id": "A-53363710",
+        "template": "disclosure",
+        "sent_at": "2026-11-16T12:21:41-06:00"
+      }
+    ],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000002",
+        "account_id": "A-53363710",
+        "phone_e164": "+15555541247",
+        "cli": "+1-520-555-01XX",
+        "started_at_local": "2026-11-16T12:20:44-06:00",
+        "tz": "America/Chicago",
+        "location_signals": {
+          "area_code": "America/Chicago",
+          "address": "America/Chicago"
+        },
+        "connect_outcome": "answered",
+        "counts_toward_cap": true,
+        "conversation": true,
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "refused",
+        "recording_uri": "s3://recordings/SY-2026-11-16-8000002.wav",
+        "retain_until": "2029-11-05"
+      }
+    ],
+    "revocations": []
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "grievances": [
+        {
+          "category": "already_paid"
+        }
+      ],
+      "sms_log": [
+        {
+          "template": "disclosure"
+        }
+      ]
+    },
+    "account": {
+      "recovery_hold": true
+    },
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "dispute"
+    }
+  },
+  "checks": [
+    {
+      "id": "C08",
+      "result": "fail",
+      "evidence_turns": [
+        6,
+        7
+      ]
+    }
+  ],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "gl-fail-v4",
+      "code": "TURN.BARGEIN",
+      "note": "900 ms talk-over; plan not revised after the already-paid claim",
+      "turn_id": 5
+    }
+  ]
+}

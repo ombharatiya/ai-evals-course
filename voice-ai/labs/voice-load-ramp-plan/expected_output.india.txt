@@ -1,0 +1,49 @@
+Tarazu Finance Ltd (fictional NBFC): load-test plan, tarazu-calls (synthetic, seed 20261120)
+Tarazu Finance is a fictional lender; its numbers are illustrative. The stack model is synthetic.
+
+Part 1. The plan, from Tarazu's volumes and prices
+  mean concurrency over 08:00-19:00: 583 calls; peak today 2,400 (4.1x the mean)
+  agent LLM cost per connected call at W20 prices (60% cached): Rs 0.315
+  ramp steps of 240 calls: 240 .. 3,600 (1.5x of 2,400); hold 10 min at 2,400; spike to 7,200 (3x)
+  19 phases, 98 minutes, about 85,440 call attempts
+
+Part 2. Ramp, hold and spike (P95 tool-turn gap SLO 2,600 ms; interval = call-clustered bootstrap)
+  phase         target   conc  P95 tool gap [95% CI]    CRM P95  TTFT P95  reject  amount-safe  Rs/task  verdict
+  ramp 0.1x       240    234   2,088 [ 2,050,  2,124]     424       890    0.0%       100.0%    0.315  pass
+  ramp 0.2x       480    490   2,093 [ 2,066,  2,127]     431       908    0.0%       100.0%    0.316  pass
+  ramp 0.3x       720    698   2,119 [ 2,097,  2,153]     440       918    0.0%       100.0%    0.315  pass
+  ramp 0.4x       960    973   2,151 [ 2,126,  2,181]     471       917    0.0%        99.9%    0.315  pass
+  ramp 0.5x     1,200  1,191   2,228 [ 2,213,  2,252]     507       953    0.0%       100.0%    0.315  pass
+  ramp 0.6x     1,440  1,408   2,345 [ 2,323,  2,361]     571       969    0.0%        99.9%    0.316  pass
+  ramp 0.7x     1,680  1,718   2,549 [ 2,523,  2,568]     718       988    0.0%        98.9%    0.323  pass
+  ramp 0.8x     1,920  1,978   2,787 [ 2,753,  2,815]     862     1,033    0.0%        97.3%    0.334  BREACH
+  ramp 0.9x     2,160  2,100   2,921 [ 2,888,  2,950]     935     1,057    0.0%        95.1%    0.352  BREACH
+  ramp 1.0x     2,400  2,426   3,383 [ 3,353,  3,417]   1,244     1,115    0.0%        85.7%    0.453  BREACH
+  hold 1.0x     2,400  2,474   3,451 [ 3,437,  3,470]   1,281     1,128    0.0%        83.2%    0.487  BREACH
+  ramp 1.1x     2,640  2,685   3,850 [ 3,807,  3,888]   1,525     1,179    0.0%        73.6%    0.657  BREACH
+  ramp 1.2x     2,880  2,993   4,525 [ 4,490,  4,575]   1,967     1,261    0.0%        54.6%    1.368  BREACH
+  ramp 1.3x     3,120  3,261   5,221 [ 5,172,  5,260]   2,392     1,349    0.0%        46.3%    2.366  BREACH
+  ramp 1.4x     3,360  3,442   5,775 [ 5,729,  5,843]   2,731     1,413    0.0%        41.4%    3.576  BREACH
+  ramp 1.5x     3,600  3,891   7,446 [ 7,368,  7,523]   3,700     1,714    0.0%        38.1%    7.202  BREACH
+  spike 3.0x    7,200  4,126  10,386 [10,295, 10,466]   5,179     2,416   39.5%        25.5%    8.316  BREACH
+
+  knee: P95 tool-turn gap is flat to about 1,200 calls (2,088 -> 2,228 ms), then leaves the SLO between 1,680 (pass, 2,549) and 1,920 (BREACH, 2,787)
+  CRM P95 vs the 240 step:  x1.35 at 1,440, x1.69 at 1,680, x2.03 at 1,920, x2.93 at 2,400
+  TTFT P95 vs the 240 step: x1.09 at 1,440, x1.11 at 1,680, x1.16 at 1,920, x1.25 at 2,400
+  why amounts go unsafe at hold 1.0x: duplicate reply on the amount turns 16.8% of calls, LLM acted on an STT partial  0.0%
+  why amounts go unsafe at ramp 1.2x: duplicate reply on the amount turns 45.3% of calls, LLM acted on an STT partial  0.0%
+  why amounts go unsafe at ramp 1.5x: duplicate reply on the amount turns 60.5% of calls, LLM acted on an STT partial  3.1%
+  a 50-call test for 10 minutes: P95 tool gap 2,063 ms [2,011, 2,188] on 396 tool turns: pass
+
+Part 3. Stop conditions and the load gate
+  a real run stops at 'ramp 1.3x' (3,120 calls): P95 tool gap 5,221 > 5,200
+  gate at hold 1.0x (2,400): FAIL  failed: P95 tool gap <= 2,600 (upper CI), amount-safe >= 99%
+  gate at ramp 1.5x (3,600): FAIL  failed: P95 tool gap <= 2,600 (upper CI), amount-safe >= 99%
+  spike to 7,200 for 180 s: 3,389 of 8,583 connections rejected (39.5%, Wilson 38.5-40.5%); admitted calls capped at the 4,500 STT streams
+
+Part 4. A cold burst to 2,400 vs the sustained phase at 2,400
+  cold burst  : 2,450 calls, P95 tool gap 4,255 ms [4,155, 4,352], TTFT P95 2,472, 3.6% of LLM requests retried after a 429, amount-safe 86.2%
+  sustained   : P95 tool gap 3,451 ms [3,437, 3,470], TTFT P95 1,128, amount-safe 83.2%
+  the burst reports +805 ms on P95: cold caches and synchronised first turns, not the steady state a peak hour runs in
+
+All assertions passed.

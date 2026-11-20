@@ -1,0 +1,75 @@
+Steelyard Credit, Inc. (fictional; numbers are illustrative)
+dataset steelyard-calls (synthetic, seed 20261121); scorer policy nfc+fold (steelyard-scorer-v1)
+
+== 1. Canonicalization ==
+  fifteen hundred            en-US  -> 150000 cents
+  one thousand five hundred  en-US  -> 150000 cents
+  1,500                      en-US  -> 150000 cents
+  1500                       en-US  -> 150000 cents
+  $1,500.00                  en-US  -> 150000 cents
+  mil quinientos             es-US  -> 150000 cents
+  mil quinientos dolares     es-US  -> 150000 cents
+  1.500                      es-ES  -> 150000 cents
+  1.500                      es-MX  -> 150 cents  (period decimal: one dollar fifty)
+  9 more amount forms match; two fifteen -> 21500
+  the twentieth              en-US  -> 2026-11-20  (call date 2026-11-14)
+  November twentieth         en-US  -> 2026-11-20  (call date 2026-11-14)
+  el veinte de noviembre     es-US  -> 2026-11-20  (call date 2026-11-14)
+  next Friday                en-US  -> 2026-11-20  (call date 2026-11-14)
+  el viernes                 es-US  -> 2026-11-20  (call date 2026-11-14)
+  the fifth                  en-US  -> 2026-12-05  (call date 2026-11-14)
+  12/03                      en-US  -> 2026-12-03  (call date 2026-11-14)
+  12/03                      es-US  -> 2027-03-12  (call date 2026-11-14)
+
+== 2. T01: one substituted word ==
+  WER 1/12 = 0.083  (S=1 D=0 I=0)
+  amount entity errors 1/1: gold 25000 cents, STT 21500 cents
+  raw policy (no punctuation strip): WER 0.167
+
+== 3. Bake-off on the 1,200-utterance set (180 speakers) ==
+  extract(reference) == generator gold on all 1,600 utterances
+  entity error rate = gold entities not recovered exactly / gold entities
+  sys     WER    CER  amount, 95% CI          date, 95% CI            flips
+  A     15.6%   8.7%  1.0% [0.4%, 1.9%]       0.6% [0.0%, 1.5%]           5
+  B     10.8%   4.3%  6.1% [4.1%, 8.2%]       4.3% [2.4%, 6.6%]           6
+  A: amounts 765 gold, 8 missed, 6 hallucinated; 8 utterances with a wrong amount, 0 of them at WER under 10%, 1 under 20%
+  B: amounts 765 gold, 47 missed, 38 hallucinated; 47 utterances with a wrong amount, 1 of them at WER under 10%, 9 under 20%
+  by language group:
+    group              utts   WER A   WER B  amount A  amount B
+    English             760   14.7%    8.5%      0.4%      2.4%
+    Spanish-dominant    229   14.9%    9.9%      0.8%      6.9%
+    Spanglish           211   18.5%   18.0%      2.9%     15.7%
+  Spanglish, errors on the Spanish words only (PIER-style) and on the English words:
+    A: Spanish words 120/658 = 18.2%; English words 177/1073 = 16.5%
+    B: Spanish words 143/658 = 21.7%; English words 99/1073 = 9.2%
+  system B, amount entity error rate by surface form:
+    shorthand   8/113  = 7.1%
+    en-words    5/194  = 2.6%
+    es-words   24/114  = 21.1%
+    digits     10/344  = 2.9%
+
+== 4. 95% interval width, system B amount entity error rate ==
+  400 utterances / 60 speakers  5.4%  speaker-clustered [2.0%, 9.1%] width 7.1 pts; utterance-level width 5.8 pts
+  1,200 / 180                   6.1%  speaker-clustered [4.1%, 8.2%] width 4.0 pts; utterance-level width 3.5 pts
+
+== 5. Same hypotheses, five scoring policies (1,200 set) ==
+  policy                   WER A   WER B  amount B
+  raw                      31.7%   27.0%      6.1%
+  whisper-basic            16.8%   11.2%      6.1%
+  nfc                      17.0%   11.4%      6.1%
+  nfc+fold                 15.6%   10.8%      6.1%
+  nfc+fold+num             13.1%   11.5%      6.1%
+
+  T08 first turn (call date 2026-11-16)
+  STT as logged    raw 50.0%  whisper-basic 29.4%  nfc 29.4%  nfc+fold 29.4%  nfc+fold+num 31.2%
+  formatted style  raw 25.0%  whisper-basic 17.6%  nfc 17.6%  nfc+fold 11.8%  nfc+fold+num 0.0%
+  STT as logged, date: 1/2 recovered
+  STT as logged, confirm: 0/1 recovered
+  STT as logged, Spanish words 3/4 wrong, English words 0/13 wrong
+
+  Locale fixture: Spanish references with accents, hypotheses in other styles
+  raw 64.3%  whisper-basic 64.3%  nfc 64.3%  nfc+fold 35.7%  nfc+fold+num 10.0%
+  'quince dólares' vs '15 dolares': whisper-basic 100.0%, nfc+fold+num 0.0%
+  amount entity errors 1/3 under every policy (entities are canonicalized first)
+
+All assertions passed.

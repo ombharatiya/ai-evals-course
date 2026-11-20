@@ -1,0 +1,39 @@
+pass^k from 8 simulated trials per scenario (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+scenario  flow  language group  passes  pass^1  pass^2  pass^4  pass^8
+--------  ----  --------------  ------  ------  ------  ------  ------
+S01       F01   Indian English  7/8     0.875   0.750   0.500   0.000
+S02       F01   Hindi-dominant  8/8     1.000   1.000   1.000   1.000
+S03       F01   Hinglish        5/8     0.625   0.357   0.071   0.000
+S04       F01   Hindi-dominant  6/8     0.750   0.536   0.214   0.000
+S05       F09   Indian English  7/8     0.875   0.750   0.500   0.000
+S06       F09   Hinglish        3/8     0.375   0.107   0.000   0.000
+S07       F02   Hindi-dominant  8/8     1.000   1.000   1.000   1.000
+S08       F02   Indian English  5/8     0.625   0.357   0.071   0.000
+S09       F03   Indian English  8/8     1.000   1.000   1.000   1.000
+S10       F03   Hinglish        7/8     0.875   0.750   0.500   0.000
+S11       F04   Hinglish        8/8     1.000   1.000   1.000   1.000
+S12       F04   Indian English  7/8     0.875   0.750   0.500   0.000
+S13       F10   Indian English  8/8     1.000   1.000   1.000   1.000
+S14       F10   Hinglish        7/8     0.875   0.750   0.500   0.000
+S15       F05   Indian English  6/8     0.750   0.536   0.214   0.000
+S16       F05   Hinglish        8/8     1.000   1.000   1.000   1.000
+S17       F06   Indian English  7/8     0.875   0.750   0.500   0.000
+S18       F06   Hindi-dominant  8/8     1.000   1.000   1.000   1.000
+S19       F07   Hinglish        7/8     0.875   0.750   0.500   0.000
+S20       F08   Hindi-dominant  8/8     1.000   1.000   1.000   1.000
+S21       F01   Hinglish        7/8     0.875   0.750   0.500   0.000
+S22       F02   Hinglish        4/8     0.500   0.214   0.014   0.000
+S23       F04   Hindi-dominant  5/8     0.625   0.357   0.071   0.000
+S24       F10   Hindi-dominant  5/8     0.625   0.357   0.071   0.000
+S25       F03   Hindi-dominant  8/8     1.000   1.000   1.000   1.000
+
+suite pass^1: unbiased 0.835   plug-in (c/n)^k 0.835
+suite pass^2: unbiased 0.713   plug-in (c/n)^k 0.728
+suite pass^4: unbiased 0.549   plug-in (c/n)^k 0.601
+suite pass^8: unbiased 0.360   plug-in (c/n)^k 0.482
+
+Worked check: c=6, n=8, k=4 gives 0.2143 unbiased and 0.3164 plug-in.
+pass^8 at 80% per trial: 0.8^8 = 0.1678; at 90%: 0.4305

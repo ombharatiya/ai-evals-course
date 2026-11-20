@@ -1,0 +1,681 @@
+{
+  "call_id": "SY-2026-11-16-8000008",
+  "schema_version": "voice-trace/1.3",
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "campaign": "PIL-digital-nov",
+  "account_id": "A-43100376",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T08",
+    "title": "Si, pero my paycheck comes el viernes",
+    "flow": "F01",
+    "persona": "P12",
+    "language_group": "Spanglish"
+  },
+  "started_at_local": "2026-11-16T15:40:18-08:00",
+  "tz": "America/Los_Angeles",
+  "location_signals": {
+    "area_code": "America/Los_Angeles",
+    "address": "America/Los_Angeles"
+  },
+  "dial": {
+    "attempts_7d_before": 2,
+    "connect_outcome": "answered",
+    "counts_toward_cap": true,
+    "conversation": true
+  },
+  "cli": "+1-520-555-01XX",
+  "attestation": "A",
+  "carrier": "carrier-b-mobile",
+  "codec_chain": [
+    "amr-wb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 1000,
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.70",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 400,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/SY-2026-11-16-8000008/agent.wav",
+    "caller_channel_uri": "s3://recordings/SY-2026-11-16-8000008/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/SY-2026-11-16-8000008/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.89,
+    "decided_at_ms": 2392,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2402,
+          "end_ms": 2591,
+          "result": {
+            "account_id": "A-43100376",
+            "contact_id": "K-49001",
+            "first_name": "Valeria",
+            "product_code": "PIL",
+            "preferred_language": "Spanglish",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX8550",
+            "jurisdiction": "us"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Valeria Cruz?",
+        "request_ms": 2601,
+        "first_byte_ms": 2716,
+        "entities": []
+      },
+      "play_start_ms": 2751,
+      "play_end_ms": 9771,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 13235,
+      "vad_end_ms": 14225,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 13725,
+          "text": "yeah, soy"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 14407,
+        "text": "yeah, soy yo",
+        "lang_tags": [
+          "en",
+          "es",
+          "es"
+        ],
+        "confidence": 0.91
+      },
+      "eot_commit_ms": 14624,
+      "reference_text": "yeah, soy yo",
+      "gloss": "yeah, it's me",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 14634,
+        "first_token_ms": 14960,
+        "first_answer_token_ms": 14960,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Thank you. To verify your identity, can you tell me your ZIP code?",
+        "request_ms": 14970,
+        "first_byte_ms": 15202,
+        "entities": []
+      },
+      "play_start_ms": 15238,
+      "play_end_ms": 19758,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 22816,
+      "vad_end_ms": 25386,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 23306,
+          "text": "eight five"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 25635,
+        "text": "eight five seven one one",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.82
+      },
+      "eot_commit_ms": 25840,
+      "reference_text": "eight five seven one one",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "85711"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "85711"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 25850,
+        "first_token_ms": 26380,
+        "first_answer_token_ms": 26380,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "zip"
+          },
+          "start_ms": 26390,
+          "end_ms": 26784,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 26794,
+          "end_ms": 27029,
+          "result": {
+            "past_due_cents": 42500,
+            "payment_cents": 42500,
+            "next_due_date": "2026-12-11",
+            "dpd": 13,
+            "late_fee_cents": 2500,
+            "payoff_cents": 382500
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thanks, Valeria. This is an attempt to collect a debt, and any information obtained will be used for that purpose. Your past-due amount is four hundred twenty-five dollars. When do you think you can pay it?",
+        "request_ms": 27039,
+        "first_byte_ms": 27257,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 42500
+          }
+        ]
+      },
+      "play_start_ms": 27297,
+      "play_end_ms": 40227,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "debt_notice",
+        "inform_dues",
+        "ask_payment"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 43754,
+      "vad_end_ms": 50274,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 44244,
+          "text": "see pedro"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 50503,
+        "text": "see pedro my paycheck comes el bee air ness so after that I can pay like the twenty third",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.51
+      },
+      "eot_commit_ms": 50760,
+      "reference_text": "si, pero my paycheck comes el viernes, so after that I can pay, like the twenty-third",
+      "gloss": "yes, but my paycheck comes on Friday, so after that I can pay, like the twenty-third",
+      "ref_intent": "promise",
+      "ref_entities": [
+        {
+          "type": "date",
+          "value": "2026-11-23"
+        }
+      ],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "objection",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 50770,
+        "first_token_ms": 51282,
+        "first_answer_token_ms": 51282,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Sorry, could you tell me the date you can pay?",
+        "request_ms": 51292,
+        "first_byte_ms": 51427,
+        "entities": []
+      },
+      "play_start_ms": 51466,
+      "play_end_ms": 54396,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "clarify"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 57505,
+      "vad_end_ms": 60865,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 57995,
+          "text": "el bent"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 61044,
+        "text": "el bent he tres the twenty third after payday",
+        "lang_tags": [
+          "es",
+          "en",
+          "en",
+          "es",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.55
+      },
+      "eot_commit_ms": 61280,
+      "reference_text": "el veintitres, the twenty-third, after payday",
+      "gloss": "the twenty-third, the twenty-third, after payday",
+      "ref_intent": "promise",
+      "ref_entities": [
+        {
+          "type": "date",
+          "value": "2026-11-23"
+        }
+      ],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "objection",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 61290,
+        "first_token_ms": 62034,
+        "first_answer_token_ms": 62034,
+        "cached_tokens": 2210
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Just to confirm, is it the third or the twenty-third?",
+        "request_ms": 62044,
+        "first_byte_ms": 62220,
+        "entities": []
+      },
+      "play_start_ms": 62261,
+      "play_end_ms": 65411,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "clarify"
+      ]
+    },
+    {
+      "turn_id": 10,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 68457,
+      "vad_end_ms": 70497,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 68947,
+          "text": "ay, no."
+        }
+      ],
+      "stt_final": {
+        "t_ms": 70711,
+        "text": "ay, no. Twenty-three. Two, three.",
+        "lang_tags": [
+          "en",
+          "es",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.87
+      },
+      "eot_commit_ms": 70929,
+      "reference_text": "ay, no. Twenty-three. Two, three.",
+      "gloss": "oh, no. Twenty-three. Two, three.",
+      "ref_intent": "hangup",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 11,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "caller_hangup"
+          },
+          "start_ms": 71000,
+          "end_ms": 71010,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": null,
+      "play_start_ms": null,
+      "play_end_ms": null,
+      "barge_in": null,
+      "acts": []
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "objection",
+      "objection"
+    ],
+    "turn_gap_ms": [
+      1013,
+      1911,
+      1192,
+      1396
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        399,
+        454,
+        486,
+        415
+      ],
+      "llm_ttft": [
+        326,
+        530,
+        512,
+        744
+      ],
+      "tool": [
+        0,
+        629,
+        0,
+        0
+      ],
+      "tts_ttfb": [
+        232,
+        218,
+        135,
+        176
+      ],
+      "playout": [
+        36,
+        40,
+        39,
+        41
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-43100376",
+        "product_code": "PIL",
+        "first_name": "Valeria",
+        "last_name": "Cruz",
+        "dob": "1976-09-02",
+        "zip": "85711",
+        "state": "CA",
+        "jurisdiction": "us",
+        "loan_last4": "8550",
+        "preferred_language": "Spanglish",
+        "dpd": 13,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-12-11",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": true,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-49001",
+        "account_id": "A-43100376",
+        "phone_e164": "+15557486769",
+        "role": "borrower",
+        "first_name": "Valeria",
+        "last_name": "Cruz",
+        "dob": "1976-09-02",
+        "zip": "85711",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [],
+    "revocations": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-43100376",
+        "product_code": "PIL",
+        "first_name": "Valeria",
+        "last_name": "Cruz",
+        "dob": "1976-09-02",
+        "zip": "85711",
+        "state": "CA",
+        "jurisdiction": "us",
+        "loan_last4": "8550",
+        "preferred_language": "Spanglish",
+        "dpd": 13,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-12-11",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": true,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-49001",
+        "account_id": "A-43100376",
+        "phone_e164": "+15557486769",
+        "role": "borrower",
+        "first_name": "Valeria",
+        "last_name": "Cruz",
+        "dob": "1976-09-02",
+        "zip": "85711",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000008",
+        "account_id": "A-43100376",
+        "phone_e164": "+15557486769",
+        "cli": "+1-520-555-01XX",
+        "started_at_local": "2026-11-16T15:40:18-08:00",
+        "tz": "America/Los_Angeles",
+        "location_signals": {
+          "area_code": "America/Los_Angeles",
+          "address": "America/Los_Angeles"
+        },
+        "connect_outcome": "answered",
+        "counts_toward_cap": true,
+        "conversation": true,
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "caller_hangup",
+        "recording_uri": "s3://recordings/SY-2026-11-16-8000008.wav",
+        "retain_until": "2029-11-05"
+      }
+    ],
+    "revocations": []
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "ptps": [
+        {
+          "amount_cents": 42500,
+          "ptp_date": "2026-11-23",
+          "readback_confirmed": true
+        }
+      ],
+      "sms_log": [
+        {
+          "template": "payment_link"
+        },
+        {
+          "template": "disclosure"
+        }
+      ]
+    },
+    "account": {},
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "ptp"
+    }
+  },
+  "checks": [],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "gl-fail-v4",
+      "code": "STT.LID",
+      "note": "STT language identification locked mid-utterance; three clarifications; hang-up at 71 s",
+      "turn_id": 6
+    }
+  ]
+}

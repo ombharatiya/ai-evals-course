@@ -1,0 +1,82 @@
+{
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "seed": 20261121,
+  "world_version": "world-global-v1.1",
+  "generator_version": "1.0.0",
+  "note": "Steelyard Credit is a fictional lender; its numbers are illustrative. All data is synthetic.",
+  "files": {
+    "calls.jsonl": {
+      "sha256": "13e8aedec235bc37c2b0f7bd2e08a050ffd2bedf2cce27d2a21a43755d2c4dff",
+      "records": 200
+    },
+    "entity_pairs.jsonl": {
+      "sha256": "73b26ba74791e1e0a00764d06681a2aa5a054b8ba9f68727062019a815192c95",
+      "records": 600
+    },
+    "judge_labels.jsonl": {
+      "sha256": "e336969760a6d9d1ab6dd3405eb34f2ddfa041fc0bc9faf3cff7cfdab75f29e8",
+      "records": 720
+    },
+    "pauses.jsonl": {
+      "sha256": "969d00e70aff5d01970ece5213fc6b4ab37751d5d7850f08299d10882db4ec83",
+      "records": 1201
+    },
+    "production_sample.jsonl": {
+      "sha256": "b6fb75b4eeb0630e3754f2a3b4d9db3cdb9bea61a34dc572e2f12cccd0bc024d",
+      "records": 4000
+    },
+    "traces/S1.json": {
+      "sha256": "8f6470215bd0ba960e2d93c2210673a5ad12ee5cd05443368133364312c0e433",
+      "records": 1
+    },
+    "traces/S2a.json": {
+      "sha256": "9f1902ea949183bd3b1db3c5cf106a497c97379f862489d6a02ae91ca1c050e3",
+      "records": 1
+    },
+    "traces/S2b.json": {
+      "sha256": "2c601b61f85a15684042f95ea5d92f5f2562ffb444e6d358d539fe1d4dcc3c1a",
+      "records": 1
+    },
+    "traces/T01.json": {
+      "sha256": "e060e739764e1de060458828ad73d8c1795b06e6780faf65521a785e3b07ea20",
+      "records": 1
+    },
+    "traces/T02.json": {
+      "sha256": "5c56159e2e7ac2006888140fbce97ca893f2c0e16210f7fc0136207550a6234e",
+      "records": 1
+    },
+    "traces/T03.json": {
+      "sha256": "a687d15b7414985e7312c2ecec6ac67d7ec2ac58265bd7f79b5d2bca9984bcef",
+      "records": 1
+    },
+    "traces/T04.json": {
+      "sha256": "1e8d44f5ad55c2149031231e83952a2f9fab71a2d00c700fbdcc0687ec91d968",
+      "records": 1
+    },
+    "traces/T05.json": {
+      "sha256": "e9427ca1b9cb92e905f6939839a0d35188f2e6ae340d9de5c5ccadda132a82b2",
+      "records": 1
+    },
+    "traces/T06.json": {
+      "sha256": "2c40028e658428a96fa9de80e8063a511f3204c921f7c5ec86a7cb3daf4ad64b",
+      "records": 1
+    },
+    "traces/T07.json": {
+      "sha256": "26a096559666604f5e29420abbf9e7e7b8e38818fea9beb489567c6b26d4347f",
+      "records": 1
+    },
+    "traces/T08.json": {
+      "sha256": "bb72112f57e41dfafb1678fc91d2ceca5e125746474de30ac776202bf831237c",
+      "records": 1
+    },
+    "traces/T09.json": {
+      "sha256": "f0d50bab8a0994ed3ba174e9e019d19335aba1dbaf5b0445a14424dbb93614de",
+      "records": 1
+    },
+    "traces/T10.json": {
+      "sha256": "eeecd1552c16bf59ff139de21b387cdb2b9d036201cae6c2457b3114cd41d054",
+      "records": 1
+    }
+  }
+}

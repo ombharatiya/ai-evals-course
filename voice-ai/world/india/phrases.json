@@ -1,0 +1,746 @@
+{
+  "edition": "india",
+  "note": "Utterance templates for data/generate.py (India edition). Hindi and Hinglish in Roman script. Tarazu Finance is a fictional lender.",
+  "agent_language_for_group": {
+    "Hinglish": "hinglish",
+    "Hindi-dominant": "hinglish",
+    "Indian English": "en"
+  },
+  "lang_tags": {
+    "default": "hi",
+    "other": "en",
+    "other_words": [
+      "already",
+      "pay",
+      "next",
+      "month",
+      "after",
+      "salary",
+      "i",
+      "can",
+      "call",
+      "me",
+      "driving",
+      "okay",
+      "fine",
+      "the",
+      "on",
+      "twentieth",
+      "yes",
+      "is",
+      "it",
+      "that",
+      "late",
+      "fee",
+      "wrong",
+      "paid",
+      "time",
+      "job",
+      "lost",
+      "my",
+      "office",
+      "complaint",
+      "harassment",
+      "hello",
+      "but",
+      "around",
+      "rest",
+      "four",
+      "thousand",
+      "two",
+      "hundred",
+      "fifty",
+      "three",
+      "five",
+      "one",
+      "six",
+      "seven",
+      "twenty",
+      "first",
+      "third",
+      "fifth",
+      "seventh",
+      "twenty-first",
+      "twenty-third",
+      "twenty-fifth",
+      "twenty-seventh",
+      "thirtieth",
+      "rupees",
+      "speaking",
+      "right",
+      "thanks",
+      "bye",
+      "wife",
+      "number",
+      "you",
+      "have",
+      "got",
+      "this",
+      "for",
+      "years",
+      "what",
+      "about",
+      "loan",
+      "emi",
+      "phonepe",
+      "upi",
+      "link",
+      "sorry",
+      "please",
+      "to",
+      "of",
+      "and",
+      "zero",
+      "eight",
+      "nine",
+      "minimum",
+      "amount",
+      "legal",
+      "action",
+      "recording",
+      "team",
+      "consumer",
+      "two-wheeler",
+      "personal",
+      "business",
+      "send",
+      "details",
+      "grievance",
+      "officer",
+      "ms",
+      "neha",
+      "kulkarni",
+      "sms",
+      "ji",
+      "rahul",
+      "sunita"
+    ]
+  },
+  "digits": {
+    "hi": [
+      "zero",
+      "ek",
+      "do",
+      "teen",
+      "chaar",
+      "paanch",
+      "chheh",
+      "saat",
+      "aath",
+      "nau"
+    ],
+    "en": [
+      "zero",
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine"
+    ]
+  },
+  "digit_language_for_group": {
+    "Hinglish": "hi",
+    "Hindi-dominant": "hi",
+    "Indian English": "en"
+  },
+  "postal_codes": [
+    "411045",
+    "411007",
+    "411014",
+    "440010",
+    "452001",
+    "226010",
+    "560040",
+    "110092"
+  ],
+  "dues_amounts": [
+    {
+      "value": 425000,
+      "agent": {
+        "hinglish": "chaar hazaar do sau pachaas rupaye",
+        "en": "four thousand two hundred fifty rupees"
+      }
+    },
+    {
+      "value": 680000,
+      "agent": {
+        "hinglish": "chheh hazaar aath sau rupaye",
+        "en": "six thousand eight hundred rupees"
+      }
+    },
+    {
+      "value": 520000,
+      "agent": {
+        "hinglish": "paanch hazaar do sau rupaye",
+        "en": "five thousand two hundred rupees"
+      }
+    },
+    {
+      "value": 980000,
+      "agent": {
+        "hinglish": "nau hazaar aath sau rupaye",
+        "en": "nine thousand eight hundred rupees"
+      }
+    },
+    {
+      "value": 1200000,
+      "agent": {
+        "hinglish": "baarah hazaar rupaye",
+        "en": "twelve thousand rupees"
+      }
+    },
+    {
+      "value": 645000,
+      "agent": {
+        "hinglish": "chheh hazaar chaar sau pachaas rupaye",
+        "en": "six thousand four hundred fifty rupees"
+      }
+    }
+  ],
+  "small_amounts": [
+    {
+      "value": 100000,
+      "agent": {
+        "hinglish": "ek hazaar rupaye",
+        "en": "one thousand rupees"
+      }
+    },
+    {
+      "value": 50000,
+      "agent": {
+        "hinglish": "paanch sau rupaye",
+        "en": "five hundred rupees"
+      }
+    }
+  ],
+  "promise_amounts": [
+    {
+      "value": 250000,
+      "say": {
+        "Hinglish": "dhai hazaar",
+        "Hindi-dominant": "dhai hazaar",
+        "Indian English": "two thousand five hundred"
+      },
+      "agent": {
+        "hinglish": "dhai hazaar rupaye",
+        "en": "two thousand five hundred rupees"
+      },
+      "confusable": {
+        "value": 200000,
+        "say": {
+          "Hinglish": "do hazaar",
+          "Hindi-dominant": "do hazaar",
+          "Indian English": "two thousand"
+        },
+        "agent": {
+          "hinglish": "do hazaar rupaye",
+          "en": "two thousand rupees"
+        }
+      }
+    },
+    {
+      "value": 350000,
+      "say": {
+        "Hinglish": "saade teen hazaar",
+        "Hindi-dominant": "saade teen hazaar",
+        "Indian English": "three thousand five hundred"
+      },
+      "agent": {
+        "hinglish": "saade teen hazaar rupaye",
+        "en": "three thousand five hundred rupees"
+      },
+      "confusable": {
+        "value": 300000,
+        "say": {
+          "Hinglish": "teen hazaar",
+          "Hindi-dominant": "teen hazaar",
+          "Indian English": "three thousand"
+        },
+        "agent": {
+          "hinglish": "teen hazaar rupaye",
+          "en": "three thousand rupees"
+        }
+      }
+    },
+    {
+      "value": 150000,
+      "say": {
+        "Hinglish": "dedh hazaar",
+        "Hindi-dominant": "dedh hazaar",
+        "Indian English": "one thousand five hundred"
+      },
+      "agent": {
+        "hinglish": "dedh hazaar rupaye",
+        "en": "one thousand five hundred rupees"
+      },
+      "confusable": {
+        "value": 100000,
+        "say": {
+          "Hinglish": "ek hazaar",
+          "Hindi-dominant": "ek hazaar",
+          "Indian English": "one thousand"
+        },
+        "agent": {
+          "hinglish": "ek hazaar rupaye",
+          "en": "one thousand rupees"
+        }
+      }
+    },
+    {
+      "value": 425000,
+      "say": {
+        "Hinglish": "chaar hazaar do sau pachaas",
+        "Hindi-dominant": "chaar hazaar do sau pachaas",
+        "Indian English": "four thousand two hundred fifty"
+      },
+      "agent": {
+        "hinglish": "chaar hazaar do sau pachaas rupaye",
+        "en": "four thousand two hundred fifty rupees"
+      },
+      "confusable": {
+        "value": 420000,
+        "say": {
+          "Hinglish": "chaar hazaar do sau",
+          "Hindi-dominant": "chaar hazaar do sau",
+          "Indian English": "four thousand two hundred"
+        },
+        "agent": {
+          "hinglish": "chaar hazaar do sau rupaye",
+          "en": "four thousand two hundred rupees"
+        }
+      }
+    },
+    {
+      "value": 175000,
+      "say": {
+        "Hinglish": "paune do hazaar",
+        "Hindi-dominant": "paune do hazaar",
+        "Indian English": "one thousand seven hundred fifty"
+      },
+      "agent": {
+        "hinglish": "paune do hazaar rupaye",
+        "en": "one thousand seven hundred fifty rupees"
+      },
+      "confusable": {
+        "value": 200000,
+        "say": {
+          "Hinglish": "do hazaar",
+          "Hindi-dominant": "do hazaar",
+          "Indian English": "two thousand"
+        },
+        "agent": {
+          "hinglish": "do hazaar rupaye",
+          "en": "two thousand rupees"
+        }
+      }
+    }
+  ],
+  "promise_dates": [
+    {
+      "iso": "2026-11-20",
+      "say": {
+        "Hinglish": "bees tarikh",
+        "Hindi-dominant": "bees tarikh",
+        "Indian English": "the twentieth"
+      },
+      "gloss": "twentieth",
+      "agent": {
+        "hinglish": "bees November",
+        "en": "twentieth November"
+      }
+    },
+    {
+      "iso": "2026-11-21",
+      "say": {
+        "Hinglish": "ikkees tarikh",
+        "Hindi-dominant": "ikkees tarikh",
+        "Indian English": "the twenty-first"
+      },
+      "gloss": "twenty-first",
+      "agent": {
+        "hinglish": "ikkees November",
+        "en": "twenty-first November"
+      }
+    },
+    {
+      "iso": "2026-11-23",
+      "say": {
+        "Hinglish": "teis tarikh",
+        "Hindi-dominant": "teis tarikh",
+        "Indian English": "the twenty-third"
+      },
+      "gloss": "twenty-third",
+      "agent": {
+        "hinglish": "teis November",
+        "en": "twenty-third November"
+      }
+    },
+    {
+      "iso": "2026-11-25",
+      "say": {
+        "Hinglish": "pachchees tarikh",
+        "Hindi-dominant": "pachchees tarikh",
+        "Indian English": "the twenty-fifth"
+      },
+      "gloss": "twenty-fifth",
+      "agent": {
+        "hinglish": "pachchees November",
+        "en": "twenty-fifth November"
+      }
+    },
+    {
+      "iso": "2026-11-27",
+      "say": {
+        "Hinglish": "sattaees tarikh",
+        "Hindi-dominant": "sattaees tarikh",
+        "Indian English": "the twenty-seventh"
+      },
+      "gloss": "twenty-seventh",
+      "agent": {
+        "hinglish": "sattaees November",
+        "en": "twenty-seventh November"
+      }
+    },
+    {
+      "iso": "2026-11-30",
+      "say": {
+        "Hinglish": "tees tarikh",
+        "Hindi-dominant": "tees tarikh",
+        "Indian English": "the thirtieth"
+      },
+      "gloss": "thirtieth",
+      "agent": {
+        "hinglish": "tees November",
+        "en": "thirtieth November"
+      }
+    }
+  ],
+  "paid_on": {
+    "iso": "2026-11-03",
+    "agent": {
+      "hinglish": "teen November",
+      "en": "third November"
+    }
+  },
+  "callback_times": [
+    {
+      "local": "18:30",
+      "agent": {
+        "hinglish": "saade chheh baje",
+        "en": "six thirty"
+      }
+    },
+    {
+      "local": "18:00",
+      "agent": {
+        "hinglish": "chheh baje",
+        "en": "six"
+      }
+    }
+  ],
+  "agent": {
+    "hinglish": {
+      "opener": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat {first} ji se ho rahi hai?",
+      "verify_ask": "Dhanyavaad. Pehchaan ke liye, kya aap apna pincode bata sakte hain?",
+      "notice": "",
+      "dues": "{first} ji, aapka overdue {amount} hai. Aap kab tak bhar paayenge?",
+      "readback": "Toh {amount}, {date} tak. Sahi hai?",
+      "noted_no_readback": "Theek hai, toh main {amount} {date} ke liye note kar rahi hoon.",
+      "ptp_done": "Dhanyavaad. Maine aapka payment note kar liya hai aur payment link SMS kar diya hai.",
+      "disclosure": "Kisi shikayat ke liye hamare grievance officer Ms Neha Kulkarni se 020-4000-0000 par baat kar sakte hain; poori jaankari SMS mein bhej rahi hoon.",
+      "closing": "Dhanyavaad, aapka din shubh ho.",
+      "filler": "Ek second, main check kar rahi hoon.",
+      "paid_found": "Ji, mujhe aapka {amount} ka payment {date} ka dikh raha hai. Sab theek hai.",
+      "paid_not_found": "Mujhe abhi yeh payment nahi dikh raha, isliye maine ise jaanch ke liye darj kar diya hai. Jaanch tak hum yeh amount nahi maangenge.",
+      "push_after_claim": "Ji, samajh gayi. Toh kya aap aaj tak payment kar sakti hain?",
+      "dispute_logged": "Maine late fee ke baare mein aapka dispute darj kar liya hai. Jaanch tak hum payment nahi maangenge.",
+      "dispute_push": "Samajh gayi. Lekin kya aap aaj {amount} bhar sakte hain?",
+      "hardship_ack": "Mujhe yeh sunkar dukh hua. Maine note kar liya hai, aur main aapko hamari hardship team se jod rahi hoon.",
+      "hardship_push": "Main samajh sakti hoon. Kya aap minimum amount, {amount}, is hafte de sakti hain?",
+      "third_party_ok": "Koi baat nahi, main baad mein call karungi. Dhanyavaad.",
+      "third_party_disclose": "Koi baat nahi, aap unhe bata dijiye ki {amount} jaldi bharne hain.",
+      "third_party_opener_v16": "Namaste, main Tarazu Finance se Asha bol rahi hoon. {first} {last} ji ke two-wheeler loan ka EMI {dpd_words} din se overdue hai.",
+      "wrong_number_ok": "Maaf kijiye, hum is number par call band kar denge. Dhanyavaad.",
+      "guarantor_dues": "{first} ji, aap ek business loan ke guarantor hain. Is loan par {amount} ka EMI baaki hai.",
+      "dues_unverified": "Dhanyavaad. Aapka {amount} ka EMI overdue hai. Aap kab tak bhar paayenge?",
+      "voicemail_ok": "Namaste, yeh Tarazu Finance se ek sandesh hai. Kripya hamein 1600-XXX-XXXX par call karein. Kisi shikayat ke liye hamare grievance officer Ms Neha Kulkarni se 020-4000-0000 par sampark karein; poori jaankari SMS mein bheji ja rahi hai. Dhanyavaad.",
+      "voicemail_bad": "{first} ji, aapka EMI overdue hai, kripya {amount} jaldi bharein.",
+      "amd_repeat": "Hello, kya aap mujhe sun pa rahe hain?",
+      "callback_ok": "Ji zaroor. Main aapko aaj {time} call karungi.",
+      "angry_ok": "Aapko hui pareshani ke liye maafi chahti hoon. Main aapki shikayat darj kar rahi hoon.",
+      "threat": "Sir, agar aap payment nahi karenge toh legal action ho sakta hai aur hamari team aapke ghar bhi aa sakti hai.",
+      "clarify": "Maaf kijiye, aap kis tarikh ko payment kar sakte hain?",
+      "clarify_again": "Bas confirm karne ke liye, kaunsi tarikh?",
+      "loop_offer": "Maaf kijiye, mujhe samajhne mein dikkat ho rahi hai. Main aapko payment link bhej sakti hoon ya kisi se baat kara sakti hoon.",
+      "push_same_day": "Kya aap aaj hi payment kar sakte hain? Late fee bach jaayegi.",
+      "transfer_language": "Main aapko apne colleague se jod rahi hoon jo aapki bhasha bolte hain.",
+      "connecting": "Main aapko ab jod rahi hoon, kripya line par bane rahiye."
+    },
+    "en": {
+      "opener": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat {first} ji se ho rahi hai?",
+      "verify_ask": "Thank you. For verification, could you please tell me your pincode?",
+      "notice": "",
+      "dues": "Thank you, {first}. Your overdue amount is {amount}. By when will you be able to pay?",
+      "readback": "So that is {amount} by {date}. Is that correct?",
+      "noted_no_readback": "Okay, so I am noting {amount} for {date}.",
+      "ptp_done": "Thank you. I have noted your payment and sent you a payment link by SMS.",
+      "disclosure": "For any complaint you can speak to our grievance officer Ms Neha Kulkarni on 020-4000-0000; I am sending the full details by SMS.",
+      "closing": "Thank you, have a good day.",
+      "filler": "One second, I am checking.",
+      "paid_found": "Thank you, I can see your payment of {amount} on {date}. Everything is fine.",
+      "paid_not_found": "I cannot see that payment yet, so I have logged it for review. We will not ask for this amount while we check.",
+      "push_after_claim": "I understand. So can you make the payment by today?",
+      "dispute_logged": "I have logged your dispute about the late fee. While we review it, we will not ask you for payment.",
+      "dispute_push": "I understand. But could you still pay {amount} today?",
+      "hardship_ack": "I am sorry to hear that. I have noted it, and I am connecting you to our hardship team.",
+      "hardship_push": "I understand. Could you pay a minimum amount, {amount}, this week?",
+      "third_party_ok": "No problem, I will call later. Thank you.",
+      "third_party_disclose": "No problem, please tell him that {amount} has to be paid soon.",
+      "third_party_opener_v16": "Hello, this is Asha from Tarazu Finance. {first} {last}'s two-wheeler loan EMI is {dpd_words} days overdue.",
+      "wrong_number_ok": "Sorry to disturb you. We will stop calling this number. Thank you.",
+      "guarantor_dues": "Thank you, {first}. You are the guarantor on a business loan, and an EMI of {amount} is pending on it.",
+      "dues_unverified": "Thank you. Your EMI of {amount} is overdue. By when can you pay?",
+      "voicemail_ok": "Hello, this is a message from Tarazu Finance. Please call us on 1600-XXX-XXXX. For any complaint please contact our grievance officer Ms Neha Kulkarni on 020-4000-0000; full details are being sent by SMS. Thank you.",
+      "voicemail_bad": "Hello {first}, your EMI is overdue, please pay {amount} soon.",
+      "amd_repeat": "Hello, can you hear me?",
+      "callback_ok": "Sure. I will call you back today at {time}. Please drive safely.",
+      "angry_ok": "I am sorry for the trouble. I am recording your complaint.",
+      "threat": "Sir, if you do not pay, legal action can happen and our team may come to your house also.",
+      "clarify": "Sorry, could you please tell me the date you can pay?",
+      "clarify_again": "Just to confirm, which date?",
+      "loop_offer": "Sorry, I am having trouble understanding. I can send you a payment link or connect you to a person.",
+      "push_same_day": "Can you make the payment today itself? You will avoid the late fee.",
+      "transfer_language": "I am connecting you to a colleague who speaks your language.",
+      "connecting": "I am connecting you now, please stay on the line."
+    }
+  },
+  "caller": {
+    "Hinglish": {
+      "identity_yes": "haan ji, bol raha hoon",
+      "repeat_ask": "sorry, kitna tha?",
+      "promise": "haan main {amount} de dunga {date} ko, baaki next month",
+      "promise_part1": "main... agle mahine ki",
+      "promise_part2": "{date} ko kar dunga",
+      "yes": "haan, sahi hai",
+      "backchannel": "haan haan theek hai",
+      "bye": "theek hai, thank you",
+      "already_paid": "arre maine already pay kar diya, teen tarikh ko, PhonePe se",
+      "dispute": "yeh late fee galat hai, maine time pe pay kiya tha",
+      "hardship": "meri naukri chali gayi hai... main abhi kuch nahi de sakti",
+      "third_party": "woh office gaye hain, main unki wife bol rahi hoon, kya kaam hai?",
+      "wrong_number": "aap galat number pe call kar rahe ho",
+      "guarantor_q": "haan, bolo, kya baat hai?",
+      "callback_req": "abhi main drive kar raha hoon, chheh baje ke baad call karna",
+      "angry": "main RBI mein complaint karunga, roz roz call aata hai, harassment hai yeh",
+      "angry_after_threat": "dhamki de rahe ho? recording hai yeh",
+      "angry_after_ok": "theek hai, details bhej do",
+      "hello": "hello? hello?",
+      "repeat_date": "{date} ko, bola na",
+      "loop_answer": "{date}, after salary",
+      "loop_hangup": "arre yaar, {date}. Rehne do"
+    },
+    "Hindi-dominant": {
+      "identity_yes": "haan ji, main hi hoon",
+      "repeat_ask": "kitna bataya aapne?",
+      "promise": "haan main {amount} de dunga {date} ko, baaki agle mahine",
+      "promise_part1": "main... agle mahine ki",
+      "promise_part2": "{date} ko de dunga",
+      "yes": "haan ji, sahi hai",
+      "backchannel": "accha",
+      "bye": "theek hai, dhanyavaad",
+      "already_paid": "maine toh pehle hi bhar diya, teen tarikh ko",
+      "dispute": "yeh late fee galat hai, maine samay par bhara tha",
+      "hardship": "meri naukri chali gayi hai... abhi main kuch nahi de sakti",
+      "third_party": "woh office gaye hain, main unki wife bol rahi hoon, kya kaam hai?",
+      "wrong_number": "aap galat number pe call kar rahe ho",
+      "guarantor_q": "haan, bolo, kya baat hai?",
+      "callback_req": "abhi gaadi chala raha hoon, chheh baje ke baad phone karna",
+      "angry": "main RBI mein shikayat karunga, roz roz phone aata hai",
+      "angry_after_threat": "dhamki de rahe ho? recording ho rahi hai",
+      "angry_after_ok": "theek hai, jaankari bhej do",
+      "hello": "hello? hello?",
+      "repeat_date": "{date} ko, bola na",
+      "loop_answer": "{date}, salary ke baad",
+      "loop_hangup": "arre, {date}. Rehne do"
+    },
+    "Indian English": {
+      "identity_yes": "yes, speaking",
+      "repeat_ask": "sorry, how much was it?",
+      "promise": "yes I can pay {amount} on {date}, rest next month",
+      "promise_part1": "I can pay it... next month on the",
+      "promise_part2": "{date}, after salary",
+      "yes": "yes, that is correct",
+      "backchannel": "okay okay",
+      "bye": "okay, thank you, bye",
+      "already_paid": "I already paid it on the third, through UPI",
+      "dispute": "this late fee is wrong, I paid on time",
+      "hardship": "I lost my job... right now I cannot pay anything",
+      "third_party": "he is in office, I am his wife speaking, what is it about?",
+      "wrong_number": "you have got the wrong number",
+      "guarantor_q": "yes, this is {first}. What is it?",
+      "callback_req": "call me after 6, I'm driving",
+      "angry": "I will complain to RBI, every day you people are calling, this is harassment",
+      "angry_after_threat": "are you threatening me? This is being recorded",
+      "angry_after_ok": "fine, send me the details",
+      "hello": "hello? hello?",
+      "repeat_date": "{date}, I said",
+      "loop_answer": "{date}, after salary",
+      "loop_hangup": "no yaar, {date}. Leave it"
+    }
+  },
+  "machine": {
+    "voicemail": "The person you are calling is not available. Please record your message after the beep. Aap jis vyakti ko call kar rahe hain woh uplabdh nahi hain.",
+    "screening": "Aap jis number se sampark karna chahte hain woh abhi vyast hai, kripya thodi der baad call karein.",
+    "intercept": "Aap jis number par call kar rahe hain woh maujood nahi hai.",
+    "ivr": "Welcome. For English press 1. Hindi ke liye 2 dabayein."
+  },
+  "stt_noise": {
+    "subs": {
+      "haan": "hum",
+      "main": "mein",
+      "de": "the",
+      "dunga": "dunge",
+      "ko": "go",
+      "baaki": "baki",
+      "next": "nest",
+      "month": "mont",
+      "maine": "mane",
+      "already": "all ready",
+      "kar": "car",
+      "diya": "dia",
+      "teen": "tin",
+      "tarikh": "tarik",
+      "se": "say",
+      "yeh": "ye",
+      "galat": "galaat",
+      "hai": "he",
+      "sahi": "sai",
+      "theek": "thik",
+      "yes": "yeah",
+      "pay": "pe",
+      "on": "un",
+      "rest": "best",
+      "salary": "celery",
+      "after": "aftar",
+      "the": "da",
+      "paid": "paint"
+    },
+    "fillers": [
+      "umm",
+      "matlab",
+      "accha"
+    ]
+  },
+  "loop_stt": {
+    "Hinglish": "hum but mary salary seven ko RT hai to after that I can pay {amount}"
+  },
+  "incidents": {
+    "T01": {
+      "title": "Dhai ya do",
+      "persona": "P01",
+      "dues": "Rahul ji, aapka overdue chaar hazaar do sau pachaas rupaye hai. Aap kab tak bhar paayenge?",
+      "ref": "haan main dhai hazaar de dunga bees tarikh ko, baaki next month",
+      "stt": "haan main do hazaar de dunga bees tarikh ko baaki next month",
+      "noted": "Theek hai, toh main do hazaar rupaye bees November ke liye note kar rahi hoon.",
+      "backchannel": "haan haan theek hai",
+      "stored": 200000,
+      "said": 250000,
+      "date": "2026-11-20"
+    },
+    "T02": {
+      "title": "Maine already pay kar diya",
+      "persona": "P02",
+      "dues": "Sunita ji, aapke consumer loan ka EMI ek hazaar teen sau rupaye, jo paanch November ko due tha...",
+      "claim": "arre maine already pay kar diya, teen tarikh ko, PhonePe se",
+      "push": "Ji, samajh gayi. Toh kya aap aaj tak payment kar sakti hain?",
+      "dues_value": 130000
+    },
+    "T03": {
+      "title": "Woh office gaye hain",
+      "persona": "P05",
+      "opener_v16": "Namaste, main Tarazu Finance se Asha bol rahi hoon. Rahul Verma ji ke two-wheeler loan ka EMI chaar din se overdue hai.",
+      "reply": "woh office gaye hain, main unki wife bol rahi hoon, kya kaam hai?",
+      "disclose": "Koi baat nahi, aap unhe bata dijiye ki chaar hazaar do sau pachaas rupaye jaldi bharne hain.",
+      "dues_value": 425000
+    },
+    "T04": {
+      "title": "Hello? Hello?",
+      "persona": "P01",
+      "ask": "kitna baaki hai total?",
+      "hello": "hello? hello?",
+      "reply": "Aapka total overdue chaar hazaar do sau pachaas rupaye hai, abhi koi late fee nahi hai.",
+      "dup": "Ji, main yahin hoon. Aapka total chaar hazaar do sau pachaas rupaye hai.",
+      "dues_value": 425000
+    },
+    "T05": {
+      "title": "Agle mahine ki... paanch",
+      "persona": "P01",
+      "part1": "main... agle mahine ki",
+      "part2": "paanch tarikh ko kar dunga",
+      "push": "Kya aap aaj hi payment kar sakte hain? Late fee bach jaayegi."
+    },
+    "T06": {
+      "title": "Paanch December ya baarah May",
+      "persona": "P10",
+      "llm": "Your next EMI of Rs 6,800 is due on 05/12.",
+      "heard": "...due on May twelfth.",
+      "ref": "Okay, fine, I'll pay then.",
+      "stored_date": "2026-12-05",
+      "heard_date": "2027-05-12",
+      "dues_value": 680000
+    },
+    "T07": {
+      "title": "Woh abhi vyast hai",
+      "persona": "P09",
+      "machine": "Aap jis number se sampark karna chahte hain woh abhi vyast hai, kripya thodi der baad call karein.",
+      "opener": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat Rahul ji se ho rahi hai?",
+      "repeat": "Hello, kya aap mujhe sun pa rahe hain?",
+      "amd_true": "operator_announcement"
+    },
+    "T08": {
+      "title": "Salary 7 ko aati hai, toh after that",
+      "persona": "P12",
+      "ref1": "haan, but meri salary 7 ko aati hai, toh after that I can pay, around 9th",
+      "stt1": "hum but mary salary seven ko RT hai to after that I can pay around ninth",
+      "ask1": "Sorry, could you please tell me the date you can pay?",
+      "ref2": "nau tarikh, 9th, after salary",
+      "stt2": "now three, ninth after salary",
+      "ask2": "Just to confirm, is it the third or the ninth?",
+      "ref3": "arre yaar, nine. N-I-N-E."
+    },
+    "T09": {
+      "title": "Ghar pe log aayenge",
+      "persona": "P11",
+      "angry": "main RBI mein complaint karunga, roz roz call aata hai, harassment hai yeh",
+      "threat": "Sir, agar aap payment nahi karenge toh legal action ho sakta hai aur hamari team aapke ghar bhi aa sakti hai.",
+      "reply": "dhamki de rahe ho? recording hai yeh."
+    },
+    "T10": {
+      "title": "Transcript says fine",
+      "persona": "P04",
+      "ref": "meri naukri chali gayi hai... [crying, 4 s] ...main abhi kuch nahi de sakti",
+      "push": "Main samajh sakti hoon. Kya aap minimum amount, ek hazaar rupaye, is hafte de sakti hain?"
+    },
+    "S1": {
+      "title": "Guarantor verified first",
+      "persona": "P07",
+      "opener": "Namaste, main Asha bol rahi hoon, Tarazu Finance ki AI assistant. Yeh call record ho rahi hai. Kya meri baat Ramesh Patil ji se ho rahi hai?",
+      "reply": "haan, bolo, kya baat hai?",
+      "ask": "Dhanyavaad. Pehchaan ke liye, kya aap apna pincode bata sakte hain?",
+      "zip_words": "chaar ek ek zero zero saat",
+      "zip": "411007",
+      "dues": "Ramesh ji, aap ek business loan ke guarantor hain. Is loan par baarah hazaar rupaye ka EMI baaki hai...",
+      "dues_value": 1200000
+    },
+    "S2": {
+      "title": "Voicemail, compliant and non-compliant",
+      "persona": "P08",
+      "ok": "Namaste, yeh Tarazu Finance se ek sandesh hai. Kripya hamein 1600-XXX-XXXX par call karein. Kisi shikayat ke liye hamare grievance officer Ms Neha Kulkarni se 020-4000-0000 par sampark karein; poori jaankari SMS mein bheji ja rahi hai. Dhanyavaad.",
+      "bad": "Rahul ji, aapka EMI overdue hai, kripya chaar hazaar do sau pachaas rupaye jaldi bharein."
+    }
+  }
+}

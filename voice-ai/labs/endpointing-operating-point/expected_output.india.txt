@@ -1,0 +1,47 @@
+Synthetic Tarazu data (Tarazu Finance is a fictional lender; its numbers are illustrative)
+seed 20261120; budgets 200-1250 ms in 50 ms steps
+
+Curves per language group (default state; pauses = whole calls, at least 600)
+group           detector       pauses holds  cut@300  cut@600  lat@5%  lat@10%
+Hinglish        silence-only      609   365    40.8%     8.2%     700      550
+Hinglish        model t=0.70      609   365    16.2%     3.8%     508      408
+Hindi-dominant  silence-only      600   364    33.5%     6.6%     650      550
+Hindi-dominant  model t=0.70      600   364    21.7%     4.7%     556      406
+Indian English  silence-only      601   357    36.7%     6.7%     750      550
+Indian English  model t=0.70      601   357    19.9%     4.5%     554      404
+
+False cutoff at a fixed silence budget, model t=0.70, 95% CI clustered by call
+Hinglish          61 calls   300 ms 13.2% [9.7%, 17.0%]   400 ms  7.7% [5.2%, 10.5%]
+Hindi-dominant    59 calls   300 ms 16.2% [12.0%, 21.1%]   400 ms  9.6% [6.2%, 13.9%]
+Indian English    61 calls   300 ms 15.4% [11.5%, 19.3%]   400 ms  7.8% [4.8%, 11.3%]
+
+Chosen silence budget per campaign and state (cost per 1,000 turns;
+range = central 95% of choices over 200 call-clustered resamples)
+campaign        state           thr  chosen       range  cost  cutoff   W12
+TW-early-nov    default        0.70     500     250-500   570    2.4%   400
+TW-early-nov    amount_asked   0.70     550     400-600   736    4.9%   600
+PL-digital-nov  default        0.70     500     350-500   642    4.0%   400
+PL-digital-nov  amount_asked   0.70     600     450-600   763    4.5%   600
+CD-short-nov    default        0.70     400     350-600   644    8.4%   400
+CD-short-nov    amount_asked   0.70     650     450-800   880    6.5%   600
+SBL-guar-nov    default        0.72     450     400-450   619    6.5%   450
+SBL-guar-nov    amount_asked   0.72     650     500-650   822    4.8%   650
+MFI-fort-nov    default        0.78     650     500-650   813    6.8%   600
+MFI-fort-nov    amount_asked   0.78     900     600-950  1031    4.0%   800
+
+Sensitivity: amount and date weights 2.5 -> 5.0
+TW-early-nov    default 500 -> 500 ms   amount/date 550 -> 550 ms
+PL-digital-nov  default 500 -> 500 ms   amount/date 600 -> 600 ms
+CD-short-nov    default 400 -> 600 ms   amount/date 650 -> 800 ms
+SBL-guar-nov    default 450 -> 450 ms   amount/date 650 -> 650 ms
+MFI-fort-nov    default 650 -> 650 ms   amount/date 900 -> 950 ms
+
+T05 at 300 ms, no hold signal: waits  300 ms -> cut off
+T05 at 300 ms, hold signal   : waits  800 ms -> held
+T05 at 400 ms, no hold signal: waits  400 ms -> cut off
+T05 at 400 ms, hold signal   : waits  900 ms -> held
+T05 at 600 ms, no hold signal: waits  600 ms -> cut off
+T05 at 600 ms, hold signal   : waits 1100 ms -> held
+
+wrote tarazu_pauses_hinglish.csv (609 rows)
+All assertions passed. The numbers are synthetic; the method transfers to your labelled pauses.

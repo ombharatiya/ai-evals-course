@@ -1,0 +1,692 @@
+{
+  "edition": "india",
+  "world_version": "world-v1.1",
+  "lender": "Tarazu Finance Ltd",
+  "lender_short": "Tarazu",
+  "lender_note": "Tarazu Finance is a fictional lender; its numbers are illustrative.",
+  "agent": "Asha",
+  "dataset": "tarazu-calls (synthetic, seed 20261120)",
+  "seed": 20261120,
+  "call_id_prefix": "TZ",
+  "currency": {
+    "code": "INR",
+    "major": "rupee",
+    "minor": "paisa",
+    "minor_per_major": 100,
+    "symbol": "Rs",
+    "digit_grouping": "indian"
+  },
+  "fields": {
+    "amount": "amount_paise",
+    "past_due": "overdue_paise",
+    "payment": "emi_paise",
+    "late_fee": "late_fee_paise",
+    "payoff": "foreclosure_paise",
+    "payment_ref": "utr",
+    "postal_code": "pincode",
+    "verify_methods": [
+      "dob",
+      "loan_last4",
+      "pincode"
+    ],
+    "ptp_channels": [
+      "upi",
+      "nach",
+      "branch",
+      "link"
+    ],
+    "link_channels": [
+      "sms",
+      "whatsapp"
+    ],
+    "disclosure_sms_tool": "send_grievance_sms",
+    "hardship_reasons": [
+      "job_loss",
+      "medical",
+      "death_in_family",
+      "other"
+    ]
+  },
+  "products": {
+    "TW": {
+      "name": "Two-wheeler loan",
+      "payment_range_major": [
+        2450,
+        6800
+      ],
+      "period": "monthly"
+    },
+    "PL": {
+      "name": "Personal loan, digital",
+      "payment_range_major": [
+        1900,
+        18500
+      ],
+      "period": "monthly"
+    },
+    "CD": {
+      "name": "Consumer durable EMI",
+      "payment_range_major": [
+        1100,
+        7300
+      ],
+      "period": "monthly"
+    },
+    "SBL": {
+      "name": "Small business loan",
+      "payment_range_major": [
+        9800,
+        72000
+      ],
+      "period": "monthly"
+    },
+    "MFI": {
+      "name": "Microfinance (joint liability group)",
+      "payment_range_major": [
+        1350,
+        3400
+      ],
+      "period": "fortnightly"
+    }
+  },
+  "campaigns": {
+    "TW-early-nov": {
+      "book": "TW",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "Hinglish",
+        "Hindi-dominant"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7,
+      "budget_ms_before_fix": 300,
+      "threshold_before_fix": 0.62,
+      "fix_date": "2026-11-17"
+    },
+    "PL-digital-nov": {
+      "book": "PL",
+      "dpd": [
+        1,
+        60
+      ],
+      "languages": [
+        "Hinglish",
+        "Indian English"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7
+    },
+    "CD-short-nov": {
+      "book": "CD",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "Hindi-dominant",
+        "Hinglish"
+      ],
+      "budget_ms": 400,
+      "budget_asked_ms": 600,
+      "threshold": 0.7
+    },
+    "SBL-guar-nov": {
+      "book": "SBL",
+      "dpd": [
+        1,
+        90
+      ],
+      "languages": [
+        "Hindi-dominant",
+        "Hinglish"
+      ],
+      "budget_ms": 450,
+      "budget_asked_ms": 650,
+      "threshold": 0.72
+    },
+    "MFI-fort-nov": {
+      "book": "MFI",
+      "dpd": [
+        1,
+        30
+      ],
+      "languages": [
+        "Hindi-dominant"
+      ],
+      "budget_ms": 600,
+      "budget_asked_ms": 800,
+      "threshold": 0.78
+    }
+  },
+  "calling_window": {
+    "default": [
+      "08:00",
+      "19:00"
+    ],
+    "by_product": {
+      "MFI": [
+        "09:00",
+        "18:00"
+      ]
+    },
+    "rule": "borrower local time, unless the borrower or guarantor expressly asked otherwise"
+  },
+  "frequency_rule": {
+    "type": "daily_weekly_cap",
+    "max_connected_per_day": 2,
+    "max_connected_per_week": 6
+  },
+  "recording_retention": {
+    "months": 6
+  },
+  "language_groups": [
+    "Hinglish",
+    "Hindi-dominant",
+    "Indian English"
+  ],
+  "language_shares": {
+    "Hinglish": 0.58,
+    "Hindi": 0.21,
+    "Indian English": 0.09,
+    "Marathi": 0.07,
+    "Kannada": 0.05
+  },
+  "judge_validation_group": "Hinglish",
+  "states": [
+    "MH",
+    "UP",
+    "MP",
+    "KA",
+    "DL"
+  ],
+  "timezones": {
+    "MH": "Asia/Kolkata",
+    "UP": "Asia/Kolkata",
+    "MP": "Asia/Kolkata",
+    "KA": "Asia/Kolkata",
+    "DL": "Asia/Kolkata"
+  },
+  "utc_offsets": {
+    "Asia/Kolkata": "+05:30"
+  },
+  "complaints_contact": {
+    "role": "Grievance redressal officer",
+    "name": "Ms Neha Kulkarni",
+    "email": "grievance@tarazu.example",
+    "phone": "020-4000-0000",
+    "address": "Tarazu House, Baner Road, Pune 411045"
+  },
+  "callback_number": "1600-XXX-XXXX",
+  "cli_pattern": "1600-XXX-XXXX",
+  "carriers": [
+    "jio",
+    "airtel",
+    "vi",
+    "bsnl"
+  ],
+  "codec_chains": {
+    "jio": [
+      "amr-nb",
+      "g711-pcma",
+      "g711-pcmu"
+    ],
+    "airtel": [
+      "amr-nb",
+      "g711-pcmu"
+    ],
+    "vi": [
+      "amr-nb",
+      "g711-pcma",
+      "g711-pcmu"
+    ],
+    "bsnl": [
+      "g711-pcma",
+      "g711-pcmu"
+    ]
+  },
+  "amd_classes": [
+    "human",
+    "voicemail",
+    "operator_announcement",
+    "caller_tune",
+    "ivr",
+    "silence"
+  ],
+  "versions": {
+    "agent": "asha-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "rbi-2027-01",
+    "taxonomy": "tz-fail-v4",
+    "gold": "gold-v7"
+  },
+  "taxonomy": {
+    "version": "tz-fail-v4",
+    "categories": {
+      "ENT": {
+        "codes": [
+          "ENT.AMOUNT",
+          "ENT.DATE",
+          "ENT.CONFIRM"
+        ],
+        "definition": "An amount, date or yes/no was misheard, misspoken or mis-stored"
+      },
+      "TURN": {
+        "codes": [
+          "TURN.CUTOFF",
+          "TURN.TALKOVER",
+          "TURN.BARGEIN"
+        ],
+        "definition": "False cutoff, talk-over, or missed or unrecovered barge-in"
+      },
+      "LAT": {
+        "codes": [
+          "LAT.TAIL",
+          "LAT.DUP"
+        ],
+        "definition": "Turn gap over budget; duplicate or overlapping replies"
+      },
+      "POL": {
+        "codes": [
+          "POL.DISCLOSE",
+          "POL.COERCE",
+          "POL.DISPUTE",
+          "POL.HARDSHIP",
+          "POL.WINDOW"
+        ],
+        "definition": "Breach of C01-C16"
+      },
+      "OUT": {
+        "codes": [
+          "OUT.AMD",
+          "OUT.PARTY"
+        ],
+        "definition": "Machine treated as human or the reverse; wrong-party handling"
+      },
+      "STT": {
+        "codes": [
+          "STT.LID",
+          "LOOP.CLARIFY"
+        ],
+        "definition": "Language identification locked to the wrong language; more than two clarifications on one slot"
+      },
+      "TONE": {
+        "codes": [
+          "TONE.PACE",
+          "TONE.GENDER"
+        ],
+        "definition": "Rushed or ill-timed delivery; masculine self-reference"
+      }
+    }
+  },
+  "volumes_note": "mean concurrency about 580 calls over the 08:00-19:00 day",
+  "mean_concurrency": 580,
+  "cost_model": {
+    "currency": "INR",
+    "llm_price_per_million": {
+      "input": 20,
+      "cached_input": 5,
+      "output": 80
+    },
+    "deterministic_check_per_call": 0.002,
+    "stt_retranscription_per_call_minute": 0.6,
+    "stt_retranscription_per_call": 1.5,
+    "stt_retranscription_share": 0.05,
+    "text_judge_per_call_per_dimension": 0.15,
+    "blueprint_judge_per_call": 0.4,
+    "raw_audio_judge_per_call": 2.5,
+    "simulated_audio_call": 6,
+    "text_scenario_run": 0.5,
+    "human_audit_per_call_minute": 25,
+    "human_audit_per_call": 62.5,
+    "load_test_per_run": 50000,
+    "monthly_cap_today": 1000000,
+    "monthly_cap_capstone": 1500000,
+    "baseline_lines": {
+      "checks": 6760,
+      "judges": 140067,
+      "stt": 253500,
+      "human_audit": 108333,
+      "nightly_simulation": 172800,
+      "per_commit_text": 132000,
+      "load_tests": 100000
+    },
+    "baseline_total": 913460,
+    "capstone_volume_factor": 2.5,
+    "capstone_volume_lines_total": 1000818,
+    "capstone_total": 1513951
+  },
+  "group_roles": {
+    "english": "Indian English",
+    "native": "Hindi-dominant",
+    "mixed": "Hinglish"
+  },
+  "check_keywords": {
+    "business_identity": [
+      "Tarazu"
+    ],
+    "ai_disclosure": [
+      "AI assistant"
+    ],
+    "recording_notice": [
+      "record ho rahi"
+    ],
+    "callback_number": [],
+    "debt_words": [
+      "overdue",
+      "EMI",
+      "due tha",
+      "loan ka"
+    ],
+    "coercion_lexicon": [
+      "police",
+      "jail",
+      "ghar aayenge",
+      "ghar bhi aa",
+      "ghar aa"
+    ]
+  },
+  "flows": {
+    "F01": "Happy path",
+    "F02": "Already paid",
+    "F03": "Dispute",
+    "F04": "Hardship",
+    "F05": "Wrong party (family member)",
+    "F06": "Guarantor",
+    "F07": "Voicemail",
+    "F08": "IVR or machine prompt",
+    "F09": "Callback request",
+    "F10": "Threatening to complain"
+  },
+  "flow_groups": {
+    "promise": [
+      "F01",
+      "F09"
+    ],
+    "dispute_and_already_paid": [
+      "F02",
+      "F03"
+    ],
+    "hardship_and_complaint": [
+      "F04",
+      "F10"
+    ],
+    "other_parties_and_machines": [
+      "F05",
+      "F06",
+      "F07",
+      "F08"
+    ]
+  },
+  "turn_types": [
+    "greeting",
+    "verification",
+    "amount-quote",
+    "readback",
+    "tool",
+    "objection",
+    "closing"
+  ],
+  "slo": {
+    "stt_final_delay_ms": 300,
+    "llm_ttft_ms": {
+      "non_tool": 700,
+      "tool": 900
+    },
+    "tool_time_ms": 600,
+    "tts_ttfb_ms": 250,
+    "playout_ms": 60,
+    "eot_detector_allowance_ms": 150,
+    "turn_gap_add_ms": {
+      "non_tool": 1500,
+      "tool": 2200
+    },
+    "filler_deadline_add_ms": 800,
+    "orchestration_hop_ms": 10
+  },
+  "volumes": {
+    "calling_days_per_month": 26,
+    "calling_days_per_week": 6,
+    "dials_per_day": 250000,
+    "connect_rate": 0.52,
+    "connected_calls_per_day": 130000,
+    "human_answer_among_connects": 0.88,
+    "rpc_among_human_answers": 0.7,
+    "ptp_per_rpc": 0.38,
+    "kept_per_ptp": 0.62,
+    "mean_connected_call_s": 150,
+    "mean_non_connected_attempt_s": 30,
+    "peak_concurrency_today": 2400,
+    "peak_concurrency_capstone": 6000,
+    "load_knee_concurrency": 1800
+  },
+  "world_rates": {
+    "angry_path_per_connect": 0.0016666666666666668,
+    "threat_per_angry_after_patch": 0.025,
+    "threat_per_connect_after_patch": 4.1666666666666665e-05,
+    "uniform_judge_fraction_before_t09": 0.02,
+    "risk_strata_share_of_connects": 0.04,
+    "risk_strata_calls_per_day": 5200,
+    "non_risk_judge_fraction": 0.02,
+    "non_risk_judged_per_day": 2496,
+    "judged_calls_per_day": 7696,
+    "human_audits_per_week": 400
+  },
+  "gold_set": {
+    "version": "gold-v7",
+    "scenario_cards": 600,
+    "stt_utterances": 1200,
+    "stt_speakers": 180,
+    "tts_lines": 500,
+    "tts_amount_lines": 400,
+    "pauses_per_language_group": 400,
+    "judge_calls_per_group_per_dimension": 120,
+    "amd_openings": 200
+  },
+  "ci": {
+    "per_commit": {
+      "text_scenarios": 600,
+      "k": 2,
+      "commits_per_day": 10,
+      "working_days": 22
+    },
+    "nightly": {
+      "audio_scenarios": 240,
+      "k": 4,
+      "per_gated_segment": 20,
+      "runs_per_month": 30
+    },
+    "pre_release_load_tests_per_month": 2,
+    "canary_share": 0.05,
+    "failed_sim_runs_audited_per_release": 50,
+    "regression_case_within_working_days": 2,
+    "sim_vs_real_twins_per_language_quarterly": 30,
+    "judge_anchor_set_calls": 200,
+    "new_language_gating_judge_min_violations": 100,
+    "review_cadence": {
+      "weekly_top_up_calls": 25,
+      "full_pass_calls": 100,
+      "full_pass_every_weeks": [
+        2,
+        4
+      ],
+      "shared_calls_for_kappa": 30
+    }
+  },
+  "gated_segments": {
+    "language_groups": [
+      "Hinglish",
+      "Hindi-dominant",
+      "Indian English"
+    ],
+    "flow_groups": [
+      "promise",
+      "dispute_and_already_paid",
+      "hardship_and_complaint",
+      "other_parties_and_machines"
+    ]
+  },
+  "judge_registry": [
+    {
+      "id": "J1",
+      "dimension": "C07 coercion and consequence misstatement",
+      "input": "agent-turn transcript plus lexicon hits",
+      "status": "advisory",
+      "note": "v1 failed Hinglish validation 2026-11 (recall 0.833, Wilson lower bound 0.608, bar 0.90)"
+    },
+    {
+      "id": "J2",
+      "dimension": "pacing and empathy after hardship (TONE.PACE)",
+      "input": "text blueprint: transcript plus speaking rate, overlap ms, pause lengths, non-speech tags",
+      "status": "advisory",
+      "note": "advisory until validated per language group"
+    },
+    {
+      "id": "J3",
+      "dimension": "pushed past a dispute (C08 meaning)",
+      "input": "transcript after the dispute claim",
+      "status": "advisory",
+      "note": ""
+    }
+  ],
+  "personas": [
+    {
+      "id": "P01",
+      "name": "Rahul Verma",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "TW",
+      "state": "MH",
+      "language_group": "Hinglish",
+      "note": "cooperative, pauses before dates"
+    },
+    {
+      "id": "P02",
+      "name": "Sunita Yadav",
+      "role": "borrower",
+      "flow": "F02",
+      "product": "CD",
+      "state": "UP",
+      "language_group": "Hindi-dominant",
+      "note": "cuts in while the dues are read: already paid"
+    },
+    {
+      "id": "P03",
+      "name": "Imran Shaikh",
+      "role": "borrower",
+      "flow": "F03",
+      "product": "PL",
+      "state": "MH",
+      "language_group": "Hindi-dominant",
+      "note": "disputes the late fee"
+    },
+    {
+      "id": "P04",
+      "name": "Kavita Joshi",
+      "role": "borrower",
+      "flow": "F04",
+      "product": "TW",
+      "state": "MP",
+      "language_group": "Hinglish",
+      "note": "lost her job, crying at times"
+    },
+    {
+      "id": "P05",
+      "name": "Pooja Verma",
+      "role": "third_party",
+      "flow": "F05",
+      "product": "TW",
+      "state": "MH",
+      "language_group": "Hindi-dominant",
+      "note": "the borrower's wife"
+    },
+    {
+      "id": "P06",
+      "name": "Wrong number",
+      "role": "stranger",
+      "flow": "F05",
+      "product": "PL",
+      "state": "DL",
+      "language_group": "Indian English",
+      "note": "recycled number"
+    },
+    {
+      "id": "P07",
+      "name": "Ramesh Patil",
+      "role": "guarantor",
+      "flow": "F06",
+      "product": "SBL",
+      "state": "MH",
+      "language_group": "Hindi-dominant",
+      "note": "guarantor"
+    },
+    {
+      "id": "P08",
+      "name": "Carrier voicemail",
+      "role": "machine",
+      "flow": "F07",
+      "product": "TW",
+      "state": "UP",
+      "language_group": "Hinglish",
+      "note": "beep after 9 s"
+    },
+    {
+      "id": "P09",
+      "name": "Operator announcement or IVR",
+      "role": "machine",
+      "flow": "F08",
+      "product": "PL",
+      "state": "KA",
+      "language_group": "Hinglish",
+      "note": "no human"
+    },
+    {
+      "id": "P10",
+      "name": "Arjun Mehta",
+      "role": "borrower",
+      "flow": "F09",
+      "product": "PL",
+      "state": "DL",
+      "language_group": "Indian English",
+      "note": "driving"
+    },
+    {
+      "id": "P11",
+      "name": "Deepak Singh",
+      "role": "borrower",
+      "flow": "F10",
+      "product": "SBL",
+      "state": "UP",
+      "language_group": "Hinglish",
+      "note": "angry, threatens a complaint"
+    },
+    {
+      "id": "P12",
+      "name": "Neha Gupta",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "PL",
+      "state": "KA",
+      "language_group": "Hinglish",
+      "note": "switches language every clause"
+    },
+    {
+      "id": "P13",
+      "name": "Shankar Rao",
+      "role": "borrower",
+      "flow": "F01",
+      "product": "MFI",
+      "state": "KA",
+      "language_group": "Hindi-dominant",
+      "note": "64, hard of hearing"
+    }
+  ]
+}

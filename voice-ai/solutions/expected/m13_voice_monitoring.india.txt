@@ -1,0 +1,23 @@
+Production monitoring: rare violations (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+stratum       human-answered calls  share   Wilson 95%
+------------  --------------------  ------  ----------------
+other         1757                  96.22%  [95.25%, 97.00%]
+dispute       19                    1.04%   [0.67%, 1.62%]
+window_edge   16                    0.88%   [0.54%, 1.42%]
+hardship      15                    0.82%   [0.50%, 1.35%]
+complaint     11                    0.60%   [0.34%, 1.08%]
+stop_request  7                     0.38%   [0.19%, 0.79%]
+angry         1                     0.05%   [0.01%, 0.31%]
+Risk strata share in the sample: 3.78% (world plan: 4.0% of connects)
+
+Calls to see a 1-in-1,000 violation with 95% probability: 2995
+1,000 sampled calls at 1 in 2,000: P(at least one) = 0.394
+0 violations in 300 audited calls: rule of three 0.0100; exact two-sided upper 0.0122
+
+T09: 130,000 connects a day, threat rate 1 in 24,000, uniform 2% judge sample
+  threat calls reaching the judge per day: 0.108; over 3 days P(at least one) = 0.28
+  stratified: the angry stratum has about 217 calls a day; judging all of them sees about 5.4 threat calls a day
+A 1-in-2,000 violation within a week at 95%: 5990 sampled calls a week

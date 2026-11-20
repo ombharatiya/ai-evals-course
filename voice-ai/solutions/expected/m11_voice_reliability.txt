@@ -1,0 +1,39 @@
+pass^k from 8 simulated trials per scenario (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+scenario  flow  language group    passes  pass^1  pass^2  pass^4  pass^8
+--------  ----  ----------------  ------  ------  ------  ------  ------
+S01       F01   English           7/8     0.875   0.750   0.500   0.000
+S02       F01   Spanish-dominant  7/8     0.875   0.750   0.500   0.000
+S03       F01   Spanglish         8/8     1.000   1.000   1.000   1.000
+S04       F01   Spanish-dominant  7/8     0.875   0.750   0.500   0.000
+S05       F09   English           5/8     0.625   0.357   0.071   0.000
+S06       F09   Spanglish         8/8     1.000   1.000   1.000   1.000
+S07       F02   Spanish-dominant  7/8     0.875   0.750   0.500   0.000
+S08       F02   English           8/8     1.000   1.000   1.000   1.000
+S09       F03   English           8/8     1.000   1.000   1.000   1.000
+S10       F03   Spanglish         7/8     0.875   0.750   0.500   0.000
+S11       F04   Spanglish         8/8     1.000   1.000   1.000   1.000
+S12       F04   English           8/8     1.000   1.000   1.000   1.000
+S13       F10   English           8/8     1.000   1.000   1.000   1.000
+S14       F10   Spanglish         7/8     0.875   0.750   0.500   0.000
+S15       F05   English           8/8     1.000   1.000   1.000   1.000
+S16       F05   Spanglish         7/8     0.875   0.750   0.500   0.000
+S17       F06   English           7/8     0.875   0.750   0.500   0.000
+S18       F06   Spanish-dominant  6/8     0.750   0.536   0.214   0.000
+S19       F07   Spanglish         5/8     0.625   0.357   0.071   0.000
+S20       F08   Spanish-dominant  5/8     0.625   0.357   0.071   0.000
+S21       F01   Spanglish         7/8     0.875   0.750   0.500   0.000
+S22       F02   Spanglish         7/8     0.875   0.750   0.500   0.000
+S23       F04   Spanish-dominant  8/8     1.000   1.000   1.000   1.000
+S24       F10   Spanish-dominant  7/8     0.875   0.750   0.500   0.000
+S25       F03   Spanish-dominant  8/8     1.000   1.000   1.000   1.000
+
+suite pass^1: unbiased 0.890   plug-in (c/n)^k 0.890
+suite pass^2: unbiased 0.794   plug-in (c/n)^k 0.806
+suite pass^4: unbiased 0.637   plug-in (c/n)^k 0.689
+suite pass^8: unbiased 0.400   plug-in (c/n)^k 0.558
+
+Worked check: c=6, n=8, k=4 gives 0.2143 unbiased and 0.3164 plug-in.
+pass^8 at 80% per trial: 0.8^8 = 0.1678; at 90%: 0.4305

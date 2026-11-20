@@ -1,0 +1,340 @@
+{
+  "call_id": "SY-2026-11-10-8000007",
+  "schema_version": "voice-trace/1.3",
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "campaign": "PIL-digital-nov",
+  "account_id": "A-96407643",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "T07",
+    "title": "Say your name and why you're calling",
+    "flow": "F08",
+    "persona": "P09",
+    "language_group": "English"
+  },
+  "started_at_local": "2026-11-10T10:12:03-08:00",
+  "tz": "America/Los_Angeles",
+  "location_signals": {
+    "area_code": "America/Los_Angeles",
+    "address": "America/Los_Angeles"
+  },
+  "dial": {
+    "attempts_7d_before": 2,
+    "connect_outcome": "answered",
+    "counts_toward_cap": true,
+    "conversation": true
+  },
+  "cli": "+1-520-555-01XX",
+  "attestation": "A",
+  "carrier": "carrier-b-mobile",
+  "codec_chain": [
+    "amr-wb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 600,
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v16",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.70",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 300,
+    "amount_or_date_asked": 600
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/SY-2026-11-10-8000007/agent.wav",
+    "caller_channel_uri": "s3://recordings/SY-2026-11-10-8000007/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/SY-2026-11-10-8000007/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.71,
+    "decided_at_ms": 2380,
+    "true_label": "call_screening"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "caller",
+      "source": "machine",
+      "vad_start_ms": 900,
+      "vad_end_ms": 7700,
+      "vad_hangover_ms": 200,
+      "stt_partials": [],
+      "stt_final": {
+        "t_ms": 7900,
+        "text": "Hi, the person you're calling is using a screening service and will get a copy of this conversation. Go ahead and say your name and why you're calling.",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "es",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "es",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.9
+      },
+      "eot_commit_ms": null,
+      "reference_text": "Hi, the person you're calling is using a screening service and will get a copy of this conversation. Go ahead and say your name and why you're calling.",
+      "ref_intent": "machine_prompt",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 2,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2400,
+          "end_ms": 2510,
+          "result": {
+            "account_id": "A-96407643",
+            "contact_id": "K-93252",
+            "first_name": "Ryan",
+            "product_code": "PIL",
+            "preferred_language": "English",
+            "contact_role": "borrower",
+            "masked_loan_no": "XXXX1495",
+            "jurisdiction": "us"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Ryan Mitchell?",
+        "request_ms": 2520,
+        "first_byte_ms": 2570,
+        "entities": []
+      },
+      "play_start_ms": 2600,
+      "play_end_ms": 13600,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "no_response"
+          },
+          "start_ms": 21000,
+          "end_ms": 21020,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hello, can you hear me?",
+        "request_ms": 13710,
+        "first_byte_ms": 13860,
+        "entities": []
+      },
+      "play_start_ms": 13900,
+      "play_end_ms": 15460,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "repeat"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [],
+    "turn_types": [],
+    "turn_gap_ms": [],
+    "stage_ms": {
+      "eot_delay": [],
+      "llm_ttft": [],
+      "tool": [],
+      "tts_ttfb": [],
+      "playout": []
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-96407643",
+        "product_code": "PIL",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1963-08-27",
+        "zip": "85711",
+        "state": "CA",
+        "jurisdiction": "us",
+        "loan_last4": "1495",
+        "preferred_language": "English",
+        "dpd": 19,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-11-24",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": true,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-93252",
+        "account_id": "A-96407643",
+        "phone_e164": "+15558602202",
+        "role": "borrower",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1963-08-27",
+        "zip": "85711",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [],
+    "revocations": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-96407643",
+        "product_code": "PIL",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1963-08-27",
+        "zip": "85711",
+        "state": "CA",
+        "jurisdiction": "us",
+        "loan_last4": "1495",
+        "preferred_language": "English",
+        "dpd": 19,
+        "past_due_cents": 42500,
+        "payment_cents": 42500,
+        "next_due_date": "2026-11-24",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": true,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-93252",
+        "account_id": "A-96407643",
+        "phone_e164": "+15558602202",
+        "role": "borrower",
+        "first_name": "Ryan",
+        "last_name": "Mitchell",
+        "dob": "1963-08-27",
+        "zip": "85711",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000007",
+        "account_id": "A-96407643",
+        "phone_e164": "+15558602202",
+        "cli": "+1-520-555-01XX",
+        "started_at_local": "2026-11-10T10:12:03-08:00",
+        "tz": "America/Los_Angeles",
+        "location_signals": {
+          "area_code": "America/Los_Angeles",
+          "address": "America/Los_Angeles"
+        },
+        "connect_outcome": "answered",
+        "counts_toward_cap": true,
+        "conversation": true,
+        "amd_label": "human",
+        "rpc": false,
+        "disposition": "no_response",
+        "recording_uri": "s3://recordings/SY-2026-11-10-8000007.wav",
+        "retain_until": "2029-10-30"
+      }
+    ],
+    "revocations": []
+  },
+  "gold_end_state": {
+    "new_rows": {},
+    "account": {},
+    "call_attempt": {
+      "rpc": false,
+      "disposition": "ivr"
+    }
+  },
+  "checks": [],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "gl-fail-v4",
+      "code": "OUT.AMD",
+      "note": "machine prompt labelled human (0.71); opener played to it; attempt logged as a conversation",
+      "turn_id": 2
+    }
+  ]
+}

@@ -1,0 +1,611 @@
+{
+  "call_id": "SY-2026-11-17-8000011",
+  "schema_version": "voice-trace/1.3",
+  "edition": "global",
+  "dataset": "steelyard-calls (synthetic, seed 20261121)",
+  "campaign": "SBL-guar-nov",
+  "account_id": "A-25654526",
+  "persona_or_real": "real",
+  "scenario": {
+    "incident": "S1",
+    "title": "Guarantor verified first",
+    "flow": "F06",
+    "persona": "P07",
+    "language_group": "English"
+  },
+  "started_at_local": "2026-11-17T11:42:10-07:00",
+  "tz": "America/Phoenix",
+  "location_signals": {
+    "area_code": "America/Phoenix",
+    "address": "America/Phoenix"
+  },
+  "dial": {
+    "attempts_7d_before": 2,
+    "connect_outcome": "answered",
+    "counts_toward_cap": true,
+    "conversation": true
+  },
+  "cli": "+1-520-555-01XX",
+  "attestation": "A",
+  "carrier": "carrier-b-mobile",
+  "codec_chain": [
+    "amr-wb",
+    "g711-pcmu"
+  ],
+  "pipeline": "cascade",
+  "concurrency_at_start": 650,
+  "versions": {
+    "agent": "hazel-3.2.1",
+    "prompt": "collections-v17",
+    "stt": "vendorA-2026-10",
+    "turn_detector": "td-1.1@thr0.72",
+    "llm": "model-x-2026-09-30",
+    "tts": "vendorB-v4@8k",
+    "policy_pack": "us-regf-2026-11",
+    "taxonomy": "gl-fail-v4",
+    "gold": null
+  },
+  "silence_budget_ms": {
+    "default": 450,
+    "amount_or_date_asked": 650
+  },
+  "audio": {
+    "agent_channel_uri": "s3://recordings/SY-2026-11-17-8000011/agent.wav",
+    "caller_channel_uri": "s3://recordings/SY-2026-11-17-8000011/caller.wav",
+    "sample_rate_hz": 8000,
+    "redacted_uri": "s3://recordings/SY-2026-11-17-8000011/caller.redacted.wav",
+    "carrier_offset_ms": 212
+  },
+  "amd": {
+    "label": "human",
+    "confidence": 0.94,
+    "decided_at_ms": 2380,
+    "true_label": "human"
+  },
+  "turns": [
+    {
+      "turn_id": 1,
+      "speaker": "agent",
+      "turn_type": "greeting",
+      "responds_to": null,
+      "llm": null,
+      "tool_calls": [
+        {
+          "name": "lookup_account",
+          "args_redacted": {},
+          "start_ms": 2390,
+          "end_ms": 2520,
+          "result": {
+            "account_id": "A-25654526",
+            "contact_id": "K-20417",
+            "first_name": "Luis",
+            "product_code": "SBL",
+            "preferred_language": "English",
+            "contact_role": "guarantor",
+            "masked_loan_no": "XXXX5076",
+            "jurisdiction": "us"
+          }
+        }
+      ],
+      "tts": {
+        "text": "Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded. Am I speaking with Luis Herrera?",
+        "request_ms": 2530,
+        "first_byte_ms": 2714,
+        "entities": []
+      },
+      "play_start_ms": 2773,
+      "play_end_ms": 9793,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "business_identity",
+        "ai_disclosure",
+        "recording_notice",
+        "identity_question"
+      ]
+    },
+    {
+      "turn_id": 2,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 10580,
+      "vad_end_ms": 12620,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 11070,
+          "text": "Yeah, this"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 12784,
+        "text": "Yeah, this is Luis. What's going on?",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.82
+      },
+      "eot_commit_ms": 13095,
+      "reference_text": "Yeah, this is Luis. What's going on?",
+      "ref_intent": "identity_confirmed",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 3,
+      "speaker": "agent",
+      "turn_type": "verification",
+      "responds_to": 2,
+      "llm": {
+        "request_ms": 13105,
+        "first_token_ms": 13652,
+        "first_answer_token_ms": 13652,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [],
+      "tts": {
+        "text": "Thank you. To verify your identity, can you tell me your ZIP code?",
+        "request_ms": 13662,
+        "first_byte_ms": 13897,
+        "entities": []
+      },
+      "play_start_ms": 13956,
+      "play_end_ms": 18476,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "verify_ask"
+      ]
+    },
+    {
+      "turn_id": 4,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 19351,
+      "vad_end_ms": 21921,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 19841,
+          "text": "eight five"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 22132,
+        "text": "eight five seven one nine",
+        "lang_tags": [
+          "en",
+          "en",
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.93
+      },
+      "eot_commit_ms": 22458,
+      "reference_text": "eight five seven one nine",
+      "ref_intent": "verify_answer",
+      "ref_entities": [
+        {
+          "type": "postal_code",
+          "value": "85719"
+        }
+      ],
+      "stt_entities": [
+        {
+          "type": "postal_code",
+          "value": "85719"
+        }
+      ],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 5,
+      "speaker": "agent",
+      "turn_type": "amount-quote",
+      "responds_to": 4,
+      "llm": {
+        "request_ms": 22468,
+        "first_token_ms": 22955,
+        "first_answer_token_ms": 22955,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "verify_identity",
+          "args_redacted": {
+            "method": "zip"
+          },
+          "start_ms": 22965,
+          "end_ms": 23081,
+          "result": {
+            "verified": true,
+            "attempts": 1,
+            "locked": false
+          }
+        },
+        {
+          "name": "get_dues",
+          "args_redacted": {},
+          "start_ms": 23091,
+          "end_ms": 23576,
+          "result": {
+            "past_due_cents": 120000,
+            "payment_cents": 120000,
+            "next_due_date": "2026-12-11",
+            "dpd": 72,
+            "late_fee_cents": 2500,
+            "payoff_cents": 1080000
+          }
+        }
+      ],
+      "tts": {
+        "text": "Thanks, Luis. This is an attempt to collect a debt, and any information obtained will be used for that purpose. You're the guarantor on a business loan, and a payment of one thousand two hundred dollars is outstanding on it...",
+        "request_ms": 23586,
+        "first_byte_ms": 23746,
+        "entities": [
+          {
+            "type": "amount",
+            "value": 120000
+          }
+        ]
+      },
+      "play_start_ms": 23795,
+      "play_end_ms": 38315,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "debt_notice",
+        "inform_dues"
+      ]
+    },
+    {
+      "turn_id": 6,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 39093,
+      "vad_end_ms": 40343,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 39583,
+          "text": "uh-huh, okay"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 40567,
+        "text": "uh-huh, okay",
+        "lang_tags": [
+          "en",
+          "en"
+        ],
+        "confidence": 0.95
+      },
+      "eot_commit_ms": 40832,
+      "reference_text": "uh-huh, okay",
+      "ref_intent": "backchannel",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 7,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 6,
+      "llm": {
+        "request_ms": 40842,
+        "first_token_ms": 41205,
+        "first_answer_token_ms": 41205,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "send_disclosure_sms",
+          "args_redacted": {
+            "jurisdiction": "us"
+          },
+          "start_ms": 52856,
+          "end_ms": 52941,
+          "result": {
+            "sms_id": "SMS-422182"
+          }
+        }
+      ],
+      "tts": {
+        "text": "If you have a complaint, you can reach our Customer Advocate, Dana Brooks, at five two zero, five five five, zero one nine nine. I'm texting you the details now.",
+        "request_ms": 41215,
+        "first_byte_ms": 41446,
+        "entities": []
+      },
+      "play_start_ms": 41506,
+      "play_end_ms": 52846,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "disclosure"
+      ]
+    },
+    {
+      "turn_id": 8,
+      "speaker": "caller",
+      "source": "human",
+      "vad_start_ms": 53316,
+      "vad_end_ms": 54566,
+      "vad_hangover_ms": 200,
+      "stt_partials": [
+        {
+          "t_ms": 53806,
+          "text": "okay, thanks,"
+        }
+      ],
+      "stt_final": {
+        "t_ms": 54818,
+        "text": "okay, thanks, bye",
+        "lang_tags": [
+          "en",
+          "en",
+          "en"
+        ],
+        "confidence": 0.93
+      },
+      "eot_commit_ms": 55034,
+      "reference_text": "okay, thanks, bye",
+      "ref_intent": "closing",
+      "ref_entities": [],
+      "stt_entities": [],
+      "tags": [],
+      "pauses": []
+    },
+    {
+      "turn_id": 9,
+      "speaker": "agent",
+      "turn_type": "closing",
+      "responds_to": 8,
+      "llm": {
+        "request_ms": 55044,
+        "first_token_ms": 55533,
+        "first_answer_token_ms": 55533,
+        "cached_tokens": 1840
+      },
+      "tool_calls": [
+        {
+          "name": "end_call",
+          "args_redacted": {
+            "disposition": "guarantor_informed"
+          },
+          "start_ms": 62150,
+          "end_ms": 62223,
+          "result": {
+            "ok": true
+          }
+        }
+      ],
+      "tts": {
+        "text": "You can call us back at five two zero, five five five, zero one zero zero. Goodbye.",
+        "request_ms": 55543,
+        "first_byte_ms": 55754,
+        "entities": []
+      },
+      "play_start_ms": 55800,
+      "play_end_ms": 62140,
+      "speaking_rate_sps": 4.4,
+      "barge_in": null,
+      "acts": [
+        "callback_number",
+        "goodbye"
+      ]
+    }
+  ],
+  "timings_summary": {
+    "agent_turn_ids": [
+      3,
+      5,
+      7,
+      9
+    ],
+    "turn_types": [
+      "verification",
+      "amount-quote",
+      "closing",
+      "closing"
+    ],
+    "turn_gap_ms": [
+      1336,
+      1874,
+      1163,
+      1234
+    ],
+    "stage_ms": {
+      "eot_delay": [
+        475,
+        537,
+        489,
+        468
+      ],
+      "llm_ttft": [
+        547,
+        487,
+        363,
+        489
+      ],
+      "tool": [
+        0,
+        601,
+        0,
+        0
+      ],
+      "tts_ttfb": [
+        235,
+        160,
+        231,
+        211
+      ],
+      "playout": [
+        59,
+        49,
+        60,
+        46
+      ]
+    }
+  },
+  "crm_before": {
+    "accounts": [
+      {
+        "account_id": "A-25654526",
+        "product_code": "SBL",
+        "first_name": "Luis",
+        "last_name": "Herrera",
+        "dob": "1983-09-14",
+        "zip": "85711",
+        "state": "AZ",
+        "jurisdiction": "us",
+        "loan_last4": "5076",
+        "preferred_language": "English",
+        "dpd": 72,
+        "past_due_cents": 120000,
+        "payment_cents": 120000,
+        "next_due_date": "2026-12-11",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-20417",
+        "account_id": "A-25654526",
+        "phone_e164": "+15555716898",
+        "role": "guarantor",
+        "first_name": "Luis",
+        "last_name": "Herrera",
+        "dob": "1982-12-03",
+        "zip": "85719",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [],
+    "call_attempts": [],
+    "revocations": []
+  },
+  "crm_after": {
+    "accounts": [
+      {
+        "account_id": "A-25654526",
+        "product_code": "SBL",
+        "first_name": "Luis",
+        "last_name": "Herrera",
+        "dob": "1983-09-14",
+        "zip": "85711",
+        "state": "AZ",
+        "jurisdiction": "us",
+        "loan_last4": "5076",
+        "preferred_language": "English",
+        "dpd": 72,
+        "past_due_cents": 120000,
+        "payment_cents": 120000,
+        "next_due_date": "2026-12-11",
+        "recovery_hold": false,
+        "hardship_flag": false,
+        "dnc_bot": false,
+        "digital_origination": false,
+        "ai_voice_consent_at": "2026-03-02T10:15:00-07:00",
+        "consent_revoked_at": null
+      }
+    ],
+    "contacts": [
+      {
+        "contact_id": "K-20417",
+        "account_id": "A-25654526",
+        "phone_e164": "+15555716898",
+        "role": "guarantor",
+        "first_name": "Luis",
+        "last_name": "Herrera",
+        "dob": "1982-12-03",
+        "zip": "85719",
+        "verified_at": null
+      }
+    ],
+    "payments": [],
+    "ptps": [],
+    "callbacks": [],
+    "grievances": [],
+    "hardship": [],
+    "dnc": [],
+    "sms_log": [
+      {
+        "sms_id": "SMS-422182",
+        "account_id": "A-25654526",
+        "template": "disclosure",
+        "sent_at": "2026-11-17T11:43:02-07:00"
+      }
+    ],
+    "call_attempts": [
+      {
+        "attempt_id": "AT-70000011",
+        "account_id": "A-25654526",
+        "phone_e164": "+15555716898",
+        "cli": "+1-520-555-01XX",
+        "started_at_local": "2026-11-17T11:42:10-07:00",
+        "tz": "America/Phoenix",
+        "location_signals": {
+          "area_code": "America/Phoenix",
+          "address": "America/Phoenix"
+        },
+        "connect_outcome": "answered",
+        "counts_toward_cap": true,
+        "conversation": true,
+        "amd_label": "human",
+        "rpc": true,
+        "disposition": "guarantor_informed",
+        "recording_uri": "s3://recordings/SY-2026-11-17-8000011.wav",
+        "retain_until": "2029-11-06"
+      }
+    ],
+    "revocations": []
+  },
+  "gold_end_state": {
+    "new_rows": {
+      "sms_log": [
+        {
+          "template": "disclosure"
+        }
+      ]
+    },
+    "account": {},
+    "call_attempt": {
+      "rpc": true,
+      "disposition": "guarantor_informed"
+    }
+  },
+  "checks": [],
+  "judge_scores": [],
+  "labels": [
+    {
+      "labeler": "rv-07",
+      "taxonomy": "gl-fail-v4",
+      "code": "NONE",
+      "note": "worked example, no failure",
+      "turn_id": null
+    }
+  ]
+}

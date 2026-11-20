@@ -1,0 +1,23 @@
+Production monitoring: rare violations (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+stratum       human-answered calls  share   Wilson 95%
+------------  --------------------  ------  ----------------
+other         1742                  96.89%  [95.98%, 97.59%]
+hardship      16                    0.89%   [0.55%, 1.44%]
+dispute       11                    0.61%   [0.34%, 1.09%]
+window_edge   11                    0.61%   [0.34%, 1.09%]
+complaint     9                     0.50%   [0.26%, 0.95%]
+stop_request  5                     0.28%   [0.12%, 0.65%]
+angry         4                     0.22%   [0.09%, 0.57%]
+Risk strata share in the sample: 3.11% (world plan: 4.0% of connects)
+
+Calls to see a 1-in-1,000 violation with 95% probability: 2995
+1,000 sampled calls at 1 in 2,000: P(at least one) = 0.394
+0 violations in 300 audited calls: rule of three 0.0100; exact two-sided upper 0.0122
+
+T09: 130,000 connects a day, threat rate 1 in 24,000, uniform 2% judge sample
+  threat calls reaching the judge per day: 0.108; over 3 days P(at least one) = 0.28
+  stratified: the angry stratum has about 217 calls a day; judging all of them sees about 5.4 threat calls a day
+A 1-in-2,000 violation within a week at 95%: 5990 sampled calls a week

@@ -1,0 +1,25 @@
+Judge validation per language group and dimension (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+dim        group             judge       TP/FN/FP/TN  agree  kappa  recall [Wilson 95%]   specificity [Wilson 95%]  precision  gate
+---------  ----------------  ----------  -----------  -----  -----  --------------------  ------------------------  ---------  --------
+C07        English           transcript  14/2/5/99    0.942  0.766  0.875 [0.640, 0.965]  0.952 [0.892, 0.979]      0.737      advisory
+C07        English           blueprint   13/3/5/99    0.933  0.726  0.812 [0.570, 0.934]  0.952 [0.892, 0.979]      0.722      advisory
+C07        Spanish-dominant  transcript  10/0/5/105   0.958  0.778  1.000 [0.722, 1.000]  0.955 [0.898, 0.980]      0.667      advisory
+C07        Spanish-dominant  blueprint   8/2/6/104    0.933  0.631  0.800 [0.490, 0.943]  0.945 [0.886, 0.975]      0.571      advisory
+C07        Spanglish         transcript  15/3/6/96    0.925  0.725  0.833 [0.608, 0.942]  0.941 [0.878, 0.973]      0.714      advisory
+C07        Spanglish         blueprint   18/0/5/97    0.958  0.853  1.000 [0.824, 1.000]  0.951 [0.890, 0.979]      0.783      advisory
+TONE.PACE  English           transcript  15/9/5/91    0.883  0.611  0.625 [0.427, 0.788]  0.948 [0.884, 0.978]      0.750      advisory
+TONE.PACE  English           blueprint   20/4/9/87    0.892  0.686  0.833 [0.641, 0.933]  0.906 [0.831, 0.950]      0.690      advisory
+TONE.PACE  Spanish-dominant  transcript  23/5/5/87    0.917  0.767  0.821 [0.644, 0.921]  0.946 [0.879, 0.977]      0.821      advisory
+TONE.PACE  Spanish-dominant  blueprint   21/7/9/83    0.867  0.636  0.750 [0.566, 0.873]  0.902 [0.824, 0.948]      0.700      advisory
+TONE.PACE  Spanglish         transcript  9/5/6/100    0.908  0.569  0.643 [0.388, 0.837]  0.943 [0.882, 0.974]      0.600      advisory
+TONE.PACE  Spanglish         blueprint   14/0/2/104   0.983  0.924  1.000 [0.785, 1.000]  0.981 [0.934, 0.995]      0.875      advisory
+
+Gate: admit only when the Wilson lower bounds of recall and specificity both reach 0.90.
+Prevalence trap: an always-compliant judge at 3% prevalence agrees on 0.970 of calls, kappa 0.000.
+
+Human raters A vs B, English: kappa 0.677
+Human raters A vs B, Spanish-dominant: kappa 0.636
+Human raters A vs B, Spanglish: kappa 0.633

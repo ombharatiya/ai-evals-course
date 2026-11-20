@@ -1,0 +1,19 @@
+Capstone evidence: which component catches each incident (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+trace  first failure  caught by (checks | CRM diff | component)
+-----  -------------  ----------------------------------------------------------------
+T01    ENT.AMOUNT     C12 | CRM diff | amount entity error rate gate
+T02    TURN.BARGEIN   C08 | CRM diff | barge-in recovery suite
+T03    POL.DISCLOSE   C03, C04, C05 | CRM diff | C04 ordered-event check on every call
+T04    LAT.TAIL       P95 tool-turn gate + load test at peak
+T05    TURN.CUTOFF    false-cutoff gate per campaign and call state
+T06    ENT.DATE       C12 | spoken-entity round-trip suite (TTS -> 8 kHz -> STT)
+T07    OUT.AMD        CRM diff | six-class AMD matrix gate
+T08    STT.LID        CRM diff | code-switch simulation + clarification-loop check
+T09    POL.COERCE     C07 | lexicon on every call + J1 flags to human audit
+T10    POL.HARDSHIP   C09 | C09 order check + J2 once validated
+
+Incidents caught by two or more independent components: 8 of 10
+Budget frame: today Rs 9,13,460 under Rs 10,00,000; at 2.5x about Rs 15,13,951 against Rs 15,00,000.

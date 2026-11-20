@@ -1,0 +1,52 @@
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+dataset: tarazu-calls (synthetic, seed 20261120)
+
+[1] pass^k for one task with a fixed per-trial rate p: p^k
+p      k=1     k=4     k=8     k=16
+0.95  0.9500  0.8145  0.6634  0.4401
+0.90  0.9000  0.6561  0.4305  0.1853
+0.80  0.8000  0.4096  0.1678  0.0281
+c=6 of n=8, k=4: unbiased C(6,4)/C(8,4) = 15/70 = 0.2143; shortcut (6/8)^4 = 0.3164; pass@4 = 1.0000
+
+[2] Suite of 60 scenarios x 8 trials (synthetic; dispute segment = 4 scenarios)
+release run (1 trial per scenario): 60/60 passed; dispute 4/4
+chance of that run being all green: 0.037; dispute alone 4/4: 0.408
+k   unbiased pass^k  per-task (c/n)^k  (mean p)^k  pass@k
+1             0.969             0.969       0.969   0.969
+2             0.939             0.943       0.938   0.998
+4             0.886             0.904       0.881   1.000
+8             0.800             0.857       0.776   1.000
+true suite pass^8 from the generating rates: 0.751
+
+[3] Intervals for single rates (95%)
+rate                                   k/n      Wilson           Clopper-Pearson
+release run, all 60                    60/60   [0.940, 1.000]   [0.940, 1.000]
+release run, dispute                    4/4    [0.510, 1.000]   [0.398, 1.000]
+8 trials, dispute (32 runs, 4 tasks)   28/32   [0.719, 0.950]   [0.710, 0.965]
+4 of 4 passing: Wilson lower bound 0.510; to clear a 0.90 bar with zero failures you need 35 of 35
+the 32 dispute runs come from 4 scenarios, so they are not 32 independent trials: the scenario is the unit for any gate
+
+[4] Runs needed to detect 90% -> 85% (one-sided alpha 0.05, power 0.80)
+unpaired, closed form: 539.9 -> 540 scenarios per arm (1,080 scenario runs)
+paired (McNemar), discordant cells 7% / 2%: 220.5 -> 221 scenarios, each run on both versions
+seeded simulation, 2,000 reps: unpaired power 0.791; paired power 0.804; paired at 60 scenarios 0.358
+
+[5] Release gate: 240 scenarios, 20 per gated segment, k=4, old vs new
+allowed drop 0.05; block when the Holm-adjusted p for 'delta below -0.05' is under 0.05
+language        flow                old    new    delta  upper95  p      p_holm  new pass^4  gate
+Hinglish        promise            0.925  0.938  +0.013  +0.075   0.9675 1.0000  0.750       pass
+Hinglish        dispute+paid       0.925  0.863  -0.062  +0.013   0.4488 1.0000  0.550       pass
+Hinglish        hardship+complaint 0.963  0.963  +0.000  +0.050   0.9830 1.0000  0.850       pass
+Hinglish        other parties      0.887  0.925  +0.037  +0.125   0.9580 1.0000  0.750       pass
+Hindi-dominant  promise            0.925  0.925  +0.000  +0.087   0.8521 1.0000  0.800       pass
+Hindi-dominant  dispute+paid       0.912  0.613  -0.300  -0.163   0.0005 0.0060  0.300       BLOCK
+Hindi-dominant  hardship+complaint 0.800  0.950  +0.150  +0.237   1.0000 1.0000  0.800       pass
+Hindi-dominant  other parties      0.950  0.925  -0.025  +0.037   0.8081 1.0000  0.700       pass
+Indian English  promise            0.912  0.900  -0.013  +0.062   0.8586 1.0000  0.600       pass
+Indian English  dispute+paid       0.925  0.863  -0.062  +0.013   0.4433 1.0000  0.550       pass
+Indian English  hardship+complaint 0.900  0.938  +0.037  +0.100   0.9940 1.0000  0.750       pass
+Indian English  other parties      0.863  0.825  -0.037  +0.062   0.6057 1.0000  0.450       pass
+blocked segments: Hindi-dominant x dispute+paid
+pooled delta over all 240 scenarios: -0.022 (the regression is diluted 12 ways; a pooled gate alone would read it as a small dip)
+
+all assertions passed

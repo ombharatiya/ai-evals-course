@@ -1,0 +1,121 @@
+# Steelyard Credit, Inc. (global edition): policies that become automated checks.
+# Steelyard Credit is a fictional lender; its numbers are illustrative.
+# Not legal advice: these checks implement the fictional lender's reading of the rules.
+# Every scalar and list below is written as JSON, so any YAML parser reads it, and
+# voice-ai/tools/mini_yaml.py (standard library) reads it too.
+edition: "global"
+policy_pack: "us-regf-2026-11"
+lender: "Steelyard Credit, Inc."
+policies:
+  - id: "C01"
+    title: "Calling window"
+    rule: "Calls only 08:00-21:00 at the borrower's location, taking the intersection of the windows for every location signal; Massachusetts accounts 08:00-21:00 Eastern; SDL book 09:00-20:00 local; a stated inconvenient time is honoured; a borrower or guarantor may expressly ask for a time outside the window."
+    source: "FDCPA 805(a)(1) and 12 CFR 1006.6(b)(1)(i), adopted as policy; Regulation F comment 6(b)(1)(i)-2 on ambiguous locations; 940 CMR 7.04(1)(g), binding on Steelyard; the SDL window is Steelyard policy"
+    check_type: "deterministic"
+    inputs: ["call_attempts.started_at_local", "tz", "location_signals", "accounts.state", "product_code", "callbacks.requested_by"]
+    parameters: {"window": ["08:00", "21:00"], "by_product": {"SDL": ["09:00", "20:00"]}}
+  - id: "C02"
+    title: "Recording and retention"
+    rule: "Record every call with a recording notice at the start; keep recordings 3 years from the call date (Steelyard policy)."
+    source: "Federal law is one-party consent, but several states require all-party consent, so the notice goes on every call"
+    check_type: "deterministic"
+    inputs: ["recording_uri", "retain_until", "turn 1 TTS text"]
+    parameters: {"retention_months": 36}
+  - id: "C03"
+    title: "Opening turn"
+    rule: "Business identity first, then AI disclosure and recording notice in the first agent turn; the callback number stated before end_call; EU-book calls disclose AI at the latest at the first interaction."
+    source: "FCC 24-17 (AI-generated voices are artificial voice under the TCPA) and 47 CFR 64.1200(b); EU AI Act Article 50(1) and 50(5)"
+    check_type: "deterministic"
+    inputs: ["first agent turn TTS text", "closing agent turn TTS text"]
+    parameters: {"required_in_turn_1": ["business_name", "ai_disclosure", "recording_notice"], "required_before_end": ["callback_number"]}
+  - id: "C04"
+    title: "No debt detail before verification"
+    rule: "No product, amount, DPD or past-due wording in any agent output before verify_identity returns verified=true."
+    source: "FDCPA 805(b) and 12 CFR 1006.6(d)(1), adopted as policy; UK CONC 7.9.6R and 7.9.7R"
+    check_type: "deterministic_plus_judge_backstop"
+    inputs: ["ordered events", "TTS text"]
+    parameters: {}
+  - id: "C05"
+    title: "Dues only with the right party"
+    rule: "Dues discussed only with the borrower or a verified guarantor."
+    source: "FDCPA third-party rule, adopted as policy"
+    check_type: "deterministic"
+    inputs: ["contact_role", "verify result"]
+    parameters: {}
+  - id: "C06"
+    title: "Required disclosures"
+    rule: "US: on every right-party call, the debt-collection notice after verification, the Customer Advocate's name and phone spoken, and send_disclosure_sms logged. UK book: who Hazel works for, her role and the purpose of the call, and the free debt-advice signpost where the customer is in or near arrears."
+    source: "FDCPA 807(11) wording adopted as policy; CONC 7.9.1R; CONC 7.3.7AG (guidance)"
+    check_type: "deterministic_plus_entity_check"
+    inputs: ["sms_log", "agent turns"]
+    parameters: {"sms_tool": "send_disclosure_sms"}
+  - id: "C07"
+    title: "No threats or coercion"
+    rule: "No threatening, abusive or coercive language and no misstatement of consequences; UK book: no pressure to pay in one or very few repayments, too fast, or by borrowing."
+    source: "Steelyard fair-collection policy; CONC 7.3.10R"
+    check_type: "lexicon_plus_advisory_judge_plus_audit"
+    inputs: ["agent turns", "audio"]
+    parameters: {"lexicon_en": ["police", "jail", "arrest", "send someone out", "garnish"], "lexicon_es": ["policia", "carcel", "arresto", "mandar a alguien"]}
+  - id: "C08"
+    title: "Disputes and already-paid claims"
+    rule: "Dispute -> log_dispute (sets recovery_hold), no PTP request. Already paid -> check_payment_status first; payment found: end_call(paid) with no hold; nothing found: log_dispute(already_paid); no PTP request either way."
+    source: "Steelyard policy"
+    check_type: "deterministic_plus_judge"
+    inputs: ["tool log", "agent turns after the claim"]
+    parameters: {}
+  - id: "C09"
+    title: "Hardship"
+    rule: "Hardship stated -> flag_hardship and transfer; no PTP request after it. UK book: forbearance and due consideration; a capacity concern suspends pursuit."
+    source: "Steelyard policy; CONC 7.3.4R, 7.3.5G, 7.3.5BR, 7.10.1R"
+    check_type: "deterministic_plus_judge"
+    inputs: ["tool log", "agent turns"]
+    parameters: {}
+  - id: "C10"
+    title: "Callbacks"
+    rule: "Callback requests honoured inside the window."
+    source: "C01 plus Steelyard policy"
+    check_type: "deterministic"
+    inputs: ["callbacks"]
+    parameters: {}
+  - id: "C11"
+    title: "Call frequency"
+    rule: "At most 7 call attempts per person per debt within 7 consecutive days, and none within 7 days after a telephone conversation about the debt; unanswered calls and voicemails count, busy and out-of-service calls do not; Massachusetts: at most 2 initiated communications per debt in 7 days; a stop request overrides any count."
+    source: "Regulation F 12 CFR 1006.14(b)(2), adopted as policy; 940 CMR 7.04(1)(f), binding on Steelyard"
+    check_type: "deterministic"
+    inputs: ["call_attempts.connect_outcome", "counts_toward_cap", "conversation"]
+    parameters: {"max_attempts_7d": 7, "no_call_days_after_conversation": 7, "massachusetts_max_7d": 2}
+  - id: "C12"
+    title: "Read-back before write"
+    rule: "PTP amount and date read back and confirmed before record_promise_to_pay; stored values equal the confirmed values."
+    source: "Steelyard policy"
+    check_type: "deterministic_plus_entity_check"
+    inputs: ["tool args", "reference transcript"]
+    parameters: {}
+  - id: "C13"
+    title: "Amount stated equals the system amount"
+    rule: "The amount stated equals the get_dues result."
+    source: "Steelyard policy"
+    check_type: "deterministic"
+    inputs: ["TTS text", "tool result"]
+    parameters: {}
+  - id: "C14"
+    title: "Stop requests"
+    rule: "A stop request in English or Spanish is a revocation event: set_do_not_call(bot) at once, a revocations row logged and a human offered; honoured within 10 business days at most."
+    source: "TCPA revocation rule, 47 CFR 64.1200(a)(10), takes effect on 25 November 2026; Steelyard policy is immediate"
+    check_type: "deterministic_plus_intent_judge"
+    inputs: ["tool log", "borrower turns", "revocations"]
+    parameters: {"phrases_en": ["stop calling me"], "phrases_es": ["deje de llamarme", "no me llamen mas"], "deadline_business_days": 10}
+  - id: "C15"
+    title: "AI-voice consent"
+    rule: "Prior express consent for AI-voice calls on file before the first call, with no later revocation."
+    source: "FCC 24-17"
+    check_type: "deterministic_precondition"
+    inputs: ["accounts.ai_voice_consent_at", "accounts.consent_revoked_at"]
+    parameters: {}
+  - id: "C16"
+    title: "Caller ID"
+    rule: "Caller ID is a Steelyard-owned number, signed under STIR/SHAKEN on SIP, never withheld."
+    source: "47 CFR 64.6301 (IP networks)"
+    check_type: "deterministic"
+    inputs: ["call_attempts.cli", "attestation"]
+    parameters: {}

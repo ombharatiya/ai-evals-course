@@ -1,0 +1,44 @@
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+dataset: steelyard-calls (synthetic, seed 20261121); call date 2026-11-20; fixture: constructed
+
+WG7 surface forms 1-7 -> 150000 cents: ok
+T06 line '12/03' (gold 2026-12-03) heard as: 'doce de marzo' -> 2027-03-12
+bare 'es' voice, '$1,500.00' heard as: 'uno coma quinientos dolares' -> 150 cents (gold 150000)
+small model, '$1,000,000.00' heard as: 'one thousand thousand dollars' -> None (rejected)
+
+200 prompts from CRM templates; exact match after the round trip
+entity      n    numeric input  written-out input  STT floor (human)
+amount     80   61/80    76.2%     80/80   100.0%     79/80    98.8%
+date       50   44/50    88.0%     50/50   100.0%     50/50   100.0%
+phone      25   16/25    64.0%     25/25   100.0%     25/25   100.0%
+zip        15    4/15    26.7%     15/15   100.0%     15/15   100.0%
+email      15    0/15     0.0%     15/15   100.0%     15/15   100.0%
+address    15   15/15   100.0%     15/15   100.0%     15/15   100.0%
+all       200  140/200   70.0%    200/200  100.0%    199/200   99.5%
+date rows, numeric input, English           :  36/36   100.0%
+date rows, numeric input, Spanish, day 1-12 :   0/6      0.0%  (day == month in 0)
+date rows, numeric input, Spanish, day 13-31:   8/8    100.0%
+
+first failure per entity type, numeric input:
+  amount  TTS input: Para liquidar el prestamo necesita pagar $31,500.00.
+          heard:     para liquidar el prestamo necesita pagar treinta y uno coma quinientos dolares
+          parsed 3150, expected 3150000
+  date    TTS input: Su proximo pago vence el 01/12.
+          heard:     su proximo pago vence el primero de diciembre
+          parsed 2026-12-01, expected 2027-01-12
+  phone   TTS input: Sigue siendo (713) 555-0197 el mejor numero para llamarle?
+          heard:     sigue siendo setenta y uno treinta y cinco cincuenta y cinco uno noventa y siete el mejor numero para llamarle
+          parsed None, expected '7135550197'
+  zip     TTS input: Thank you, ZIP code 78763 matches our records.
+          heard:     thank you zip code seventy eight thousand seven hundred sixty three matches our records
+          parsed None, expected '78763'
+  email   TTS input: Nuestro correo de quejas es advocate@steelyard.example.
+          heard:     nuestro correo de quejas es advocate commercial at steelyard full stop example
+          parsed None, expected 'advocate@steelyard.example'
+
+acceptance gate: 400 amount lines, rule = exact match >= 99.5% and zero wrong amounts
+input          wrong  exact match  95% upper bound (one-sided)  gate
+written-out    0/400      100.00%                       0.0075  PASS
+numeric       69/400       82.75%                       0.2066  FAIL
+0 of 400: exact bound 0.00746 (0.746%); rule of three 3/400 = 0.0075
+all assertions passed

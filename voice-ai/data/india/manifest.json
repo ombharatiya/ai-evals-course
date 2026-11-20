@@ -1,0 +1,82 @@
+{
+  "edition": "india",
+  "dataset": "tarazu-calls (synthetic, seed 20261120)",
+  "seed": 20261120,
+  "world_version": "world-v1.1",
+  "generator_version": "1.0.0",
+  "note": "Tarazu Finance is a fictional lender; its numbers are illustrative. All data is synthetic.",
+  "files": {
+    "calls.jsonl": {
+      "sha256": "bc77da0dc5eac48e6f77e1a20b6864d2a1ac9166e5a74741fee18edcbbd92715",
+      "records": 200
+    },
+    "entity_pairs.jsonl": {
+      "sha256": "dbcb6869f8e66e03037920a02b4c79a2d68558526b0df815904ce331e41bc31c",
+      "records": 600
+    },
+    "judge_labels.jsonl": {
+      "sha256": "a01edb46296ec09008da9423ad79fa95c73f688cab7b7f47d241091b7a5e5d40",
+      "records": 720
+    },
+    "pauses.jsonl": {
+      "sha256": "647ccb5f7a905be03abf16c08bcb774fcc95541c857155bf7849296c5517fd2b",
+      "records": 1201
+    },
+    "production_sample.jsonl": {
+      "sha256": "256fac5bef1f94c1e7774536750efac001deff3523439ef623af380bc341bfa7",
+      "records": 4000
+    },
+    "traces/S1.json": {
+      "sha256": "561362e569d0d00e905fc070d434a16803851111a86f993c4349f859b954405d",
+      "records": 1
+    },
+    "traces/S2a.json": {
+      "sha256": "16fdf9af638f585b8a80b098885d81bf43192a515ddfa828aefe766492428d36",
+      "records": 1
+    },
+    "traces/S2b.json": {
+      "sha256": "1a7fdd60e02c0378c57c23d175795fd34cd7194d73f543adc70c9d0fca9d6789",
+      "records": 1
+    },
+    "traces/T01.json": {
+      "sha256": "f5bcef39a66ec38169e08cca52a747c4b5c32e4fd78718ce79ec0e3444bd6888",
+      "records": 1
+    },
+    "traces/T02.json": {
+      "sha256": "19cde25c2fc43590e6f282a7b7595f4d581e08be387ec97dee07e474f3d5cad2",
+      "records": 1
+    },
+    "traces/T03.json": {
+      "sha256": "877fd5e79d92ac4a5a06c6c308bb8a5251a78128f7f167cb124b92b50a745dd6",
+      "records": 1
+    },
+    "traces/T04.json": {
+      "sha256": "3d179f118656f7b2a589c560c25ac454c8496dfa1b7fabddf0bcdacf7a68481c",
+      "records": 1
+    },
+    "traces/T05.json": {
+      "sha256": "56e0d0de5783c74772e3aaf74ae3f7b15056ad06b27ef6b8d6295a24f84b2e30",
+      "records": 1
+    },
+    "traces/T06.json": {
+      "sha256": "1b7ac770481b9aa10047bf9f6e45441e2733700f7134ea63fad8d0661e0bba94",
+      "records": 1
+    },
+    "traces/T07.json": {
+      "sha256": "28a913fd18b3b2c31bfce647c38a72d16d6b68bdaa0cb3e48af010a5fb8ece8c",
+      "records": 1
+    },
+    "traces/T08.json": {
+      "sha256": "a58f36f5be03788e8ea1c49520ebbc49dafd5030d6d6988a45e3c6f4745d44a4",
+      "records": 1
+    },
+    "traces/T09.json": {
+      "sha256": "80194a943eba3452db0026da611197e8336a376b7033a6468eb741dfc020d4bf",
+      "records": 1
+    },
+    "traces/T10.json": {
+      "sha256": "b73ed197f5d84d5a94f12a7243cab60898b72746cb8f8e5acb6d5b736bcb970d",
+      "records": 1
+    }
+  }
+}

@@ -1,0 +1,62 @@
+Validate a simulated caller (R7). Steelyard Credit is a fictional lender; its numbers are illustrative.
+Dataset: steelyard-calls (synthetic, seed 20261121); simulation seed 20261120, shared with the India edition. All data below is synthetic.
+
+== 1. scenario grid ==
+persona-flow pairs: 20; audio conditions: 3; language mixes: 3
+full factorial: 180 scenarios; pairwise grid: 60 scenarios
+  persona_flow x audio     60/60 pairs covered
+  persona_flow x lang      60/60 pairs covered
+  audio x lang             9/9 pairs covered
+
+== 2. validators and regeneration (up to 2 retries) ==
+planned runs: 120; simulator calls placed: 152
+rejected on first attempt: 25/120 = 20.8%
+  first-attempt rejections by valid call end         11
+  first-attempt rejections by behavioural fidelity   7
+  first-attempt rejections by caller-turn fidelity   7
+     8  no terminal event (call truncated)
+     3  simulated caller hung up before the flow's terminal state
+     2  required behaviour missing (veinte|twentieth)
+     2  caller fact missing or changed (confirmation_no)
+     2  required behaviour missing (esta mal|wrong)
+     2  required behaviour missing (after six|despues de las seis)
+     1  language mix off card (Spanish share 0.47, card English)
+     1  caller fact missing or changed (paid_on)
+     1  language mix off card (Spanish share 0.40, card Spanish-dominant)
+     1  required behaviour missing (\[beep)
+     1  caller fact missing or changed (date_after_payday)
+     1  language mix off card (Spanish share 0.50, card Spanish-dominant)
+all rejections incl. retries: 34
+still invalid after 2 retries (dropped, reported): 2 (S008 P02-F02 seed 0, S031 P07-F06 seed 0)
+valid runs kept: 118
+kept runs with a timer-based interruption (no validator checks it): 10
+regeneration overhead: 26.7% extra calls; at the nightly 960 audio calls x $0.30 that is about $76.80 a night
+
+== 3. sim vs real on 30 consented, redacted real calls and their twins ==
+check                              sim  real    gap   b   c  McNemar p
+task success (CRM diff)           0.83  0.63  +0.20   7   1      0.070
+advocate details stated (C06)     1.00  0.97  +0.03   1   0      1.000
+no clarification loop             0.87  0.83  +0.03   3   2      1.000
+no talk-over                      0.97  0.83  +0.13   5   1      0.219
+amount stated correctly           0.93  0.90  +0.03   2   1      1.000
+mean overestimate: +0.087 (paired bootstrap 95% CI +0.020 to +0.160)
+b = sim pass, real fail; c = real pass, sim fail
+  task success, Spanglish         sim 7/10  real 5/10
+  task success, Spanish-dominant  sim 10/10  real 8/10
+  task success, English           sim 8/10  real 6/10
+
+== 4. two-rater attribution of 42 failed simulated runs ==
+rater 1: 32 agent, 10 simulator; rater 2: 32 agent, 10 simulator
+agreement 0.810; Cohen's kappa 0.475; disagreements adjudicated: 8
+simulator caused the first critical error: 7/42 = 16.7% (Wilson 95% 0.083 to 0.306)
+failed runs with a timer-based interruption: 7
+
+P12 example run S053 (Spanglish, phone-8k-mulaw), end = end_call(ptp):
+  agent            Hi, this is Steelyard Credit. I'm Hazel, an AI assistant. This call is recorded.
+  caller           si, speaking
+                   gloss: yes, speaking
+  agent            Thank you. To verify your identity, can you tell me your ZIP code?
+  caller           si, pero my paycheck comes el viernes, so after that I can pay, el veintitres
+                   gloss: yes, but my paycheck comes on Friday, so after that I can pay, on the twenty-third
+
+All checks passed.

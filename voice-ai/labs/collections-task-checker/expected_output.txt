@@ -1,0 +1,84 @@
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Edition: global. Dataset: steelyard-calls (synthetic, seed 20261121)
+
+[1] Incident calls against their gold end states
+  T01 F01: FAIL
+    ptps.amount_cents expected 25000 got 21500
+    ptps.readback_confirmed expected true got false
+  T02 F02: FAIL
+    call_attempts.disposition expected paid got no_ptp
+    sms_log rows added expected 1 got 0
+    missing tool check_payment_status (required after get_dues)
+    missing tool send_disclosure_sms (required after get_dues)
+  T07 F08: FAIL
+    call_attempts.amd_label expected call_screening got human
+    call_attempts.disposition expected ivr got no_response
+    call_attempts.conversation expected false got true
+    missing tool mark_contact (required after call start)
+
+[2] Task success on 120 synthetic calls (3 incidents + 117 seeded, 15% fault rate)
+  flow  calls  pass  fail  first failure line of failed calls (top 2)
+  F01     13    10     3  ptps.amount_cents expected 25000 got 21500; sms_log rows added expected 2 got 1
+  F02     13     9     4  call_attempts.disposition expected paid got no_ptp (x4)
+  F03     12     9     3  call_attempts.disposition expected dispute got ptp (x3)
+  F04     12     9     3  ptps rows added expected 0 got 1 (x3)
+  F05     12    10     2  call_attempts.rpc expected false got true (x2)
+  F06     12    12     0  -
+  F07     12    11     1  sms_log rows added expected 0 got 1
+  F08     12    11     1  call_attempts.amd_label expected call_screening got human
+  F09     11     8     3  callbacks.requested_by expected borrower got agent (x3)
+  F10     11    10     1  sms_log rows added expected 1 got 0
+  injected faults caught 21, missed 0; clean calls flagged 0
+  SYN-030: record_promise_to_pay returned 'ok'; checker says ptps rows added expected 1 got 0
+
+[3] Funnel on the 120 calls (each denominator named)
+  AMD said human                 97
+  right-party contacts (RPC)     86
+  PTP rows written               18   PTP per RPC 0.209
+  verified PTP                   11   verified PTP per RPC 0.128; per PTP 0.611
+  task success                   99   per call 0.825
+  kept PTP: not known at call time; checked at ptp_date plus grace (ptps.kept)
+
+  Daily funnel from WG1 (26 calling days a month)
+  dials             250,000   -
+  connects          130,000   52% of dials
+  human answers     114,400   88% of connects
+  RPC                80,080   70% of human answers
+  PTP                30,430   38% of RPC
+  kept PTP           18,867   62% of PTP
+  PTP per connect 0.2341; PTP per RPC 0.38; kept PTP per dial 0.0755
+
+[4] AMD setting A (current): 200 labelled openings, rows = true, columns = predicted
+                           human   vmail  screen  intcpt     ivr silence   recall [Wilson 95%]
+  human                       77       1       0       0       0       2   0.96 [0.90, 0.99]
+  voicemail                    6      31       1       0       2       0   0.78 [0.62, 0.88]
+  call_screening               8       2      14       0       1       0   0.56 [0.37, 0.73]
+  carrier_intercept            1       2       0      14       0       3   0.70 [0.48, 0.85]
+  ivr                          3       0       2       0      15       0   0.75 [0.53, 0.89]
+  silence                      2       1       0       0       0      12   0.80 [0.55, 0.93]
+  false machine on a human: 3 -> 2.1 expected lost RPCs
+  false human on a machine: 20 -> 420 s of trunk time, 20 openers played to a machine
+  machine taken for another machine class: 14
+  lowest recall: call_screening
+
+[4] AMD setting B (stricter human): 200 labelled openings, rows = true, columns = predicted
+                           human   vmail  screen  intcpt     ivr silence   recall [Wilson 95%]
+  human                       75       2       1       0       0       2   0.94 [0.86, 0.97]
+  voicemail                    3      34       1       0       2       0   0.85 [0.71, 0.93]
+  call_screening               3       1      20       0       1       0   0.80 [0.61, 0.91]
+  carrier_intercept            0       0       0      17       0       3   0.85 [0.64, 0.95]
+  ivr                          2       0       1       0      17       0   0.85 [0.64, 0.95]
+  silence                      1       1       0       0       0      13   0.87 [0.62, 0.96]
+  false machine on a human: 5 -> 3.5 expected lost RPCs
+  false human on a machine: 9 -> 189 s of trunk time, 9 openers played to a machine
+  machine taken for another machine class: 10
+
+[5] Daily projection: same agent, two AMD settings (machine mix taken from the gold set)
+  setting               agent connects  machines engaged   RPC     PTP   PTP/connect  PTP/RPC  trunk h
+  A (current)                  112,710             2,600  77,077  29,289       0.2599     0.38     15.2
+  B (stricter human)           108,420             1,170  75,075  28,528       0.2631     0.38      6.8
+  PTP per connect moves 0.2599 -> 0.2631 while PTP per RPC stays 0.38: the agent did not change, the denominator did
+  B loses 2,002 RPCs and 761 PTPs a day and saves 8.3 trunk hours
+  break-even: B pays only if one lost RPC is worth less than 15 trunk seconds
+
+All checks passed.

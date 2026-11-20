@@ -1,0 +1,42 @@
+Error analysis on calls (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+Caller turns where the STT entity differs from the reference transcript: 4
+  SY-2026-11-19-9000003 turn 6
+    REF: yeah I can do one fifty on the thirtieth, rest next month
+    STT: yeah I can do one fifteen on the thirtieth, rest next month
+  SY-2026-11-19-9000009 turn 6
+    REF: si, puedo pagar cuatrocientos cincuenta el veinte, el resto el mes que viene
+    STT: si, puedo pagar cuatrocientos quince el veinte, el resto el mes que viene
+  SY-2026-11-19-9000025 turn 6
+    REF: si, puedo pagar doscientos cincuenta el veinticinco, el resto el mes que viene
+    STT: si, puedo pagar doscientos quince el veinticinco, el resto el mes que viene
+
+Taxonomy gl-fail-v4: 45 of 200 calls have a first failure
+code          category  calls  share of failing
+------------  --------  -----  ----------------
+ENT.AMOUNT    ENT       4      8.9%
+TURN.CUTOFF   TURN      2      4.4%
+LAT.TAIL      LAT       21     46.7%
+POL.DISCLOSE  POL       7      15.6%
+POL.DISPUTE   POL       1      2.2%
+POL.WINDOW    POL       7      15.6%
+OUT.AMD       OUT       3      6.7%
+
+Shared calls: 30; same first-failure code: 27; Cohen's kappa 0.804
+  disagreement: rv-03 ENT.AMOUNT vs rv-11 ENT.CONFIRM
+  disagreement: rv-03 TURN.CUTOFF vs rv-11 TURN.TALKOVER
+  disagreement: rv-03 NONE vs rv-11 TURN.TALKOVER
+
+Incident traces: does the STT text alone show the failure turn's problem?
+  T01 ENT.AMOUNT    STT differs from REF on an entity: yes
+  T02 TURN.BARGEIN  STT differs from REF on an entity: no
+  T03 POL.DISCLOSE  STT differs from REF on an entity: no
+  T04 LAT.TAIL      STT differs from REF on an entity: no
+  T05 TURN.CUTOFF   STT differs from REF on an entity: no
+  T06 ENT.DATE      STT differs from REF on an entity: no
+  T07 OUT.AMD       STT differs from REF on an entity: no
+  T08 STT.LID       STT differs from REF on an entity: yes
+  T09 POL.COERCE    STT differs from REF on an entity: no
+  T10 POL.HARDSHIP  STT differs from REF on an entity: no

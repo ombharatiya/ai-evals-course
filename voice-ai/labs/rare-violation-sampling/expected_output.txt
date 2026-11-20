@@ -1,0 +1,55 @@
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Dataset: steelyard-calls (synthetic, seed 20261121)
+
+1. Detection probability: P(at least one) = 1 - (1 - rate)^n
+   calls for 95% at 1 in 1,000   : 2,995  (p = 0.95004; 2,994 gives 0.94999)
+   1,000 calls at 1 in 2,000     : 0.394
+   calls for 95% at 1 in 2,000   : 5,990  (5,989 gives 0.94998)
+   2% of non-risk calls a week   : 14,976  (p at 1 in 2,000 = 0.9994)
+   rate        n for 50%    n for 95%    n for 99%
+   1/500            347        1,497        2,301
+   1/1000           693        2,995        4,603
+   1/2000         1,386        5,990        9,209
+   1/10000        6,932       29,956       46,050
+   1/24000       16,636       71,897      110,522
+
+2. Upper bounds on the rate (95%)
+   k / n        rule of 3   exact 1-sided   Clopper-Pearson 2-sided
+   0 / 300         0.0100          0.0099                    0.0122
+   0 / 400         0.0075          0.0075                    0.0092
+   0 / 3,000       0.0010          0.0010                    0.0012
+   1 / 300            n/a          0.0157                    0.0184
+   2 / 300            n/a          0.0208                    0.0239
+
+3. T09: threats live on the angry path
+   angry calls a day        : 216.7  (a week: 1,300)
+   threat calls a day       : 5.42  (1 in 24,000 connects)
+   reaching a 2% judge      : 0.11 a day
+   P(judge sees one, 3 days): 0.280 exact, 0.272 Monte Carlo (20,000 runs)
+   policy                     judged/day   1 day   3 days   1 week    J1 $/week
+   uniform 2% (before T09)         2,600   0.104    0.280    0.482       117.00
+   uniform 5.92% (same count)      7,696   0.277    0.623    0.858       346.32
+   stratified WG15 plan            7,696   0.996    1.000    1.000       346.32
+   stratified, J1 flags at least one in a day (recall 0.833): 0.990
+
+   angry path judged 200 times a week needs 15.4% of 1,300; judging all of it costs $9.75 a week for J1
+   WG15 plan with J1, J3 and J2: $1,616.16 a week, $7,003.36 a month
+
+4. 400 human audits a week across strata (assumed rates: angry 1/40, other risk 1/250, rest 1/2,000)
+   stratum sizes a week: angry 1,300, other_risk 29,900, rest 748,800
+   allocation      angry  other_risk     rest   expected found   SE of overall rate
+   proportional      0.7        15.3    384.0             0.27             0.001297
+   equal           133.3       133.3    133.3             3.93             0.001870
+   neyman            4.3        40.1    355.6             0.45             0.001207
+   true overall rate under these assumptions: 0.000675
+
+5. One synthetic week under the WG15 plan (judge treated as perfect here)
+   stratum      calls     judged  violations seen
+   angry          1,300      1,300               35
+   other_risk    29,900     29,900              110
+   rest         748,800     14,976                9
+   population rate (truth) : 0.000621
+   naive rate over judged  : 0.003335  (5.4x too high)
+   stratum-weighted rate   : 0.000763
+
+All assertions passed.

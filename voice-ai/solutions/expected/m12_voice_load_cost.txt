@@ -1,0 +1,23 @@
+Load and cost (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+concurrent calls at start  tool turns  P50 gap ms  P95 gap ms
+-------------------------  ----------  ----------  ----------
+0-1499                     194         1773        2297
+1500-1799                  62          1853        2391
+>= 1800                    43          2777        3676
+The tail grows above the knee near 1,800 concurrent calls; a 50-call load test never sees it.
+
+line                recomputed  world bible
+------------------  ----------  -----------
+checks              $338.00     $338.00
+judges              $7,003.36   $7,003.36
+stt                 $12,675.00  $12,675.00
+human_audit         $5,416.67   $5,416.67
+nightly_simulation  $8,640.00   $8,640.00
+per_commit_text     $6,600.00   $6,600.00
+load_tests          $5,000.00   $5,000.00
+total               $45,673.03  $45,673.03
+Monthly cap today $50,000: inside
+At 2.5x volume the plan costs $75,697.57 against a cap of $75,000: over by $697.57

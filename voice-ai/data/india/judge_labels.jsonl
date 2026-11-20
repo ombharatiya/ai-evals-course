@@ -1,0 +1,720 @@
+{"call_id":"JV-0C001","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C002","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C003","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C004","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C005","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C006","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C007","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C008","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C009","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C010","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C011","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0C012","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C013","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C014","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C015","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C016","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C017","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C018","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C019","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C020","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C021","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0C022","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C023","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C024","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C025","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C026","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C027","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C028","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C029","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C030","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C031","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C032","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C033","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C034","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C035","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C036","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C037","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C038","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C039","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C040","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C041","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C042","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C043","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C044","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C045","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C046","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C047","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C048","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C049","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C050","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C051","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C052","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C053","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C054","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C055","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C056","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C057","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C058","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C059","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C060","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C061","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C062","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C063","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C064","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C065","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C066","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C067","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C068","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C069","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C070","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0C071","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0C072","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C073","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C074","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C075","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C076","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C077","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C078","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C079","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C080","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C081","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C082","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C083","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C084","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C085","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C086","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C087","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C088","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C089","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C090","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C091","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C092","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C093","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C094","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C095","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C096","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C097","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C098","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C099","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C100","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C101","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C102","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C103","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C104","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C105","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C106","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C107","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C108","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C109","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C110","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C111","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C112","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C113","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C114","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C115","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0C116","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C117","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0C118","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0C119","language_group":"Hinglish","dimension":"C07","rater_a":false,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0C120","language_group":"Hinglish","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P001","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P002","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P003","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P004","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P005","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P006","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P007","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P008","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P009","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P010","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P011","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P012","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P013","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P014","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P015","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P016","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P017","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P018","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P019","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P020","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P021","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P022","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P023","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P024","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P025","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P026","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P027","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P028","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P029","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P030","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P031","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P032","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P033","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P034","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P035","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P036","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P037","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P038","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P039","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P040","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P041","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P042","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P043","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P044","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P045","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P046","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P047","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P048","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P049","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P050","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P051","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P052","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P053","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P054","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P055","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P056","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P057","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P058","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P059","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P060","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P061","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P062","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P063","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P064","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P065","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P066","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P067","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P068","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P069","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P070","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P071","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P072","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P073","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P074","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P075","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P076","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P077","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P078","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P079","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P080","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P081","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-0P082","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P083","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P084","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P085","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P086","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P087","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P088","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P089","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P090","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P091","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P092","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P093","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P094","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P095","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P096","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P097","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P098","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P099","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P100","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P101","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P102","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P103","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P104","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P105","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P106","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P107","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P108","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P109","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P110","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P111","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-0P112","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P113","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P114","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P115","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P116","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P117","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P118","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-0P119","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-0P120","language_group":"Hinglish","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C001","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C002","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C003","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C004","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C005","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C006","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C007","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C008","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C009","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C010","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C011","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C012","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C013","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C014","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C015","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C016","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C017","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C018","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C019","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C020","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C021","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C022","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C023","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C024","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C025","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C026","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C027","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C028","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C029","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C030","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C031","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C032","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C033","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C034","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C035","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C036","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C037","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C038","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C039","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C040","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C041","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C042","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C043","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C044","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C045","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C046","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C047","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C048","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C049","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C050","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C051","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C052","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C053","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C054","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C055","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C056","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C057","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C058","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C059","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C060","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C061","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C062","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C063","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C064","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C065","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C066","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C067","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C068","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C069","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C070","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C071","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C072","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C073","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C074","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C075","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C076","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C077","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C078","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C079","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C080","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C081","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C082","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C083","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C084","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C085","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C086","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C087","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C088","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C089","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C090","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C091","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C092","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C093","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C094","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C095","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C096","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C097","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1C098","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C099","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C100","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C101","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C102","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C103","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C104","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C105","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C106","language_group":"Hindi-dominant","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1C107","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C108","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C109","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C110","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C111","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C112","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C113","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1C114","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C115","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C116","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C117","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C118","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C119","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1C120","language_group":"Hindi-dominant","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P001","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P002","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P003","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P004","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P005","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P006","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P007","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P008","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P009","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P010","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P011","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P012","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P013","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P014","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P015","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P016","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P017","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P018","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P019","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P020","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P021","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P022","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P023","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P024","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P025","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P026","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P027","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P028","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P029","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P030","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P031","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P032","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P033","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P034","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P035","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P036","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P037","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P038","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P039","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P040","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P041","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P042","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P043","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P044","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P045","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P046","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P047","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P048","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P049","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P050","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P051","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P052","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P053","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P054","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P055","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P056","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P057","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P058","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P059","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P060","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P061","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P062","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P063","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P064","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P065","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P066","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P067","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P068","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P069","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P070","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P071","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P072","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P073","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P074","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P075","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P076","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P077","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P078","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P079","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P080","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P081","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P082","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P083","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P084","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P085","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P086","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P087","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P088","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P089","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P090","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P091","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P092","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P093","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P094","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P095","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P096","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P097","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P098","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P099","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P100","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P101","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P102","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P103","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P104","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P105","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-1P106","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P107","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P108","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-1P109","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P110","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P111","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P112","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P113","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-1P114","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P115","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P116","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P117","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P118","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P119","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-1P120","language_group":"Hindi-dominant","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C001","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C002","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C003","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C004","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C005","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C006","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C007","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C008","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C009","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C010","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C011","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C012","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C013","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C014","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C015","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C016","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C017","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C018","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C019","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C020","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C021","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C022","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C023","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C024","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C025","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C026","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C027","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C028","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C029","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C030","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C031","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C032","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C033","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C034","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C035","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C036","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C037","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C038","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C039","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C040","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C041","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C042","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C043","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C044","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C045","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C046","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C047","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C048","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C049","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C050","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C051","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C052","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C053","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C054","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C055","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C056","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C057","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C058","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C059","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C060","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C061","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C062","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C063","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C064","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C065","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C066","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C067","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C068","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C069","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C070","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C071","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C072","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C073","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C074","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C075","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C076","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C077","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C078","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C079","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C080","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C081","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C082","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C083","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C084","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C085","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C086","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C087","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C088","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C089","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C090","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C091","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C092","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C093","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C094","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C095","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C096","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C097","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C098","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C099","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C100","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C101","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2C102","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C103","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C104","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C105","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C106","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C107","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C108","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C109","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2C110","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C111","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C112","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C113","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C114","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C115","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C116","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C117","language_group":"Indian English","dimension":"C07","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2C118","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C119","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2C120","language_group":"Indian English","dimension":"C07","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P001","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P002","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P003","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P004","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P005","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P006","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P007","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P008","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P009","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P010","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P011","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P012","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P013","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P014","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P015","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P016","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P017","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P018","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P019","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P020","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P021","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P022","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P023","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P024","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P025","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P026","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P027","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P028","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P029","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P030","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P031","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P032","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P033","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P034","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P035","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P036","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P037","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P038","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P039","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P040","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P041","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P042","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P043","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P044","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P045","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P046","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P047","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P048","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P049","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P050","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P051","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P052","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P053","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P054","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P055","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P056","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P057","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P058","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P059","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P060","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P061","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P062","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P063","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P064","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P065","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P066","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P067","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P068","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P069","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P070","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P071","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P072","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P073","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P074","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P075","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P076","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P077","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P078","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P079","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P080","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P081","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P082","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P083","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P084","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P085","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P086","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P087","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P088","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P089","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P090","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P091","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":true,"blueprint_judge":false}
+{"call_id":"JV-2P092","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P093","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P094","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P095","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P096","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P097","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P098","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P099","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P100","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":false,"blueprint_judge":true}
+{"call_id":"JV-2P101","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P102","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P103","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P104","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P105","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P106","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P107","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P108","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P109","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":true,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P110","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P111","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P112","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P113","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P114","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":true,"human_label":true,"transcript_judge":true,"blueprint_judge":true}
+{"call_id":"JV-2P115","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P116","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P117","language_group":"Indian English","dimension":"TONE.PACE","rater_a":true,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P118","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P119","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":false}
+{"call_id":"JV-2P120","language_group":"Indian English","dimension":"TONE.PACE","rater_a":false,"rater_b":false,"human_label":false,"transcript_judge":false,"blueprint_judge":true}

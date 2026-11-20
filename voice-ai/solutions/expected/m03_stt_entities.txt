@@ -1,0 +1,13 @@
+WER versus entity error rate (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+T01 utterance: WER 1/12 = 0.083; amount correct: False
+
+system  corpus WER  amount entity error rate [95% speaker-clustered]  wrong amounts  WER<10% but amount wrong
+------  ----------  ------------------------------------------------  -------------  ------------------------
+sys_a   0.066       0.051 [0.032, 0.076]                              24/472         14
+sys_b   0.032       0.074 [0.051, 0.098]                              35/472         29
+sys_c   0.076       0.117 [0.089, 0.145]                              55/472         24
+
+Lower WER does not mean fewer wrong amounts: rank the systems by the metric the task depends on.

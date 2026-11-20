@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/data/schemas/judge_label.schema.json",
+  "title": "One human-labelled validation call with judge verdicts",
+  "type": "object",
+  "properties": {
+    "call_id": {
+      "type": "string"
+    },
+    "language_group": {
+      "type": "string"
+    },
+    "dimension": {
+      "enum": [
+        "C07",
+        "TONE.PACE"
+      ]
+    },
+    "rater_a": {
+      "type": "boolean"
+    },
+    "rater_b": {
+      "type": "boolean"
+    },
+    "human_label": {
+      "type": "boolean"
+    },
+    "transcript_judge": {
+      "type": "boolean"
+    },
+    "blueprint_judge": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "call_id",
+    "language_group",
+    "dimension",
+    "rater_a",
+    "rater_b",
+    "human_label",
+    "transcript_judge",
+    "blueprint_judge"
+  ],
+  "additionalProperties": false
+}

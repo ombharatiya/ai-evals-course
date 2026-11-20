@@ -1,0 +1,27 @@
+Simulated callers: coverage and fidelity (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+flow group                  language group  scenarios
+--------------------------  --------------  ---------
+promise                     Hinglish        3
+promise                     Hindi-dominant  2
+promise                     Indian English  2
+dispute_and_already_paid    Hinglish        2
+dispute_and_already_paid    Hindi-dominant  2
+dispute_and_already_paid    Indian English  2
+hardship_and_complaint      Hinglish        2
+hardship_and_complaint      Hindi-dominant  2
+hardship_and_complaint      Indian English  2
+other_parties_and_machines  Hinglish        2
+other_parties_and_machines  Hindi-dominant  2
+other_parties_and_machines  Indian English  2
+Gated segments without a scenario: 0
+
+check  sim pass  sim rate  real pass  real rate  sim minus real
+-----  --------  --------  ---------  ---------  --------------
+C04    196/200   98.0%     1824/1826  99.9%      -1.9 pts
+C08    40/48     83.3%     237/250    94.8%      -11.5 pts
+C09    20/24     83.3%     8/10       80.0%      +3.3 pts
+C12    33/37     89.2%     470/475    98.9%      -9.8 pts
+A simulator whose pass rates sit far from production on the same checks is not yet a stand-in for real callers.

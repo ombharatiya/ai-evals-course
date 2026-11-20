@@ -1,0 +1,22 @@
+Speech output: spoken entities and the acceptance gate (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+Exact one-sided 95% upper bound on the error rate after k errors in n spoken lines:
+  0 of 400: 0.0075
+  1 of 400: 0.0118
+  0 of 100: 0.0295
+  2 of 1000: 0.0063
+
+Read-back lines in the simulated calls: 37; amount differs from what the caller said: 4
+  TZ-2026-11-19-9000001 turn 7: caller said Rs 1,750, agent read back Rs 2,000
+  TZ-2026-11-19-9000031 turn 7: caller said Rs 1,500, agent read back Rs 1,000
+  TZ-2026-11-18-9000032 turn 7: caller said Rs 1,500, agent read back Rs 1,000
+Upper bound on the read-back amount error rate: 0.2305
+
+C13 (amount stated equals get_dues): 153 of 153 dues statements match
+
+T06: the text was right and the audio was wrong
+  TTS input text : Your next EMI of Rs 6,800 is due on 05/12.
+  audio reading  : ...due on May twelfth.
+  stored ptp_date 2026-12-05; the date the borrower heard 2027-05-12

@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "voice-ai/data/schemas/production_row.schema.json",
+  "title": "One dial attempt from a production day",
+  "type": "object",
+  "properties": {
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^PR-\\d{5}$"
+    },
+    "call_date": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "product": {
+      "type": "string"
+    },
+    "language_group": {
+      "type": "string"
+    },
+    "local_time": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}$"
+    },
+    "connect_outcome": {
+      "enum": [
+        "answered",
+        "voicemail",
+        "unanswered",
+        "busy",
+        "out_of_service"
+      ]
+    },
+    "connected": {
+      "type": "boolean"
+    },
+    "amd_true": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "amd_pred": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "human_answer": {
+      "type": "boolean"
+    },
+    "rpc": {
+      "type": "boolean"
+    },
+    "flow": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "stratum": {
+      "enum": [
+        null,
+        "angry",
+        "complaint",
+        "dispute",
+        "hardship",
+        "stop_request",
+        "window_edge",
+        "other"
+      ]
+    },
+    "ptp": {
+      "type": "boolean"
+    },
+    "ptp_verified": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "kept": {
+      "type": [
+        "boolean",
+        "null"
+      ]
+    },
+    "call_seconds": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "checks": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "C04": {
+              "enum": [
+                "pass",
+                "fail",
+                "n/a"
+              ]
+            },
+            "C08": {
+              "enum": [
+                "pass",
+                "fail",
+                "n/a"
+              ]
+            },
+            "C09": {
+              "enum": [
+                "pass",
+                "fail",
+                "n/a"
+              ]
+            },
+            "C12": {
+              "enum": [
+                "pass",
+                "fail",
+                "n/a"
+              ]
+            }
+          },
+          "required": [
+            "C04",
+            "C08",
+            "C09",
+            "C12"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "violation": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "judge_sampled": {
+      "type": "boolean"
+    },
+    "concurrency": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "attempt_id",
+    "call_date",
+    "campaign",
+    "product",
+    "language_group",
+    "local_time",
+    "connect_outcome",
+    "connected",
+    "amd_true",
+    "amd_pred",
+    "human_answer",
+    "rpc",
+    "flow",
+    "stratum",
+    "ptp",
+    "ptp_verified",
+    "kept",
+    "call_seconds",
+    "checks",
+    "violation",
+    "judge_sampled",
+    "concurrency"
+  ],
+  "additionalProperties": false
+}

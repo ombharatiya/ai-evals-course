@@ -1,0 +1,27 @@
+Simulated callers: coverage and fidelity (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+flow group                  language group    scenarios
+--------------------------  ----------------  ---------
+promise                     English           2
+promise                     Spanish-dominant  2
+promise                     Spanglish         3
+dispute_and_already_paid    English           2
+dispute_and_already_paid    Spanish-dominant  2
+dispute_and_already_paid    Spanglish         2
+hardship_and_complaint      English           2
+hardship_and_complaint      Spanish-dominant  2
+hardship_and_complaint      Spanglish         2
+other_parties_and_machines  English           2
+other_parties_and_machines  Spanish-dominant  2
+other_parties_and_machines  Spanglish         2
+Gated segments without a scenario: 0
+
+check  sim pass  sim rate  real pass  real rate  sim minus real
+-----  --------  --------  ---------  ---------  --------------
+C04    193/200   96.5%     1794/1798  99.8%      -3.3 pts
+C08    47/48     97.9%     216/227    95.2%      +2.8 pts
+C09    24/24     100.0%    12/12      100.0%     +0.0 pts
+C12    36/40     90.0%     463/468    98.9%      -8.9 pts
+A simulator whose pass rates sit far from production on the same checks is not yet a stand-in for real callers.

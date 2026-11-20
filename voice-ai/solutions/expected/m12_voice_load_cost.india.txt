@@ -1,0 +1,23 @@
+Load and cost (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+concurrent calls at start  tool turns  P50 gap ms  P95 gap ms
+-------------------------  ----------  ----------  ----------
+0-1499                     223         1766        2264
+1500-1799                  32          1762        2154
+>= 1800                    33          2716        3551
+The tail grows above the knee near 1,800 concurrent calls; a 50-call load test never sees it.
+
+line                recomputed   world bible
+------------------  -----------  -----------
+checks              Rs 6,760     Rs 6,760
+judges              Rs 1,40,067  Rs 1,40,067
+stt                 Rs 2,53,500  Rs 2,53,500
+human_audit         Rs 1,08,333  Rs 1,08,333
+nightly_simulation  Rs 1,72,800  Rs 1,72,800
+per_commit_text     Rs 1,32,000  Rs 1,32,000
+load_tests          Rs 1,00,000  Rs 1,00,000
+total               Rs 9,13,461  Rs 9,13,460
+Monthly cap today Rs 10,00,000: inside
+At 2.5x volume the plan costs Rs 15,13,951 against a cap of Rs 15,00,000: over by Rs 13,951

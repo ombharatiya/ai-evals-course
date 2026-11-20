@@ -1,0 +1,34 @@
+Task success against CRM state (india edition)
+Tarazu Finance is a fictional lender; its numbers are illustrative.
+Data: tarazu-calls (synthetic, seed 20261120)
+
+T01 against its gold end state:
+  ptps.amount_paise expected 250000 got 200000
+  ptps.readback_confirmed expected true got false
+
+flow  name                         task success  rate
+----  ---------------------------  ------------  ------
+F01   Happy path                   33/40         82.5%
+F02   Already paid                 17/24         70.8%
+F03   Dispute                      24/24         100.0%
+F04   Hardship                     24/24         100.0%
+F05   Wrong party (family member)  14/16         87.5%
+F06   Guarantor                    16/16         100.0%
+F07   Voicemail                    8/8           100.0%
+F08   IVR or machine prompt        8/8           100.0%
+F09   Callback request             10/16         62.5%
+F10   Threatening to complain      24/24         100.0%
+
+Most common diff fields: call_attempts.disposition (12), sms_log: (6), callbacks.requested_by (6), ptps.amount_paise (4), ptps.readback_confirmed (4)
+
+AMD confusion on connected attempts (rows: true class, columns: predicted):
+true \ pred            human  voicemail  operator_announcement  caller_tune  ivr  silence  recall
+---------------------  -----  ---------  ---------------------  -----------  ---  -------  ------
+human                  1779   30         0                      0            0    17       0.97
+voicemail              11     118        0                      0            0    3        0.89
+operator_announcement  11     3          23                     0            0    0        0.62
+caller_tune            4      6          0                      36           0    0        0.78
+ivr                    1      0          0                      0            27   0        0.96
+silence                1      0          0                      0            0    10       0.91
+Lowest recall: operator_announcement (0.62).
+Cost-weighted error: 28 false humans x 21 s of trunk time = 588 s; 47 false machines = 47 lost human contacts.

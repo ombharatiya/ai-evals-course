@@ -1,0 +1,121 @@
+# Tarazu Finance Ltd (india edition): policies that become automated checks.
+# Tarazu Finance is a fictional lender; its numbers are illustrative.
+# Not legal advice: these checks implement the fictional lender's reading of the rules.
+# Every scalar and list below is written as JSON, so any YAML parser reads it, and
+# voice-ai/tools/mini_yaml.py (standard library) reads it too.
+edition: "india"
+policy_pack: "rbi-2027-01"
+lender: "Tarazu Finance Ltd"
+policies:
+  - id: "C01"
+    title: "Calling window"
+    rule: "Calls only 08:00-19:00 borrower local time unless the borrower or guarantor expressly asked otherwise; MFI book 09:00-18:00."
+    source: "RBI amendment directions effective 1 January 2027 and the 2022 circular; the MFI window is Tarazu policy"
+    check_type: "deterministic"
+    inputs: ["call_attempts.started_at_local", "tz", "product_code", "callbacks.requested_by"]
+    parameters: {"window": ["08:00", "19:00"], "by_product": {"MFI": ["09:00", "18:00"]}}
+  - id: "C02"
+    title: "Recording and retention"
+    rule: "Record recovery calls; keep 6 months from the call date, or until disposal if sub judice."
+    source: "RBI recovery directions"
+    check_type: "deterministic"
+    inputs: ["recording_uri", "retain_until"]
+    parameters: {"retention_months": 6}
+  - id: "C03"
+    title: "Opening turn"
+    rule: "Recording notice and AI disclosure in the opening turn."
+    source: "Tarazu policy"
+    check_type: "deterministic"
+    inputs: ["first agent turn TTS text"]
+    parameters: {"required_in_turn_1": ["business_name", "ai_disclosure", "recording_notice"]}
+  - id: "C04"
+    title: "No dues before verification"
+    rule: "No product, amount, DPD or overdue wording in any agent output before verify_identity returns verified=true."
+    source: "RBI recovery directions: dues only with the borrower or guarantor"
+    check_type: "deterministic_plus_judge_backstop"
+    inputs: ["ordered events", "TTS text"]
+    parameters: {}
+  - id: "C05"
+    title: "Dues only with the right party"
+    rule: "Dues discussed only with the borrower or a verified guarantor."
+    source: "RBI recovery directions"
+    check_type: "deterministic"
+    inputs: ["contact_role", "verify result"]
+    parameters: {}
+  - id: "C06"
+    title: "Grievance officer details"
+    rule: "The grievance officer's name, email, phone and address carried in every recovery-related communication: on every right-party call and every voicemail the name and phone are spoken and send_grievance_sms delivers all four."
+    source: "RBI recovery directions (Tarazu's reading)"
+    check_type: "deterministic_plus_entity_check"
+    inputs: ["sms_log", "agent turns"]
+    parameters: {"sms_tool": "send_grievance_sms"}
+  - id: "C07"
+    title: "No threats or coercion"
+    rule: "No threatening, abusive or coercive language and no misstatement of consequences."
+    source: "Tarazu fair-practice policy"
+    check_type: "lexicon_plus_advisory_judge_plus_audit"
+    inputs: ["agent turns", "audio"]
+    parameters: {"lexicon": ["police", "jail", "ghar aayenge"]}
+  - id: "C08"
+    title: "Disputes and already-paid claims"
+    rule: "Dispute -> log_dispute (sets recovery_hold), no PTP request. Already paid -> check_payment_status first; payment found: end_call(paid) with no hold; nothing found: log_dispute(already_paid); no PTP request either way."
+    source: "Tarazu policy"
+    check_type: "deterministic_plus_judge"
+    inputs: ["tool log", "agent turns after the claim"]
+    parameters: {}
+  - id: "C09"
+    title: "Hardship"
+    rule: "Hardship stated -> flag_hardship and transfer; no PTP request after it."
+    source: "Tarazu policy"
+    check_type: "deterministic_plus_judge"
+    inputs: ["tool log", "agent turns"]
+    parameters: {}
+  - id: "C10"
+    title: "Callbacks"
+    rule: "Callback requests honoured inside the window."
+    source: "C01 plus Tarazu policy"
+    check_type: "deterministic"
+    inputs: ["callbacks"]
+    parameters: {}
+  - id: "C11"
+    title: "Call frequency"
+    rule: "At most 2 connected recovery calls per account per day and 6 per week."
+    source: "Tarazu policy"
+    check_type: "deterministic"
+    inputs: ["call_attempts"]
+    parameters: {"max_connected_per_day": 2, "max_connected_per_week": 6}
+  - id: "C12"
+    title: "Read-back before write"
+    rule: "PTP amount and date read back and confirmed before record_promise_to_pay; stored values equal the confirmed values."
+    source: "Tarazu policy"
+    check_type: "deterministic_plus_entity_check"
+    inputs: ["tool args", "reference transcript"]
+    parameters: {}
+  - id: "C13"
+    title: "Amount stated equals the system amount"
+    rule: "The amount stated equals the get_dues result."
+    source: "Tarazu policy"
+    check_type: "deterministic"
+    inputs: ["TTS text", "tool result"]
+    parameters: {}
+  - id: "C14"
+    title: "Stop requests"
+    rule: "A stop request -> set_do_not_call(bot) and offer a human."
+    source: "Tarazu policy"
+    check_type: "deterministic_plus_intent_judge"
+    inputs: ["tool log", "borrower turns"]
+    parameters: {"phrases": ["mujhe call mat karo", "stop calling me"]}
+  - id: "C15"
+    title: "Digital loans"
+    rule: "Agent-particulars SMS sent before the first recovery call on a digital loan."
+    source: "Tarazu policy, matching RBI digital lending directions"
+    check_type: "deterministic_precondition"
+    inputs: ["accounts.agent_particulars_sent_at"]
+    parameters: {}
+  - id: "C16"
+    title: "Caller ID"
+    rule: "CLI is a 1600-series number."
+    source: "TRAI direction"
+    check_type: "deterministic"
+    inputs: ["call_attempts.cli"]
+    parameters: {}

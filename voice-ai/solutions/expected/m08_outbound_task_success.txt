@@ -1,0 +1,34 @@
+Task success against CRM state (global edition)
+Steelyard Credit is a fictional lender; its numbers are illustrative.
+Data: steelyard-calls (synthetic, seed 20261121)
+
+T01 against its gold end state:
+  ptps.amount_cents expected 25000 got 21500
+  ptps.readback_confirmed expected true got false
+
+flow  name                         task success  rate
+----  ---------------------------  ------------  ------
+F01   Happy path                   36/40         90.0%
+F02   Already paid                 24/24         100.0%
+F03   Dispute                      24/24         100.0%
+F04   Hardship                     24/24         100.0%
+F05   Wrong party (family member)  15/16         93.8%
+F06   Guarantor                    16/16         100.0%
+F07   Voicemail                    8/8           100.0%
+F08   IVR or machine prompt        5/8           62.5%
+F09   Callback request             13/16         81.2%
+F10   Threatening to complain      24/24         100.0%
+
+Most common diff fields: ptps.amount_cents (4), ptps.readback_confirmed (4), call_attempts.disposition (4), callbacks.requested_by (3), dnc: (1)
+
+AMD confusion on connected attempts (rows: true class, columns: predicted):
+true \ pred        human  voicemail  carrier_intercept  call_screening  ivr  silence  recall
+-----------------  -----  ---------  -----------------  --------------  ---  -------  ------
+human              1752   28         0                  0               0    18       0.97
+voicemail          12     119        0                  0               0    3        0.89
+carrier_intercept  8      3          30                 0               0    0        0.73
+call_screening     7      3          0                  20              0    0        0.67
+ivr                3      2          0                  0               11   0        0.69
+silence            0      1          0                  0               0    13       0.93
+Lowest recall: call_screening (0.67).
+Cost-weighted error: 30 false humans x 21 s of trunk time = 630 s; 46 false machines = 46 lost human contacts.
