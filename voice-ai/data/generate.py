@@ -1099,8 +1099,11 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
         "value": dues_value, "agent": {k: "" for k in W.P["agent"]}}
     acc, contact, extra = make_account(W, rng, persona, group, dues_value, d, account_id="A-55120931" if pid in ("P01", "P05", "P08") else None,
                                        postal=inc.get("zip"))
-    if pid == "P01":
-        acc["dpd"] = 4 if d.day <= 12 else 6
+    if acc["account_id"] == "A-55120931":
+        # P01's account (also reached by P05 and P08): the payment fell due on 2026-11-08 and the
+        # next one falls due on 2026-12-08, so every call on it agrees (DPD 4 on 11-12, 6 on 11-14).
+        acc["dpd"] = (d - dt.date(2026, 11, 8)).days
+        acc["next_due_date"] = "2026-12-08"
     if pid == "P07":
         contact["contact_id"] = "K-20417"
     call_id = f"{W.C['call_id_prefix']}-{date_s}-{'0871234' if iid == 'T01' else f'{8000000 + seq:07d}'}"

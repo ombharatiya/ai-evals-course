@@ -234,8 +234,8 @@
           "result": {
             "overdue_paise": 425000,
             "emi_paise": 425000,
-            "next_due_date": "2026-12-02",
-            "dpd": 6,
+            "next_due_date": "2026-12-08",
+            "dpd": 5,
             "late_fee_paise": 50000,
             "foreclosure_paise": 3825000
           }
@@ -343,8 +343,8 @@
           "result": {
             "overdue_paise": 425000,
             "emi_paise": 425000,
-            "next_due_date": "2026-12-02",
-            "dpd": 6,
+            "next_due_date": "2026-12-08",
+            "dpd": 5,
             "late_fee_paise": 50000,
             "foreclosure_paise": 3825000
           }
@@ -629,10 +629,10 @@
         "pincode": "226010",
         "loan_last4": "9823",
         "preferred_language": "Hinglish",
-        "dpd": 6,
+        "dpd": 5,
         "overdue_paise": 425000,
         "emi_paise": 425000,
-        "next_due_date": "2026-12-02",
+        "next_due_date": "2026-12-08",
         "recovery_hold": false,
         "hardship_flag": false,
         "dnc_bot": false,
@@ -673,10 +673,10 @@
         "pincode": "226010",
         "loan_last4": "9823",
         "preferred_language": "Hinglish",
-        "dpd": 6,
+        "dpd": 5,
         "overdue_paise": 425000,
         "emi_paise": 425000,
-        "next_due_date": "2026-12-02",
+        "next_due_date": "2026-12-08",
         "recovery_hold": false,
         "hardship_flag": false,
         "dnc_bot": false,
