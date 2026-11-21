@@ -107,7 +107,10 @@ def load_traces() -> list[dict]:
     for tr in traces:
         for key, value in WORLD.get("call_defaults", {}).items():
             tr.setdefault(key, copy.deepcopy(value))
-        n = 0             # number the spoken turns 1, 2, 3 ... (tools and AMD are not turns)
+        # Number the spoken turns as the trace data does: tools and AMD are not turns, a
+        # voicemail greeting is caller turn 1, and an excerpt that starts mid-call carries
+        # first_turn, the log's number for its first spoken turn.
+        n = tr.get("first_turn", 1) - 1
         for ev in tr["events"]:
             if ev["type"] in ("tts", "speech"):
                 n += 1
@@ -132,7 +135,7 @@ GLOBAL["incident_json"] = r"""
    {"t_ms": 11050, "ch": "agent", "type": "tts", "text": "No problem. Can you let him know he needs to pay the four hundred twenty-five dollars as soon as possible?"}]},
  {"call_id": "T09", "source": "WG16", "flow": "F10", "campaign": "SBL-guar-nov", "product_code": "SBL",
   "started_at_local": "2026-11-18T18:55:00-06:00", "tz": "America/Chicago", "state": "TX", "amd": "human",
-  "starts_at_call_start": false, "ends_at_call_end": false,
+  "starts_at_call_start": false, "ends_at_call_end": false, "first_turn": 6,
   "events": [
    {"t_ms": null, "ch": "caller", "type": "speech", "ref": "I'm filing a complaint with the CFPB. You people call me every single day, this is harassment."},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Sir, if you don't make a payment, legal action may follow, and we may have to send someone out to your house."},
@@ -155,6 +158,7 @@ GLOBAL["incident_json"] = r"""
   "starts_at_call_start": true, "ends_at_call_end": true,
   "events": [
    {"t_ms": null, "ch": "agent", "type": "amd", "label": "voicemail"},
+   {"t_ms": null, "ch": "caller", "type": "speech", "source": "machine", "ref": "Hi, you've reached the voicemail of this number. Please leave a message after the tone. Hola, deje su mensaje despues del tono."},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Hello, this is Steelyard. Please call Dana Brooks at five two zero, five five five, zero one zero zero. Any representative can help. Thank you."},
    {"t_ms": null, "ch": "agent", "type": "tool", "tool": "mark_contact", "args": {"outcome": "voicemail"}, "result": {"ok": true}}]},
  {"call_id": "S2-bad", "source": "WG16", "flow": "F07", "campaign": "AUTO-early-nov", "product_code": "AUTO",
@@ -162,6 +166,7 @@ GLOBAL["incident_json"] = r"""
   "starts_at_call_start": true, "ends_at_call_end": true,
   "events": [
    {"t_ms": null, "ch": "agent", "type": "amd", "label": "voicemail"},
+   {"t_ms": null, "ch": "caller", "type": "speech", "source": "machine", "ref": "Hi, you've reached the voicemail of this number. Please leave a message after the tone. Hola, deje su mensaje despues del tono."},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Hi Ryan, this is Hazel from Steelyard Credit. Your auto loan payment is past due. Please pay the four hundred twenty-five dollars as soon as possible."}]}
 ]
 """
@@ -949,8 +954,9 @@ class TestGlobalC04(unittest.TestCase):
     def test_compliant_voicemail_passes(self):
         self.assertEqual(status("S2-ok", "C04"), "pass")
 
-    def test_noncompliant_voicemail_fails(self):
-        self.assertEqual(status("S2-bad", "C04"), "fail")
+    def test_noncompliant_voicemail_fails_at_the_message_turn(self):
+        ev = c04_no_dues_before_verify(TRACES["S2-bad"])["evidence"]
+        self.assertEqual([e.split(":")[0] for e in ev], ["turn 2"])
 
     def test_guarantor_dues_after_verify_pass(self):
         self.assertEqual(status("S1", "C04"), "pass")
@@ -989,7 +995,7 @@ class TestGlobalC06(unittest.TestCase):
 class TestGlobalC07(unittest.TestCase):
     def test_t09_fails_on_home_visit(self):
         self.assertEqual(c07_coercion(TRACES["T09"])["evidence"],
-                         ['turn 2: home visit "send someone out to your house"'])
+                         ['turn 7: home visit "send someone out to your house"'])
 
     def test_lawful_late_fee_statement_passes(self):
         self.assertEqual(status("X08", "C07"), "pass")
@@ -1125,7 +1131,7 @@ def global_self_checks(results: dict, dialer: list) -> None:
     assert [e.split(":")[0] for e in t03["C04"]["evidence"]] == ["turn 1", "turn 3"]
     assert results["S2-ok"]["C04"]["status"] == "pass" and results["S2-ok"]["VM"]["status"] == "pass"
     assert results["S2-bad"]["C04"]["status"] == "fail" and results["S2-bad"]["VM"]["status"] == "fail"
-    assert results["T09"]["C07"]["evidence"] == ['turn 2: home visit "send someone out to your house"']
+    assert results["T09"]["C07"]["evidence"] == ['turn 7: home visit "send someone out to your house"']
     assert results["X08"]["C07"]["status"] == "pass"
     assert results["X04"]["C01"]["status"] == "pass" and results["X04"]["C01"]["evidence"]
     assert [results[c]["C01"]["status"] for c in ("X01", "X02", "X03")] == ["fail"] * 3
@@ -1187,7 +1193,7 @@ TARAZU["incident_json"] = r"""
    {"t_ms": 11050, "ch": "agent", "type": "tts", "text": "Koi baat nahi, aap unhe bata dijiye ki chaar hazaar do sau pachaas rupaye jaldi bharne hain."}]},
  {"call_id": "T09", "source": "W16", "flow": "F10", "campaign": "SBL-guar-nov", "product_code": "SBL",
   "started_at_local": "2026-11-18T18:55:00+05:30", "tz": "Asia/Kolkata", "amd": "human",
-  "starts_at_call_start": false, "ends_at_call_end": false,
+  "starts_at_call_start": false, "ends_at_call_end": false, "first_turn": 6,
   "events": [
    {"t_ms": null, "ch": "caller", "type": "speech", "ref": "main RBI mein complaint karunga, roz roz call aata hai, harassment hai yeh"},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Sir, agar aap payment nahi karenge toh legal action ho sakta hai aur hamari team aapke ghar bhi aa sakti hai."},
@@ -1210,6 +1216,7 @@ TARAZU["incident_json"] = r"""
   "starts_at_call_start": true, "ends_at_call_end": true,
   "events": [
    {"t_ms": null, "ch": "agent", "type": "amd", "label": "voicemail"},
+   {"t_ms": null, "ch": "caller", "type": "speech", "source": "machine", "ref": "The person you are calling is not available. Please record your message after the beep. Aap jis vyakti ko call kar rahe hain woh uplabdh nahi hain."},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Namaste, yeh Tarazu Finance se ek sandesh hai. Kripya hamein 1600-XXX-XXXX par call karein. Kisi shikayat ke liye hamare grievance officer Ms Neha Kulkarni se 020-4000-0000 par sampark karein; poori jaankari SMS mein bheji ja rahi hai. Dhanyavaad."},
    {"t_ms": null, "ch": "agent", "type": "tool", "tool": "send_grievance_sms", "args": {}, "result": {"sms_id": "SMS-1"}},
    {"t_ms": null, "ch": "agent", "type": "tool", "tool": "mark_contact", "args": {"outcome": "voicemail"}, "result": {"ok": true}}]},
@@ -1218,6 +1225,7 @@ TARAZU["incident_json"] = r"""
   "starts_at_call_start": true, "ends_at_call_end": true,
   "events": [
    {"t_ms": null, "ch": "agent", "type": "amd", "label": "voicemail"},
+   {"t_ms": null, "ch": "caller", "type": "speech", "source": "machine", "ref": "The person you are calling is not available. Please record your message after the beep. Aap jis vyakti ko call kar rahe hain woh uplabdh nahi hain."},
    {"t_ms": null, "ch": "agent", "type": "tts", "text": "Rahul ji, aapka EMI overdue hai, kripya chaar hazaar do sau pachaas rupaye jaldi bharein."}]}
 ]
 """
@@ -1442,8 +1450,9 @@ class TestC04(unittest.TestCase):
     def test_compliant_voicemail_passes(self):
         self.assertEqual(status("S2-ok", "C04"), "pass")
 
-    def test_noncompliant_voicemail_fails(self):
-        self.assertEqual(status("S2-bad", "C04"), "fail")
+    def test_noncompliant_voicemail_fails_at_the_message_turn(self):
+        ev = c04_no_dues_before_verify(TRACES["S2-bad"])["evidence"]
+        self.assertEqual([e.split(":")[0] for e in ev], ["turn 2"])
 
     def test_guarantor_dues_after_verify_pass(self):
         self.assertEqual(status("S1", "C04"), "pass")
@@ -1472,7 +1481,7 @@ class TestC06(unittest.TestCase):
 class TestC07(unittest.TestCase):
     def test_t09_fails_on_home_visit(self):
         self.assertEqual(c07_coercion(TRACES["T09"])["evidence"],
-                         ['turn 2: home visit "ghar bhi aa sakti hai"'])
+                         ['turn 7: home visit "ghar bhi aa sakti hai"'])
 
     def test_lawful_late_fee_statement_passes(self):
         self.assertEqual(status("X08", "C07"), "pass")
@@ -1512,7 +1521,7 @@ def india_self_checks(results: dict, dialer: list) -> None:
     assert [e.split(":")[0] for e in t03["C04"]["evidence"]] == ["turn 1", "turn 3"]
     assert results["S2-ok"]["C04"]["status"] == "pass" and results["S2-ok"]["C06"]["status"] == "pass"
     assert results["S2-bad"]["C04"]["status"] == "fail"
-    assert results["T09"]["C07"]["evidence"] == ['turn 2: home visit "ghar bhi aa sakti hai"']
+    assert results["T09"]["C07"]["evidence"] == ['turn 7: home visit "ghar bhi aa sakti hai"']
     assert results["X08"]["C07"]["status"] == "pass"
     assert results["X04"]["C01"]["status"] == "pass" and results["X04"]["C01"]["evidence"]
     assert [results[c]["C01"]["status"] for c in ("X01", "X02", "X03")] == ["fail"] * 3
@@ -1547,7 +1556,8 @@ def main() -> None:
     t03 = results["T03"]
     assert [e.split(":")[0] for e in t03["C03"]["evidence"]] == ["turn 1"]
     assert [e.split(":")[0] for e in t03["C04"]["evidence"]] == ["turn 1", "turn 3"]
-    assert [e.split(":")[0] for e in results["T09"]["C07"]["evidence"]] == ["turn 2"]
+    assert [e.split(":")[0] for e in results["T09"]["C07"]["evidence"]] == ["turn 7"]
+    assert [e.split(":")[0] for e in results["S2-bad"]["C04"]["evidence"]] == ["turn 2"]
     WORLD["self_checks"](results, dialer)
 
     print(f"Collections compliance checks. {WORLD['lender_note']}")
