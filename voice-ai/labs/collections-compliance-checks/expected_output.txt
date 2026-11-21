@@ -31,8 +31,8 @@ Evidence (every FAIL, and every pass that used an exception):
   T03    C03  FAIL  turn 1: agent name before business identity; no AI disclosure; no recording notice
   T03    C04  FAIL  turn 1: product "auto loan", dues word "payment", dpd "four days past due"
   T03    C04  FAIL  turn 3: amount "four hundred twenty-five dollars"
-  T09    C07  FAIL  turn 2: home visit "send someone out to your house"
-  S2-bad C04  FAIL  turn 1: product "auto loan", dues word "payment", dues word "past due", amount "four hundred twenty-five dollars"
+  T09    C07  FAIL  turn 7: home visit "send someone out to your house"
+  S2-bad C04  FAIL  turn 2: product "auto loan", dues word "payment", dues word "past due", amount "four hundred twenty-five dollars"
   S2-bad VM   FAIL  sentence 1: names the AI persona "hazel"
   S2-bad VM   FAIL  sentence 2: debt detail: product "auto loan", dues word "payment", dues word "past due"
   S2-bad VM   FAIL  sentence 3: debt detail: amount "four hundred twenty-five dollars"

@@ -26,8 +26,8 @@ Evidence (every FAIL, and every pass that used an exception):
   T03    C03  FAIL  turn 1: no AI disclosure and no recording notice
   T03    C04  FAIL  turn 1: product "two-wheeler loan", dues word "EMI", dpd "chaar din se overdue"
   T03    C04  FAIL  turn 3: amount "hazaar", amount "rupaye"
-  T09    C07  FAIL  turn 2: home visit "ghar bhi aa sakti hai"
-  S2-bad C04  FAIL  turn 1: dues word "EMI", overdue "overdue", amount "hazaar", amount "rupaye"
+  T09    C07  FAIL  turn 7: home visit "ghar bhi aa sakti hai"
+  S2-bad C04  FAIL  turn 2: dues word "EMI", overdue "overdue", amount "hazaar", amount "rupaye"
   S2-bad C06  FAIL  officer name not spoken
   S2-bad C06  FAIL  officer phone not spoken
   S2-bad C06  FAIL  send_grievance_sms not logged
