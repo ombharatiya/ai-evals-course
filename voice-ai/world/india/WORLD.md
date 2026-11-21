@@ -63,6 +63,8 @@ Grievance redressal officer (fictional): Ms Neha Kulkarni, grievance@tarazu.exam
 | SBL-guar-nov | SBL | 1-90 | Hindi, Hinglish | Guarantor flow F06 |
 | MFI-fort-nov | MFI | 1-30 | Hindi, Kannada-accented Hindi | Older borrowers; 09:00-18:00 |
 
+Each campaign also serves the other bot language groups: a call's language comes from the account preference and the call itself, so the Languages column names the book's main languages (they weight the production sample), not a limit.
+
 ## W3. The agent
 
 **Asha**, Tarazu's AI collections agent. Female persona: Hindi self-reference uses feminine forms ("main bol rahi hoon", "maine check kar liya hai"); masculine self-reference is a failure code (TONE.GENDER). Default language Hinglish; follows the borrower into Hindi or Indian English; transfers Marathi and Kannada.
@@ -280,7 +282,7 @@ Endpointing operating points [W] chosen with the consequence-weighted cost model
 
 | Campaign | Default silence budget | Amount-asked / date-asked states | Detector threshold |
 |---|---|---|---|
-| TW-early-nov | 300 ms (before T05) -> 400 ms (from 2026-11-17) | 600 ms | td-1.1 thr 0.62 -> 0.70 |
+| TW-early-nov | 300 ms (before T05) -> 400 ms (from 2026-11-17) | 300 ms (before T05) -> 600 ms | td-1.1 thr 0.62 -> 0.70 |
 | PL-digital-nov | 400 ms | 600 ms | thr 0.70 |
 | CD-short-nov | 400 ms | 600 ms | thr 0.70 |
 | SBL-guar-nov | 450 ms | 650 ms | thr 0.72 |
@@ -313,12 +315,12 @@ The unit is the call. Everything sits on one clock: milliseconds since media sta
             "carrier_offset_ms": 212},
   "amd": {"label": "human", "confidence": 0.91, "decided_at_ms": 2380},
   "turns": [
-    {"turn_id": 3, "speaker": "caller", "vad_start_ms": 18220, "vad_end_ms": 21940, "vad_hangover_ms": 200,
+    {"turn_id": 6, "speaker": "caller", "vad_start_ms": 18220, "vad_end_ms": 21940, "vad_hangover_ms": 200,
      "stt_partials": [{"t_ms": 18710, "text": "haan main"}],
      "stt_final": {"t_ms": 22180, "text": "haan main do hazaar de dunga bees tarikh ko baaki next month",
                    "lang_tags": ["hi","hi","hi","hi","hi","hi","hi","hi","hi","hi","en","en"], "confidence": 0.78},
      "eot_commit_ms": 22310, "reference_text": "haan main dhai hazaar de dunga bees tarikh ko, baaki next month"},
-    {"turn_id": 4, "speaker": "agent", "turn_type": "tool",
+    {"turn_id": 7, "speaker": "agent", "turn_type": "tool",
      "llm": {"request_ms": 22320, "first_token_ms": 22990, "first_answer_token_ms": 22990, "cached_tokens": 1840},
      "tool_calls": [{"name": "record_promise_to_pay",
                      "args_redacted": {"amount_paise": 200000, "ptp_date": "2026-11-20", "readback_confirmed": false},
@@ -330,7 +332,7 @@ The unit is the call. Everything sits on one clock: milliseconds since media sta
   "timings_summary": {"turn_gap_ms": [1800], "stage_ms": {"eot_delay": [370], "llm_ttft": [670], "tts_ttfb": [190]}},
   "crm_before": {"ptps": []},
   "crm_after": {"ptps": [{"amount_paise": 200000, "ptp_date": "2026-11-20", "readback_confirmed": false}]},
-  "checks": [{"id": "C12", "result": "fail", "evidence_turns": [3, 4]}],
+  "checks": [{"id": "C12", "result": "fail", "evidence_turns": [6, 7]}],
   "judge_scores": [],
   "labels": [{"labeler": "rv-07", "taxonomy": "tz-fail-v4", "code": "ENT.AMOUNT", "note": "dhai heard as do; PTP written before read-back"}]
 }
@@ -389,7 +391,7 @@ Production judge sampling (from 2026-11-19, after T09) [W]: every call in the ri
 
 Reference text (REF) is what the speaker said (human transcription). STT is what the agent's speech-to-text produced. TTS is the text Asha sent to synthesis. 
 
-Dates and versions: prompt collections-v16 ran until 2026-11-12; v17 (the W3 rules, including words for dates) went live on 2026-11-13. TW-early-nov ran a 300 ms silence budget at thr 0.62 until T05's fix on 2026-11-17. P01's EMI fell due on 2026-11-08, so his DPD is 4 on 11-12 and 6 on 11-14.
+Dates and versions: prompt collections-v16 ran until 2026-11-12; v17 (the W3 rules, including words for dates) went live on 2026-11-13. TW-early-nov ran a 300 ms silence budget at thr 0.62 in every call state until T05's fix on 2026-11-17, which added the 600 ms amount-asked and date-asked budget. P01's EMI fell due on 2026-11-08, so his DPD is 4 on 11-12 and 6 on 11-14.
 
 "Transcript view" says what a reviewer sees from the STT text and the TTS input text alone, without the timeline, the REF lane, non-speech tags such as [crying, 4 s] or audio (call review step 1): visible, partly visible, or not visible.
 
@@ -453,7 +455,7 @@ t_ms   ch      event / text
 ```
 What failed: a 3,990 ms gap made of a slow first token, two sequential tool calls and no filler: 380 + 1,220 + 860 + 1,250 + 190 + 50 = 3,950 ms of stage time plus four 10 ms orchestration hops [C]. Then the "hello?" became a new turn and the agent talked over itself. It happens only above about 1,800 concurrent calls, when the CRM P95 doubles and the LLM first-token tail widens at the same time [W]: a shared-load case, so the stage tails line up (W11). What catches it: per-stage spans on one timeline, P95 by turn type, the filler rule, a duplicate-response check, and a load test at projected peak.
 
-**T05 "Agle mahine ki... paanch" (false cutoff on a mid-turn pause).** 2026-11-15, P01, F01, Hinglish; TW budget 300 ms (moved to 400 ms on 2026-11-17 because of this call). Transcript view: visible (the agent's push lands mid-sentence). Opens the turn-taking chapter. Recurs in simulation, statistics.
+**T05 "Agle mahine ki... paanch" (false cutoff on a mid-turn pause).** 2026-11-16, P01, F01, Hinglish; TW budget 300 ms (moved to 400 ms on 2026-11-17 because of this call). Transcript view: visible (the agent's push lands mid-sentence). Opens the turn-taking chapter. Recurs in simulation, statistics.
 
 ```
 t_ms   ch      event / text

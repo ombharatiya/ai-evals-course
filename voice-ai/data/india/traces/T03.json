@@ -21,9 +21,10 @@
     "connect_outcome": "answered"
   },
   "cli": "1600-XXX-XXXX",
-  "carrier": "airtel",
+  "carrier": "jio",
   "codec_chain": [
     "amr-nb",
+    "g711-pcma",
     "g711-pcmu"
   ],
   "pipeline": "cascade",
@@ -41,7 +42,7 @@
   },
   "silence_budget_ms": {
     "default": 300,
-    "amount_or_date_asked": 600
+    "amount_or_date_asked": 300
   },
   "audio": {
     "agent_channel_uri": "s3://recordings/TZ-2026-11-12-8000003/agent.wav",

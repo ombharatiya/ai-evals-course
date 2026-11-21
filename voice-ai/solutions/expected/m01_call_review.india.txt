@@ -7,7 +7,7 @@ Caller turns where the STT entity differs from the reference transcript: 13 (fir
     REF: yes I can pay one thousand seven hundred fifty on the twentieth, rest next month
     STT: yes I can pay two thousand on the twentieth, rest next month
   TZ-2026-11-18-9000018 turn 6
-    REF: haan main saade teen hazaar de dunga tees tarikh ko, baaki next month
+    REF: haan main saade teen hazaar de dungi tees tarikh ko, baaki next month
     STT: hum but mary salary seven ko RT hai to after that I can pay teen hazaar
   TZ-2026-11-18-9000018 turn 8
     REF: tees tarikh, after salary

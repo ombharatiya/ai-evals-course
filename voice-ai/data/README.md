@@ -41,7 +41,7 @@ Schema: `schemas/trace.schema.json` (voice-trace/1.3). One object per call. Ever
 | `call_id` | `SY-` (global) or `TZ-` (India), the call date and a 7-digit number |
 | `schema_version` | Always `voice-trace/1.3` |
 | `edition`, `dataset` | Edition name and dataset name with its seed |
-| `campaign` | Campaign id from `world/<edition>/constants.json` (`campaigns`) |
+| `campaign` | Campaign id from `world/<edition>/constants.json` (`campaigns`). A campaign's `languages` are its book's main languages, not a limit: a caller may speak any of the edition's three bot language groups (`campaigns_languages_note`) |
 | `account_id` | Fictional account, `A-` and 8 digits |
 | `persona_or_real` | `sim` for the 200 simulated calls, `real` for the incident traces (real inside the fictional world) |
 | `scenario` | For simulated calls: `scenario_id`, `trial` (1-8), `flow` (F01-F10), `persona` (P01-P13), `language_group`, `variant`. For traces: `incident`, `title`, `flow`, `persona`, `language_group` |
@@ -53,7 +53,7 @@ Schema: `schemas/trace.schema.json` (voice-trace/1.3). One object per call. Ever
 | `pipeline` | `cascade` (STT, LLM, TTS) or `s2s` |
 | `concurrency_at_start` | Concurrent calls on the platform when the call started (module 12) |
 | `versions` | Agent, prompt, STT, turn detector with threshold, LLM, TTS, policy pack, taxonomy, gold set |
-| `silence_budget_ms` | The campaign's end-of-turn silence budget: `default` and `amount_or_date_asked` |
+| `silence_budget_ms` | The campaign's end-of-turn silence budget: `default` and `amount_or_date_asked`. Before the 17 November fix the AUTO and TW books ran 300 ms in every state, so their earlier traces store 300 for both |
 | `audio` | Recording URIs (placeholders, no audio ships), sample rate, and the carrier offset in ms |
 | `amd` | Answering machine detection: `label` (what AMD said), `confidence`, `decided_at_ms`, `true_label` (what answered) |
 | `turns` | Caller and agent turns in time order (below) |
@@ -116,6 +116,8 @@ Schema: `schemas/entity_pair.schema.json`.
 | `hyps` | Hypotheses from `sys_a`, `sys_b` and `sys_c` |
 | `ref_entities` | Gold entities of the reference (amounts in minor units, ISO dates, confirmations) |
 | `hyp_entities` | The entities each hypothesis states, per system |
+
+Every amount in this file is a small promise: Rs 1,500 to Rs 4,250 in the India edition and $150.00 to $450.00 in the global edition. No India amount reaches Rs 1,00,000, so the Indian-system scale words and digit grouping above that (Rs 1,50,000) are tested from the tables in the India edition's entity error rate and TTS chapters and in the entity recipe, not from this file.
 
 ## Pauses (`pauses.jsonl`)
 

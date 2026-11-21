@@ -21,9 +21,10 @@
     "connect_outcome": "answered"
   },
   "cli": "1600-XXX-XXXX",
-  "carrier": "airtel",
+  "carrier": "jio",
   "codec_chain": [
     "amr-nb",
+    "g711-pcma",
     "g711-pcmu"
   ],
   "pipeline": "cascade",
@@ -112,7 +113,7 @@
       ],
       "stt_final": {
         "t_ms": 15105,
-        "text": "haan ji, bol raha hoon",
+        "text": "haan ji, bol rahi hoon",
         "lang_tags": [
           "hi",
           "en",
@@ -123,7 +124,7 @@
         "confidence": 0.94
       },
       "eot_commit_ms": 15374,
-      "reference_text": "haan ji, bol raha hoon",
+      "reference_text": "haan ji, bol rahi hoon",
       "ref_intent": "identity_confirmed",
       "ref_entities": [],
       "stt_entities": [],

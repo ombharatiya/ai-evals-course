@@ -46,7 +46,7 @@
     "gold": null
   },
   "silence_budget_ms": {
-    "default": 300,
+    "default": 400,
     "amount_or_date_asked": 600
   },
   "audio": {

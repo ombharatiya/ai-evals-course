@@ -118,6 +118,7 @@ class World:
         tags = self.P["lang_tags"]
         self.tag_default, self.tag_other = tags["default"], tags["other"]
         self.other_words = set(tags["other_words"])
+        self.speaker_gender = None  # set per call from the persona; None for anonymous speakers
 
     def group(self, role: str, persona_id: str) -> str:
         return self.C["group_roles"][role]
@@ -141,7 +142,10 @@ class World:
         return self._render(text, gloss, kw)
 
     def caller_line(self, group: str, key: str, **kw) -> tuple[str, str | None]:
-        text, gloss = text_of(self.P["caller"][group][key])
+        lines = self.P["caller"][group]
+        if self.speaker_gender == "f" and key + "_f" in lines:
+            key += "_f"  # India edition: the verb agrees with a female speaker
+        text, gloss = text_of(lines[key])
         return self._render(text, gloss, kw)
 
     def lang_tags(self, text: str) -> list[str]:
@@ -625,6 +629,7 @@ def flow_call(W: World, sid: str, flow: str, pid: str, role: str, variant: str, 
               seq: int) -> dict:
     rng = random.Random(f"{W.C['seed']}-{sid}-{trial}")
     persona = W.persona[pid]
+    W.speaker_gender = persona.get("gender")
     group = W.C["group_roles"][role]
     campaign = W.book_campaign[persona["product"]]
     cinfo = W.C["campaigns"][campaign]
@@ -1030,7 +1035,7 @@ INCIDENT_META = {
     "T04": ("2026-11-13", "17:52:30", "P01", "F01", "collections-v17", 300, 2150),
     "T05": (None, "13:15:09", "P01", "F01", "collections-v17", 300, 1300),
     "T06": ("2026-11-11", "16:02:51", "P10", "F01", "collections-v16", None, 800),
-    "T07": ("2026-11-10", "10:12:03", "P09", "F08", "collections-v16", 300, 600),
+    "T07": ("2026-11-10", "10:12:03", "P09", "F08", "collections-v16", None, 600),  # PIL/PL: 400 ms
     "T08": ("2026-11-16", "15:40:18", "P12", "F01", "collections-v17", None, 1000),
     "T09": ("2026-11-18", "18:55:41", "P11", "F10", "collections-v17-p1", None, 1700),
     "T10": ("2026-11-17", "14:30:27", "P04", "F04", "collections-v17", None, 950),
@@ -1069,10 +1074,11 @@ def incident_call(W: World, iid: str, seq: int) -> dict:
 
 def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap: float = 0.0):
     date_s, time_s, pid, flow, prompt, budget_over, load = INCIDENT_META[iid]
-    if date_s is None:  # T05: a Monday in the global log; the India twin's date is a Sunday
-        date_s = "2026-11-16" if W.global_ed else "2026-11-15"
+    if date_s is None:  # T05: Monday 16 November in both editions (both lenders call Monday to Saturday)
+        date_s = "2026-11-16"
     rng = random.Random(f"{W.C['seed']}-{iid}")
     persona = W.persona[pid]
+    W.speaker_gender = persona.get("gender")
     group = persona["language_group"]
     campaign = W.book_campaign[persona["product"]]
     cinfo = W.C["campaigns"][campaign]
@@ -1098,7 +1104,10 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
     if pid == "P07":
         contact["contact_id"] = "K-20417"
     call_id = f"{W.C['call_id_prefix']}-{date_s}-{'0871234' if iid == 'T01' else f'{8000000 + seq:07d}'}"
-    c = Call(W, rng, call_id, acc, contact, campaign, started, tz, budget, cinfo["budget_asked_ms"], load,
+    # Before the 17 November fix the old campaign budget applied in every call state (no longer
+    # amount-asked or date-asked budget), so a pre-fix trace stores the same value for both.
+    budget_asked = budget_over if budget_over == 300 else cinfo["budget_asked_ms"]
+    c = Call(W, rng, call_id, acc, contact, campaign, started, tz, budget, budget_asked, load,
              prompt=prompt, threshold=thr)
     c.extra = extra
     c.extra_gap = extra_gap
@@ -1325,7 +1334,8 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
                 post_tools=[])
         c.t = 20990
         c.turns[-1]["tool_calls"].append(c.tool("end_call", {"disposition": "no_response"}, 21000, 21020))
-        labels = [lab("OUT.AMD", "machine prompt labeled human (0.71); opener played to it; attempt logged as a conversation", 2)]
+        logged = "attempt logged as a conversation" if W.global_ed else "attempt counted as a human connect"
+        labels = [lab("OUT.AMD", f"machine prompt labeled human (0.71); opener played to it; {logged}", 2)]
         gold["call_attempt"] = {"rpc": False, "disposition": "ivr"}
 
     elif iid == "T08":
@@ -1431,7 +1441,9 @@ def _incident(W: World, iid: str, seq: int, k_fill: int | None = None, extra_gap
 
     if not labels:
         labels = [{"labeler": "rv-07", "taxonomy": W.C["taxonomy"]["version"], "code": "NONE", "note": "worked example, no failure", "turn_id": None}]
-    carrier = W.C["carriers"][1]
+    # Incident traces share one carrier leg per edition: the global T01 leg (carrier-b-mobile,
+    # AMR-WB to G.711) and the India T01 leg (Jio, AMR-NB to G.711 A-law and mu-law).
+    carrier = W.C["carriers"][1] if W.global_ed else "jio"
     tzsig = {"area_code": tz, "address": tz}
     if W.global_ed:
         dial = {"attempts_7d_before": 2, **conn}
@@ -1474,6 +1486,7 @@ def noisy(W: World, rng: random.Random, text: str, protect: set, p: float) -> st
 
 def generate_entity_pairs(W: World, t01: dict) -> list[dict]:
     rng = random.Random(W.C["seed"] + 11)
+    W.speaker_gender = None  # entity-pair speakers are anonymous
     groups = W.C["language_groups"]
     speakers = [(f"spk-{i:03d}", groups[i % 3]) for i in range(1, 91)]
     pairs = []

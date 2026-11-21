@@ -21,9 +21,10 @@
     "connect_outcome": "answered"
   },
   "cli": "1600-XXX-XXXX",
-  "carrier": "airtel",
+  "carrier": "jio",
   "codec_chain": [
     "amr-nb",
+    "g711-pcma",
     "g711-pcmu"
   ],
   "pipeline": "cascade",

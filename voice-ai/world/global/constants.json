@@ -588,6 +588,7 @@
     {
       "id": "P01",
       "name": "Ryan Mitchell",
+      "gender": "m",
       "role": "borrower",
       "flow": "F01",
       "product": "AUTO",
@@ -598,6 +599,7 @@
     {
       "id": "P02",
       "name": "Sofia Ramirez",
+      "gender": "f",
       "role": "borrower",
       "flow": "F02",
       "product": "POS",
@@ -608,6 +610,7 @@
     {
       "id": "P03",
       "name": "Marcus Reed",
+      "gender": "m",
       "role": "borrower",
       "flow": "F03",
       "product": "PIL",
@@ -618,6 +621,7 @@
     {
       "id": "P04",
       "name": "Daniela Torres",
+      "gender": "f",
       "role": "borrower",
       "flow": "F04",
       "product": "AUTO",
@@ -628,6 +632,7 @@
     {
       "id": "P05",
       "name": "Kyle Mitchell",
+      "gender": "m",
       "role": "third_party",
       "flow": "F05",
       "product": "AUTO",
@@ -648,6 +653,7 @@
     {
       "id": "P07",
       "name": "Luis Herrera",
+      "gender": "m",
       "role": "guarantor",
       "flow": "F06",
       "product": "SBL",
@@ -678,6 +684,7 @@
     {
       "id": "P10",
       "name": "Javier Ortiz",
+      "gender": "m",
       "role": "borrower",
       "flow": "F09",
       "product": "PIL",
@@ -688,6 +695,7 @@
     {
       "id": "P11",
       "name": "Derek Wallace",
+      "gender": "m",
       "role": "borrower",
       "flow": "F10",
       "product": "SBL",
@@ -698,6 +706,7 @@
     {
       "id": "P12",
       "name": "Valeria Cruz",
+      "gender": "f",
       "role": "borrower",
       "flow": "F01",
       "product": "PIL",
@@ -708,6 +717,7 @@
     {
       "id": "P13",
       "name": "Ramon Diaz",
+      "gender": "m",
       "role": "borrower",
       "flow": "F01",
       "product": "SDL",
@@ -715,5 +725,6 @@
       "language_group": "Spanish-dominant",
       "note": "64, hard of hearing"
     }
-  ]
+  ],
+  "campaigns_languages_note": "Each campaign's languages are its book's main languages, which weight the production sample. Every campaign serves all three bot language groups: a call's language comes from the account preference and the call itself, so scenario cards and incident personas can use any of them."
 }

@@ -21,9 +21,10 @@
     "connect_outcome": "answered"
   },
   "cli": "1600-XXX-XXXX",
-  "carrier": "airtel",
+  "carrier": "jio",
   "codec_chain": [
     "amr-nb",
+    "g711-pcma",
     "g711-pcmu"
   ],
   "pipeline": "cascade",
@@ -40,7 +41,7 @@
     "gold": null
   },
   "silence_budget_ms": {
-    "default": 300,
+    "default": 400,
     "amount_or_date_asked": 600
   },
   "audio": {
@@ -301,7 +302,7 @@
       "labeler": "rv-07",
       "taxonomy": "tz-fail-v4",
       "code": "OUT.AMD",
-      "note": "machine prompt labeled human (0.71); opener played to it; attempt logged as a conversation",
+      "note": "machine prompt labeled human (0.71); opener played to it; attempt counted as a human connect",
       "turn_id": 2
     }
   ]

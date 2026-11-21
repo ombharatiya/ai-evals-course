@@ -68,6 +68,8 @@ Customer Advocate (complaints contact, fictional; replaces the India edition's g
 | SBL-guar-nov | SBL | 1-90 | English, Spanglish | Guarantor flow F06 |
 | SDL-biwk-nov | SDL | 1-30 | English, Spanish-dominant | Older borrowers; 09:00-20:00 |
 
+Each campaign also serves the other bot language groups: a call's language comes from the account preference and the call itself, so the Languages column names the book's main languages (they weight the production sample), not a limit.
+
 ## WG3. The agent
 
 **Hazel**, Steelyard's AI collections agent. Female persona: Spanish self-reference uses feminine forms ("una asistente", "estoy segura" [I am sure]); masculine self-reference ("un asistente", "estoy seguro") is a failure code (TONE.GENDER). Default language: the account preference, English when none is set; follows the borrower into Spanish or Spanglish; transfers other languages.
@@ -350,7 +352,7 @@ Endpointing operating points [W] chosen with the consequence-weighted cost model
 
 | Campaign | Default silence budget | Amount-asked / date-asked states | Detector threshold |
 |---|---|---|---|
-| AUTO-early-nov | 300 ms (before T05) -> 400 ms (from 2026-11-17) | 600 ms | td-1.1 thr 0.62 -> 0.70 |
+| AUTO-early-nov | 300 ms (before T05) -> 400 ms (from 2026-11-17) | 300 ms (before T05) -> 600 ms | td-1.1 thr 0.62 -> 0.70 |
 | PIL-digital-nov | 400 ms | 600 ms | thr 0.70 |
 | POS-short-nov | 400 ms | 600 ms | thr 0.70 |
 | SBL-guar-nov | 450 ms | 650 ms | thr 0.72 |
@@ -385,12 +387,12 @@ The unit is the call. Everything sits on one clock: milliseconds since media sta
             "carrier_offset_ms": 212},
   "amd": {"label": "human", "confidence": 0.91, "decided_at_ms": 2380},
   "turns": [
-    {"turn_id": 3, "speaker": "caller", "vad_start_ms": 18220, "vad_end_ms": 21940, "vad_hangover_ms": 200,
+    {"turn_id": 6, "speaker": "caller", "vad_start_ms": 18220, "vad_end_ms": 21940, "vad_hangover_ms": 200,
      "stt_partials": [{"t_ms": 18710, "text": "yeah I can"}],
      "stt_final": {"t_ms": 22180, "text": "yeah I can do two fifteen on the twentieth rest next month",
                    "lang_tags": ["en","en","en","en","en","en","en","en","en","en","en","en"], "confidence": 0.78},
      "eot_commit_ms": 22310, "reference_text": "yeah I can do two fifty on the twentieth, rest next month"},
-    {"turn_id": 4, "speaker": "agent", "turn_type": "tool",
+    {"turn_id": 7, "speaker": "agent", "turn_type": "tool",
      "llm": {"request_ms": 22320, "first_token_ms": 22990, "first_answer_token_ms": 22990, "cached_tokens": 1840},
      "tool_calls": [{"name": "record_promise_to_pay",
                      "args_redacted": {"amount_cents": 21500, "ptp_date": "2026-11-20", "readback_confirmed": false},
@@ -402,7 +404,7 @@ The unit is the call. Everything sits on one clock: milliseconds since media sta
   "timings_summary": {"turn_gap_ms": [1800], "stage_ms": {"eot_delay": [370], "llm_ttft": [670], "tts_ttfb": [190]}},
   "crm_before": {"ptps": []},
   "crm_after": {"ptps": [{"amount_cents": 21500, "ptp_date": "2026-11-20", "readback_confirmed": false}]},
-  "checks": [{"id": "C12", "result": "fail", "evidence_turns": [3, 4]}],
+  "checks": [{"id": "C12", "result": "fail", "evidence_turns": [6, 7]}],
   "judge_scores": [],
   "labels": [{"labeler": "rv-07", "taxonomy": "gl-fail-v4", "code": "ENT.AMOUNT", "note": "fifty heard as fifteen; PTP written before read-back"}]
 }
@@ -463,7 +465,7 @@ Production judge sampling (from 2026-11-19, after T09) [W]: every call in the ri
 
 Reference text (REF) is what the speaker said (human transcription). STT is what the agent's speech-to-text produced. TTS is the text Hazel sent to synthesis. A `gloss:` line under a Spanish line is the English meaning and is not part of the trace. 
 
-Dates and versions: prompt collections-v16 ran until 2026-11-12; v17 (the WG3 rules, including words for dates) went live on 2026-11-13. AUTO-early-nov ran a 300 ms silence budget at thr 0.62 until T05's fix on 2026-11-17. P01's payment fell due on 2026-11-08, so his DPD is 4 on 11-12 and 6 on 11-14. Every incident date is a Monday-to-Saturday calling day (T05 is dated 2026-11-16).
+Dates and versions: prompt collections-v16 ran until 2026-11-12; v17 (the WG3 rules, including words for dates) went live on 2026-11-13. AUTO-early-nov ran a 300 ms silence budget at thr 0.62 in every call state until T05's fix on 2026-11-17, which added the 600 ms amount-asked and date-asked budget. P01's payment fell due on 2026-11-08, so his DPD is 4 on 11-12 and 6 on 11-14. Every incident date is a Monday-to-Saturday calling day (T05 is dated 2026-11-16).
 
 "Transcript view" says what a reviewer sees from the STT text and the TTS input text alone, without the timeline, the REF lane, non-speech tags such as [crying, 4 s] or audio (call review step 1): visible, partly visible, or not visible.
 

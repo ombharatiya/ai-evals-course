@@ -47,7 +47,7 @@
   },
   "silence_budget_ms": {
     "default": 300,
-    "amount_or_date_asked": 600
+    "amount_or_date_asked": 300
   },
   "audio": {
     "agent_channel_uri": "s3://recordings/SY-2026-11-13-8000004/agent.wav",
